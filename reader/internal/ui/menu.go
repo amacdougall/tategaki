@@ -6,6 +6,7 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/amacdougall/tategaki/reader/internal/anki"
 	"github.com/amacdougall/tategaki/reader/internal/config"
 	"github.com/amacdougall/tategaki/reader/internal/display"
 	"github.com/amacdougall/tategaki/reader/internal/input"
@@ -18,6 +19,7 @@ type Menu struct {
 	reader  *Reader
 	sheet   image.Rectangle
 	buttons []menuButton
+	anki    string // Anki button label while/after sending
 }
 
 type menuButton struct {
@@ -28,7 +30,7 @@ type menuButton struct {
 
 func (m *Menu) Draw(a *App) error {
 	r := m.reader
-	m.sheet = image.Rect(0, 0, a.W, 700)
+	m.sheet = image.Rect(0, 0, a.W, 850)
 	img := image.NewGray(m.sheet)
 	fill(img, m.sheet, white)
 	b := r.book.Manifest
@@ -44,6 +46,17 @@ func (m *Menu) Draw(a *App) error {
 		{label: "Go to page", do: func(a *App) error { a.Show(&Goto{reader: r}); return nil }},
 		{label: "Book info", do: func(a *App) error { a.Show(&Info{reader: r}); return nil }},
 		{label: "Library", do: func(a *App) error { r.Library(a); return nil }},
+		{label: m.ankiLabel(a), do: func(a *App) error {
+			m.anki = "Sending…"
+			m.Draw(a)
+			a.FlushAnki(func(res anki.FlushResult) {
+				m.anki = res.String()
+				if a.screen == m {
+					m.Draw(a)
+				}
+			})
+			return nil
+		}},
 		{label: "Close menu", do: func(a *App) error { a.Show(r); return nil }},
 		{label: "Exit", do: func(a *App) error { a.Quit(); return nil }},
 	}
@@ -56,6 +69,13 @@ func (m *Menu) Draw(a *App) error {
 	}
 	fill(img, image.Rect(0, m.sheet.Max.Y-6, a.W, m.sheet.Max.Y), black)
 	return a.Disp.Image(img, image.Point{}, display.Partial)
+}
+
+func (m *Menu) ankiLabel(a *App) string {
+	if m.anki != "" {
+		return m.anki
+	}
+	return fmt.Sprintf("Send to Anki (%d)", a.Queue.Pending())
 }
 
 func (m *Menu) Handle(a *App, g input.Gesture) error {

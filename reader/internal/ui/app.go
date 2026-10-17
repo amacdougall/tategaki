@@ -13,6 +13,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/amacdougall/tategaki/reader/internal/anki"
 	"github.com/amacdougall/tategaki/reader/internal/book"
 	"github.com/amacdougall/tategaki/reader/internal/config"
 	"github.com/amacdougall/tategaki/reader/internal/dict"
@@ -48,7 +49,17 @@ type App struct {
 	DictPaths []string
 	dictDB    *dict.DB
 	dictErr   error
+	// Queue is the Anki queue (plan §7.7).
+	Queue   *anki.Queue
+	updates chan func()
 }
+
+// Updates delivers work posted from background goroutines; the event loop
+// runs it, so screens are only touched from one goroutine.
+func (a *App) Updates() <-chan func() { return a.updates }
+
+// Post schedules f on the event loop.
+func (a *App) Post(f func()) { a.updates <- f }
 
 // Dict opens the dictionary on first use.
 func (a *App) Dict() (*dict.DB, error) {
@@ -71,8 +82,14 @@ func (a *App) Dict() (*dict.DB, error) {
 // New creates the app; Start shows the library.
 func New(disp display.Display, fonts *text.Fonts, paths config.Paths, tmp string) *App {
 	size := disp.Size()
-	a := &App{Disp: disp, Fonts: fonts, Paths: paths, Tmp: tmp, W: size.X, H: size.Y, State: config.OpenState(paths)}
+	a := &App{Disp: disp, Fonts: fonts, Paths: paths, Tmp: tmp, W: size.X, H: size.Y, State: config.OpenState(paths),
+		updates: make(chan func(), 16)}
 	a.reloadConfig()
+	q, err := anki.OpenQueue(filepath.Join(paths.Root, "anki-queue.jsonl"))
+	if err != nil {
+		log.Printf("anki queue: %v", err)
+	}
+	a.Queue = q
 	return a
 }
 
@@ -100,8 +117,12 @@ func (a *App) redraw() {
 }
 
 // Start resumes the most recently read book at its saved place, or opens the
-// library if there is none (or it has been removed).
+// library if there is none (or it has been removed). Cards mined while Anki
+// was unreachable are sent in the background.
 func (a *App) Start() {
+	if a.Queue.Pending() > 0 {
+		a.FlushAnki(nil)
+	}
 	if id := a.State.State.LastBook; id != "" {
 		if _, err := os.Stat(a.Paths.Book(id)); err == nil {
 			if err := a.OpenBook(id); err == nil {

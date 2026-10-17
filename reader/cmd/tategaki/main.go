@@ -105,6 +105,7 @@ func run(fbinkBin, tmp, root, fontDir, dictPath string, idle time.Duration, simM
 	}
 	app := ui.New(disp, fonts, config.Paths{Root: root}, tmp)
 	app.DictPaths = []string{dictPath, "data/jmdict.sqlite", "../data/jmdict.sqlite"}
+	ev.updates = app.Updates()
 	app.Start()
 	return ev.loop(func(g input.Gesture) bool {
 		app.Gesture(g)

@@ -25,6 +25,7 @@ type events struct {
 	power    <-chan string    // com.lab126.powerd events (device only)
 	wake     <-chan struct{}  // simulated wake (sim only)
 	settle   <-chan time.Time // post-launch redraws (device only)
+	updates  <-chan func()    // work posted by background goroutines
 	sigs     chan os.Signal
 	idle     time.Duration
 	// onInput runs on every gesture (the device resets powerd's idle timer).
@@ -100,6 +101,8 @@ func (e *events) loop(onGesture func(input.Gesture) bool, onWake, onSettle func(
 			}
 		case <-e.wake:
 			onWake()
+		case f := <-e.updates:
+			f()
 		case <-e.settle:
 			if onSettle != nil {
 				onSettle()

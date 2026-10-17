@@ -178,6 +178,7 @@ func (r *Reader) clearBars(a *App, bars []image.Rectangle) {
 type Popup struct {
 	chapter   int
 	offset    int // tapped code point offset in the chapter text
+	paraStart int
 	paraEnd   int
 	spanLen   int  // selection length when span-adjusted
 	adjusted  bool // span adjust in effect: candidates come from LookupCandidates
@@ -190,6 +191,7 @@ type Popup struct {
 	pages     [][]int // candidate indices per sheet page
 	pageIdx   int
 	rowRects  map[int]image.Rectangle
+	ankiRects map[int]image.Rectangle
 	shrink    image.Rectangle
 	extend    image.Rectangle
 	close     image.Rectangle
@@ -216,11 +218,11 @@ func (r *Reader) lookupAt(a *App, ch int, g book.Glyph) error {
 		return err
 	}
 	offset := g[0]
-	paraEnd := len(text)
+	paraStart, paraEnd := 0, len(text)
 	if l, err := r.book.Layout(ch); err == nil {
 		for _, para := range l.Paragraphs {
 			if para[0] <= offset && offset < para[1] {
-				paraEnd = para[1]
+				paraStart, paraEnd = para[0], para[1]
 				break
 			}
 		}
@@ -238,7 +240,7 @@ func (r *Reader) lookupAt(a *App, ch int, g book.Glyph) error {
 	if g[2]+g[4]/2 >= a.H/2 {
 		sheet = image.Rect(0, 0, a.W, sheetH)
 	}
-	p := &Popup{chapter: ch, offset: offset, paraEnd: paraEnd, cands: cands, sheet: sheet, spanLen: 1, startedAt: started}
+	p := &Popup{chapter: ch, offset: offset, paraStart: paraStart, paraEnd: paraEnd, cands: cands, sheet: sheet, spanLen: 1, startedAt: started}
 	if len(cands) == 0 {
 		p.raw = true
 	} else {
@@ -406,8 +408,10 @@ func (r *Reader) renderPopup(a *App) *image.Gray {
 
 	y := y0 + controlH + 16
 	p.rowRects = map[int]image.Rectangle{}
+	p.ankiRects = map[int]image.Rectangle{}
 	if p.raw {
-		a.label(img, image.Rect(popPad, y, a.W-popPad, y+90), r.popupText(p), sizeWord, true, false, black)
+		p.ankiRects[0] = r.ankiButton(a, img, p, 0, "", image.Rect(a.W-popPad-250, y+14, a.W-popPad, y+72))
+		a.label(img, image.Rect(popPad, y, a.W-popPad-300, y+90), r.popupText(p), sizeWord, true, false, black)
 		a.label(img, image.Rect(popPad, y+90, a.W-popPad, y+160), "No dictionary match. Use ◀ ▶ to change the span.", sizeNote, false, false, gray)
 		return img
 	}
@@ -435,17 +439,14 @@ func (r *Reader) drawRow(a *App, img *image.Gray, p *Popup, i int, row rowLayout
 	wordFace := a.Fonts.Face(sizeWord, true)
 	readFace := a.Fonts.Face(sizeRead, false)
 	noteFace := a.Fonts.Face(sizeNote, false)
-	base := y + 64
-	text.Draw(img, wordFace, x, base, c.Word, black)
-	xr := x + text.Width(wordFace, c.Word) + 8
-	if c.Reading != "" && c.Reading != c.Word {
-		text.Draw(img, readFace, xr, base, "【"+c.Reading+"】", black)
-	}
-	// rank badge: inverted for common words (rank <= 10,000)
-	if c.Rank < dict.Unranked {
+	// Top line, right to left: [+ Anki] [rank badge] … word【reading】.
+	button := image.Rect(a.W-popPad-250, y+14, a.W-popPad, y+72)
+	p.ankiRects[i] = r.ankiButton(a, img, p, c.EntSeq, c.Word, button)
+	right := button.Min.X - 16
+	if c.Rank < dict.Unranked { // inverted badge for common words (rank <= 10,000)
 		label := formatRank(c.Rank)
 		w := text.Width(noteFace, label) + 2*sizeNote // label() pads by half the size on each side
-		badge := image.Rect(a.W-popPad-w, y+16, a.W-popPad, y+72)
+		badge := image.Rect(right-w, y+14, right, y+72)
 		if c.Rank <= 10000 {
 			fill(img, badge, black)
 			a.label(img, badge, label, sizeNote, true, true, white)
@@ -453,6 +454,14 @@ func (r *Reader) drawRow(a *App, img *image.Gray, p *Popup, i int, row rowLayout
 			frame(img, badge, 3, black)
 			a.label(img, badge, label, sizeNote, false, true, black)
 		}
+		right = badge.Min.X - 16
+	}
+	base := y + 64
+	word := text.Ellipsize(wordFace, c.Word, right-x)
+	text.Draw(img, wordFace, x, base, word, black)
+	xr := x + text.Width(wordFace, word) + 8
+	if c.Reading != "" && c.Reading != c.Word && xr < right {
+		text.Draw(img, readFace, xr, base, text.Ellipsize(readFace, "【"+c.Reading+"】", right-xr), black)
 	}
 	var note []string
 	if len(c.Reasons) > 0 {
@@ -499,6 +508,8 @@ func (r *Reader) handlePopup(a *App, g input.Gesture) error {
 			return r.adjustSpan(a, -1)
 		case g.Kind == input.Tap && pt.In(p.extend):
 			return r.adjustSpan(a, 1)
+		case g.Kind == input.Tap && r.hitAnki(p, pt) >= 0:
+			return r.mine(a, r.hitAnki(p, pt))
 		case g.Kind == input.Tap:
 			for i, rect := range p.rowRects {
 				if pt.In(rect) {
@@ -552,4 +563,29 @@ func (r *Reader) adjustSpan(a *App, delta int) error {
 	p.raw = len(cands) == 0
 	r.showPopup(a)
 	return nil
+}
+
+// ankiButton draws a row's "+ Anki" button, labelled with the row's queue
+// status (queued, sent, duplicate, error).
+func (r *Reader) ankiButton(a *App, img *image.Gray, p *Popup, entSeq int64, word string, rect image.Rectangle) image.Rectangle {
+	if word == "" {
+		word = r.popupText(p)
+	}
+	label, done := ankiStatus(a.Queue.Latest(r.id, entSeq, word))
+	if done { // a status, not a button: gray, so it doesn't read as a rank badge
+		fill(img, rect, light)
+	} else {
+		frame(img, rect, 3, black)
+	}
+	a.label(img, rect, label, sizeNote, true, true, black)
+	return rect
+}
+
+func (r *Reader) hitAnki(p *Popup, pt image.Point) int {
+	for i, rect := range p.ankiRects {
+		if pt.In(rect) {
+			return i
+		}
+	}
+	return -1
 }
