@@ -1,0 +1,49 @@
+[
+ {
+  "args": {
+   "word": "擦る",
+   "sentence": "壁を擦られた跡がある。",
+   "reading": "こする",
+   "meaning": "to rub; to scrub"
+  },
+  "fields": {
+   "Word": "擦る",
+   "Sentence": "壁を擦られた跡がある。",
+   "Word Reading": "こする",
+   "Word Meaning": "to rub; to scrub"
+  }
+ },
+ {
+  "args": {
+   "word": "蜘蛛",
+   "sentence": "",
+   "reading": "くも",
+   "meaning": "spider"
+  },
+  "fields": {
+   "Word": "蜘蛛",
+   "Word Reading": "くも",
+   "Word Meaning": "spider"
+  }
+ },
+ {
+  "args": {
+   "word": "筆者"
+  },
+  "fields": {
+   "Word": "筆者"
+  }
+ },
+ {
+  "args": {
+   "word": "悠々",
+   "sentence": "彼は悠々と歩いていった。",
+   "note": "from とらドラ！"
+  },
+  "fields": {
+   "Word": "悠々",
+   "Sentence": "彼は悠々と歩いていった。",
+   "Notes": "from とらドラ！"
+  }
+ }
+]

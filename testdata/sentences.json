@@ -1,0 +1,158 @@
+[
+ {
+  "text": "田中さんは「ちょっと待って！」と言った。",
+  "offset": 16,
+  "strip_speaker_tag": false,
+  "sentence": "田中さんは「ちょっと待って！」と言った。"
+ },
+ {
+  "text": "田中さんは「ちょっと待って！」と言った。",
+  "offset": 16,
+  "strip_speaker_tag": true,
+  "sentence": "田中さんは「ちょっと待って！」と言った。"
+ },
+ {
+  "text": "田中さんは「ちょっと待って！」と言った。",
+  "offset": 10,
+  "strip_speaker_tag": false,
+  "sentence": "田中さんは「ちょっと待って！」"
+ },
+ {
+  "text": "田中さんは「ちょっと待って！」と言った。",
+  "offset": 10,
+  "strip_speaker_tag": true,
+  "sentence": "田中さんは「ちょっと待って！」"
+ },
+ {
+  "text": "田中さんは「ちょっと待って！」と言った。",
+  "offset": 0,
+  "strip_speaker_tag": false,
+  "sentence": "田中さんは「ちょっと待って！」と言った。"
+ },
+ {
+  "text": "田中さんは「ちょっと待って！」と言った。",
+  "offset": 0,
+  "strip_speaker_tag": true,
+  "sentence": "田中さんは「ちょっと待って！」と言った。"
+ },
+ {
+  "text": "猫が好きだ。犬も好きだ。鳥はどうかな。",
+  "offset": 6,
+  "strip_speaker_tag": false,
+  "sentence": "犬も好きだ。"
+ },
+ {
+  "text": "猫が好きだ。犬も好きだ。鳥はどうかな。",
+  "offset": 6,
+  "strip_speaker_tag": true,
+  "sentence": "犬も好きだ。"
+ },
+ {
+  "text": "「でもはいらないよ。とにかく明日は宿を探そう。だから、そんなに気を張らないでいいよ」",
+  "offset": 31,
+  "strip_speaker_tag": false,
+  "sentence": "だから、そんなに気を張らないでいいよ"
+ },
+ {
+  "text": "「でもはいらないよ。とにかく明日は宿を探そう。だから、そんなに気を張らないでいいよ」",
+  "offset": 31,
+  "strip_speaker_tag": true,
+  "sentence": "だから、そんなに気を張らないでいいよ"
+ },
+ {
+  "text": "「でもはいらないよ。とにかく明日は宿を探そう。だから、そんなに気を張らないでいいよ」",
+  "offset": 1,
+  "strip_speaker_tag": false,
+  "sentence": "でもはいらないよ。"
+ },
+ {
+  "text": "「でもはいらないよ。とにかく明日は宿を探そう。だから、そんなに気を張らないでいいよ」",
+  "offset": 1,
+  "strip_speaker_tag": true,
+  "sentence": "でもはいらないよ。"
+ },
+ {
+  "text": "彼は『吾輩は猫である。名前はまだ無い。』を読んだ。",
+  "offset": 21,
+  "strip_speaker_tag": false,
+  "sentence": "彼は『吾輩は猫である。名前はまだ無い。』を読んだ。"
+ },
+ {
+  "text": "彼は『吾輩は猫である。名前はまだ無い。』を読んだ。",
+  "offset": 21,
+  "strip_speaker_tag": true,
+  "sentence": "彼は『吾輩は猫である。名前はまだ無い。』を読んだ。"
+ },
+ {
+  "text": "筆者　えーと……実は今、引っ越しを考えていまして。",
+  "offset": 12,
+  "strip_speaker_tag": false,
+  "sentence": "筆者　えーと……実は今、引っ越しを考えていまして。"
+ },
+ {
+  "text": "筆者　えーと……実は今、引っ越しを考えていまして。",
+  "offset": 12,
+  "strip_speaker_tag": true,
+  "sentence": "えーと……実は今、引っ越しを考えていまして。"
+ },
+ {
+  "text": "筆者　えーと……実は今、引っ越しを考えていまして。",
+  "offset": 0,
+  "strip_speaker_tag": false,
+  "sentence": "筆者　えーと……実は今、引っ越しを考えていまして。"
+ },
+ {
+  "text": "筆者　えーと……実は今、引っ越しを考えていまして。",
+  "offset": 0,
+  "strip_speaker_tag": true,
+  "sentence": "筆者　えーと……実は今、引っ越しを考えていまして。"
+ },
+ {
+  "text": "栗原　やっぱり私は、殺された四人目がいると思うんですよ。これを見てください。",
+  "offset": 31,
+  "strip_speaker_tag": false,
+  "sentence": "これを見てください。"
+ },
+ {
+  "text": "栗原　やっぱり私は、殺された四人目がいると思うんですよ。これを見てください。",
+  "offset": 31,
+  "strip_speaker_tag": true,
+  "sentence": "これを見てください。"
+ },
+ {
+  "text": "内側から鍵がかかっていたのではないですか？",
+  "offset": 4,
+  "strip_speaker_tag": false,
+  "sentence": "内側から鍵がかかっていたのではないですか？"
+ },
+ {
+  "text": "内側から鍵がかかっていたのではないですか？",
+  "offset": 4,
+  "strip_speaker_tag": true,
+  "sentence": "内側から鍵がかかっていたのではないですか？"
+ },
+ {
+  "text": "　筆者は家に入った。",
+  "offset": 4,
+  "strip_speaker_tag": false,
+  "sentence": "筆者は家に入った。"
+ },
+ {
+  "text": "　筆者は家に入った。",
+  "offset": 4,
+  "strip_speaker_tag": true,
+  "sentence": "筆者は家に入った。"
+ },
+ {
+  "text": "猫が好きだ。\n片淵　どうでしょう。",
+  "offset": 10,
+  "strip_speaker_tag": false,
+  "sentence": "片淵　どうでしょう。"
+ },
+ {
+  "text": "猫が好きだ。\n片淵　どうでしょう。",
+  "offset": 10,
+  "strip_speaker_tag": true,
+  "sentence": "どうでしょう。"
+ }
+]

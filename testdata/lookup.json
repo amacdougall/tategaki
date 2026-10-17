@@ -1,0 +1,9604 @@
+[
+ {
+  "selection": "突き込",
+  "candidates": [
+   {
+    "ent_seq": 2827320,
+    "word": "突き込む",
+    "reading": "つきこむ",
+    "readings": [
+     "つきこむ"
+    ],
+    "pos": [
+     "v5m",
+     "vt",
+     "vi"
+    ],
+    "meaning": "to thrust (something) into (something); to cram; to stuff; to shove; to plunge into; to charge into; to rush into; to ram into; to crash into; to delve into (a matter); to go into depth; to get to the heart (of something); to press (someone) about; to point out (e.g. an inconsistency); to question sharply; to grill; to get involved with; to meddle in; to poke one's nose into; to riposte; to retort; to quip",
+    "glosses": [
+     "to thrust (something) into (something)",
+     "to cram",
+     "to stuff",
+     "to shove",
+     "to plunge into",
+     "to charge into",
+     "to rush into",
+     "to ram into",
+     "to crash into",
+     "to delve into (a matter)",
+     "to go into depth",
+     "to get to the heart (of something)",
+     "to press (someone) about",
+     "to point out (e.g. an inconsistency)",
+     "to question sharply",
+     "to grill",
+     "to get involved with",
+     "to meddle in",
+     "to poke one's nose into",
+     "to riposte",
+     "to retort",
+     "to quip"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to thrust (something) into (something)",
+       "to cram",
+       "to stuff",
+       "to shove"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vi"
+      ],
+      "glosses": [
+       "to plunge into",
+       "to charge into",
+       "to rush into",
+       "to ram into",
+       "to crash into"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vi"
+      ],
+      "glosses": [
+       "to delve into (a matter)",
+       "to go into depth",
+       "to get to the heart (of something)"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to press (someone) about",
+       "to point out (e.g. an inconsistency)",
+       "to question sharply",
+       "to grill"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to get involved with",
+       "to meddle in",
+       "to poke one's nose into"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vi"
+      ],
+      "glosses": [
+       "to riposte",
+       "to retort",
+       "to quip"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "突き込",
+    "rank": 11584
+   }
+  ]
+ },
+ {
+  "selection": "擦ら",
+  "candidates": [
+   {
+    "ent_seq": 1298910,
+    "word": "擦る",
+    "reading": "こする",
+    "readings": [
+     "こする"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub; to scrub; to scrape; to repeatedly reuse (a joke, a topic of conversation, etc.); to milk; to keep getting mileage out of; to mash (a button); to spam (a move)",
+    "glosses": [
+     "to rub",
+     "to scrub",
+     "to scrape",
+     "to repeatedly reuse (a joke, a topic of conversation, etc.)",
+     "to milk",
+     "to keep getting mileage out of",
+     "to mash (a button)",
+     "to spam (a move)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub",
+       "to scrub",
+       "to scrape"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to repeatedly reuse (a joke, a topic of conversation, etc.)",
+       "to milk",
+       "to keep getting mileage out of"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to mash (a button)",
+       "to spam (a move)"
+      ]
+     }
+    ],
+    "reasons": [
+     "-zu"
+    ],
+    "completed_from": "擦ら",
+    "rank": 4559
+   },
+   {
+    "ent_seq": 1523790,
+    "word": "摩る",
+    "reading": "さする",
+    "readings": [
+     "さする"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub; to pat; to stroke; to massage",
+    "glosses": [
+     "to rub",
+     "to pat",
+     "to stroke",
+     "to massage"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub",
+       "to pat",
+       "to stroke",
+       "to massage"
+      ]
+     }
+    ],
+    "reasons": [
+     "-zu"
+    ],
+    "completed_from": "擦ら",
+    "rank": 4559
+   },
+   {
+    "ent_seq": 1595910,
+    "word": "擦る",
+    "reading": "する",
+    "readings": [
+     "する"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub; to chafe; to strike (match); to file; to frost (glass); to squander (one's money); to run through (one's fortune); to lose money (e.g. by gambling)",
+    "glosses": [
+     "to rub",
+     "to chafe",
+     "to strike (match)",
+     "to file",
+     "to frost (glass)",
+     "to squander (one's money)",
+     "to run through (one's fortune)",
+     "to lose money (e.g. by gambling)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub",
+       "to chafe",
+       "to strike (match)",
+       "to file",
+       "to frost (glass)"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to squander (one's money)",
+       "to run through (one's fortune)",
+       "to lose money (e.g. by gambling)"
+      ]
+     }
+    ],
+    "reasons": [
+     "-zu"
+    ],
+    "completed_from": "擦ら",
+    "rank": 4559
+   },
+   {
+    "ent_seq": 1636530,
+    "word": "掠る",
+    "reading": "かする",
+    "readings": [
+     "かする"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to graze (e.g. bullet); to scratch; to touch lightly; to take a percentage; to exploit; to squeeze",
+    "glosses": [
+     "to graze (e.g. bullet)",
+     "to scratch",
+     "to touch lightly",
+     "to take a percentage",
+     "to exploit",
+     "to squeeze"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to graze (e.g. bullet)",
+       "to scratch",
+       "to touch lightly"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to take a percentage",
+       "to exploit",
+       "to squeeze"
+      ]
+     }
+    ],
+    "reasons": [
+     "-zu"
+    ],
+    "completed_from": "擦ら",
+    "rank": 4559
+   },
+   {
+    "ent_seq": 2086270,
+    "word": "擦る",
+    "reading": "なする",
+    "readings": [
+     "なする"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub in; to smear on; to spread on; to daub; to lay the blame on",
+    "glosses": [
+     "to rub in",
+     "to smear on",
+     "to spread on",
+     "to daub",
+     "to lay the blame on"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub in",
+       "to smear on",
+       "to spread on",
+       "to daub"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to lay the blame on"
+      ]
+     }
+    ],
+    "reasons": [
+     "-zu"
+    ],
+    "completed_from": "擦ら",
+    "rank": 4559
+   }
+  ]
+ },
+ {
+  "selection": "食べ",
+  "candidates": [
+   {
+    "ent_seq": 1358280,
+    "word": "食べる",
+    "reading": "たべる",
+    "readings": [
+     "たべる"
+    ],
+    "pos": [
+     "v1",
+     "vt"
+    ],
+    "meaning": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+    "glosses": [
+     "to eat",
+     "to live on (e.g. a salary)",
+     "to live off",
+     "to subsist on"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to eat"
+      ]
+     },
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to live on (e.g. a salary)",
+       "to live off",
+       "to subsist on"
+      ]
+     }
+    ],
+    "reasons": [
+     "masu stem"
+    ],
+    "completed_from": null,
+    "rank": 184
+   },
+   {
+    "ent_seq": 1358340,
+    "word": "食べ物",
+    "reading": "たべもの",
+    "readings": [
+     "たべもの"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "food",
+    "glosses": [
+     "food"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "food"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "食べ",
+    "rank": 2521
+   },
+   {
+    "ent_seq": 2145280,
+    "word": "食べ始める",
+    "reading": "たべはじめる",
+    "readings": [
+     "たべはじめる"
+    ],
+    "pos": [
+     "v1"
+    ],
+    "meaning": "to start eating",
+    "glosses": [
+     "to start eating"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v1"
+      ],
+      "glosses": [
+       "to start eating"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "食べ",
+    "rank": 12331
+   },
+   {
+    "ent_seq": 1358300,
+    "word": "食べ過ぎる",
+    "reading": "たべすぎる",
+    "readings": [
+     "たべすぎる"
+    ],
+    "pos": [
+     "v1",
+     "vt"
+    ],
+    "meaning": "to overeat",
+    "glosses": [
+     "to overeat"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to overeat"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "食べ",
+    "rank": 17219
+   },
+   {
+    "ent_seq": 1839660,
+    "word": "食べ掛け",
+    "reading": "たべかけ",
+    "readings": [
+     "たべかけ"
+    ],
+    "pos": [
+     "adj-no"
+    ],
+    "meaning": "half-eaten",
+    "glosses": [
+     "half-eaten"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-no"
+      ],
+      "glosses": [
+       "half-eaten"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "食べ",
+    "rank": 22881
+   },
+   {
+    "ent_seq": 2027920,
+    "word": "食べきれない",
+    "reading": "たべきれない",
+    "readings": [
+     "たべきれない"
+    ],
+    "pos": [
+     "adj-i"
+    ],
+    "meaning": "more than one can eat",
+    "glosses": [
+     "more than one can eat"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-i"
+      ],
+      "glosses": [
+       "more than one can eat"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "食べ",
+    "rank": 27185
+   },
+   {
+    "ent_seq": 2837335,
+    "word": "食べっぷり",
+    "reading": "たべっぷり",
+    "readings": [
+     "たべっぷり"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "manner of eating",
+    "glosses": [
+     "manner of eating"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "manner of eating"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "食べ",
+    "rank": 31313
+   },
+   {
+    "ent_seq": 1839570,
+    "word": "食べ歩き",
+    "reading": "たべあるき",
+    "readings": [
+     "たべあるき"
+    ],
+    "pos": [
+     "n",
+     "vs"
+    ],
+    "meaning": "trying the food at various restaurants; eating tour; walking while eating; eating while walking",
+    "glosses": [
+     "trying the food at various restaurants",
+     "eating tour",
+     "walking while eating",
+     "eating while walking"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "vs"
+      ],
+      "glosses": [
+       "trying the food at various restaurants",
+       "eating tour"
+      ]
+     },
+     {
+      "pos": [
+       "n",
+       "vs"
+      ],
+      "glosses": [
+       "walking while eating",
+       "eating while walking"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "食べ",
+    "rank": 33403
+   },
+   {
+    "ent_seq": 1891870,
+    "word": "食べ尽くす",
+    "reading": "たべつくす",
+    "readings": [
+     "たべつくす"
+    ],
+    "pos": [
+     "v5s",
+     "vt"
+    ],
+    "meaning": "to eat up; to consume (completely)",
+    "glosses": [
+     "to eat up",
+     "to consume (completely)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5s",
+       "vt"
+      ],
+      "glosses": [
+       "to eat up",
+       "to consume (completely)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "食べ",
+    "rank": 36757
+   },
+   {
+    "ent_seq": 1358330,
+    "word": "食べにくい",
+    "reading": "たべにくい",
+    "readings": [
+     "たべにくい"
+    ],
+    "pos": [
+     "adj-i"
+    ],
+    "meaning": "difficult to eat; unpalatable",
+    "glosses": [
+     "difficult to eat",
+     "unpalatable"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-i"
+      ],
+      "glosses": [
+       "difficult to eat",
+       "unpalatable"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "食べ",
+    "rank": 44480
+   },
+   {
+    "ent_seq": 2671010,
+    "word": "食べ慣れる",
+    "reading": "たべなれる",
+    "readings": [
+     "たべなれる"
+    ],
+    "pos": [
+     "v1"
+    ],
+    "meaning": "to be used to eating; to become used to eating; to be accustomed to eating; to acquire a taste for",
+    "glosses": [
+     "to be used to eating",
+     "to become used to eating",
+     "to be accustomed to eating",
+     "to acquire a taste for"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v1"
+      ],
+      "glosses": [
+       "to be used to eating",
+       "to become used to eating",
+       "to be accustomed to eating",
+       "to acquire a taste for"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "食べ",
+    "rank": 47765
+   },
+   {
+    "ent_seq": 2795790,
+    "word": "食べ比べる",
+    "reading": "たべくらべる",
+    "readings": [
+     "たべくらべる"
+    ],
+    "pos": [
+     "v1",
+     "vt"
+    ],
+    "meaning": "to taste and compare several dishes (or foods) of the same type",
+    "glosses": [
+     "to taste and compare several dishes (or foods) of the same type"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to taste and compare several dishes (or foods) of the same type"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "食べ",
+    "rank": 49872
+   },
+   {
+    "ent_seq": 1839680,
+    "word": "食べ盛り",
+    "reading": "たべざかり",
+    "readings": [
+     "たべざかり"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "growing child's hearty appetite",
+    "glosses": [
+     "growing child's hearty appetite"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "growing child's hearty appetite"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "食べ",
+    "rank": 50710
+   },
+   {
+    "ent_seq": 1621360,
+    "word": "食べ頃",
+    "reading": "たべごろ",
+    "readings": [
+     "たべごろ"
+    ],
+    "pos": [
+     "n",
+     "adj-no"
+    ],
+    "meaning": "good for eating; ripe enough for eating; in season",
+    "glosses": [
+     "good for eating",
+     "ripe enough for eating",
+     "in season"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "adj-no"
+      ],
+      "glosses": [
+       "good for eating",
+       "ripe enough for eating",
+       "in season"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "食べ",
+    "rank": 52258
+   },
+   {
+    "ent_seq": 1358350,
+    "word": "食べ物屋",
+    "reading": "たべものや",
+    "readings": [
+     "たべものや"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "eatery; restaurant",
+    "glosses": [
+     "eatery",
+     "restaurant"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "eatery",
+       "restaurant"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "食べ",
+    "rank": 57420
+   },
+   {
+    "ent_seq": 1839750,
+    "word": "食べかす",
+    "reading": "たべかす",
+    "readings": [
+     "たべかす",
+     "たべカス"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "leavings of a meal; food scraps; leftovers; food particles (in one's teeth or mouth); bits of food",
+    "glosses": [
+     "leavings of a meal",
+     "food scraps",
+     "leftovers",
+     "food particles (in one's teeth or mouth)",
+     "bits of food"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "leavings of a meal",
+       "food scraps",
+       "leftovers"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "food particles (in one's teeth or mouth)",
+       "bits of food"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "食べ",
+    "rank": 59560
+   }
+  ]
+ },
+ {
+  "selection": "並々ならぬ",
+  "candidates": [
+   {
+    "ent_seq": 1599660,
+    "word": "並々ならぬ",
+    "reading": "なみなみならぬ",
+    "readings": [
+     "なみなみならぬ"
+    ],
+    "pos": [
+     "adj-pn"
+    ],
+    "meaning": "extraordinary; uncommon",
+    "glosses": [
+     "extraordinary",
+     "uncommon"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-pn"
+      ],
+      "glosses": [
+       "extraordinary",
+       "uncommon"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 22710
+   }
+  ]
+ },
+ {
+  "selection": "悠々",
+  "candidates": [
+   {
+    "ent_seq": 1605700,
+    "word": "悠々",
+    "reading": "ゆうゆう",
+    "readings": [
+     "ゆうゆう"
+    ],
+    "pos": [
+     "adj-t",
+     "adv-to",
+     "adv"
+    ],
+    "meaning": "quiet; calm; leisurely; composed; easily; comfortably; without difficulty; distant; far-off; boundless; endless; eternal",
+    "glosses": [
+     "quiet",
+     "calm",
+     "leisurely",
+     "composed",
+     "easily",
+     "comfortably",
+     "without difficulty",
+     "distant",
+     "far-off",
+     "boundless",
+     "endless",
+     "eternal"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-t",
+       "adv-to"
+      ],
+      "glosses": [
+       "quiet",
+       "calm",
+       "leisurely",
+       "composed"
+      ]
+     },
+     {
+      "pos": [
+       "adv-to",
+       "adv"
+      ],
+      "glosses": [
+       "easily",
+       "comfortably",
+       "without difficulty"
+      ]
+     },
+     {
+      "pos": [
+       "adj-t",
+       "adv-to"
+      ],
+      "glosses": [
+       "distant",
+       "far-off",
+       "boundless",
+       "endless",
+       "eternal"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 10838
+   },
+   {
+    "ent_seq": 1540680,
+    "word": "悠々自適",
+    "reading": "ゆうゆうじてき",
+    "readings": [
+     "ゆうゆうじてき"
+    ],
+    "pos": [
+     "adj-na",
+     "adj-no",
+     "n",
+     "vs",
+     "vi"
+    ],
+    "meaning": "living a life of leisure with dignity; living quietly and comfortably free from worldly cares; otium cum dignitate",
+    "glosses": [
+     "living a life of leisure with dignity",
+     "living quietly and comfortably free from worldly cares",
+     "otium cum dignitate"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-na",
+       "adj-no",
+       "n",
+       "vs",
+       "vi"
+      ],
+      "glosses": [
+       "living a life of leisure with dignity",
+       "living quietly and comfortably free from worldly cares",
+       "otium cum dignitate"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "悠々",
+    "rank": 38668
+   },
+   {
+    "ent_seq": 2032940,
+    "word": "悠々閑々",
+    "reading": "ゆうゆうかんかん",
+    "readings": [
+     "ゆうゆうかんかん"
+    ],
+    "pos": [
+     "adj-t",
+     "adv-to"
+    ],
+    "meaning": "composed and unhurried; easygoing and leisurely; in indolence",
+    "glosses": [
+     "composed and unhurried",
+     "easygoing and leisurely",
+     "in indolence"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-t",
+       "adv-to"
+      ],
+      "glosses": [
+       "composed and unhurried",
+       "easygoing and leisurely",
+       "in indolence"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "悠々",
+    "rank": 111861
+   },
+   {
+    "ent_seq": 1913950,
+    "word": "悠々自適の生活",
+    "reading": "ゆうゆうじてきのせいかつ",
+    "readings": [
+     "ゆうゆうじてきのせいかつ"
+    ],
+    "pos": [
+     "exp",
+     "n"
+    ],
+    "meaning": "life free from worldly cares",
+    "glosses": [
+     "life free from worldly cares"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp",
+       "n"
+      ],
+      "glosses": [
+       "life free from worldly cares"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "悠々",
+    "rank": 9999999
+   }
+  ]
+ },
+ {
+  "selection": "蜘蛛の巣",
+  "candidates": [
+   {
+    "ent_seq": 1939780,
+    "word": "蜘蛛の巣",
+    "reading": "くものす",
+    "readings": [
+     "くものす"
+    ],
+    "pos": [
+     "exp",
+     "n"
+    ],
+    "meaning": "spiderweb; spider web; spider's web; cobweb",
+    "glosses": [
+     "spiderweb",
+     "spider web",
+     "spider's web",
+     "cobweb"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp",
+       "n"
+      ],
+      "glosses": [
+       "spiderweb",
+       "spider web",
+       "spider's web",
+       "cobweb"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 19015
+   },
+   {
+    "ent_seq": 2163010,
+    "word": "蜘蛛の巣理論",
+    "reading": "くものすりろん",
+    "readings": [
+     "くものすりろん"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "cobweb theorem",
+    "glosses": [
+     "cobweb theorem"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "cobweb theorem"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛の巣",
+    "rank": 9999999
+   },
+   {
+    "ent_seq": 2460720,
+    "word": "蜘蛛の巣黴",
+    "reading": "クモノスカビ",
+    "readings": [
+     "クモノスカビ",
+     "くものすかび"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "Rhizopus (saprobic fungus)",
+    "glosses": [
+     "Rhizopus (saprobic fungus)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "Rhizopus (saprobic fungus)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛の巣",
+    "rank": 9999999
+   }
+  ]
+ },
+ {
+  "selection": "する",
+  "candidates": [
+   {
+    "ent_seq": 1157170,
+    "word": "為る",
+    "reading": "する",
+    "readings": [
+     "する"
+    ],
+    "pos": [
+     "vs-i",
+     "vi",
+     "vt",
+     "suf",
+     "aux-v"
+    ],
+    "meaning": "to do; to carry out; to perform; to cause to become; to make (into); to turn (into); to serve as; to act as; to work as; to wear (clothes, a facial expression, etc.); to judge as being; to view as being; to think of as; to treat as; to use as; to decide on; to choose; to be sensed (of a smell, noise, etc.); to be (in a state, condition, etc.); to be worth; to cost; to pass (of time); to elapse; to place, or raise, person A to a post or status B; to transform A to B; to make A into B; to exchange A for B; to make use of A for B; to view A as B; to handle A as if it were B; to feel A about B; verbalizing suffix (applies to nouns noted in this dictionary with the part of speech \"vs\"); creates a humble verb (after a noun prefixed with \"o\" or \"go\"); to be just about to; to be just starting to; to try to; to attempt to",
+    "glosses": [
+     "to do",
+     "to carry out",
+     "to perform",
+     "to cause to become",
+     "to make (into)",
+     "to turn (into)",
+     "to serve as",
+     "to act as",
+     "to work as",
+     "to wear (clothes, a facial expression, etc.)",
+     "to judge as being",
+     "to view as being",
+     "to think of as",
+     "to treat as",
+     "to use as",
+     "to decide on",
+     "to choose",
+     "to be sensed (of a smell, noise, etc.)",
+     "to be (in a state, condition, etc.)",
+     "to be worth",
+     "to cost",
+     "to pass (of time)",
+     "to elapse",
+     "to place, or raise, person A to a post or status B",
+     "to transform A to B",
+     "to make A into B",
+     "to exchange A for B",
+     "to make use of A for B",
+     "to view A as B",
+     "to handle A as if it were B",
+     "to feel A about B",
+     "verbalizing suffix (applies to nouns noted in this dictionary with the part of speech \"vs\")",
+     "creates a humble verb (after a noun prefixed with \"o\" or \"go\")",
+     "to be just about to",
+     "to be just starting to",
+     "to try to",
+     "to attempt to"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "vs-i"
+      ],
+      "glosses": [
+       "to do",
+       "to carry out",
+       "to perform"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i"
+      ],
+      "glosses": [
+       "to cause to become",
+       "to make (into)",
+       "to turn (into)"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i"
+      ],
+      "glosses": [
+       "to serve as",
+       "to act as",
+       "to work as"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i"
+      ],
+      "glosses": [
+       "to wear (clothes, a facial expression, etc.)"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i"
+      ],
+      "glosses": [
+       "to judge as being",
+       "to view as being",
+       "to think of as",
+       "to treat as",
+       "to use as"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i"
+      ],
+      "glosses": [
+       "to decide on",
+       "to choose"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i",
+       "vi"
+      ],
+      "glosses": [
+       "to be sensed (of a smell, noise, etc.)"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i",
+       "vi"
+      ],
+      "glosses": [
+       "to be (in a state, condition, etc.)"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i",
+       "vi"
+      ],
+      "glosses": [
+       "to be worth",
+       "to cost"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i",
+       "vi"
+      ],
+      "glosses": [
+       "to pass (of time)",
+       "to elapse"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i",
+       "vt"
+      ],
+      "glosses": [
+       "to place, or raise, person A to a post or status B"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i",
+       "vt"
+      ],
+      "glosses": [
+       "to transform A to B",
+       "to make A into B",
+       "to exchange A for B"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i",
+       "vt"
+      ],
+      "glosses": [
+       "to make use of A for B",
+       "to view A as B",
+       "to handle A as if it were B"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i",
+       "vt"
+      ],
+      "glosses": [
+       "to feel A about B"
+      ]
+     },
+     {
+      "pos": [
+       "suf",
+       "vs-i"
+      ],
+      "glosses": [
+       "verbalizing suffix (applies to nouns noted in this dictionary with the part of speech \"vs\")"
+      ]
+     },
+     {
+      "pos": [
+       "aux-v",
+       "vs-i"
+      ],
+      "glosses": [
+       "creates a humble verb (after a noun prefixed with \"o\" or \"go\")"
+      ]
+     },
+     {
+      "pos": [
+       "aux-v",
+       "vs-i"
+      ],
+      "glosses": [
+       "to be just about to",
+       "to be just starting to",
+       "to try to",
+       "to attempt to"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 11
+   },
+   {
+    "ent_seq": 1595910,
+    "word": "擦る",
+    "reading": "する",
+    "readings": [
+     "する"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub; to chafe; to strike (match); to file; to frost (glass); to squander (one's money); to run through (one's fortune); to lose money (e.g. by gambling)",
+    "glosses": [
+     "to rub",
+     "to chafe",
+     "to strike (match)",
+     "to file",
+     "to frost (glass)",
+     "to squander (one's money)",
+     "to run through (one's fortune)",
+     "to lose money (e.g. by gambling)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub",
+       "to chafe",
+       "to strike (match)",
+       "to file",
+       "to frost (glass)"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to squander (one's money)",
+       "to run through (one's fortune)",
+       "to lose money (e.g. by gambling)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 4559
+   },
+   {
+    "ent_seq": 1581900,
+    "word": "剃る",
+    "reading": "する",
+    "readings": [
+     "そる",
+     "する"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to shave",
+    "glosses": [
+     "to shave"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to shave"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 17106
+   },
+   {
+    "ent_seq": 1298670,
+    "word": "刷る",
+    "reading": "する",
+    "readings": [
+     "する"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to print; to color or pattern fabric using a wooden mold",
+    "glosses": [
+     "to print",
+     "to color or pattern fabric using a wooden mold"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to print"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to color or pattern fabric using a wooden mold"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 29517
+   },
+   {
+    "ent_seq": 1567440,
+    "word": "掏る",
+    "reading": "する",
+    "readings": [
+     "する",
+     "スる"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to pickpocket; to steal",
+    "glosses": [
+     "to pickpocket",
+     "to steal"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to pickpocket",
+       "to steal"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 74469
+   },
+   {
+    "ent_seq": 1174890,
+    "word": "鋭い",
+    "reading": "するどい",
+    "readings": [
+     "するどい"
+    ],
+    "pos": [
+     "adj-i"
+    ],
+    "meaning": "sharp (knife, claws, etc.); pointed; sharp (pain, tone, etc.); acute; stabbing; cutting (remark, criticism, etc.); stinging; biting; fierce (attack); pointed (question, look, etc.); piercing (gaze); shrill (sound); keen (intuition, sense of smell, etc.); acute; sharp (eye, mind, etc.); astute; shrewd; discerning; penetrating (insight, question, etc.); perceptive",
+    "glosses": [
+     "sharp (knife, claws, etc.)",
+     "pointed",
+     "sharp (pain, tone, etc.)",
+     "acute",
+     "stabbing",
+     "cutting (remark, criticism, etc.)",
+     "stinging",
+     "biting",
+     "fierce (attack)",
+     "pointed (question, look, etc.)",
+     "piercing (gaze)",
+     "shrill (sound)",
+     "keen (intuition, sense of smell, etc.)",
+     "acute",
+     "sharp (eye, mind, etc.)",
+     "astute",
+     "shrewd",
+     "discerning",
+     "penetrating (insight, question, etc.)",
+     "perceptive"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-i"
+      ],
+      "glosses": [
+       "sharp (knife, claws, etc.)",
+       "pointed"
+      ]
+     },
+     {
+      "pos": [
+       "adj-i"
+      ],
+      "glosses": [
+       "sharp (pain, tone, etc.)",
+       "acute",
+       "stabbing",
+       "cutting (remark, criticism, etc.)",
+       "stinging",
+       "biting",
+       "fierce (attack)",
+       "pointed (question, look, etc.)",
+       "piercing (gaze)",
+       "shrill (sound)"
+      ]
+     },
+     {
+      "pos": [
+       "adj-i"
+      ],
+      "glosses": [
+       "keen (intuition, sense of smell, etc.)",
+       "acute",
+       "sharp (eye, mind, etc.)",
+       "astute",
+       "shrewd",
+       "discerning",
+       "penetrating (insight, question, etc.)",
+       "perceptive"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "する",
+    "rank": 1483
+   },
+   {
+    "ent_seq": 2261300,
+    "word": "するべき",
+    "reading": "するべき",
+    "readings": [
+     "するべき"
+    ],
+    "pos": [
+     "exp"
+    ],
+    "meaning": "should do; ought to do",
+    "glosses": [
+     "should do",
+     "ought to do"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp"
+      ],
+      "glosses": [
+       "should do",
+       "ought to do"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "する",
+    "rank": 6058
+   },
+   {
+    "ent_seq": 1006300,
+    "word": "するり",
+    "reading": "するり",
+    "readings": [
+     "するり"
+    ],
+    "pos": [
+     "adv",
+     "adv-to"
+    ],
+    "meaning": "with a smooth, unhindered motion; speedily and without delay",
+    "glosses": [
+     "with a smooth, unhindered motion",
+     "speedily and without delay"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adv",
+       "adv-to"
+      ],
+      "glosses": [
+       "with a smooth, unhindered motion",
+       "speedily and without delay"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "する",
+    "rank": 9178
+   },
+   {
+    "ent_seq": 1006270,
+    "word": "するする",
+    "reading": "するする",
+    "readings": [
+     "するする"
+    ],
+    "pos": [
+     "adv-to",
+     "adv"
+    ],
+    "meaning": "smoothly; swiftly",
+    "glosses": [
+     "smoothly",
+     "swiftly"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adv-to",
+       "adv"
+      ],
+      "glosses": [
+       "smoothly",
+       "swiftly"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "する",
+    "rank": 15761
+   },
+   {
+    "ent_seq": 2845146,
+    "word": "駿河",
+    "reading": "するが",
+    "readings": [
+     "するが"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "Suruga (former province located in the central and northern parts of present-day Shizuoka Prefecture)",
+    "glosses": [
+     "Suruga (former province located in the central and northern parts of present-day Shizuoka Prefecture)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "Suruga (former province located in the central and northern parts of present-day Shizuoka Prefecture)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "する",
+    "rank": 25739
+   },
+   {
+    "ent_seq": 1006260,
+    "word": "するが良い",
+    "reading": "するがいい",
+    "readings": [
+     "するがいい",
+     "するがよい"
+    ],
+    "pos": [
+     "exp",
+     "adj-ix"
+    ],
+    "meaning": "had better ...; may as well ...",
+    "glosses": [
+     "had better ...",
+     "may as well ..."
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp",
+       "adj-ix"
+      ],
+      "glosses": [
+       "had better ...",
+       "may as well ..."
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "する",
+    "rank": 34099
+   },
+   {
+    "ent_seq": 2806790,
+    "word": "スルッと",
+    "reading": "スルッと",
+    "readings": [
+     "スルッと",
+     "するっと"
+    ],
+    "pos": [
+     "adv"
+    ],
+    "meaning": "smoothly; glidingly",
+    "glosses": [
+     "smoothly",
+     "glidingly"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adv"
+      ],
+      "glosses": [
+       "smoothly",
+       "glidingly"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "する",
+    "rank": 39576
+   },
+   {
+    "ent_seq": 1574840,
+    "word": "鯣",
+    "reading": "するめ",
+    "readings": [
+     "するめ",
+     "スルメ"
+    ],
+    "pos": [
+     "n",
+     "n-pref"
+    ],
+    "meaning": "dried squid; dried cuttlefish; Japanese common squid (Todarodes pacificus); (thing that) grows on one over time",
+    "glosses": [
+     "dried squid",
+     "dried cuttlefish",
+     "Japanese common squid (Todarodes pacificus)",
+     "(thing that) grows on one over time"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "dried squid",
+       "dried cuttlefish"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "Japanese common squid (Todarodes pacificus)"
+      ]
+     },
+     {
+      "pos": [
+       "n-pref"
+      ],
+      "glosses": [
+       "(thing that) grows on one over time"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "する",
+    "rank": 69491
+   },
+   {
+    "ent_seq": 2613070,
+    "word": "する事なす事",
+    "reading": "することなすこと",
+    "readings": [
+     "することなすこと"
+    ],
+    "pos": [
+     "exp"
+    ],
+    "meaning": "everything one does; whatever one does",
+    "glosses": [
+     "everything one does",
+     "whatever one does"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp"
+      ],
+      "glosses": [
+       "everything one does",
+       "whatever one does"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "する",
+    "rank": 104724
+   },
+   {
+    "ent_seq": 2452700,
+    "word": "駿河問い",
+    "reading": "するがどい",
+    "readings": [
+     "するがどい"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "form of bondage torture in which the victim is hung from the ceiling with their hands and legs bound behind them and a rock placed on their back (Edo period)",
+    "glosses": [
+     "form of bondage torture in which the victim is hung from the ceiling with their hands and legs bound behind them and a rock placed on their back (Edo period)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "form of bondage torture in which the victim is hung from the ceiling with their hands and legs bound behind them and a rock placed on their back (Edo period)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "する",
+    "rank": 186155
+   },
+   {
+    "ent_seq": 1637060,
+    "word": "鯣烏賊",
+    "reading": "するめいか",
+    "readings": [
+     "するめいか",
+     "スルメイカ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "Japanese common squid; Pacific flying squid (Todarodes pacificus)",
+    "glosses": [
+     "Japanese common squid",
+     "Pacific flying squid (Todarodes pacificus)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "Japanese common squid",
+       "Pacific flying squid (Todarodes pacificus)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "する",
+    "rank": 218125
+   }
+  ]
+ },
+ {
+  "selection": "擦る",
+  "candidates": [
+   {
+    "ent_seq": 1298910,
+    "word": "擦る",
+    "reading": "こする",
+    "readings": [
+     "こする"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub; to scrub; to scrape; to repeatedly reuse (a joke, a topic of conversation, etc.); to milk; to keep getting mileage out of; to mash (a button); to spam (a move)",
+    "glosses": [
+     "to rub",
+     "to scrub",
+     "to scrape",
+     "to repeatedly reuse (a joke, a topic of conversation, etc.)",
+     "to milk",
+     "to keep getting mileage out of",
+     "to mash (a button)",
+     "to spam (a move)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub",
+       "to scrub",
+       "to scrape"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to repeatedly reuse (a joke, a topic of conversation, etc.)",
+       "to milk",
+       "to keep getting mileage out of"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to mash (a button)",
+       "to spam (a move)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 4559
+   },
+   {
+    "ent_seq": 1523790,
+    "word": "摩る",
+    "reading": "さする",
+    "readings": [
+     "さする"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub; to pat; to stroke; to massage",
+    "glosses": [
+     "to rub",
+     "to pat",
+     "to stroke",
+     "to massage"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub",
+       "to pat",
+       "to stroke",
+       "to massage"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 4559
+   },
+   {
+    "ent_seq": 1595910,
+    "word": "擦る",
+    "reading": "する",
+    "readings": [
+     "する"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub; to chafe; to strike (match); to file; to frost (glass); to squander (one's money); to run through (one's fortune); to lose money (e.g. by gambling)",
+    "glosses": [
+     "to rub",
+     "to chafe",
+     "to strike (match)",
+     "to file",
+     "to frost (glass)",
+     "to squander (one's money)",
+     "to run through (one's fortune)",
+     "to lose money (e.g. by gambling)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub",
+       "to chafe",
+       "to strike (match)",
+       "to file",
+       "to frost (glass)"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to squander (one's money)",
+       "to run through (one's fortune)",
+       "to lose money (e.g. by gambling)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 4559
+   },
+   {
+    "ent_seq": 1636530,
+    "word": "掠る",
+    "reading": "かする",
+    "readings": [
+     "かする"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to graze (e.g. bullet); to scratch; to touch lightly; to take a percentage; to exploit; to squeeze",
+    "glosses": [
+     "to graze (e.g. bullet)",
+     "to scratch",
+     "to touch lightly",
+     "to take a percentage",
+     "to exploit",
+     "to squeeze"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to graze (e.g. bullet)",
+       "to scratch",
+       "to touch lightly"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to take a percentage",
+       "to exploit",
+       "to squeeze"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 4559
+   },
+   {
+    "ent_seq": 2086270,
+    "word": "擦る",
+    "reading": "なする",
+    "readings": [
+     "なする"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub in; to smear on; to spread on; to daub; to lay the blame on",
+    "glosses": [
+     "to rub in",
+     "to smear on",
+     "to spread on",
+     "to daub",
+     "to lay the blame on"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub in",
+       "to smear on",
+       "to spread on",
+       "to daub"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to lay the blame on"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 4559
+   }
+  ]
+ },
+ {
+  "selection": "筆者　えーと…",
+  "candidates": []
+ },
+ {
+  "selection": "食べている",
+  "candidates": [
+   {
+    "ent_seq": 1358280,
+    "word": "食べる",
+    "reading": "たべる",
+    "readings": [
+     "たべる"
+    ],
+    "pos": [
+     "v1",
+     "vt"
+    ],
+    "meaning": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+    "glosses": [
+     "to eat",
+     "to live on (e.g. a salary)",
+     "to live off",
+     "to subsist on"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to eat"
+      ]
+     },
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to live on (e.g. a salary)",
+       "to live off",
+       "to subsist on"
+      ]
+     }
+    ],
+    "reasons": [
+     "-te",
+     "progressive or perfect"
+    ],
+    "completed_from": null,
+    "rank": 184
+   }
+  ]
+ },
+ {
+  "selection": "美味しかった",
+  "candidates": [
+   {
+    "ent_seq": 1486650,
+    "word": "美味しい",
+    "reading": "おいしい",
+    "readings": [
+     "おいしい",
+     "オイシイ"
+    ],
+    "pos": [
+     "adj-i"
+    ],
+    "meaning": "good(-tasting); nice; delicious; tasty; attractive (offer, opportunity, etc.); appealing; convenient; favorable; desirable; profitable",
+    "glosses": [
+     "good(-tasting)",
+     "nice",
+     "delicious",
+     "tasty",
+     "attractive (offer, opportunity, etc.)",
+     "appealing",
+     "convenient",
+     "favorable",
+     "desirable",
+     "profitable"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-i"
+      ],
+      "glosses": [
+       "good(-tasting)",
+       "nice",
+       "delicious",
+       "tasty"
+      ]
+     },
+     {
+      "pos": [
+       "adj-i"
+      ],
+      "glosses": [
+       "attractive (offer, opportunity, etc.)",
+       "appealing",
+       "convenient",
+       "favorable",
+       "desirable",
+       "profitable"
+      ]
+     }
+    ],
+    "reasons": [
+     "past"
+    ],
+    "completed_from": null,
+    "rank": 1444
+   }
+  ]
+ },
+ {
+  "selection": "読まない",
+  "candidates": [
+   {
+    "ent_seq": 1456360,
+    "word": "読む",
+    "reading": "よむ",
+    "readings": [
+     "よむ"
+    ],
+    "pos": [
+     "v5m",
+     "vt"
+    ],
+    "meaning": "to read; to recite (e.g. a sutra); to chant; to predict; to guess; to forecast; to read (someone's thoughts); to see (e.g. into someone's heart); to divine; to pronounce; to read (e.g. a kanji); to decipher; to read (a meter, graph, music, etc.); to tell (the time); to count; to estimate; to read (a kanji) with its native Japanese reading",
+    "glosses": [
+     "to read",
+     "to recite (e.g. a sutra)",
+     "to chant",
+     "to predict",
+     "to guess",
+     "to forecast",
+     "to read (someone's thoughts)",
+     "to see (e.g. into someone's heart)",
+     "to divine",
+     "to pronounce",
+     "to read (e.g. a kanji)",
+     "to decipher",
+     "to read (a meter, graph, music, etc.)",
+     "to tell (the time)",
+     "to count",
+     "to estimate",
+     "to read (a kanji) with its native Japanese reading"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to read"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to recite (e.g. a sutra)",
+       "to chant"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to predict",
+       "to guess",
+       "to forecast",
+       "to read (someone's thoughts)",
+       "to see (e.g. into someone's heart)",
+       "to divine"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to pronounce",
+       "to read (e.g. a kanji)"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to decipher",
+       "to read (a meter, graph, music, etc.)",
+       "to tell (the time)"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to count",
+       "to estimate"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to read (a kanji) with its native Japanese reading"
+      ]
+     }
+    ],
+    "reasons": [
+     "negative"
+    ],
+    "completed_from": null,
+    "rank": 312
+   }
+  ]
+ },
+ {
+  "selection": "行かなかった",
+  "candidates": [
+   {
+    "ent_seq": 1578850,
+    "word": "行く",
+    "reading": "いく",
+    "readings": [
+     "いく",
+     "ゆく",
+     "イク"
+    ],
+    "pos": [
+     "v5k-s",
+     "vi",
+     "aux-v"
+    ],
+    "meaning": "to go; to move (towards); to head (towards); to leave (for); to move through; to travel across; to walk along (e.g. a road); to go (well, badly, etc.); to proceed; to turn out; to get along; to do (in a particular way); to go (with; a choice); to try; to pass (of time, seasons, etc.); to go by; to stream; to flow; to die; to pass away; to reach (a stage, extent, age, etc.); to get to; to go (so far as ...); to reach (of information, instructions, wind, etc.); to arrive; to continue ...; to go on ...; to (progress) steadily; to gradually ...; to progressively ...; to have an orgasm; to come; to cum; to trip; to get high; to have a drug-induced hallucination",
+    "glosses": [
+     "to go",
+     "to move (towards)",
+     "to head (towards)",
+     "to leave (for)",
+     "to move through",
+     "to travel across",
+     "to walk along (e.g. a road)",
+     "to go (well, badly, etc.)",
+     "to proceed",
+     "to turn out",
+     "to get along",
+     "to do (in a particular way)",
+     "to go (with; a choice)",
+     "to try",
+     "to pass (of time, seasons, etc.)",
+     "to go by",
+     "to stream",
+     "to flow",
+     "to die",
+     "to pass away",
+     "to reach (a stage, extent, age, etc.)",
+     "to get to",
+     "to go (so far as ...)",
+     "to reach (of information, instructions, wind, etc.)",
+     "to arrive",
+     "to continue ...",
+     "to go on ...",
+     "to (progress) steadily",
+     "to gradually ...",
+     "to progressively ...",
+     "to have an orgasm",
+     "to come",
+     "to cum",
+     "to trip",
+     "to get high",
+     "to have a drug-induced hallucination"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5k-s",
+       "vi"
+      ],
+      "glosses": [
+       "to go",
+       "to move (towards)",
+       "to head (towards)",
+       "to leave (for)"
+      ]
+     },
+     {
+      "pos": [
+       "v5k-s",
+       "vi"
+      ],
+      "glosses": [
+       "to move through",
+       "to travel across",
+       "to walk along (e.g. a road)"
+      ]
+     },
+     {
+      "pos": [
+       "v5k-s",
+       "vi"
+      ],
+      "glosses": [
+       "to go (well, badly, etc.)",
+       "to proceed",
+       "to turn out",
+       "to get along"
+      ]
+     },
+     {
+      "pos": [
+       "v5k-s",
+       "vi"
+      ],
+      "glosses": [
+       "to do (in a particular way)",
+       "to go (with; a choice)",
+       "to try"
+      ]
+     },
+     {
+      "pos": [
+       "v5k-s",
+       "vi"
+      ],
+      "glosses": [
+       "to pass (of time, seasons, etc.)",
+       "to go by"
+      ]
+     },
+     {
+      "pos": [
+       "v5k-s",
+       "vi"
+      ],
+      "glosses": [
+       "to stream",
+       "to flow"
+      ]
+     },
+     {
+      "pos": [
+       "v5k-s",
+       "vi"
+      ],
+      "glosses": [
+       "to die",
+       "to pass away"
+      ]
+     },
+     {
+      "pos": [
+       "v5k-s",
+       "vi"
+      ],
+      "glosses": [
+       "to reach (a stage, extent, age, etc.)",
+       "to get to",
+       "to go (so far as ...)"
+      ]
+     },
+     {
+      "pos": [
+       "v5k-s",
+       "vi"
+      ],
+      "glosses": [
+       "to reach (of information, instructions, wind, etc.)",
+       "to arrive"
+      ]
+     },
+     {
+      "pos": [
+       "aux-v",
+       "v5k-s"
+      ],
+      "glosses": [
+       "to continue ...",
+       "to go on ...",
+       "to (progress) steadily",
+       "to gradually ...",
+       "to progressively ..."
+      ]
+     },
+     {
+      "pos": [
+       "v5k-s",
+       "vi"
+      ],
+      "glosses": [
+       "to have an orgasm",
+       "to come",
+       "to cum"
+      ]
+     },
+     {
+      "pos": [
+       "v5k-s",
+       "vi"
+      ],
+      "glosses": [
+       "to trip",
+       "to get high",
+       "to have a drug-induced hallucination"
+      ]
+     }
+    ],
+    "reasons": [
+     "negative",
+     "past"
+    ],
+    "completed_from": null,
+    "rank": 44
+   }
+  ]
+ },
+ {
+  "selection": "飲みたい",
+  "candidates": [
+   {
+    "ent_seq": 1169870,
+    "word": "飲む",
+    "reading": "のむ",
+    "readings": [
+     "のむ"
+    ],
+    "pos": [
+     "v5m",
+     "vt"
+    ],
+    "meaning": "to drink; to swallow; to take (medicine); to smoke (tobacco); to swallow up; to engulf; to suppress (one's anger, bitter feelings, etc.); to keep down; to hold back; to swallow (one's tears); to catch (one's breath); to accept (a demand, conditions, etc.); to agree to; to make light of (someone); to think nothing of; to overwhelm; to overawe; to carry (a concealed dagger, etc.); to conceal (up one's sleeve, etc.)",
+    "glosses": [
+     "to drink",
+     "to swallow",
+     "to take (medicine)",
+     "to smoke (tobacco)",
+     "to swallow up",
+     "to engulf",
+     "to suppress (one's anger, bitter feelings, etc.)",
+     "to keep down",
+     "to hold back",
+     "to swallow (one's tears)",
+     "to catch (one's breath)",
+     "to accept (a demand, conditions, etc.)",
+     "to agree to",
+     "to make light of (someone)",
+     "to think nothing of",
+     "to overwhelm",
+     "to overawe",
+     "to carry (a concealed dagger, etc.)",
+     "to conceal (up one's sleeve, etc.)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to drink",
+       "to swallow",
+       "to take (medicine)"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to smoke (tobacco)"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to swallow up",
+       "to engulf"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to suppress (one's anger, bitter feelings, etc.)",
+       "to keep down",
+       "to hold back",
+       "to swallow (one's tears)",
+       "to catch (one's breath)"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to accept (a demand, conditions, etc.)",
+       "to agree to"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to make light of (someone)",
+       "to think nothing of",
+       "to overwhelm",
+       "to overawe"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to carry (a concealed dagger, etc.)",
+       "to conceal (up one's sleeve, etc.)"
+      ]
+     }
+    ],
+    "reasons": [
+     "-tai"
+    ],
+    "completed_from": null,
+    "rank": 305
+   }
+  ]
+ },
+ {
+  "selection": "食べる",
+  "candidates": [
+   {
+    "ent_seq": 1358280,
+    "word": "食べる",
+    "reading": "たべる",
+    "readings": [
+     "たべる"
+    ],
+    "pos": [
+     "v1",
+     "vt"
+    ],
+    "meaning": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+    "glosses": [
+     "to eat",
+     "to live on (e.g. a salary)",
+     "to live off",
+     "to subsist on"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to eat"
+      ]
+     },
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to live on (e.g. a salary)",
+       "to live off",
+       "to subsist on"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 184
+   },
+   {
+    "ent_seq": 2847337,
+    "word": "食べるラー油",
+    "reading": "たべるラーゆ",
+    "readings": [
+     "たべるラーゆ"
+    ],
+    "pos": [
+     "exp",
+     "n"
+    ],
+    "meaning": "chili oil mixed with chopped garlic, onions, etc.",
+    "glosses": [
+     "chili oil mixed with chopped garlic, onions, etc."
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp",
+       "n"
+      ],
+      "glosses": [
+       "chili oil mixed with chopped garlic, onions, etc."
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "食べる",
+    "rank": 149276
+   }
+  ]
+ },
+ {
+  "selection": "食べていますが",
+  "candidates": [
+   {
+    "ent_seq": 1358280,
+    "word": "食べる",
+    "reading": "たべる",
+    "readings": [
+     "たべる"
+    ],
+    "pos": [
+     "v1",
+     "vt"
+    ],
+    "meaning": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+    "glosses": [
+     "to eat",
+     "to live on (e.g. a salary)",
+     "to live off",
+     "to subsist on"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to eat"
+      ]
+     },
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to live on (e.g. a salary)",
+       "to live off",
+       "to subsist on"
+      ]
+     }
+    ],
+    "reasons": [
+     "-te",
+     "progressive or perfect",
+     "polite"
+    ],
+    "completed_from": null,
+    "rank": 184
+   }
+  ]
+ },
+ {
+  "selection": "漬け込",
+  "candidates": [
+   {
+    "ent_seq": 1433690,
+    "word": "漬け込む",
+    "reading": "つけこむ",
+    "readings": [
+     "つけこむ"
+    ],
+    "pos": [
+     "v5m",
+     "vt"
+    ],
+    "meaning": "to pickle thoroughly; to pickle a large amount",
+    "glosses": [
+     "to pickle thoroughly",
+     "to pickle a large amount"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to pickle thoroughly",
+       "to pickle a large amount"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "漬け込",
+    "rank": 38369
+   }
+  ]
+ },
+ {
+  "selection": "食べら",
+  "candidates": [
+   {
+    "ent_seq": 2765050,
+    "word": "食べられる",
+    "reading": "たべられる",
+    "readings": [
+     "たべられる"
+    ],
+    "pos": [
+     "v1",
+     "vi",
+     "adj-pn"
+    ],
+    "meaning": "to be able to eat; to be edible; to be good to eat",
+    "glosses": [
+     "to be able to eat",
+     "to be edible",
+     "to be good to eat"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v1",
+       "vi"
+      ],
+      "glosses": [
+       "to be able to eat"
+      ]
+     },
+     {
+      "pos": [
+       "adj-pn"
+      ],
+      "glosses": [
+       "to be edible",
+       "to be good to eat"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "食べら",
+    "rank": 9999999
+   },
+   {
+    "ent_seq": 1358280,
+    "word": "食べる",
+    "reading": "たべる",
+    "readings": [
+     "たべる"
+    ],
+    "pos": [
+     "v1",
+     "vt"
+    ],
+    "meaning": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+    "glosses": [
+     "to eat",
+     "to live on (e.g. a salary)",
+     "to live off",
+     "to subsist on"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to eat"
+      ]
+     },
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to live on (e.g. a salary)",
+       "to live off",
+       "to subsist on"
+      ]
+     }
+    ],
+    "reasons": [
+     "potential or passive"
+    ],
+    "completed_from": "食べら",
+    "rank": 184
+   }
+  ]
+ },
+ {
+  "selection": "読ま",
+  "candidates": [
+   {
+    "ent_seq": 1456360,
+    "word": "読む",
+    "reading": "よむ",
+    "readings": [
+     "よむ"
+    ],
+    "pos": [
+     "v5m",
+     "vt"
+    ],
+    "meaning": "to read; to recite (e.g. a sutra); to chant; to predict; to guess; to forecast; to read (someone's thoughts); to see (e.g. into someone's heart); to divine; to pronounce; to read (e.g. a kanji); to decipher; to read (a meter, graph, music, etc.); to tell (the time); to count; to estimate; to read (a kanji) with its native Japanese reading",
+    "glosses": [
+     "to read",
+     "to recite (e.g. a sutra)",
+     "to chant",
+     "to predict",
+     "to guess",
+     "to forecast",
+     "to read (someone's thoughts)",
+     "to see (e.g. into someone's heart)",
+     "to divine",
+     "to pronounce",
+     "to read (e.g. a kanji)",
+     "to decipher",
+     "to read (a meter, graph, music, etc.)",
+     "to tell (the time)",
+     "to count",
+     "to estimate",
+     "to read (a kanji) with its native Japanese reading"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to read"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to recite (e.g. a sutra)",
+       "to chant"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to predict",
+       "to guess",
+       "to forecast",
+       "to read (someone's thoughts)",
+       "to see (e.g. into someone's heart)",
+       "to divine"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to pronounce",
+       "to read (e.g. a kanji)"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to decipher",
+       "to read (a meter, graph, music, etc.)",
+       "to tell (the time)"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to count",
+       "to estimate"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to read (a kanji) with its native Japanese reading"
+      ]
+     }
+    ],
+    "reasons": [
+     "-zu"
+    ],
+    "completed_from": "読ま",
+    "rank": 312
+   }
+  ]
+ },
+ {
+  "selection": "はし",
+  "candidates": [
+   {
+    "ent_seq": 1581610,
+    "word": "端",
+    "reading": "はし",
+    "readings": [
+     "はし",
+     "はじ",
+     "はな"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "end (e.g. of street); tip; point; edge; margin; beginning; start; first; odds and ends; scrap; odd bit; least",
+    "glosses": [
+     "end (e.g. of street)",
+     "tip",
+     "point",
+     "edge",
+     "margin",
+     "beginning",
+     "start",
+     "first",
+     "odds and ends",
+     "scrap",
+     "odd bit",
+     "least"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "end (e.g. of street)",
+       "tip",
+       "point",
+       "edge",
+       "margin"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "beginning",
+       "start",
+       "first"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "odds and ends",
+       "scrap",
+       "odd bit",
+       "least"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 2039
+   },
+   {
+    "ent_seq": 1237410,
+    "word": "橋",
+    "reading": "はし",
+    "readings": [
+     "はし"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "bridge",
+    "glosses": [
+     "bridge"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "bridge"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 2218
+   },
+   {
+    "ent_seq": 2543170,
+    "word": "階",
+    "reading": "はし",
+    "readings": [
+     "きざはし",
+     "きだはし",
+     "はし"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "stairs; stairs at the front of a noh stage",
+    "glosses": [
+     "stairs",
+     "stairs at the front of a noh stage"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "stairs"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "stairs at the front of a noh stage"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 2360
+   },
+   {
+    "ent_seq": 1476410,
+    "word": "箸",
+    "reading": "はし",
+    "readings": [
+     "はし"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "chopsticks",
+    "glosses": [
+     "chopsticks"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "chopsticks"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 5008
+   },
+   {
+    "ent_seq": 2575170,
+    "word": "梯",
+    "reading": "はし",
+    "readings": [
+     "はし"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "ladder",
+    "glosses": [
+     "ladder"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "ladder"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 19290
+   },
+   {
+    "ent_seq": 1565560,
+    "word": "嘴",
+    "reading": "はし",
+    "readings": [
+     "くちばし",
+     "はし",
+     "クチバシ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "beak; bill",
+    "glosses": [
+     "beak",
+     "bill"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "beak",
+       "bill"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 21623
+   },
+   {
+    "ent_seq": 2869636,
+    "word": "波斯",
+    "reading": "はし",
+    "readings": [
+     "はし"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "Sasanian Empire; Persia",
+    "glosses": [
+     "Sasanian Empire",
+     "Persia"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "Sasanian Empire",
+       "Persia"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 56583
+   },
+   {
+    "ent_seq": 2757660,
+    "word": "愛し",
+    "reading": "はし",
+    "readings": [
+     "はし"
+    ],
+    "pos": [
+     "adj-shiku"
+    ],
+    "meaning": "lovely; beloved; sweet; adorable",
+    "glosses": [
+     "lovely",
+     "beloved",
+     "sweet",
+     "adorable"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-shiku"
+      ],
+      "glosses": [
+       "lovely",
+       "beloved",
+       "sweet",
+       "adorable"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999
+   },
+   {
+    "ent_seq": 2590770,
+    "word": "端",
+    "reading": "はした",
+    "readings": [
+     "はした"
+    ],
+    "pos": [
+     "n",
+     "adj-no",
+     "adj-na"
+    ],
+    "meaning": "fraction; odd sum; odd money; small change; low class female servant",
+    "glosses": [
+     "fraction",
+     "odd sum",
+     "odd money",
+     "small change",
+     "low class female servant"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "adj-no",
+       "adj-na"
+      ],
+      "glosses": [
+       "fraction",
+       "odd sum"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "odd money",
+       "small change"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "low class female servant"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "はし",
+    "rank": 2039
+   },
+   {
+    "ent_seq": 2009400,
+    "word": "捷い",
+    "reading": "はしっこい",
+    "readings": [
+     "はしっこい",
+     "はしこい"
+    ],
+    "pos": [
+     "adj-i"
+    ],
+    "meaning": "smart; clever; sharp; shrewd; agile; nimble; quick",
+    "glosses": [
+     "smart",
+     "clever",
+     "sharp",
+     "shrewd",
+     "agile",
+     "nimble",
+     "quick"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-i"
+      ],
+      "glosses": [
+       "smart",
+       "clever",
+       "sharp",
+       "shrewd"
+      ]
+     },
+     {
+      "pos": [
+       "adj-i"
+      ],
+      "glosses": [
+       "agile",
+       "nimble",
+       "quick"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "はし",
+    "rank": 5680
+   },
+   {
+    "ent_seq": 2464070,
+    "word": "端から",
+    "reading": "はしから",
+    "readings": [
+     "はしから"
+    ],
+    "pos": [
+     "exp"
+    ],
+    "meaning": "every last one; one and all; from A to Z; as soon as; right after; no sooner (than)",
+    "glosses": [
+     "every last one",
+     "one and all",
+     "from A to Z",
+     "as soon as",
+     "right after",
+     "no sooner (than)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp"
+      ],
+      "glosses": [
+       "every last one",
+       "one and all",
+       "from A to Z"
+      ]
+     },
+     {
+      "pos": [
+       "exp"
+      ],
+      "glosses": [
+       "as soon as",
+       "right after",
+       "no sooner (than)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "はし",
+    "rank": 7619
+   },
+   {
+    "ent_seq": 1436480,
+    "word": "梯子",
+    "reading": "はしご",
+    "readings": [
+     "はしご",
+     "ハシゴ"
+    ],
+    "pos": [
+     "n",
+     "vs",
+     "vt",
+     "vi"
+    ],
+    "meaning": "ladder; stairs; going to several places in succession (e.g. barhopping)",
+    "glosses": [
+     "ladder",
+     "stairs",
+     "going to several places in succession (e.g. barhopping)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "ladder"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "stairs"
+      ]
+     },
+     {
+      "pos": [
+       "n",
+       "vs",
+       "vt",
+       "vi"
+      ],
+      "glosses": [
+       "going to several places in succession (e.g. barhopping)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "はし",
+    "rank": 13424
+   },
+   {
+    "ent_seq": 1626320,
+    "word": "端くれ",
+    "reading": "はしくれ",
+    "readings": [
+     "はしくれ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "scrap; (small) piece; unimportant (person); petty ...; humble ...; ... in name only",
+    "glosses": [
+     "scrap",
+     "(small) piece",
+     "unimportant (person)",
+     "petty ...",
+     "humble ...",
+     "... in name only"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "scrap",
+       "(small) piece"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "unimportant (person)",
+       "petty ...",
+       "humble ...",
+       "... in name only"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "はし",
+    "rank": 22368
+   },
+   {
+    "ent_seq": 2464080,
+    "word": "端から端まで",
+    "reading": "はしからはしまで",
+    "readings": [
+     "はしからはしまで"
+    ],
+    "pos": [
+     "exp"
+    ],
+    "meaning": "from one end to another; thoroughly; completely; utterly",
+    "glosses": [
+     "from one end to another",
+     "thoroughly",
+     "completely",
+     "utterly"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp"
+      ],
+      "glosses": [
+       "from one end to another",
+       "thoroughly",
+       "completely",
+       "utterly"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "はし",
+    "rank": 27354
+   },
+   {
+    "ent_seq": 1704780,
+    "word": "はした金",
+    "reading": "はしたがね",
+    "readings": [
+     "はしたがね"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "paltry sum of money; small change; odd money; pittance; chicken feed",
+    "glosses": [
+     "paltry sum of money",
+     "small change",
+     "odd money",
+     "pittance",
+     "chicken feed"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "paltry sum of money",
+       "small change",
+       "odd money",
+       "pittance",
+       "chicken feed"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "はし",
+    "rank": 39285
+   },
+   {
+    "ent_seq": 1581620,
+    "word": "端折る",
+    "reading": "はしょる",
+    "readings": [
+     "はしょる",
+     "はしおる"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to tuck up (a kimono skirt); to tuck in; to make short (a story, explanation, etc.); to cut short; to abridge; to skip (over); to omit; to leave out",
+    "glosses": [
+     "to tuck up (a kimono skirt)",
+     "to tuck in",
+     "to make short (a story, explanation, etc.)",
+     "to cut short",
+     "to abridge",
+     "to skip (over)",
+     "to omit",
+     "to leave out"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to tuck up (a kimono skirt)",
+       "to tuck in"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to make short (a story, explanation, etc.)",
+       "to cut short",
+       "to abridge",
+       "to skip (over)",
+       "to omit",
+       "to leave out"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "はし",
+    "rank": 40567
+   }
+  ]
+ },
+ {
+  "selection": "xyzzy",
+  "candidates": []
+ },
+ {
+  "selection": "蜘蛛",
+  "candidates": [
+   {
+    "ent_seq": 1421960,
+    "word": "蜘蛛",
+    "reading": "くも",
+    "readings": [
+     "くも",
+     "ちちゅ",
+     "ちちゅう",
+     "ちしゅ",
+     "クモ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "spider",
+    "glosses": [
+     "spider"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "spider"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9061
+   },
+   {
+    "ent_seq": 1939780,
+    "word": "蜘蛛の巣",
+    "reading": "くものす",
+    "readings": [
+     "くものす"
+    ],
+    "pos": [
+     "exp",
+     "n"
+    ],
+    "meaning": "spiderweb; spider web; spider's web; cobweb",
+    "glosses": [
+     "spiderweb",
+     "spider web",
+     "spider's web",
+     "cobweb"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp",
+       "n"
+      ],
+      "glosses": [
+       "spiderweb",
+       "spider web",
+       "spider's web",
+       "cobweb"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛",
+    "rank": 19015
+   },
+   {
+    "ent_seq": 2815290,
+    "word": "クモの糸",
+    "reading": "くものいと",
+    "readings": [
+     "くものいと",
+     "クモのいと"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "spider's thread; spider silk",
+    "glosses": [
+     "spider's thread",
+     "spider silk"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "spider's thread",
+       "spider silk"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛",
+    "rank": 26343
+   },
+   {
+    "ent_seq": 5741607,
+    "word": "蜘蛛の糸",
+    "reading": "くものいと",
+    "readings": [
+     "くものいと"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "The Spider's Thread (1918 short story by Ryūnosuke Akutagawa)",
+    "glosses": [
+     "The Spider's Thread (1918 short story by Ryūnosuke Akutagawa)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "The Spider's Thread (1918 short story by Ryūnosuke Akutagawa)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛",
+    "rank": 26343
+   },
+   {
+    "ent_seq": 2026020,
+    "word": "蜘蛛の子を散らす",
+    "reading": "くものこをちらす",
+    "readings": [
+     "くものこをちらす"
+    ],
+    "pos": [
+     "exp",
+     "v5s"
+    ],
+    "meaning": "to scatter in all directions (like baby spiders)",
+    "glosses": [
+     "to scatter in all directions (like baby spiders)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp",
+       "v5s"
+      ],
+      "glosses": [
+       "to scatter in all directions (like baby spiders)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛",
+    "rank": 33961
+   },
+   {
+    "ent_seq": 1173200,
+    "word": "雲助",
+    "reading": "くもすけ",
+    "readings": [
+     "くもすけ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "ruffian palanquin bearer (Edo period); thug; ruffian; scoundrel; exploiter",
+    "glosses": [
+     "ruffian palanquin bearer (Edo period)",
+     "thug",
+     "ruffian",
+     "scoundrel",
+     "exploiter"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "ruffian palanquin bearer (Edo period)"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "thug",
+       "ruffian",
+       "scoundrel",
+       "exploiter"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛",
+    "rank": 77291
+   },
+   {
+    "ent_seq": 1735900,
+    "word": "くも膜下出血",
+    "reading": "くもまくかしゅっけつ",
+    "readings": [
+     "くもまくかしゅっけつ",
+     "くもまっかしゅっけつ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "subarachnoid hemorrhage; subarachnoid haemorrhage; SAH",
+    "glosses": [
+     "subarachnoid hemorrhage",
+     "subarachnoid haemorrhage",
+     "SAH"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "subarachnoid hemorrhage",
+       "subarachnoid haemorrhage",
+       "SAH"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛",
+    "rank": 80059
+   },
+   {
+    "ent_seq": 2434530,
+    "word": "蜘蛛の子",
+    "reading": "くものこ",
+    "readings": [
+     "くものこ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "baby spider",
+    "glosses": [
+     "baby spider"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "baby spider"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛",
+    "rank": 86026
+   },
+   {
+    "ent_seq": 1735890,
+    "word": "くも膜",
+    "reading": "くもまく",
+    "readings": [
+     "くもまく"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "arachnoid mater; arachnoid membrane",
+    "glosses": [
+     "arachnoid mater",
+     "arachnoid membrane"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "arachnoid mater",
+       "arachnoid membrane"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛",
+    "rank": 149994
+   },
+   {
+    "ent_seq": 2629580,
+    "word": "クモ類",
+    "reading": "クモるい",
+    "readings": [
+     "クモるい",
+     "くもるい"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "arachnids; araneids",
+    "glosses": [
+     "arachnids",
+     "araneids"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "arachnids"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "araneids"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛",
+    "rank": 223486
+   },
+   {
+    "ent_seq": 2250780,
+    "word": "くも膜下腔",
+    "reading": "くもまくかくう",
+    "readings": [
+     "くもまくかくう"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "subarachnoid space",
+    "glosses": [
+     "subarachnoid space"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "subarachnoid space"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛",
+    "rank": 250718
+   },
+   {
+    "ent_seq": 2612950,
+    "word": "クモ恐怖症",
+    "reading": "くもきょうふしょう",
+    "readings": [
+     "くもきょうふしょう"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "arachnophobia",
+    "glosses": [
+     "arachnophobia"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "arachnophobia"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛",
+    "rank": 254306
+   },
+   {
+    "ent_seq": 2844024,
+    "word": "クモ貝",
+    "reading": "くもがい",
+    "readings": [
+     "くもがい",
+     "クモがい",
+     "クモガイ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "spider conch (Lambis lambis)",
+    "glosses": [
+     "spider conch (Lambis lambis)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "spider conch (Lambis lambis)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛",
+    "rank": 278559
+   },
+   {
+    "ent_seq": 2163010,
+    "word": "蜘蛛の巣理論",
+    "reading": "くものすりろん",
+    "readings": [
+     "くものすりろん"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "cobweb theorem",
+    "glosses": [
+     "cobweb theorem"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "cobweb theorem"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛",
+    "rank": 9999999
+   },
+   {
+    "ent_seq": 2460720,
+    "word": "蜘蛛の巣黴",
+    "reading": "クモノスカビ",
+    "readings": [
+     "クモノスカビ",
+     "くものすかび"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "Rhizopus (saprobic fungus)",
+    "glosses": [
+     "Rhizopus (saprobic fungus)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "Rhizopus (saprobic fungus)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛",
+    "rank": 9999999
+   },
+   {
+    "ent_seq": 2241540,
+    "word": "蜘蛛海星",
+    "reading": "くもひとで",
+    "readings": [
+     "くもひとで",
+     "クモヒトデ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "brittle star (any starfish-like echinoderm of the order Ophiuroidea); brittlestar; Ophioplocus japonicus (species of brittlestar)",
+    "glosses": [
+     "brittle star (any starfish-like echinoderm of the order Ophiuroidea)",
+     "brittlestar",
+     "Ophioplocus japonicus (species of brittlestar)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "brittle star (any starfish-like echinoderm of the order Ophiuroidea)",
+       "brittlestar"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "Ophioplocus japonicus (species of brittlestar)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛",
+    "rank": 9999999
+   }
+  ]
+ },
+ {
+  "selection": "蜘蛛の",
+  "candidates": [
+   {
+    "ent_seq": 1939780,
+    "word": "蜘蛛の巣",
+    "reading": "くものす",
+    "readings": [
+     "くものす"
+    ],
+    "pos": [
+     "exp",
+     "n"
+    ],
+    "meaning": "spiderweb; spider web; spider's web; cobweb",
+    "glosses": [
+     "spiderweb",
+     "spider web",
+     "spider's web",
+     "cobweb"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp",
+       "n"
+      ],
+      "glosses": [
+       "spiderweb",
+       "spider web",
+       "spider's web",
+       "cobweb"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛の",
+    "rank": 19015
+   },
+   {
+    "ent_seq": 2815290,
+    "word": "クモの糸",
+    "reading": "くものいと",
+    "readings": [
+     "くものいと",
+     "クモのいと"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "spider's thread; spider silk",
+    "glosses": [
+     "spider's thread",
+     "spider silk"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "spider's thread",
+       "spider silk"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛の",
+    "rank": 26343
+   },
+   {
+    "ent_seq": 5741607,
+    "word": "蜘蛛の糸",
+    "reading": "くものいと",
+    "readings": [
+     "くものいと"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "The Spider's Thread (1918 short story by Ryūnosuke Akutagawa)",
+    "glosses": [
+     "The Spider's Thread (1918 short story by Ryūnosuke Akutagawa)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "The Spider's Thread (1918 short story by Ryūnosuke Akutagawa)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛の",
+    "rank": 26343
+   },
+   {
+    "ent_seq": 2026020,
+    "word": "蜘蛛の子を散らす",
+    "reading": "くものこをちらす",
+    "readings": [
+     "くものこをちらす"
+    ],
+    "pos": [
+     "exp",
+     "v5s"
+    ],
+    "meaning": "to scatter in all directions (like baby spiders)",
+    "glosses": [
+     "to scatter in all directions (like baby spiders)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp",
+       "v5s"
+      ],
+      "glosses": [
+       "to scatter in all directions (like baby spiders)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛の",
+    "rank": 33961
+   },
+   {
+    "ent_seq": 2434530,
+    "word": "蜘蛛の子",
+    "reading": "くものこ",
+    "readings": [
+     "くものこ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "baby spider",
+    "glosses": [
+     "baby spider"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "baby spider"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛の",
+    "rank": 86026
+   },
+   {
+    "ent_seq": 2163010,
+    "word": "蜘蛛の巣理論",
+    "reading": "くものすりろん",
+    "readings": [
+     "くものすりろん"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "cobweb theorem",
+    "glosses": [
+     "cobweb theorem"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "cobweb theorem"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛の",
+    "rank": 9999999
+   },
+   {
+    "ent_seq": 2460720,
+    "word": "蜘蛛の巣黴",
+    "reading": "クモノスカビ",
+    "readings": [
+     "クモノスカビ",
+     "くものすかび"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "Rhizopus (saprobic fungus)",
+    "glosses": [
+     "Rhizopus (saprobic fungus)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "Rhizopus (saprobic fungus)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛の",
+    "rank": 9999999
+   }
+  ]
+ },
+ {
+  "selection": "来た",
+  "candidates": [
+   {
+    "ent_seq": 1547720,
+    "word": "来る",
+    "reading": "くる",
+    "readings": [
+     "くる",
+     "クる"
+    ],
+    "pos": [
+     "vk",
+     "vi",
+     "aux-v"
+    ],
+    "meaning": "to come (spatially or temporally); to approach; to arrive; to come back; to do ... and come back; to come to be; to become; to get; to grow; to continue; to come from; to be caused by; to derive from; to come to (e.g. \"when it comes to spinach ...\")",
+    "glosses": [
+     "to come (spatially or temporally)",
+     "to approach",
+     "to arrive",
+     "to come back",
+     "to do ... and come back",
+     "to come to be",
+     "to become",
+     "to get",
+     "to grow",
+     "to continue",
+     "to come from",
+     "to be caused by",
+     "to derive from",
+     "to come to (e.g. \"when it comes to spinach ...\")"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "vk",
+       "vi"
+      ],
+      "glosses": [
+       "to come (spatially or temporally)",
+       "to approach",
+       "to arrive"
+      ]
+     },
+     {
+      "pos": [
+       "vk",
+       "vi",
+       "aux-v"
+      ],
+      "glosses": [
+       "to come back",
+       "to do ... and come back"
+      ]
+     },
+     {
+      "pos": [
+       "vk",
+       "vi",
+       "aux-v"
+      ],
+      "glosses": [
+       "to come to be",
+       "to become",
+       "to get",
+       "to grow",
+       "to continue"
+      ]
+     },
+     {
+      "pos": [
+       "vk",
+       "vi"
+      ],
+      "glosses": [
+       "to come from",
+       "to be caused by",
+       "to derive from"
+      ]
+     },
+     {
+      "pos": [
+       "vk",
+       "vi"
+      ],
+      "glosses": [
+       "to come to (e.g. \"when it comes to spinach ...\")"
+      ]
+     }
+    ],
+    "reasons": [
+     "past"
+    ],
+    "completed_from": null,
+    "rank": 38
+   },
+   {
+    "ent_seq": 1591270,
+    "word": "来る",
+    "reading": "きたる",
+    "readings": [
+     "きたる"
+    ],
+    "pos": [
+     "adj-pn",
+     "v5r",
+     "vi"
+    ],
+    "meaning": "next (e.g. \"next April\"); forthcoming; coming; to come; to arrive; to be due to",
+    "glosses": [
+     "next (e.g. \"next April\")",
+     "forthcoming",
+     "coming",
+     "to come",
+     "to arrive",
+     "to be due to"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-pn"
+      ],
+      "glosses": [
+       "next (e.g. \"next April\")",
+       "forthcoming",
+       "coming"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vi"
+      ],
+      "glosses": [
+       "to come",
+       "to arrive",
+       "to be due to"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "来た",
+    "rank": 38
+   },
+   {
+    "ent_seq": 1591260,
+    "word": "来す",
+    "reading": "きたす",
+    "readings": [
+     "きたす"
+    ],
+    "pos": [
+     "v5s",
+     "vt"
+    ],
+    "meaning": "to cause; to induce; to bring about; to produce",
+    "glosses": [
+     "to cause",
+     "to induce",
+     "to bring about",
+     "to produce"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5s",
+       "vt"
+      ],
+      "glosses": [
+       "to cause",
+       "to induce",
+       "to bring about",
+       "to produce"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "来た",
+    "rank": 20694
+   },
+   {
+    "ent_seq": 2149720,
+    "word": "来るべき",
+    "reading": "きたるべき",
+    "readings": [
+     "きたるべき"
+    ],
+    "pos": [
+     "adj-f"
+    ],
+    "meaning": "expected to arrive (occur) in the near future",
+    "glosses": [
+     "expected to arrive (occur) in the near future"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-f"
+      ],
+      "glosses": [
+       "expected to arrive (occur) in the near future"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "来た",
+    "rank": 75262
+   },
+   {
+    "ent_seq": 2408680,
+    "word": "来る者は拒まず",
+    "reading": "くるものはこばまず",
+    "readings": [
+     "くるものはこばまず",
+     "きたるものはこばまず"
+    ],
+    "pos": [
+     "exp"
+    ],
+    "meaning": "turn away no one; do not cast out those that come to you",
+    "glosses": [
+     "turn away no one",
+     "do not cast out those that come to you"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp"
+      ],
+      "glosses": [
+       "turn away no one",
+       "do not cast out those that come to you"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "来た",
+    "rank": 100044
+   },
+   {
+    "ent_seq": 1548320,
+    "word": "来立て",
+    "reading": "きたて",
+    "readings": [
+     "きたて"
+    ],
+    "pos": [
+     "exp"
+    ],
+    "meaning": "new arrival",
+    "glosses": [
+     "new arrival"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp"
+      ],
+      "glosses": [
+       "new arrival"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "来た",
+    "rank": 100083
+   },
+   {
+    "ent_seq": 2834251,
+    "word": "来た、見た、勝った",
+    "reading": "きた、みた、かった",
+    "readings": [
+     "きた、みた、かった"
+    ],
+    "pos": [
+     "exp"
+    ],
+    "meaning": "veni, vidi, vici; I came; I saw; I conquered",
+    "glosses": [
+     "veni, vidi, vici",
+     "I came; I saw; I conquered"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp"
+      ],
+      "glosses": [
+       "veni, vidi, vici",
+       "I came; I saw; I conquered"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "来た",
+    "rank": 236423
+   }
+  ]
+ },
+ {
+  "selection": "した",
+  "candidates": [
+   {
+    "ent_seq": 1184140,
+    "word": "下",
+    "reading": "した",
+    "readings": [
+     "した"
+    ],
+    "pos": [
+     "n",
+     "adj-no",
+     "n-pref"
+    ],
+    "meaning": "below; down; under; younger (e.g. daughter); bottom; beneath; underneath; just after; right after; inferiority; one's inferior (i.e. one's junior); trade-in; preliminary; preparatory",
+    "glosses": [
+     "below",
+     "down",
+     "under",
+     "younger (e.g. daughter)",
+     "bottom",
+     "beneath",
+     "underneath",
+     "just after",
+     "right after",
+     "inferiority",
+     "one's inferior (i.e. one's junior)",
+     "trade-in",
+     "preliminary",
+     "preparatory"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "below",
+       "down",
+       "under",
+       "younger (e.g. daughter)"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "bottom"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "beneath",
+       "underneath"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "just after",
+       "right after"
+      ]
+     },
+     {
+      "pos": [
+       "n",
+       "adj-no"
+      ],
+      "glosses": [
+       "inferiority",
+       "one's inferior (i.e. one's junior)"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "trade-in"
+      ]
+     },
+     {
+      "pos": [
+       "n-pref"
+      ],
+      "glosses": [
+       "preliminary",
+       "preparatory"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 308
+   },
+   {
+    "ent_seq": 1387010,
+    "word": "舌",
+    "reading": "した",
+    "readings": [
+     "した"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "tongue; tongue-like object; clapper (of a bell); talon (of a lock); reed (of a musical instrument)",
+    "glosses": [
+     "tongue",
+     "tongue-like object",
+     "clapper (of a bell)",
+     "talon (of a lock)",
+     "reed (of a musical instrument)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "tongue"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "tongue-like object",
+       "clapper (of a bell)",
+       "talon (of a lock)",
+       "reed (of a musical instrument)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 1550
+   },
+   {
+    "ent_seq": 2230160,
+    "word": "簧",
+    "reading": "した",
+    "readings": [
+     "した"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "reed (of a musical instrument)",
+    "glosses": [
+     "reed (of a musical instrument)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "reed (of a musical instrument)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 243222
+   },
+   {
+    "ent_seq": 1157170,
+    "word": "為る",
+    "reading": "する",
+    "readings": [
+     "する"
+    ],
+    "pos": [
+     "vs-i",
+     "vi",
+     "vt",
+     "suf",
+     "aux-v"
+    ],
+    "meaning": "to do; to carry out; to perform; to cause to become; to make (into); to turn (into); to serve as; to act as; to work as; to wear (clothes, a facial expression, etc.); to judge as being; to view as being; to think of as; to treat as; to use as; to decide on; to choose; to be sensed (of a smell, noise, etc.); to be (in a state, condition, etc.); to be worth; to cost; to pass (of time); to elapse; to place, or raise, person A to a post or status B; to transform A to B; to make A into B; to exchange A for B; to make use of A for B; to view A as B; to handle A as if it were B; to feel A about B; verbalizing suffix (applies to nouns noted in this dictionary with the part of speech \"vs\"); creates a humble verb (after a noun prefixed with \"o\" or \"go\"); to be just about to; to be just starting to; to try to; to attempt to",
+    "glosses": [
+     "to do",
+     "to carry out",
+     "to perform",
+     "to cause to become",
+     "to make (into)",
+     "to turn (into)",
+     "to serve as",
+     "to act as",
+     "to work as",
+     "to wear (clothes, a facial expression, etc.)",
+     "to judge as being",
+     "to view as being",
+     "to think of as",
+     "to treat as",
+     "to use as",
+     "to decide on",
+     "to choose",
+     "to be sensed (of a smell, noise, etc.)",
+     "to be (in a state, condition, etc.)",
+     "to be worth",
+     "to cost",
+     "to pass (of time)",
+     "to elapse",
+     "to place, or raise, person A to a post or status B",
+     "to transform A to B",
+     "to make A into B",
+     "to exchange A for B",
+     "to make use of A for B",
+     "to view A as B",
+     "to handle A as if it were B",
+     "to feel A about B",
+     "verbalizing suffix (applies to nouns noted in this dictionary with the part of speech \"vs\")",
+     "creates a humble verb (after a noun prefixed with \"o\" or \"go\")",
+     "to be just about to",
+     "to be just starting to",
+     "to try to",
+     "to attempt to"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "vs-i"
+      ],
+      "glosses": [
+       "to do",
+       "to carry out",
+       "to perform"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i"
+      ],
+      "glosses": [
+       "to cause to become",
+       "to make (into)",
+       "to turn (into)"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i"
+      ],
+      "glosses": [
+       "to serve as",
+       "to act as",
+       "to work as"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i"
+      ],
+      "glosses": [
+       "to wear (clothes, a facial expression, etc.)"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i"
+      ],
+      "glosses": [
+       "to judge as being",
+       "to view as being",
+       "to think of as",
+       "to treat as",
+       "to use as"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i"
+      ],
+      "glosses": [
+       "to decide on",
+       "to choose"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i",
+       "vi"
+      ],
+      "glosses": [
+       "to be sensed (of a smell, noise, etc.)"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i",
+       "vi"
+      ],
+      "glosses": [
+       "to be (in a state, condition, etc.)"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i",
+       "vi"
+      ],
+      "glosses": [
+       "to be worth",
+       "to cost"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i",
+       "vi"
+      ],
+      "glosses": [
+       "to pass (of time)",
+       "to elapse"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i",
+       "vt"
+      ],
+      "glosses": [
+       "to place, or raise, person A to a post or status B"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i",
+       "vt"
+      ],
+      "glosses": [
+       "to transform A to B",
+       "to make A into B",
+       "to exchange A for B"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i",
+       "vt"
+      ],
+      "glosses": [
+       "to make use of A for B",
+       "to view A as B",
+       "to handle A as if it were B"
+      ]
+     },
+     {
+      "pos": [
+       "vs-i",
+       "vt"
+      ],
+      "glosses": [
+       "to feel A about B"
+      ]
+     },
+     {
+      "pos": [
+       "suf",
+       "vs-i"
+      ],
+      "glosses": [
+       "verbalizing suffix (applies to nouns noted in this dictionary with the part of speech \"vs\")"
+      ]
+     },
+     {
+      "pos": [
+       "aux-v",
+       "vs-i"
+      ],
+      "glosses": [
+       "creates a humble verb (after a noun prefixed with \"o\" or \"go\")"
+      ]
+     },
+     {
+      "pos": [
+       "aux-v",
+       "vs-i"
+      ],
+      "glosses": [
+       "to be just about to",
+       "to be just starting to",
+       "to try to",
+       "to attempt to"
+      ]
+     }
+    ],
+    "reasons": [
+     "past"
+    ],
+    "completed_from": null,
+    "rank": 11
+   },
+   {
+    "ent_seq": 1310920,
+    "word": "死体",
+    "reading": "したい",
+    "readings": [
+     "したい"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "dead body; corpse; cadaver; carcass",
+    "glosses": [
+     "dead body",
+     "corpse",
+     "cadaver",
+     "carcass"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "dead body",
+       "corpse",
+       "cadaver",
+       "carcass"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "した",
+    "rank": 3065
+   },
+   {
+    "ent_seq": 1387070,
+    "word": "舌打ち",
+    "reading": "したうち",
+    "readings": [
+     "したうち"
+    ],
+    "pos": [
+     "n",
+     "vs",
+     "vi"
+    ],
+    "meaning": "clicking one's tongue; tut-tut; smacking one's lips (with relish)",
+    "glosses": [
+     "clicking one's tongue",
+     "tut-tut",
+     "smacking one's lips (with relish)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "vs",
+       "vi"
+      ],
+      "glosses": [
+       "clicking one's tongue",
+       "tut-tut"
+      ]
+     },
+     {
+      "pos": [
+       "n",
+       "vs",
+       "vi"
+      ],
+      "glosses": [
+       "smacking one's lips (with relish)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "した",
+    "rank": 3619
+   },
+   {
+    "ent_seq": 1514910,
+    "word": "慕う",
+    "reading": "したう",
+    "readings": [
+     "したう"
+    ],
+    "pos": [
+     "v5u",
+     "vt"
+    ],
+    "meaning": "to yearn for; to long for; to pine for; to miss; to love dearly; to adore; to follow (someone); to idolize (for virtue, learning, status, etc.)",
+    "glosses": [
+     "to yearn for",
+     "to long for",
+     "to pine for",
+     "to miss",
+     "to love dearly",
+     "to adore",
+     "to follow (someone)",
+     "to idolize (for virtue, learning, status, etc.)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5u",
+       "vt"
+      ],
+      "glosses": [
+       "to yearn for",
+       "to long for",
+       "to pine for",
+       "to miss",
+       "to love dearly",
+       "to adore"
+      ]
+     },
+     {
+      "pos": [
+       "v5u",
+       "vt"
+      ],
+      "glosses": [
+       "to follow (someone)"
+      ]
+     },
+     {
+      "pos": [
+       "v5u",
+       "vt"
+      ],
+      "glosses": [
+       "to idolize (for virtue, learning, status, etc.)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "した",
+    "rank": 4284
+   },
+   {
+    "ent_seq": 1311740,
+    "word": "肢体",
+    "reading": "したい",
+    "readings": [
+     "したい"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "limbs; arms and legs; body",
+    "glosses": [
+     "limbs",
+     "arms and legs",
+     "body"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "limbs",
+       "arms and legs",
+       "body"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "した",
+    "rank": 11968
+   },
+   {
+    "ent_seq": 1184640,
+    "word": "下顎",
+    "reading": "したあご",
+    "readings": [
+     "したあご",
+     "かがく"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "lower jaw; mandible",
+    "glosses": [
+     "lower jaw",
+     "mandible"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "lower jaw",
+       "mandible"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "した",
+    "rank": 35306
+   },
+   {
+    "ent_seq": 1594320,
+    "word": "下請け",
+    "reading": "したうけ",
+    "readings": [
+     "したうけ"
+    ],
+    "pos": [
+     "n",
+     "vs"
+    ],
+    "meaning": "subcontract; subcontractor (person or company)",
+    "glosses": [
+     "subcontract",
+     "subcontractor (person or company)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "vs"
+      ],
+      "glosses": [
+       "subcontract"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "subcontractor (person or company)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "した",
+    "rank": 37257
+   },
+   {
+    "ent_seq": 1307760,
+    "word": "姿態",
+    "reading": "したい",
+    "readings": [
+     "したい"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "figure; form; style",
+    "glosses": [
+     "figure",
+     "form",
+     "style"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "figure",
+       "form",
+       "style"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "した",
+    "rank": 43914
+   },
+   {
+    "ent_seq": 1718890,
+    "word": "下味",
+    "reading": "したあじ",
+    "readings": [
+     "したあじ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "seasoning of food",
+    "glosses": [
+     "seasoning of food"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "seasoning of food"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "した",
+    "rank": 52155
+   },
+   {
+    "ent_seq": 1767490,
+    "word": "死体遺棄",
+    "reading": "したいいき",
+    "readings": [
+     "したいいき"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "abandonment of a corpse; abandoning a dead body",
+    "glosses": [
+     "abandonment of a corpse",
+     "abandoning a dead body"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "abandonment of a corpse",
+       "abandoning a dead body"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "した",
+    "rank": 52656
+   },
+   {
+    "ent_seq": 1184630,
+    "word": "下絵",
+    "reading": "したえ",
+    "readings": [
+     "したえ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "rough sketch; design; cartoon",
+    "glosses": [
+     "rough sketch",
+     "design",
+     "cartoon"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "rough sketch",
+       "design",
+       "cartoon"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "した",
+    "rank": 56322
+   },
+   {
+    "ent_seq": 1767480,
+    "word": "死体置き場",
+    "reading": "したいおきば",
+    "readings": [
+     "したいおきば"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "morgue",
+    "glosses": [
+     "morgue"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "morgue"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "した",
+    "rank": 80240
+   },
+   {
+    "ent_seq": 2616240,
+    "word": "死体安置所",
+    "reading": "したいあんちじょ",
+    "readings": [
+     "したいあんちじょ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "morgue; mortuary",
+    "glosses": [
+     "morgue",
+     "mortuary"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "morgue",
+       "mortuary"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "した",
+    "rank": 81627
+   }
+  ]
+ },
+ {
+  "selection": "食べました",
+  "candidates": [
+   {
+    "ent_seq": 1358280,
+    "word": "食べる",
+    "reading": "たべる",
+    "readings": [
+     "たべる"
+    ],
+    "pos": [
+     "v1",
+     "vt"
+    ],
+    "meaning": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+    "glosses": [
+     "to eat",
+     "to live on (e.g. a salary)",
+     "to live off",
+     "to subsist on"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to eat"
+      ]
+     },
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to live on (e.g. a salary)",
+       "to live off",
+       "to subsist on"
+      ]
+     }
+    ],
+    "reasons": [
+     "polite past"
+    ],
+    "completed_from": null,
+    "rank": 184
+   }
+  ]
+ },
+ {
+  "selection": "苛立ち",
+  "candidates": [
+   {
+    "ent_seq": 1975500,
+    "word": "苛立ち",
+    "reading": "いらだち",
+    "readings": [
+     "いらだち"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "irritation; annoyance; frustration",
+    "glosses": [
+     "irritation",
+     "annoyance",
+     "frustration"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "irritation",
+       "annoyance",
+       "frustration"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 5472
+   },
+   {
+    "ent_seq": 1195200,
+    "word": "苛立つ",
+    "reading": "いらだつ",
+    "readings": [
+     "いらだつ"
+    ],
+    "pos": [
+     "v5t",
+     "vi"
+    ],
+    "meaning": "to be irritated; to get annoyed; to lose one's patience",
+    "glosses": [
+     "to be irritated",
+     "to get annoyed",
+     "to lose one's patience"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5t",
+       "vi"
+      ],
+      "glosses": [
+       "to be irritated",
+       "to get annoyed",
+       "to lose one's patience"
+      ]
+     }
+    ],
+    "reasons": [
+     "masu stem"
+    ],
+    "completed_from": null,
+    "rank": 6116
+   }
+  ]
+ },
+ {
+  "selection": "曇る",
+  "candidates": [
+   {
+    "ent_seq": 1457560,
+    "word": "曇る",
+    "reading": "くもる",
+    "readings": [
+     "くもる"
+    ],
+    "pos": [
+     "v5r",
+     "vi"
+    ],
+    "meaning": "to get cloudy; to cloud over; to become overcast; to cloud up; to fog up; to mist up; to become dim; to be gloomy; to be clouded (expression); to be downcast; to look slightly downward (of a noh mask; indicating sadness, grief, etc.)",
+    "glosses": [
+     "to get cloudy",
+     "to cloud over",
+     "to become overcast",
+     "to cloud up",
+     "to fog up",
+     "to mist up",
+     "to become dim",
+     "to be gloomy",
+     "to be clouded (expression)",
+     "to be downcast",
+     "to look slightly downward (of a noh mask; indicating sadness, grief, etc.)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vi"
+      ],
+      "glosses": [
+       "to get cloudy",
+       "to cloud over",
+       "to become overcast"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vi"
+      ],
+      "glosses": [
+       "to cloud up",
+       "to fog up",
+       "to mist up",
+       "to become dim"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vi"
+      ],
+      "glosses": [
+       "to be gloomy",
+       "to be clouded (expression)",
+       "to be downcast"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vi"
+      ],
+      "glosses": [
+       "to look slightly downward (of a noh mask; indicating sadness, grief, etc.)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 4469
+   }
+  ]
+ },
+ {
+  "selection": "拭った",
+  "candidates": [
+   {
+    "ent_seq": 1357220,
+    "word": "拭う",
+    "reading": "ぬぐう",
+    "readings": [
+     "ぬぐう"
+    ],
+    "pos": [
+     "v5u",
+     "vt"
+    ],
+    "meaning": "to wipe; to mop up; to get rid of (an impression, feeling, blemish, etc.); to dispel (e.g. shame); to erase; to remove",
+    "glosses": [
+     "to wipe",
+     "to mop up",
+     "to get rid of (an impression, feeling, blemish, etc.)",
+     "to dispel (e.g. shame)",
+     "to erase",
+     "to remove"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5u",
+       "vt"
+      ],
+      "glosses": [
+       "to wipe",
+       "to mop up"
+      ]
+     },
+     {
+      "pos": [
+       "v5u",
+       "vt"
+      ],
+      "glosses": [
+       "to get rid of (an impression, feeling, blemish, etc.)",
+       "to dispel (e.g. shame)",
+       "to erase",
+       "to remove"
+      ]
+     }
+    ],
+    "reasons": [
+     "past"
+    ],
+    "completed_from": null,
+    "rank": 3305
+   }
+  ]
+ },
+ {
+  "selection": "跪き",
+  "candidates": [
+   {
+    "ent_seq": 1573270,
+    "word": "跪く",
+    "reading": "ひざまずく",
+    "readings": [
+     "ひざまずく",
+     "ひざまづく"
+    ],
+    "pos": [
+     "v5k",
+     "vi"
+    ],
+    "meaning": "to kneel (in respect); to genuflect",
+    "glosses": [
+     "to kneel (in respect)",
+     "to genuflect"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5k",
+       "vi"
+      ],
+      "glosses": [
+       "to kneel (in respect)",
+       "to genuflect"
+      ]
+     }
+    ],
+    "reasons": [
+     "masu stem"
+    ],
+    "completed_from": null,
+    "rank": 8675
+   }
+  ]
+ },
+ {
+  "selection": "掴み",
+  "candidates": [
+   {
+    "ent_seq": 1953900,
+    "word": "掴み",
+    "reading": "つかみ",
+    "readings": [
+     "つかみ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "grip; having all the cards needed to form a scoring combination in one's hand",
+    "glosses": [
+     "grip",
+     "having all the cards needed to form a scoring combination in one's hand"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "grip"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "having all the cards needed to form a scoring combination in one's hand"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 40465
+   },
+   {
+    "ent_seq": 1433650,
+    "word": "掴む",
+    "reading": "つかむ",
+    "readings": [
+     "つかむ"
+    ],
+    "pos": [
+     "v5m",
+     "vt"
+    ],
+    "meaning": "to seize; to catch; to grasp; to grip; to grab; to clutch; to hold; to catch hold of; to lay one's hands on; to obtain; to acquire; to get; to win; to capture; to understand; to grasp; to comprehend",
+    "glosses": [
+     "to seize",
+     "to catch",
+     "to grasp",
+     "to grip",
+     "to grab",
+     "to clutch",
+     "to hold",
+     "to catch hold of",
+     "to lay one's hands on",
+     "to obtain",
+     "to acquire",
+     "to get",
+     "to win",
+     "to capture",
+     "to understand",
+     "to grasp",
+     "to comprehend"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to seize",
+       "to catch",
+       "to grasp",
+       "to grip",
+       "to grab",
+       "to clutch",
+       "to hold",
+       "to catch hold of",
+       "to lay one's hands on"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to obtain",
+       "to acquire",
+       "to get",
+       "to win",
+       "to capture"
+      ]
+     },
+     {
+      "pos": [
+       "v5m",
+       "vt"
+      ],
+      "glosses": [
+       "to understand",
+       "to grasp",
+       "to comprehend"
+      ]
+     }
+    ],
+    "reasons": [
+     "masu stem"
+    ],
+    "completed_from": null,
+    "rank": 1798
+   },
+   {
+    "ent_seq": 1008070,
+    "word": "掴み取る",
+    "reading": "つかみとる",
+    "readings": [
+     "つかみとる"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to grasp; to get",
+    "glosses": [
+     "to grasp",
+     "to get"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to grasp",
+       "to get"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "掴み",
+    "rank": 22306
+   },
+   {
+    "ent_seq": 1433630,
+    "word": "掴みかかる",
+    "reading": "つかみかかる",
+    "readings": [
+     "つかみかかる"
+    ],
+    "pos": [
+     "v5r",
+     "vi"
+    ],
+    "meaning": "to grab at; to grasp at; to clutch at",
+    "glosses": [
+     "to grab at",
+     "to grasp at",
+     "to clutch at"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vi"
+      ],
+      "glosses": [
+       "to grab at",
+       "to grasp at",
+       "to clutch at"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "掴み",
+    "rank": 22852
+   },
+   {
+    "ent_seq": 1661880,
+    "word": "つかみ所",
+    "reading": "つかみどころ",
+    "readings": [
+     "つかみどころ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "point (of a question, story, etc.); hold; grip",
+    "glosses": [
+     "point (of a question, story, etc.)",
+     "hold",
+     "grip"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "point (of a question, story, etc.)"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "hold",
+       "grip"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "掴み",
+    "rank": 54559
+   },
+   {
+    "ent_seq": 1433640,
+    "word": "つかみ出す",
+    "reading": "つかみだす",
+    "readings": [
+     "つかみだす"
+    ],
+    "pos": [
+     "v5s",
+     "vt"
+    ],
+    "meaning": "to take out; to take a handful of; to grab and throw; to turn someone out (of house, room, etc.)",
+    "glosses": [
+     "to take out",
+     "to take a handful of",
+     "to grab and throw",
+     "to turn someone out (of house, room, etc.)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5s",
+       "vt"
+      ],
+      "glosses": [
+       "to take out",
+       "to take a handful of",
+       "to grab and throw"
+      ]
+     },
+     {
+      "pos": [
+       "v5s",
+       "vt"
+      ],
+      "glosses": [
+       "to turn someone out (of house, room, etc.)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "掴み",
+    "rank": 55581
+   },
+   {
+    "ent_seq": 2647630,
+    "word": "つかみ所のない",
+    "reading": "つかみどころのない",
+    "readings": [
+     "つかみどころのない"
+    ],
+    "pos": [
+     "exp",
+     "adj-i"
+    ],
+    "meaning": "vague; fuzzy; elusive; slippery",
+    "glosses": [
+     "vague",
+     "fuzzy",
+     "elusive",
+     "slippery"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp",
+       "adj-i"
+      ],
+      "glosses": [
+       "vague",
+       "fuzzy",
+       "elusive",
+       "slippery"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "掴み",
+    "rank": 56488
+   },
+   {
+    "ent_seq": 1847870,
+    "word": "つかみ合う",
+    "reading": "つかみあう",
+    "readings": [
+     "つかみあう"
+    ],
+    "pos": [
+     "v5u",
+     "vi"
+    ],
+    "meaning": "to grapple",
+    "glosses": [
+     "to grapple"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5u",
+       "vi"
+      ],
+      "glosses": [
+       "to grapple"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "掴み",
+    "rank": 56685
+   },
+   {
+    "ent_seq": 2647650,
+    "word": "つかみ所がない",
+    "reading": "つかみどころがない",
+    "readings": [
+     "つかみどころがない"
+    ],
+    "pos": [
+     "exp",
+     "adj-i"
+    ],
+    "meaning": "vague; fuzzy; elusive; slippery",
+    "glosses": [
+     "vague",
+     "fuzzy",
+     "elusive",
+     "slippery"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp",
+       "adj-i"
+      ],
+      "glosses": [
+       "vague",
+       "fuzzy",
+       "elusive",
+       "slippery"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "掴み",
+    "rank": 65400
+   },
+   {
+    "ent_seq": 1661890,
+    "word": "つかみ取り",
+    "reading": "つかみどり",
+    "readings": [
+     "つかみどり"
+    ],
+    "pos": [
+     "n",
+     "vs",
+     "vt"
+    ],
+    "meaning": "grabbing a handful (of); grabbing as much as one can in one handful; catching with one's hands",
+    "glosses": [
+     "grabbing a handful (of)",
+     "grabbing as much as one can in one handful",
+     "catching with one's hands"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "vs",
+       "vt"
+      ],
+      "glosses": [
+       "grabbing a handful (of)",
+       "grabbing as much as one can in one handful"
+      ]
+     },
+     {
+      "pos": [
+       "n",
+       "vs",
+       "vt"
+      ],
+      "glosses": [
+       "catching with one's hands"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "掴み",
+    "rank": 120364
+   },
+   {
+    "ent_seq": 2138750,
+    "word": "掴み投げ",
+    "reading": "つかみなげ",
+    "readings": [
+     "つかみなげ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "lifting throw",
+    "glosses": [
+     "lifting throw"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "lifting throw"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "掴み",
+    "rank": 215904
+   },
+   {
+    "ent_seq": 2859276,
+    "word": "掴み上げる",
+    "reading": "つかみあげる",
+    "readings": [
+     "つかみあげる"
+    ],
+    "pos": [
+     "v1",
+     "vt"
+    ],
+    "meaning": "to grab up",
+    "glosses": [
+     "to grab up"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to grab up"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "掴み",
+    "rank": 9999999
+   },
+   {
+    "ent_seq": 2851764,
+    "word": "つかみ金",
+    "reading": "つかみがね",
+    "readings": [
+     "つかみがね",
+     "つかみきん"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "handful of cash",
+    "glosses": [
+     "handful of cash"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "handful of cash"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "掴み",
+    "rank": 9999999
+   }
+  ]
+ },
+ {
+  "selection": "乱暴",
+  "candidates": [
+   {
+    "ent_seq": 1549100,
+    "word": "乱暴",
+    "reading": "らんぼう",
+    "readings": [
+     "らんぼう"
+    ],
+    "pos": [
+     "n",
+     "adj-na",
+     "vs",
+     "vi"
+    ],
+    "meaning": "violence; assault; rowdiness; wildness; running riot; rough (handling, language, etc.); reckless; careless; coarse; rude; unreasonable (e.g. demand); wild (e.g. argument); rape; sexual assault",
+    "glosses": [
+     "violence",
+     "assault",
+     "rowdiness",
+     "wildness",
+     "running riot",
+     "rough (handling, language, etc.)",
+     "reckless",
+     "careless",
+     "coarse",
+     "rude",
+     "unreasonable (e.g. demand)",
+     "wild (e.g. argument)",
+     "rape",
+     "sexual assault"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "adj-na",
+       "vs",
+       "vi"
+      ],
+      "glosses": [
+       "violence",
+       "assault",
+       "rowdiness",
+       "wildness",
+       "running riot"
+      ]
+     },
+     {
+      "pos": [
+       "adj-na",
+       "n"
+      ],
+      "glosses": [
+       "rough (handling, language, etc.)",
+       "reckless",
+       "careless",
+       "coarse",
+       "rude",
+       "unreasonable (e.g. demand)",
+       "wild (e.g. argument)"
+      ]
+     },
+     {
+      "pos": [
+       "n",
+       "vs",
+       "vi"
+      ],
+      "glosses": [
+       "rape",
+       "sexual assault"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 2421
+   },
+   {
+    "ent_seq": 1822100,
+    "word": "乱暴者",
+    "reading": "らんぼうもの",
+    "readings": [
+     "らんぼうもの"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "thug; hooligan",
+    "glosses": [
+     "thug",
+     "hooligan"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "thug",
+       "hooligan"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "乱暴",
+    "rank": 32228
+   },
+   {
+    "ent_seq": 2033050,
+    "word": "乱暴狼藉",
+    "reading": "らんぼうろうぜき",
+    "readings": [
+     "らんぼうろうぜき"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "running amok; committing an outrage; rampageous behavior",
+    "glosses": [
+     "running amok",
+     "committing an outrage",
+     "rampageous behavior"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "running amok",
+       "committing an outrage",
+       "rampageous behavior"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "乱暴",
+    "rank": 70532
+   }
+  ]
+ },
+ {
+  "selection": "高須",
+  "candidates": [
+   {
+    "ent_seq": 1633260,
+    "word": "高",
+    "reading": "たか",
+    "readings": [
+     "たか",
+     "だか"
+    ],
+    "pos": [
+     "n",
+     "n-suf"
+    ],
+    "meaning": "quantity; amount; volume; number; amount of money",
+    "glosses": [
+     "quantity",
+     "amount",
+     "volume",
+     "number",
+     "amount of money"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "n-suf"
+      ],
+      "glosses": [
+       "quantity",
+       "amount",
+       "volume",
+       "number",
+       "amount of money"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 3873
+   },
+   {
+    "ent_seq": 2183260,
+    "word": "高",
+    "reading": "こう",
+    "readings": [
+     "こう"
+    ],
+    "pos": [
+     "pref",
+     "n",
+     "suf"
+    ],
+    "meaning": "high; high school",
+    "glosses": [
+     "high",
+     "high school"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "pref",
+       "n"
+      ],
+      "glosses": [
+       "high"
+      ]
+     },
+     {
+      "pos": [
+       "suf"
+      ],
+      "glosses": [
+       "high school"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 3873
+   }
+  ]
+ },
+ {
+  "selection": "ふんわり",
+  "candidates": [
+   {
+    "ent_seq": 2069720,
+    "word": "ふんわり",
+    "reading": "ふんわり",
+    "readings": [
+     "ふんわり",
+     "フンワリ"
+    ],
+    "pos": [
+     "adv-to",
+     "adv"
+    ],
+    "meaning": "gently; airily; fluffily",
+    "glosses": [
+     "gently",
+     "airily",
+     "fluffily"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adv-to",
+       "adv"
+      ],
+      "glosses": [
+       "gently",
+       "airily",
+       "fluffily"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 10865
+   }
+  ]
+ },
+ {
+  "selection": "うそっぱち",
+  "candidates": [
+   {
+    "ent_seq": 1172410,
+    "word": "嘘っぱち",
+    "reading": "うそっぱち",
+    "readings": [
+     "うそっぱち"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "total lie; downright lie",
+    "glosses": [
+     "total lie",
+     "downright lie"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "total lie",
+       "downright lie"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 41713
+   }
+  ]
+ },
+ {
+  "selection": "変われる",
+  "candidates": [
+   {
+    "ent_seq": 1510790,
+    "word": "変わる",
+    "reading": "かわる",
+    "readings": [
+     "かわる"
+    ],
+    "pos": [
+     "v5r",
+     "vi"
+    ],
+    "meaning": "to change; to be transformed; to be altered; to vary; to move to; to be different; to be uncommon; to be unusual",
+    "glosses": [
+     "to change",
+     "to be transformed",
+     "to be altered",
+     "to vary",
+     "to move to",
+     "to be different",
+     "to be uncommon",
+     "to be unusual"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vi"
+      ],
+      "glosses": [
+       "to change",
+       "to be transformed",
+       "to be altered",
+       "to vary"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vi"
+      ],
+      "glosses": [
+       "to move to"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vi"
+      ],
+      "glosses": [
+       "to be different",
+       "to be uncommon",
+       "to be unusual"
+      ]
+     }
+    ],
+    "reasons": [
+     "potential"
+    ],
+    "completed_from": null,
+    "rank": 213
+   }
+  ]
+ },
+ {
+  "selection": "勝手",
+  "candidates": [
+   {
+    "ent_seq": 1346190,
+    "word": "勝手",
+    "reading": "かって",
+    "readings": [
+     "かって"
+    ],
+    "pos": [
+     "n",
+     "adj-na",
+     "n-pref"
+    ],
+    "meaning": "one's own convenience; one's way; selfishness; surroundings; environment; way of doing things; convenience; ease of use; financial circumstances; living; livelihood; kitchen; right hand (in archery); hand that pulls the bowstring; unauthorised (e.g. phone app, WWW site); unofficial",
+    "glosses": [
+     "one's own convenience",
+     "one's way",
+     "selfishness",
+     "surroundings",
+     "environment",
+     "way of doing things",
+     "convenience",
+     "ease of use",
+     "financial circumstances",
+     "living",
+     "livelihood",
+     "kitchen",
+     "right hand (in archery)",
+     "hand that pulls the bowstring",
+     "unauthorised (e.g. phone app, WWW site)",
+     "unofficial"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "adj-na"
+      ],
+      "glosses": [
+       "one's own convenience",
+       "one's way",
+       "selfishness"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "surroundings",
+       "environment",
+       "way of doing things"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "convenience",
+       "ease of use"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "financial circumstances",
+       "living",
+       "livelihood"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "kitchen"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "right hand (in archery)",
+       "hand that pulls the bowstring"
+      ]
+     },
+     {
+      "pos": [
+       "n-pref"
+      ],
+      "glosses": [
+       "unauthorised (e.g. phone app, WWW site)",
+       "unofficial"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 368
+   },
+   {
+    "ent_seq": 2068190,
+    "word": "勝手にしろ",
+    "reading": "かってにしろ",
+    "readings": [
+     "かってにしろ"
+    ],
+    "pos": [
+     "exp",
+     "int"
+    ],
+    "meaning": "have it your way; to hell with you!; get rooted!; bugger you!",
+    "glosses": [
+     "have it your way",
+     "to hell with you!",
+     "get rooted!",
+     "bugger you!"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp",
+       "int"
+      ],
+      "glosses": [
+       "have it your way",
+       "to hell with you!",
+       "get rooted!",
+       "bugger you!"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "勝手",
+    "rank": 18625
+   },
+   {
+    "ent_seq": 1706590,
+    "word": "勝手口",
+    "reading": "かってぐち",
+    "readings": [
+     "かってぐち"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "kitchen door; back door; service door; tradesman's entrance; host's entrance to a tea-ceremony room",
+    "glosses": [
+     "kitchen door",
+     "back door",
+     "service door",
+     "tradesman's entrance",
+     "host's entrance to a tea-ceremony room"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "kitchen door",
+       "back door",
+       "service door",
+       "tradesman's entrance"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "host's entrance to a tea-ceremony room"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "勝手",
+    "rank": 24024
+   },
+   {
+    "ent_seq": 2839170,
+    "word": "勝手が違う",
+    "reading": "かってがちがう",
+    "readings": [
+     "かってがちがう"
+    ],
+    "pos": [
+     "exp",
+     "v5u"
+    ],
+    "meaning": "to be confusing; to be different from what one is used to",
+    "glosses": [
+     "to be confusing",
+     "to be different from what one is used to"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp",
+       "v5u"
+      ],
+      "glosses": [
+       "to be confusing",
+       "to be different from what one is used to"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "勝手",
+    "rank": 25613
+   },
+   {
+    "ent_seq": 2764140,
+    "word": "勝手知ったる",
+    "reading": "かってしったる",
+    "readings": [
+     "かってしったる"
+    ],
+    "pos": [
+     "exp",
+     "adj-f"
+    ],
+    "meaning": "well aware of; know thoroughly; being familiar with (and thus feeling no need for restraint)",
+    "glosses": [
+     "well aware of",
+     "know thoroughly",
+     "being familiar with (and thus feeling no need for restraint)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp",
+       "adj-f"
+      ],
+      "glosses": [
+       "well aware of",
+       "know thoroughly",
+       "being familiar with (and thus feeling no need for restraint)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "勝手",
+    "rank": 28212
+   },
+   {
+    "ent_seq": 2043010,
+    "word": "勝手気まま",
+    "reading": "かってきまま",
+    "readings": [
+     "かってきまま"
+    ],
+    "pos": [
+     "n",
+     "adj-na"
+    ],
+    "meaning": "self-willed; (doing or saying things) to suit one's own convenience; oblivious to the convenience of others",
+    "glosses": [
+     "self-willed",
+     "(doing or saying things) to suit one's own convenience",
+     "oblivious to the convenience of others"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "adj-na"
+      ],
+      "glosses": [
+       "self-willed",
+       "(doing or saying things) to suit one's own convenience",
+       "oblivious to the convenience of others"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "勝手",
+    "rank": 43865
+   },
+   {
+    "ent_seq": 2602800,
+    "word": "勝手ながら",
+    "reading": "かってながら",
+    "readings": [
+     "かってながら"
+    ],
+    "pos": [
+     "exp",
+     "pref"
+    ],
+    "meaning": "to allow oneself to ...; to take the liberty of ...; it is presumed that; (I, we) presume that; on one's own accord; by one's arbitrary decision",
+    "glosses": [
+     "to allow oneself to ...",
+     "to take the liberty of ...",
+     "it is presumed that",
+     "(I, we) presume that",
+     "on one's own accord",
+     "by one's arbitrary decision"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp",
+       "pref"
+      ],
+      "glosses": [
+       "to allow oneself to ...",
+       "to take the liberty of ..."
+      ]
+     },
+     {
+      "pos": [
+       "exp"
+      ],
+      "glosses": [
+       "it is presumed that",
+       "(I, we) presume that"
+      ]
+     },
+     {
+      "pos": [
+       "exp"
+      ],
+      "glosses": [
+       "on one's own accord",
+       "by one's arbitrary decision"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "勝手",
+    "rank": 45683
+   },
+   {
+    "ent_seq": 5368269,
+    "word": "勝手にしやがれ",
+    "reading": "かってにしやがれ",
+    "readings": [
+     "かってにしやがれ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "Breathless (1960 film); À bout de souffle",
+    "glosses": [
+     "Breathless (1960 film)",
+     "À bout de souffle"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "Breathless (1960 film)",
+       "À bout de souffle"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "勝手",
+    "rank": 69109
+   },
+   {
+    "ent_seq": 1706600,
+    "word": "勝手元",
+    "reading": "かってもと",
+    "readings": [
+     "かってもと"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "in and about a kitchen; family circumstances",
+    "glosses": [
+     "in and about a kitchen",
+     "family circumstances"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "in and about a kitchen",
+       "family circumstances"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "勝手",
+    "rank": 85031
+   },
+   {
+    "ent_seq": 2043020,
+    "word": "勝手放題",
+    "reading": "かってほうだい",
+    "readings": [
+     "かってほうだい"
+    ],
+    "pos": [
+     "n",
+     "adj-na",
+     "adj-no"
+    ],
+    "meaning": "at one's sweet will; doing whatever one pleases; however one pleases",
+    "glosses": [
+     "at one's sweet will",
+     "doing whatever one pleases",
+     "however one pleases"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "adj-na",
+       "adj-no"
+      ],
+      "glosses": [
+       "at one's sweet will",
+       "doing whatever one pleases",
+       "however one pleases"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "勝手",
+    "rank": 97271
+   },
+   {
+    "ent_seq": 1706610,
+    "word": "勝手次第",
+    "reading": "かってしだい",
+    "readings": [
+     "かってしだい"
+    ],
+    "pos": [
+     "adj-na",
+     "n"
+    ],
+    "meaning": "acting according to one's inclinations",
+    "glosses": [
+     "acting according to one's inclinations"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-na",
+       "n"
+      ],
+      "glosses": [
+       "acting according to one's inclinations"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "勝手",
+    "rank": 104096
+   },
+   {
+    "ent_seq": 1706620,
+    "word": "勝手向き",
+    "reading": "かってむき",
+    "readings": [
+     "かってむき"
+    ],
+    "pos": [
+     "adj-no",
+     "n"
+    ],
+    "meaning": "kitchen-related; cooking; household finances; financial circumstances",
+    "glosses": [
+     "kitchen-related",
+     "cooking",
+     "household finances",
+     "financial circumstances"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-no",
+       "n"
+      ],
+      "glosses": [
+       "kitchen-related",
+       "cooking"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "household finances",
+       "financial circumstances"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "勝手",
+    "rank": 127827
+   },
+   {
+    "ent_seq": 1346200,
+    "word": "勝手に",
+    "reading": "かってに",
+    "readings": [
+     "かってに"
+    ],
+    "pos": [
+     "adv"
+    ],
+    "meaning": "arbitrarily; of its own accord; without asking; voluntarily; willfully; as one pleases; selfishly; by itself; automatically",
+    "glosses": [
+     "arbitrarily",
+     "of its own accord",
+     "without asking",
+     "voluntarily",
+     "willfully",
+     "as one pleases",
+     "selfishly",
+     "by itself",
+     "automatically"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adv"
+      ],
+      "glosses": [
+       "arbitrarily",
+       "of its own accord",
+       "without asking",
+       "voluntarily",
+       "willfully",
+       "as one pleases",
+       "selfishly",
+       "by itself",
+       "automatically"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "勝手",
+    "rank": 9999999
+   },
+   {
+    "ent_seq": 2834391,
+    "word": "勝手アプリ",
+    "reading": "かってアプリ",
+    "readings": [
+     "かってアプリ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "mobile phone application installed without carrier approval (esp. on feature phones); unofficial app",
+    "glosses": [
+     "mobile phone application installed without carrier approval (esp. on feature phones)",
+     "unofficial app"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "mobile phone application installed without carrier approval (esp. on feature phones)",
+       "unofficial app"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "勝手",
+    "rank": 9999999
+   },
+   {
+    "ent_seq": 2854748,
+    "word": "勝手仕事",
+    "reading": "かってしごと",
+    "readings": [
+     "かってしごと"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "kitchen work; work in the kitchen; kitchen chores",
+    "glosses": [
+     "kitchen work",
+     "work in the kitchen",
+     "kitchen chores"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "kitchen work",
+       "work in the kitchen",
+       "kitchen chores"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "勝手",
+    "rank": 9999999
+   },
+   {
+    "ent_seq": 2866089,
+    "word": "勝手踏切",
+    "reading": "かってふみきり",
+    "readings": [
+     "かってふみきり"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "railroad crossing without a crossing gate",
+    "glosses": [
+     "railroad crossing without a crossing gate"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "railroad crossing without a crossing gate"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "勝手",
+    "rank": 9999999
+   }
+  ]
+ },
+ {
+  "selection": "ぶちまけ",
+  "candidates": [
+   {
+    "ent_seq": 1011150,
+    "word": "ブチ撒ける",
+    "reading": "ぶちまける",
+    "readings": [
+     "ぶちまける",
+     "ブチまける"
+    ],
+    "pos": [
+     "v1",
+     "vt"
+    ],
+    "meaning": "to dump (e.g. onto the floor); to empty by overturning; to throw out (the contents); to tell everything; to open one's heart; to reveal (a secret, the truth, etc.); to vent (e.g. one's anger)",
+    "glosses": [
+     "to dump (e.g. onto the floor)",
+     "to empty by overturning",
+     "to throw out (the contents)",
+     "to tell everything",
+     "to open one's heart",
+     "to reveal (a secret, the truth, etc.)",
+     "to vent (e.g. one's anger)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to dump (e.g. onto the floor)",
+       "to empty by overturning",
+       "to throw out (the contents)"
+      ]
+     },
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to tell everything",
+       "to open one's heart",
+       "to reveal (a secret, the truth, etc.)",
+       "to vent (e.g. one's anger)"
+      ]
+     }
+    ],
+    "reasons": [
+     "masu stem"
+    ],
+    "completed_from": null,
+    "rank": 6582
+   }
+  ]
+ },
+ {
+  "selection": "悠",
+  "candidates": [
+   {
+    "ent_seq": 2844201,
+    "word": "悠",
+    "reading": "ゆう",
+    "readings": [
+     "ゆう"
+    ],
+    "pos": [
+     "adj-nari"
+    ],
+    "meaning": "quiet; calm; leisurely; composed; distant; far-off; boundless; endless; eternal",
+    "glosses": [
+     "quiet",
+     "calm",
+     "leisurely",
+     "composed",
+     "distant",
+     "far-off",
+     "boundless",
+     "endless",
+     "eternal"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-nari"
+      ],
+      "glosses": [
+       "quiet",
+       "calm",
+       "leisurely",
+       "composed"
+      ]
+     },
+     {
+      "pos": [
+       "adj-nari"
+      ],
+      "glosses": [
+       "distant",
+       "far-off",
+       "boundless",
+       "endless",
+       "eternal"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 25465
+   },
+   {
+    "ent_seq": 1540700,
+    "word": "悠然",
+    "reading": "ゆうぜん",
+    "readings": [
+     "ゆうぜん"
+    ],
+    "pos": [
+     "adj-t",
+     "adv-to"
+    ],
+    "meaning": "calm; composed; leisurely",
+    "glosses": [
+     "calm",
+     "composed",
+     "leisurely"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-t",
+       "adv-to"
+      ],
+      "glosses": [
+       "calm",
+       "composed",
+       "leisurely"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "悠",
+    "rank": 9566
+   },
+   {
+    "ent_seq": 1540710,
+    "word": "悠長",
+    "reading": "ゆうちょう",
+    "readings": [
+     "ゆうちょう"
+    ],
+    "pos": [
+     "adj-na",
+     "n"
+    ],
+    "meaning": "leisurely; slow; deliberate; easygoing",
+    "glosses": [
+     "leisurely",
+     "slow",
+     "deliberate",
+     "easygoing"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-na",
+       "n"
+      ],
+      "glosses": [
+       "leisurely",
+       "slow",
+       "deliberate",
+       "easygoing"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "悠",
+    "rank": 9603
+   },
+   {
+    "ent_seq": 1605700,
+    "word": "悠々",
+    "reading": "ゆうゆう",
+    "readings": [
+     "ゆうゆう"
+    ],
+    "pos": [
+     "adj-t",
+     "adv-to",
+     "adv"
+    ],
+    "meaning": "quiet; calm; leisurely; composed; easily; comfortably; without difficulty; distant; far-off; boundless; endless; eternal",
+    "glosses": [
+     "quiet",
+     "calm",
+     "leisurely",
+     "composed",
+     "easily",
+     "comfortably",
+     "without difficulty",
+     "distant",
+     "far-off",
+     "boundless",
+     "endless",
+     "eternal"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-t",
+       "adv-to"
+      ],
+      "glosses": [
+       "quiet",
+       "calm",
+       "leisurely",
+       "composed"
+      ]
+     },
+     {
+      "pos": [
+       "adv-to",
+       "adv"
+      ],
+      "glosses": [
+       "easily",
+       "comfortably",
+       "without difficulty"
+      ]
+     },
+     {
+      "pos": [
+       "adj-t",
+       "adv-to"
+      ],
+      "glosses": [
+       "distant",
+       "far-off",
+       "boundless",
+       "endless",
+       "eternal"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "悠",
+    "rank": 10838
+   },
+   {
+    "ent_seq": 1540690,
+    "word": "悠久",
+    "reading": "ゆうきゅう",
+    "readings": [
+     "ゆうきゅう"
+    ],
+    "pos": [
+     "adj-no",
+     "adj-na",
+     "n"
+    ],
+    "meaning": "eternal; everlasting; perpetual; immemorial",
+    "glosses": [
+     "eternal",
+     "everlasting",
+     "perpetual",
+     "immemorial"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-no",
+       "adj-na",
+       "n"
+      ],
+      "glosses": [
+       "eternal",
+       "everlasting",
+       "perpetual",
+       "immemorial"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "悠",
+    "rank": 24318
+   },
+   {
+    "ent_seq": 1540680,
+    "word": "悠々自適",
+    "reading": "ゆうゆうじてき",
+    "readings": [
+     "ゆうゆうじてき"
+    ],
+    "pos": [
+     "adj-na",
+     "adj-no",
+     "n",
+     "vs",
+     "vi"
+    ],
+    "meaning": "living a life of leisure with dignity; living quietly and comfortably free from worldly cares; otium cum dignitate",
+    "glosses": [
+     "living a life of leisure with dignity",
+     "living quietly and comfortably free from worldly cares",
+     "otium cum dignitate"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-na",
+       "adj-no",
+       "n",
+       "vs",
+       "vi"
+      ],
+      "glosses": [
+       "living a life of leisure with dignity",
+       "living quietly and comfortably free from worldly cares",
+       "otium cum dignitate"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "悠",
+    "rank": 38668
+   },
+   {
+    "ent_seq": 1540720,
+    "word": "悠揚",
+    "reading": "ゆうよう",
+    "readings": [
+     "ゆうよう"
+    ],
+    "pos": [
+     "adj-t",
+     "adv-to"
+    ],
+    "meaning": "self-possessed; calm",
+    "glosses": [
+     "self-possessed",
+     "calm"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-t",
+       "adv-to"
+      ],
+      "glosses": [
+       "self-possessed",
+       "calm"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "悠",
+    "rank": 78362
+   },
+   {
+    "ent_seq": 2032940,
+    "word": "悠々閑々",
+    "reading": "ゆうゆうかんかん",
+    "readings": [
+     "ゆうゆうかんかん"
+    ],
+    "pos": [
+     "adj-t",
+     "adv-to"
+    ],
+    "meaning": "composed and unhurried; easygoing and leisurely; in indolence",
+    "glosses": [
+     "composed and unhurried",
+     "easygoing and leisurely",
+     "in indolence"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-t",
+       "adv-to"
+      ],
+      "glosses": [
+       "composed and unhurried",
+       "easygoing and leisurely",
+       "in indolence"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "悠",
+    "rank": 111861
+   },
+   {
+    "ent_seq": 1662390,
+    "word": "悠遠",
+    "reading": "ゆうえん",
+    "readings": [
+     "ゆうえん"
+    ],
+    "pos": [
+     "adj-na",
+     "n"
+    ],
+    "meaning": "faraway; remoteness",
+    "glosses": [
+     "faraway",
+     "remoteness"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-na",
+       "n"
+      ],
+      "glosses": [
+       "faraway",
+       "remoteness"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "悠",
+    "rank": 120192
+   },
+   {
+    "ent_seq": 2658290,
+    "word": "悠揚迫らぬ",
+    "reading": "ゆうようせまらぬ",
+    "readings": [
+     "ゆうようせまらぬ"
+    ],
+    "pos": [
+     "exp",
+     "adj-f"
+    ],
+    "meaning": "calm; composed",
+    "glosses": [
+     "calm",
+     "composed"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp",
+       "adj-f"
+      ],
+      "glosses": [
+       "calm",
+       "composed"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "悠",
+    "rank": 130222
+   },
+   {
+    "ent_seq": 2658410,
+    "word": "悠揚迫らず",
+    "reading": "ゆうようせまらず",
+    "readings": [
+     "ゆうようせまらず"
+    ],
+    "pos": [
+     "exp",
+     "adv"
+    ],
+    "meaning": "calmly; composedly",
+    "glosses": [
+     "calmly",
+     "composedly"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp",
+       "adv"
+      ],
+      "glosses": [
+       "calmly",
+       "composedly"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "悠",
+    "rank": 191547
+   },
+   {
+    "ent_seq": 1913950,
+    "word": "悠々自適の生活",
+    "reading": "ゆうゆうじてきのせいかつ",
+    "readings": [
+     "ゆうゆうじてきのせいかつ"
+    ],
+    "pos": [
+     "exp",
+     "n"
+    ],
+    "meaning": "life free from worldly cares",
+    "glosses": [
+     "life free from worldly cares"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "exp",
+       "n"
+      ],
+      "glosses": [
+       "life free from worldly cares"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "悠",
+    "rank": 9999999
+   }
+  ]
+ },
+ {
+  "selection": "ゆう",
+  "candidates": [
+   {
+    "ent_seq": 1587040,
+    "word": "言う",
+    "reading": "ゆう",
+    "readings": [
+     "いう",
+     "ゆう"
+    ],
+    "pos": [
+     "v5u",
+     "vt",
+     "vi"
+    ],
+    "meaning": "to say; to utter; to declare; to name; to call; to go (e.g. \"the alarm went ping\"); to make a noise",
+    "glosses": [
+     "to say",
+     "to utter",
+     "to declare",
+     "to name",
+     "to call",
+     "to go (e.g. \"the alarm went ping\")",
+     "to make a noise"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5u",
+       "vt"
+      ],
+      "glosses": [
+       "to say",
+       "to utter",
+       "to declare"
+      ]
+     },
+     {
+      "pos": [
+       "v5u",
+       "vt"
+      ],
+      "glosses": [
+       "to name",
+       "to call"
+      ]
+     },
+     {
+      "pos": [
+       "v5u",
+       "vi"
+      ],
+      "glosses": [
+       "to go (e.g. \"the alarm went ping\")",
+       "to make a noise"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 27
+   },
+   {
+    "ent_seq": 2844332,
+    "word": "友",
+    "reading": "ゆう",
+    "readings": [
+     "ゆう"
+    ],
+    "pos": [
+     "n",
+     "adj-na"
+    ],
+    "meaning": "friend; affection (for siblings)",
+    "glosses": [
+     "friend",
+     "affection (for siblings)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "friend"
+      ]
+     },
+     {
+      "pos": [
+       "n",
+       "adj-na"
+      ],
+      "glosses": [
+       "affection (for siblings)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 3856
+   },
+   {
+    "ent_seq": 1540940,
+    "word": "有",
+    "reading": "ゆう",
+    "readings": [
+     "ゆう"
+    ],
+    "pos": [
+     "n",
+     "n-pref"
+    ],
+    "meaning": "existence; possession; having; limited company",
+    "glosses": [
+     "existence",
+     "possession",
+     "having",
+     "limited company"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "existence"
+      ]
+     },
+     {
+      "pos": [
+       "n",
+       "n-pref"
+      ],
+      "glosses": [
+       "possession",
+       "having"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "limited company"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 8487
+   },
+   {
+    "ent_seq": 1539030,
+    "word": "優",
+    "reading": "ゆう",
+    "readings": [
+     "ゆう"
+    ],
+    "pos": [
+     "n",
+     "adj-na"
+    ],
+    "meaning": "Excellent (grade); A; superiority; excellence; gentle; graceful; elegant; skillful",
+    "glosses": [
+     "Excellent (grade)",
+     "A",
+     "superiority",
+     "excellence",
+     "gentle",
+     "graceful",
+     "elegant",
+     "skillful"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "Excellent (grade)",
+       "A"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "superiority",
+       "excellence"
+      ]
+     },
+     {
+      "pos": [
+       "adj-na"
+      ],
+      "glosses": [
+       "gentle",
+       "graceful",
+       "elegant"
+      ]
+     },
+     {
+      "pos": [
+       "adj-na"
+      ],
+      "glosses": [
+       "skillful"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9238
+   },
+   {
+    "ent_seq": 2836662,
+    "word": "雄",
+    "reading": "ゆう",
+    "readings": [
+     "ゆう"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "male; man; excellence; greatness; best (of); great person; leading figure",
+    "glosses": [
+     "male",
+     "man",
+     "excellence",
+     "greatness",
+     "best (of)",
+     "great person",
+     "leading figure"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "male",
+       "man"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "excellence",
+       "greatness",
+       "best (of)",
+       "great person",
+       "leading figure"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9925
+   },
+   {
+    "ent_seq": 1254600,
+    "word": "結う",
+    "reading": "ゆう",
+    "readings": [
+     "ゆう",
+     "いう"
+    ],
+    "pos": [
+     "v5u",
+     "vt"
+    ],
+    "meaning": "to do up (hair); to dress; to arrange; to tie; to bind; to fasten; to make (a fence)",
+    "glosses": [
+     "to do up (hair)",
+     "to dress",
+     "to arrange",
+     "to tie",
+     "to bind",
+     "to fasten",
+     "to make (a fence)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5u",
+       "vt"
+      ],
+      "glosses": [
+       "to do up (hair)",
+       "to dress",
+       "to arrange"
+      ]
+     },
+     {
+      "pos": [
+       "v5u",
+       "vt"
+      ],
+      "glosses": [
+       "to tie",
+       "to bind",
+       "to fasten",
+       "to make (a fence)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 11981
+   },
+   {
+    "ent_seq": 2834885,
+    "word": "夕",
+    "reading": "ゆう",
+    "readings": [
+     "ゆう"
+    ],
+    "pos": [
+     "n",
+     "adv"
+    ],
+    "meaning": "evening",
+    "glosses": [
+     "evening"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "adv"
+      ],
+      "glosses": [
+       "evening"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 12234
+   },
+   {
+    "ent_seq": 1539650,
+    "word": "勇",
+    "reading": "ゆう",
+    "readings": [
+     "ゆう"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "bravery; courage; heroism",
+    "glosses": [
+     "bravery",
+     "courage",
+     "heroism"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "bravery",
+       "courage",
+       "heroism"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 15326
+   },
+   {
+    "ent_seq": 2261050,
+    "word": "木綿",
+    "reading": "ゆう",
+    "readings": [
+     "ゆう"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "string made of cut steamed, soaked mulberry bark fibers",
+    "glosses": [
+     "string made of cut steamed, soaked mulberry bark fibers"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "string made of cut steamed, soaked mulberry bark fibers"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 22767
+   },
+   {
+    "ent_seq": 2844201,
+    "word": "悠",
+    "reading": "ゆう",
+    "readings": [
+     "ゆう"
+    ],
+    "pos": [
+     "adj-nari"
+    ],
+    "meaning": "quiet; calm; leisurely; composed; distant; far-off; boundless; endless; eternal",
+    "glosses": [
+     "quiet",
+     "calm",
+     "leisurely",
+     "composed",
+     "distant",
+     "far-off",
+     "boundless",
+     "endless",
+     "eternal"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-nari"
+      ],
+      "glosses": [
+       "quiet",
+       "calm",
+       "leisurely",
+       "composed"
+      ]
+     },
+     {
+      "pos": [
+       "adj-nari"
+      ],
+      "glosses": [
+       "distant",
+       "far-off",
+       "boundless",
+       "endless",
+       "eternal"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 25465
+   },
+   {
+    "ent_seq": 1605750,
+    "word": "柚子",
+    "reading": "ゆう",
+    "readings": [
+     "ゆず",
+     "ゆ",
+     "ゆう",
+     "ユズ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "yuzu (Citrus ichangensis x C. reticulata)",
+    "glosses": [
+     "yuzu (Citrus ichangensis x C. reticulata)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "yuzu (Citrus ichangensis x C. reticulata)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 31291
+   },
+   {
+    "ent_seq": 2813860,
+    "word": "尤",
+    "reading": "ゆう",
+    "readings": [
+     "ゆう"
+    ],
+    "pos": [
+     "adj-nari"
+    ],
+    "meaning": "superb; outstanding",
+    "glosses": [
+     "superb",
+     "outstanding"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-nari"
+      ],
+      "glosses": [
+       "superb",
+       "outstanding"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 35047
+   },
+   {
+    "ent_seq": 1586000,
+    "word": "釉薬",
+    "reading": "ゆう",
+    "readings": [
+     "うわぐすり",
+     "ゆうやく",
+     "ゆう"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "glaze; enamel",
+    "glosses": [
+     "glaze",
+     "enamel"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "glaze",
+       "enamel"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 62770
+   },
+   {
+    "ent_seq": 1538920,
+    "word": "唯一",
+    "reading": "ゆいいつ",
+    "readings": [
+     "ゆいいつ",
+     "ゆいつ",
+     "ゆういつ"
+    ],
+    "pos": [
+     "adj-no",
+     "n",
+     "adv"
+    ],
+    "meaning": "only; sole; unique",
+    "glosses": [
+     "only",
+     "sole",
+     "unique"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-no",
+       "n",
+       "adv"
+      ],
+      "glosses": [
+       "only",
+       "sole",
+       "unique"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "ゆう",
+    "rank": 1213
+   },
+   {
+    "ent_seq": 1605640,
+    "word": "憂鬱",
+    "reading": "ゆううつ",
+    "readings": [
+     "ゆううつ"
+    ],
+    "pos": [
+     "n",
+     "adj-na"
+    ],
+    "meaning": "depression; melancholy; dejection; gloom; despondency",
+    "glosses": [
+     "depression",
+     "melancholy",
+     "dejection",
+     "gloom",
+     "despondency"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "adj-na"
+      ],
+      "glosses": [
+       "depression",
+       "melancholy",
+       "dejection",
+       "gloom",
+       "despondency"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "ゆう",
+    "rank": 6837
+   },
+   {
+    "ent_seq": 1541090,
+    "word": "有意義",
+    "reading": "ゆういぎ",
+    "readings": [
+     "ゆういぎ"
+    ],
+    "pos": [
+     "adj-na"
+    ],
+    "meaning": "significant; useful; meaningful; worthwhile; valuable; of interest",
+    "glosses": [
+     "significant",
+     "useful",
+     "meaningful",
+     "worthwhile",
+     "valuable",
+     "of interest"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-na"
+      ],
+      "glosses": [
+       "significant",
+       "useful",
+       "meaningful",
+       "worthwhile",
+       "valuable",
+       "of interest"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "ゆう",
+    "rank": 11444
+   }
+  ]
+ },
+ {
+  "selection": "々",
+  "candidates": [
+   {
+    "ent_seq": 1000060,
+    "word": "々",
+    "reading": "のま",
+    "readings": [
+     "のま",
+     "ノマ"
+    ],
+    "pos": [
+     "unc"
+    ],
+    "meaning": "kanji repetition mark",
+    "glosses": [
+     "kanji repetition mark"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "unc"
+      ],
+      "glosses": [
+       "kanji repetition mark"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999
+   }
+  ]
+ },
+ {
+  "selection": "え",
+  "candidates": [
+   {
+    "ent_seq": 2122310,
+    "word": "え",
+    "reading": "え",
+    "readings": [
+     "え"
+    ],
+    "pos": [
+     "int",
+     "prt"
+    ],
+    "meaning": "eh?; what?; oh?; yes; that's correct; used for soft emphasis or to soften a statement or request; strengthens a question, assertion, etc.; hey",
+    "glosses": [
+     "eh?",
+     "what?",
+     "oh?",
+     "yes",
+     "that's correct",
+     "used for soft emphasis or to soften a statement or request",
+     "strengthens a question, assertion, etc.",
+     "hey"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "int"
+      ],
+      "glosses": [
+       "eh?",
+       "what?",
+       "oh?"
+      ]
+     },
+     {
+      "pos": [
+       "int"
+      ],
+      "glosses": [
+       "yes",
+       "that's correct"
+      ]
+     },
+     {
+      "pos": [
+       "prt"
+      ],
+      "glosses": [
+       "used for soft emphasis or to soften a statement or request"
+      ]
+     },
+     {
+      "pos": [
+       "prt"
+      ],
+      "glosses": [
+       "strengthens a question, assertion, etc."
+      ]
+     },
+     {
+      "pos": [
+       "prt"
+      ],
+      "glosses": [
+       "hey"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 456
+   },
+   {
+    "ent_seq": 1202270,
+    "word": "絵",
+    "reading": "え",
+    "readings": [
+     "え",
+     "が"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "picture; drawing; painting; sketch; image (TV, film, etc.); picture; footage",
+    "glosses": [
+     "picture",
+     "drawing",
+     "painting",
+     "sketch",
+     "image (TV, film, etc.)",
+     "picture",
+     "footage"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "picture",
+       "drawing",
+       "painting",
+       "sketch"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "image (TV, film, etc.)",
+       "picture",
+       "footage"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 1630
+   },
+   {
+    "ent_seq": 1198160,
+    "word": "会",
+    "reading": "え",
+    "readings": [
+     "え"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "gathering (esp. Buddhist, festive, etc.)",
+    "glosses": [
+     "gathering (esp. Buddhist, festive, etc.)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "gathering (esp. Buddhist, festive, etc.)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 1936
+   },
+   {
+    "ent_seq": 1177490,
+    "word": "縁",
+    "reading": "え",
+    "readings": [
+     "えん",
+     "えにし",
+     "えに",
+     "え"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "fate; destiny (esp. as a mysterious force that binds two people together); relationship (e.g. between two people); bond; link; connection; family ties; affinity; opportunity; chance (to meet someone and start a relationship); pratyaya (indirect conditions, as opposed to direct causes); narrow open-air veranda",
+    "glosses": [
+     "fate",
+     "destiny (esp. as a mysterious force that binds two people together)",
+     "relationship (e.g. between two people)",
+     "bond",
+     "link",
+     "connection",
+     "family ties",
+     "affinity",
+     "opportunity",
+     "chance (to meet someone and start a relationship)",
+     "pratyaya (indirect conditions, as opposed to direct causes)",
+     "narrow open-air veranda"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "fate",
+       "destiny (esp. as a mysterious force that binds two people together)"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "relationship (e.g. between two people)",
+       "bond",
+       "link",
+       "connection"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "family ties",
+       "affinity"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "opportunity",
+       "chance (to meet someone and start a relationship)"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "pratyaya (indirect conditions, as opposed to direct causes)"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "narrow open-air veranda"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 2425
+   },
+   {
+    "ent_seq": 1508290,
+    "word": "柄",
+    "reading": "え",
+    "readings": [
+     "え"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "handle; grip; stalk (of a mushroom, leaf, etc.)",
+    "glosses": [
+     "handle",
+     "grip",
+     "stalk (of a mushroom, leaf, etc.)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "handle",
+       "grip"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "stalk (of a mushroom, leaf, etc.)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 3529
+   },
+   {
+    "ent_seq": 1173340,
+    "word": "餌",
+    "reading": "え",
+    "readings": [
+     "えさ",
+     "え",
+     "エサ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "(animal) feed; fodder; pet food; bait; lure; enticement",
+    "glosses": [
+     "(animal) feed",
+     "fodder",
+     "pet food",
+     "bait",
+     "lure",
+     "enticement"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "(animal) feed",
+       "fodder",
+       "pet food"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "bait",
+       "lure",
+       "enticement"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 3863
+   },
+   {
+    "ent_seq": 1335730,
+    "word": "重",
+    "reading": "え",
+    "readings": [
+     "え"
+    ],
+    "pos": [
+     "suf",
+     "ctr"
+    ],
+    "meaning": "-fold; -ply",
+    "glosses": [
+     "-fold",
+     "-ply"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "suf",
+       "ctr"
+      ],
+      "glosses": [
+       "-fold",
+       "-ply"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 5635
+   },
+   {
+    "ent_seq": 1279860,
+    "word": "江",
+    "reading": "え",
+    "readings": [
+     "え"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "inlet; bay",
+    "glosses": [
+     "inlet",
+     "bay"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "inlet",
+       "bay"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 11083
+   },
+   {
+    "ent_seq": 2743950,
+    "word": "恵",
+    "reading": "え",
+    "readings": [
+     "え"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "wisdom; enlightenment; prajñā (one of the three divisions of the noble eightfold path); wisdom",
+    "glosses": [
+     "wisdom",
+     "enlightenment",
+     "prajñā (one of the three divisions of the noble eightfold path)",
+     "wisdom"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "wisdom",
+       "enlightenment"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "prajñā (one of the three divisions of the noble eightfold path)",
+       "wisdom"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 13827
+   },
+   {
+    "ent_seq": 1173300,
+    "word": "荏",
+    "reading": "え",
+    "readings": [
+     "え"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "egoma (type of perilla); Perilla frutescens var. frutescens",
+    "glosses": [
+     "egoma (type of perilla)",
+     "Perilla frutescens var. frutescens"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "egoma (type of perilla)",
+       "Perilla frutescens var. frutescens"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 74465
+   },
+   {
+    "ent_seq": 2064450,
+    "word": "艮",
+    "reading": "え",
+    "readings": [
+     "ごん",
+     "こん",
+     "え"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "gen (one of the trigrams of the I Ching: mountain, northeast)",
+    "glosses": [
+     "gen (one of the trigrams of the I Ching: mountain, northeast)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "gen (one of the trigrams of the I Ching: mountain, northeast)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999
+   },
+   {
+    "ent_seq": 1588760,
+    "word": "得る",
+    "reading": "える",
+    "readings": [
+     "える"
+    ],
+    "pos": [
+     "v1",
+     "vt",
+     "aux-v"
+    ],
+    "meaning": "to get; to earn; to acquire; to procure; to gain; to secure; to attain; to obtain; to win; to understand; to comprehend; to receive something undesirable (e.g. a punishment); to get (ill); to be able to ..., can ...",
+    "glosses": [
+     "to get",
+     "to earn",
+     "to acquire",
+     "to procure",
+     "to gain",
+     "to secure",
+     "to attain",
+     "to obtain",
+     "to win",
+     "to understand",
+     "to comprehend",
+     "to receive something undesirable (e.g. a punishment)",
+     "to get (ill)",
+     "to be able to ..., can ..."
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to get",
+       "to earn",
+       "to acquire",
+       "to procure",
+       "to gain",
+       "to secure",
+       "to attain",
+       "to obtain",
+       "to win"
+      ]
+     },
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to understand",
+       "to comprehend"
+      ]
+     },
+     {
+      "pos": [
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to receive something undesirable (e.g. a punishment)",
+       "to get (ill)"
+      ]
+     },
+     {
+      "pos": [
+       "aux-v",
+       "v1",
+       "vt"
+      ],
+      "glosses": [
+       "to be able to ..., can ..."
+      ]
+     }
+    ],
+    "reasons": [
+     "masu stem"
+    ],
+    "completed_from": null,
+    "rank": 340
+   },
+   {
+    "ent_seq": 1605820,
+    "word": "良い",
+    "reading": "よい",
+    "readings": [
+     "よい",
+     "えい"
+    ],
+    "pos": [
+     "adj-i",
+     "suf"
+    ],
+    "meaning": "good; excellent; fine; nice; pleasant; agreeable; sufficient; enough; ready; prepared; profitable (deal, business offer, etc.); beneficial; OK; all right; fine; no problem; easy to ...",
+    "glosses": [
+     "good",
+     "excellent",
+     "fine",
+     "nice",
+     "pleasant",
+     "agreeable",
+     "sufficient",
+     "enough",
+     "ready",
+     "prepared",
+     "profitable (deal, business offer, etc.)",
+     "beneficial",
+     "OK",
+     "all right",
+     "fine",
+     "no problem",
+     "easy to ..."
+    ],
+    "senses": [
+     {
+      "pos": [
+       "adj-i"
+      ],
+      "glosses": [
+       "good",
+       "excellent",
+       "fine",
+       "nice",
+       "pleasant",
+       "agreeable"
+      ]
+     },
+     {
+      "pos": [
+       "adj-i"
+      ],
+      "glosses": [
+       "sufficient",
+       "enough",
+       "ready",
+       "prepared"
+      ]
+     },
+     {
+      "pos": [
+       "adj-i"
+      ],
+      "glosses": [
+       "profitable (deal, business offer, etc.)",
+       "beneficial"
+      ]
+     },
+     {
+      "pos": [
+       "adj-i"
+      ],
+      "glosses": [
+       "OK",
+       "all right",
+       "fine",
+       "no problem"
+      ]
+     },
+     {
+      "pos": [
+       "suf",
+       "adj-i"
+      ],
+      "glosses": [
+       "easy to ..."
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "え",
+    "rank": 139
+   },
+   {
+    "ent_seq": 1001140,
+    "word": "ええ",
+    "reading": "ええ",
+    "readings": [
+     "ええ",
+     "えー",
+     "え〜",
+     "えーー",
+     "えーっ"
+    ],
+    "pos": [
+     "int",
+     "adj-f"
+    ],
+    "meaning": "yes; that is correct; right; um; errr; well; huh?; grrr; gah; must I?; good",
+    "glosses": [
+     "yes",
+     "that is correct",
+     "right",
+     "um",
+     "errr",
+     "well",
+     "huh?",
+     "grrr",
+     "gah",
+     "must I?",
+     "good"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "int"
+      ],
+      "glosses": [
+       "yes",
+       "that is correct",
+       "right"
+      ]
+     },
+     {
+      "pos": [
+       "int"
+      ],
+      "glosses": [
+       "um",
+       "errr",
+       "well"
+      ]
+     },
+     {
+      "pos": [
+       "int"
+      ],
+      "glosses": [
+       "huh?"
+      ]
+     },
+     {
+      "pos": [
+       "int"
+      ],
+      "glosses": [
+       "grrr",
+       "gah",
+       "must I?"
+      ]
+     },
+     {
+      "pos": [
+       "adj-f"
+      ],
+      "glosses": [
+       "good"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "え",
+    "rank": 469
+   },
+   {
+    "ent_seq": 1001150,
+    "word": "えっと",
+    "reading": "えっと",
+    "readings": [
+     "えっと",
+     "えと",
+     "えーと",
+     "えーっと",
+     "え〜と",
+     "ええと",
+     "ええっと",
+     "えーーっと",
+     "えーーーっと",
+     "えーーーーっと"
+    ],
+    "pos": [
+     "int"
+    ],
+    "meaning": "let me see; well; errr ...; uhh ...",
+    "glosses": [
+     "let me see",
+     "well",
+     "errr ...",
+     "uhh ..."
+    ],
+    "senses": [
+     {
+      "pos": [
+       "int"
+      ],
+      "glosses": [
+       "let me see",
+       "well",
+       "errr ...",
+       "uhh ..."
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "え",
+    "rank": 1370
+   },
+   {
+    "ent_seq": 1174070,
+    "word": "永遠",
+    "reading": "えいえん",
+    "readings": [
+     "えいえん"
+    ],
+    "pos": [
+     "n",
+     "adj-no",
+     "adj-na"
+    ],
+    "meaning": "eternity; perpetuity; permanence; immortality",
+    "glosses": [
+     "eternity",
+     "perpetuity",
+     "permanence",
+     "immortality"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "adj-no",
+       "adj-na"
+      ],
+      "glosses": [
+       "eternity",
+       "perpetuity",
+       "permanence",
+       "immortality"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "え",
+    "rank": 2049
+   }
+  ]
+ },
+ {
+  "selection": "ー",
+  "candidates": [
+   {
+    "ent_seq": 1607150,
+    "word": "ー",
+    "reading": "ー",
+    "readings": [
+     "ー"
+    ],
+    "pos": [
+     "unc"
+    ],
+    "meaning": "long-vowel mark",
+    "glosses": [
+     "long-vowel mark"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "unc"
+      ],
+      "glosses": [
+       "long-vowel mark"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999
+   }
+  ]
+ }
+]

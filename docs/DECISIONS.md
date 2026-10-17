@@ -103,3 +103,41 @@ Decisions made during implementation, newest last. LOCKED decisions live in
 - **Phase 1 accepted by the user (2026-10-17).** Pages were reviewed on the
   device and in the preview, and typography was chosen from proofs. Next:
   Phase 2 (lookup engine in Go).
+
+## 2026-10-17 (Phase 2)
+
+- **Lookup engine:** `reader/internal/dict`.
+  - It's a port of the vendored Calibre `deinflect.py`, `jmdict.py` and
+    `lookup.py`. The Yomichan rules are embedded verbatim, and are read in file
+    order, because Python dict order is part of result order.
+  - SQLite is `modernc.org/sqlite` (pure Go). The static ARM binary works on
+    the Kindle.
+- **Golden fixtures:** `tools/gen_fixtures.py` writes them to `testdata/`. They
+  cover deinflection, partial-inflection completion, `lookup_candidates`, the
+  tap scan (both policies), Kaishi fields and sentence extraction. Go
+  reproduces deinflection, lookup and scan exactly, and the tests were checked
+  to fail on corrupted fixtures.
+- **The tap scan's reference is in Python,** `tools/reference_scan.py`, built on
+  the Calibre modules, because Calibre has no tap scan. The Go scan batches all
+  queries (exact matches, entries, ranks); the reference does per-term queries.
+  Both sort completely (ent_seq as the last key), so they agree.
+- **No partial-inflection completion in the scan.** The text after a tap holds
+  the whole inflection, and completing the 16-character window never yields a
+  word. Completion matters only for a hand-shortened span (span adjust, plan
+  §7.5), which uses `LookupCandidates`, the Calibre port, completions included.
+  This changes how plan §7.2's "partial inflections" bullet is implemented.
+- **Ranking policies:**
+  - `longest` (default) sorts by (source_len desc, chain asc, rank asc).
+  - `frequency` sorts by (rank asc, source_len desc, chain asc).
+  - For 蜘蛛の巣, `longest` puts 蜘蛛の巣 first and `frequency` puts 蜘蛛 first.
+    Which should be the default is still open (plan §7.3), to be decided in
+    Phase 4 testing.
+- **jmdict.sqlite gets `ent_seq` indexes** (`tools/prepare_jmdict.py`). The
+  Calibre file lacks them, so every entry fetch was a full table scan. Row
+  order is unchanged.
+- **Timings:**
+  - Desktop: the worst cold scan over a 55-character sentence takes 1.2 ms
+    (Python `lookup_candidates` took up to 460 ms).
+  - Kindle: scans take 20–47 ms (139 ms when nothing matches), and
+    `LookupCandidates` takes 180 ms. That's well inside the 700 ms
+    tap-to-popup budget.
