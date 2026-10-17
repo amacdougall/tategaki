@@ -100,3 +100,6 @@ Decisions made during implementation, newest last. LOCKED decisions live in
   - **Fix:** ruby bands are extended one ruby em leftward into the base
     column, so they always merge. Checked for ruby-only bands from 8 to
     18 pt in two chapters, and a regression test was added.
+- **Phase 1 accepted by the user (2026-10-17).** Pages were reviewed on the
+  device and in the preview, and typography was chosen from proofs. Next:
+  Phase 2 (lookup engine in Go).
