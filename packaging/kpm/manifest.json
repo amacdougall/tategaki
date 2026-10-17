@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "id": "tategaki",
+  "name": "Tategaki Reader",
+  "author": "Alan MacDougall",
+  "description": "Vertical Japanese ebook reader with tap lookup and Anki mining.",
+  "version": [
+    0,
+    0,
+    1
+  ],
+  "dependencies": [],
+  "supported_platforms": [
+    "kindlehf"
+  ]
+}

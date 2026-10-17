@@ -20,3 +20,18 @@ Decisions made during implementation, newest last. LOCKED decisions live in
   what it does.
 - **KPM calls in scripts always use `-y` and `</dev/null`**, after the
   interactive-prompt failure.
+- **Phase 0 complete.** The KPM package (`packaging/kpm/`) installs, launches
+  from the Library and over SSH, pauses and restores the Kindle UI, and
+  survives sleep, wake and SIGKILL.
+- **FBInk:** use the CLI, not cgo, and the vendored 1.25.0 libkh build, because
+  it is the only one on hand with image support. Latencies are in DEVICE.md.
+- **UI pause and restore live in `launch.sh`** (KOReader's FW ≥ 5.12.4 recipe:
+  pillow off, SIGSTOP awesome, framebuffer dump and restore, home booklet), with
+  `trap … EXIT`. No `wmctrl`.
+- **No `preventScreenSaver`,** because it disables the power button. The reader
+  calls `touchScreenSaverTimeout` on input, at most every 30 s.
+- **Helper processes get `Pdeathsig=SIGKILL`,** so a crashed reader doesn't
+  leave `lipc-wait-event` running.
+- **Package id** is `tategaki`, and the Library entry is "Tategaki Reader". The
+  package is versioned 0.0.x until the project is renamed (plan §11, open
+  question 5).

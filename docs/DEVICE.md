@@ -24,9 +24,9 @@ device.
 - Each row is **1248 bytes** (`stride`/`lineLength`), so every row has 12 padding
   bytes. Don't assume `width == stride`.
 - `virtual_size` is 1248×3296, i.e. two buffers.
-- **FBInk reports `viewVertOrigin=8`:** the visible image starts 8 rows down in
-  the buffer. FBInk handles this; it only matters if we ever write to
-  `/dev/fb0` directly.
+- **The visible image starts at buffer row 0** (`pan` is `0,0`). FBInk reports
+  `viewVertOrigin=8`, but its draws at y=0 land on row 0 (checked 2026-10-17).
+  `tools/fbshot.py` crops rows 0–1647.
 - `rotate=3`, `currentRota=3`, `canRotate=0`.
 - FBInk also reports `isMTK=1`, `canHWInvert=1`, `hasEclipseWfm=1` and
   `canWaitForSubmission=1`.
@@ -40,8 +40,10 @@ device.
 - `/mnt/us/koreader/fbink`: `-e` works and reports `FBINK_VERSION='92e1270'`.
   `strings` finds "1.25.0 for Kindle", probably from this binary; this isn't
   certain.
-- **Ship our own** `kindlehf` FBInk in the package, as plan §4 says. Don't rely
-  on either of these.
+- **Image support:** the libkh build is FBInk 1.25.0 with `Image=Yes`. KOReader's
+  build has `Image=No`, even though its `--help` lists `-g`.
+- **We vendor the libkh build** as `third_party/fbink/kindlehf/fbink` and ship
+  it inside our package (see `third_party/fbink/README.md`).
 
 ### Input devices (`/proc/bus/input/devices`)
 
@@ -52,11 +54,57 @@ device.
 
 Discover these at runtime by name; don't hardcode the event numbers.
 
+**Touch (verified with corner taps, 2026-10-17):**
+- `ABS_MT_POSITION_X` is 0..1235 and `ABS_MT_POSITION_Y` is 0..1647, the same as
+  screen pixels.
+- No axis swap or mirroring: raw coordinates are screen coordinates in portrait.
+- `ABS_MT_SLOT` 0..31, multitouch protocol B.
+- **Power key:** `EV_KEY` code 116 (`KEY_POWER`) on `event0`. powerd handles
+  sleep by itself; the reader doesn't need to read this device.
+
+## Power and sleep (verified 2026-10-17)
+
+- **Events:** `lipc-wait-event -m -s 0 com.lab126.powerd '*'` emits
+  `goingToScreenSaver 2`, `outOfScreenSaver 1`, `exitingScreenSaver` and
+  `t1TimerReset`. Redraw on `outOfScreenSaver`.
+- **Don't set `preventScreenSaver 1`.** It blocks the idle timeout, but it also
+  makes the power button do nothing.
+- **Instead, reset the idle timer** on input with
+  `lipc-set-prop com.lab126.powerd touchScreenSaverTimeout 1`. This sets
+  "Remaining time" back to `screenSaverTimeout` (600 s).
+- With `awesome` stopped, sleeping turns the frontlight off and leaves our
+  image on screen. Waking needs no unlock with the current settings.
+
+## Display latency (FBInk CLI, measured on device 2026-10-17)
+
+| Operation | Time |
+|---|---|
+| Full-screen 1236×1648 PNG, GC16 + flash, from the Go app | 64–77 ms |
+| The same, right after waking | 319–389 ms |
+| 24×24 PNG region, DU | about 13 ms |
+
+The CLI is well under the 250 ms page-turn budget, so we stay on the CLI and
+don't need cgo (plan §9 Phase 0).
+
+## Launching and stopping
+
+- **Package install:** `kpm -y install file:///mnt/us/...kpkg` works with KPM
+  0.2.2. Reinstalling the same version fails dependency resolution, so
+  `tools/dev-install.sh` uninstalls first.
+- **Library launch:** `documents/tategaki.sh` runs
+  `kpm launch tategaki </dev/null`. Tested 2026-10-17.
+- **Launch over SSH:**
+  `ssh kindle 'nohup /var/local/kmc/bin/kpm launch tategaki </dev/null >/dev/null 2>&1 &'`
+- **Stop over SSH:** `ssh kindle killall tategaki`. Even `killall -9` restores
+  the UI, through the `launch.sh` trap. Verified by screenshot.
+- **Log:** `/mnt/us/tategaki/log.txt`
+- **Screenshot:** `uv run --with pillow tools/fbshot.py out.png`
+
 ### Tools on the device
 
 - **Present:** `evtest`, `lipc-set-prop`, `lipc-wait-event`, `sqlite3`, busybox,
   `tar`, `gzip`.
-- **Missing:** `fbgrab`, `evemu-*`, `rsync`, `python3`, `scp`.
+- **Missing:** `fbgrab`, `evemu-*`, `rsync`, `python3`, `scp`, and `evtest` output is unusable over SSH (buffered). Use `/mnt/us/tategaki/bin/evinfo` (`reader/cmd/evinfo`) instead.
   - `scp` from the Mac still works, because OpenSSH 9.9's `scp` uses SFTP and the
     device has `sftp-server`.
   - **Without `rsync`, `tategaki deploy` must use `scp`/`sftp` or
