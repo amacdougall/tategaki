@@ -50,6 +50,7 @@ func main() {
 	simMode := flag.Bool("sim", false, "run the desktop simulator instead of driving a Kindle")
 	listen := flag.String("listen", "localhost:8800", "simulator address")
 	hello := flag.Bool("hello", false, "run the Phase 0 bring-up test")
+	dictPath := flag.String("dict", "", "jmdict.sqlite (default: <root>/jmdict.sqlite, then the repo's data/)")
 	flag.Parse()
 	log.SetFlags(log.Ldate | log.Ltime | log.Lmicroseconds)
 	log.Printf("tategaki starting, pid %d", os.Getpid())
@@ -57,14 +58,14 @@ func main() {
 		*idle = 1<<63 - 1
 	}
 
-	if err := run(*fbinkBin, *tmp, *root, findFonts(*fontDir), *idle, *simMode, *listen, *hello); err != nil {
+	if err := run(*fbinkBin, *tmp, *root, findFonts(*fontDir), *dictPath, *idle, *simMode, *listen, *hello); err != nil {
 		log.Printf("fatal: %v", err)
 		os.Exit(1)
 	}
 	log.Printf("clean exit")
 }
 
-func run(fbinkBin, tmp, root, fontDir string, idle time.Duration, simMode bool, listen string, hello bool) error {
+func run(fbinkBin, tmp, root, fontDir, dictPath string, idle time.Duration, simMode bool, listen string, hello bool) error {
 	if simMode && tmp == "/var/tmp/tategaki" {
 		tmp = filepath.Join(os.TempDir(), "tategaki-sim")
 	}
@@ -103,6 +104,7 @@ func run(fbinkBin, tmp, root, fontDir string, idle time.Duration, simMode bool, 
 		return err
 	}
 	app := ui.New(disp, fonts, config.Paths{Root: root}, tmp)
+	app.DictPaths = []string{dictPath, "data/jmdict.sqlite", "../data/jmdict.sqlite"}
 	app.Start()
 	return ev.loop(func(g input.Gesture) bool {
 		app.Gesture(g)

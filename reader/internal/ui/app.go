@@ -3,16 +3,19 @@
 package ui
 
 import (
+	"fmt"
 	"image"
 	"image/color"
 	"image/draw"
 	"log"
 	"os"
+	"path/filepath"
 	"strings"
 	"time"
 
 	"github.com/amacdougall/tategaki/reader/internal/book"
 	"github.com/amacdougall/tategaki/reader/internal/config"
+	"github.com/amacdougall/tategaki/reader/internal/dict"
 	"github.com/amacdougall/tategaki/reader/internal/display"
 	"github.com/amacdougall/tategaki/reader/internal/input"
 	"github.com/amacdougall/tategaki/reader/internal/text"
@@ -41,6 +44,28 @@ type App struct {
 	pageTurns int
 	// fullNext forces the next page draw to flash (after a UI screen).
 	fullNext bool
+	// DictPaths are tried in order when the dictionary is first needed.
+	DictPaths []string
+	dictDB    *dict.DB
+	dictErr   error
+}
+
+// Dict opens the dictionary on first use.
+func (a *App) Dict() (*dict.DB, error) {
+	if a.dictDB != nil || a.dictErr != nil {
+		return a.dictDB, a.dictErr
+	}
+	paths := append([]string{filepath.Join(a.Paths.Root, "jmdict.sqlite")}, a.DictPaths...)
+	for _, p := range paths {
+		if _, err := os.Stat(p); err == nil {
+			start := time.Now()
+			a.dictDB, a.dictErr = dict.Open(p)
+			log.Printf("dictionary %s opened in %v (err %v)", p, time.Since(start).Round(time.Millisecond), a.dictErr)
+			return a.dictDB, a.dictErr
+		}
+	}
+	a.dictErr = fmt.Errorf("no jmdict.sqlite (tried %v); run `tategaki deploy`", paths)
+	return nil, a.dictErr
 }
 
 // New creates the app; Start shows the library.

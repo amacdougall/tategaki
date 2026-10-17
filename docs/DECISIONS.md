@@ -170,3 +170,42 @@ Decisions made during implementation, newest last. LOCKED decisions live in
   the built books into `./simroot` (git-ignored), so its state is separate from
   the Kindle's.
 - **Phase 3 accepted by the user (2026-10-17)** after testing on the device.
+
+## 2026-10-17 (Phase 4)
+
+- **Ranking default stays `longest`.** The user confirmed it after testing
+  (plan §7.3, open question 3): "Greedily finding the longest dictionary entry
+  starting from the cursor is fine, given that we have the frequency ranks."
+- **Taps:**
+  - A tap on a lookupable character always looks it up. That includes the
+    first characters of every column, which sit inside the menu's top strip,
+    and the outer columns, which sit inside the plan's edge zones.
+  - The menu opens from the margin or gaps in the top strip.
+  - Pages turn by swiping, or by tapping blank space: left half next, right
+    half previous.
+  - `edge_zone_pct` therefore has no separate effect.
+- **Highlight:** a side-line on the *left* of each column. Plan §7.4 said
+  right, but in vertical text the ruby is on the right.
+- **Popup** (user's choices after trying it):
+  - It covers 3/4 of the screen, on the side away from the tapped character.
+    Four collapsed entries fit per sheet page.
+  - Swipe up/down to page (a "1 / 2" indicator shows when there's more).
+  - A × close button sits at the upper right. There are no ▲▼ buttons.
+  - Tap a row to select it (the highlight follows) and tap again to expand all
+    senses.
+  - ◀ ▶ shorten or extend the span end and re-run `LookupCandidates`.
+  - The raw row shows when nothing matches.
+- **The dictionary is deployed by `tategaki deploy`** to
+  `/mnt/us/tategaki/jmdict.sqlite`, sent only when its sha256 changes. It isn't
+  in the KPM package, so app reinstalls stay small. Plan §6.1 placed it in the
+  package.
+- **Timings:**
+  - Kindle: tap-to-popup 218–369 ms over 11 real lookups (scan 4–114 ms). The
+    budget is 700 ms.
+  - Simulator: about 20 ms.
+- **Test book:** `tools/make_test_epub.py` writes `books/lookup-test`
+  (辞書テスト) with the plan's example sentences.
+- **Converter rebuild hash** now covers only rendering sources
+  (`RENDER_SOURCES` in `library.py`), so CLI or deploy edits don't re-render
+  every book.
+- **Phase 4 accepted (2026-10-17).**

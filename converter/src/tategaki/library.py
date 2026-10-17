@@ -11,17 +11,24 @@ from importlib import resources
 from pathlib import Path
 
 from .config import BookConfig, Library
-from .convert import convert, sha256
+from .convert import JMDICT, convert, sha256
 from .render import Profile, RenderSettings
 
 DEVICE_ROOT = '/mnt/us/tategaki'
 
 
+# Source files whose changes alter a rendered bundle. CLI, config and deploy
+# code are left out so editing them doesn't re-render every book.
+RENDER_SOURCES = ['bundle.py', 'convert.py', 'epub.py', 'images.py', 'layout.js', 'paginate.py',
+                  'render.py', 'sentences.py', 'reference/furigana.py', 'reference/deinflect.py',
+                  'reference/deinflect_rules.json', 'reference/jmdict.py', 'profiles/pw11.json']
+
+
 def _code_hash() -> str:
-    """Hash of the converter's own source, so code changes trigger rebuilds."""
+    """Hash of the rendering code, so converter changes trigger rebuilds."""
     h = hashlib.sha256()
     pkg = resources.files('tategaki')
-    for name in sorted(p.name for p in pkg.iterdir() if p.name.endswith(('.py', '.js'))):
+    for name in RENDER_SOURCES:
         h.update(name.encode())
         h.update(pkg.joinpath(name).read_bytes())
     return h.hexdigest()[:16]
@@ -146,6 +153,22 @@ class UsbTarget:
         (self.root / 'books' / '.deployed.json').write_text(json.dumps(hashes))
 
 
+def deploy_dictionary(target, deployed: dict, force: bool, log=print) -> None:
+    """Send data/jmdict.sqlite when it changed. It lives in the reader's data
+    folder rather than the KPM package, so app reinstalls don't resend 54 MB."""
+    if not JMDICT.exists():
+        log(f'dictionary: {JMDICT} missing (run tools/prepare_jmdict.py); skipping')
+        return
+    h = sha256(JMDICT)
+    if not force and deployed.get('_jmdict') == h:
+        log('dictionary: already on device')
+        return
+    log(f'dictionary: sending {JMDICT.stat().st_size / 1e6:.0f} MB')
+    target.put(JMDICT, f'{DEVICE_ROOT}/jmdict.sqlite')
+    deployed['_jmdict'] = h
+    target.save_hashes(deployed)
+
+
 def deploy(lib: Library, ids: list[str], settings_only: bool = False, usb: Path | None = None,
            force: bool = False, log=print) -> None:
     target = UsbTarget(usb, log) if usb else SshTarget(lib.device['ssh_host'], log)
@@ -158,6 +181,8 @@ def deploy(lib: Library, ids: list[str], settings_only: bool = False, usb: Path 
     log('config.json deployed')
 
     deployed = target.hashes()
+    if not settings_only:
+        deploy_dictionary(target, deployed, force, log)
     for book_id in ids or lib.book_ids():
         book = lib.book(book_id)
         write_sidecar(book)

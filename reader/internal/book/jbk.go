@@ -174,13 +174,14 @@ func (b *Book) TOCTitle(page int) string {
 }
 
 // ExtractPage writes page n's PNG to dir and returns its path. FBInk needs a
-// file, and /var/tmp is tmpfs, so this is cheap.
+// file, and /var/tmp is tmpfs, so this is cheap. Each page gets its own name
+// so a background decode of one page can't see another being written.
 func (b *Book) ExtractPage(n int, dir string) (string, error) {
 	data, err := b.read(fmt.Sprintf("pages/%05d.png", n))
 	if err != nil {
 		return "", err
 	}
-	path := filepath.Join(dir, "page.png")
+	path := filepath.Join(dir, fmt.Sprintf("page-%05d.png", n))
 	tmp := path + ".tmp"
 	if err := os.WriteFile(tmp, data, 0o644); err != nil {
 		return "", err
