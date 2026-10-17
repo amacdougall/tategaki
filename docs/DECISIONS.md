@@ -141,3 +141,32 @@ Decisions made during implementation, newest last. LOCKED decisions live in
   - Kindle: scans take 20–47 ms (139 ms when nothing matches), and
     `LookupCandidates` takes 180 ms. That's well inside the 700 ms
     tap-to-popup budget.
+
+## 2026-10-17 (Phase 3)
+
+- **Startup resumes** the most recently read book at its saved place,
+  requested by the user. The library opens instead if there's no history or
+  that book has been removed. This replaces plan §8.1's "library first".
+- **Positions:**
+  - `state.json` stores `{chapter, offset, image, page, page_count}`. Offset
+    is the first glyph on the page; for an illustration page it's the offset of
+    the text after it, with `image: true`. `page` breaks ties between pages that
+    share a position (the halves of a split spread).
+  - The mapping round-trips for every page of the test book, and an offset
+    from another layout lands on the page containing it (ready for Phase 6
+    size variants).
+- **UI font:** BIZ UDPGothic Regular/Bold (TrueType, OFL), shipped in the
+  package's `fonts/`. `x/image` may not handle CID-keyed CJK OpenType fonts.
+  The font has no ⌫ glyph, so the keypad says "Del".
+- **UI images reach FBInk as raw PGM files on tmpfs.** FBInk's stb_image reads
+  PGM, so the device never has to compress PNGs.
+- **The paused Kindle UI can still draw for a few seconds after launch,** for
+  example the home screen finishing a redraw. The reader redraws its screen
+  2 s and 5 s after starting (`settle`).
+- **Sleep shows no screensaver:** with `awesome` stopped, the e-ink keeps our
+  page when the device sleeps. The user said this is fine for now. A "sleeping"
+  cover screen could be drawn on `goingToScreenSaver` later.
+- **Simulator:** run `tools/sim.sh` and open http://localhost:8800. It links
+  the built books into `./simroot` (git-ignored), so its state is separate from
+  the Kindle's.
+- **Phase 3 accepted by the user (2026-10-17)** after testing on the device.

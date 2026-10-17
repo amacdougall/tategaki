@@ -7,6 +7,7 @@ import (
 	"image/color"
 	"image/draw"
 	"log"
+	"os"
 	"strings"
 	"time"
 
@@ -73,8 +74,20 @@ func (a *App) redraw() {
 	}
 }
 
-// Start opens the library.
-func (a *App) Start() { a.Show(NewLibrary(a)) }
+// Start resumes the most recently read book at its saved place, or opens the
+// library if there is none (or it has been removed).
+func (a *App) Start() {
+	if id := a.State.State.LastBook; id != "" {
+		if _, err := os.Stat(a.Paths.Book(id)); err == nil {
+			if err := a.OpenBook(id); err == nil {
+				return
+			} else {
+				log.Printf("resume %s: %v", id, err)
+			}
+		}
+	}
+	a.Show(NewLibrary(a))
+}
 
 // Quit ends the event loop.
 func (a *App) Quit() { a.quit = true }
