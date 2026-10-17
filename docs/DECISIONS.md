@@ -35,3 +35,57 @@ Decisions made during implementation, newest last. LOCKED decisions live in
 - **Package id** is `tategaki`, and the Library entry is "Tategaki Reader". The
   package is versioned 0.0.x until the project is renamed (plan §11, open
   question 5).
+
+## 2026-10-17 (Phase 1)
+
+- **No LICENSE file.** At the user's request, ignore the plan's GPL-3.0 note.
+- **Library location:** `~/Tategaki/` (plan default). The test book is
+  `books/toradora-01/` (`toradora_01.epub`, copied from the Kindle). Fonts live
+  in `~/Tategaki/fonts/`: Noto Serif JP (default), Shippori Mincho and
+  BIZ UDPMincho, all OFL.
+- **Desktop entry point:** `bin/tategaki` wraps `uv run tategaki` (build,
+  deploy, preview, proof, convert).
+- **Pagination: strip slicing worked**, so there's no Vivliostyle fallback. The
+  first whole-book render took 31 s for 279 pages.
+  - **Bands come from em boxes,** not client rects. Chromium's per-character
+    rects span the font's ascent and descent (about 1.45 em for Noto CJK), and
+    ruby boxes bridged the inter-column gap, merging up to four columns into
+    one uncuttable band. Using em boxes (column centre ± font-size/2, plus the
+    ruby characters' em boxes) gives one band per column, plus ruby. Glyph
+    boxes for hit testing are still the real client rects.
+  - **Each page image extends halfway into the gaps on either side** (at most
+    12 px), so ink slightly outside an em box isn't clipped.
+- **deviceScaleFactor is 1:** CSS px are device px, and the root font size is
+  `pt * dpi / 72` px. The book CSS is em-based, so this is equivalent and
+  avoids a fractional viewport.
+- **Book JS is disabled** (`kobo.js` etc.). Pages load to `domcontentloaded`,
+  because the `load` event never fired for this book. With JS disabled,
+  Chromium can't call back into JS (for example, `TreeWalker` filter
+  callbacks), so `layout.js` filters by hand.
+- **Illustrations embedded in chapters** (a block containing only one
+  `<img>`/`<svg><image>`, which is how this book does all of its mid-chapter
+  plates) are cut out of the text strip and become full-screen illustration
+  pages at that point. The plan only described whole-spine-item
+  illustrations; both now work.
+- **Ruby from the book:** per-character ruby (`苛<rt>いら</rt>立<rt>だ</rt>`) is
+  grouped as in `furigana.pyj`. The furigana JS is a direct port, and the
+  ranker is the vendored `FuriganaRanker` (`converter/src/tategaki/reference/`).
+- **Sentence spans: the plan needs a decision here (§5.4, §7.6).** The
+  reference algorithm is offset-dependent, not a splitter. Tapping inside a
+  multi-sentence quotation yields the inner sentence; tapping outside it yields
+  the whole enclosing sentence. A fixed partition of spans can't express that.
+  - **What we did:** the `.jbk` stores a partition (each span is "the sentence
+    that starts here"), and tests check it against the reference at every span
+    start. `sentence_bounds` reproduces the reference at every offset.
+  - **Recommendation for Phase 5:** port the ~40-line scan to Go and run it on
+    the device over the paragraph text, instead of using stored spans. Then
+    mining matches Calibre exactly.
+- **Deploy uses `scp` with temp-file-then-`mv`,** not rsync. The device keeps
+  `books/.deployed.json` (book id → build_hash) to skip unchanged books.
+- **Rebuild detection:** `build_hash` covers the EPUB, the resolved render
+  settings, the font file contents, the profile, and a hash of the converter's
+  own source, so converter changes rebuild books automatically.
+- **Phase 3 preview slice:** the device binary now opens the newest `.jbk` in a
+  minimal page viewer (tap left half = next, right half = previous, top strip =
+  exit), so proof sheets can be judged in hand. `-hello` keeps the Phase 0
+  test.

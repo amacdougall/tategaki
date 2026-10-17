@@ -1,0 +1,8 @@
+{
+  "name": "pw11",
+  "description": "Kindle Paperwhite 11th gen (2021), verified on device 2026-10-17",
+  "width": 1236,
+  "height": 1648,
+  "dpi": 300,
+  "margins": {"top": 84, "right": 72, "bottom": 84, "left": 72}
+}

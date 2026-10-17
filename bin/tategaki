@@ -1,0 +1,3 @@
+#!/bin/sh
+# Run the desktop converter CLI (build, deploy, preview, proof, convert).
+exec uv run --quiet --project "$(cd "$(dirname "$0")/.." && pwd)/converter" tategaki "$@"
