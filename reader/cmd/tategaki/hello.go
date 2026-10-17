@@ -24,9 +24,9 @@ const (
 
 var exitBox = image.Rect(screenW/2-200, screenH/2-100, screenW/2+200, screenH/2+100)
 
-func runHello(s *session) error {
-	pattern := filepath.Join(s.tmp, "pattern.png")
-	dot := filepath.Join(s.tmp, "marker.png")
+func runHello(fb *display.FBInk, ev *events) error {
+	pattern := filepath.Join(fb.Tmp, "pattern.png")
+	dot := filepath.Join(fb.Tmp, "marker.png")
 	if err := writePNG(pattern, testPattern()); err != nil {
 		return err
 	}
@@ -35,34 +35,34 @@ func runHello(s *session) error {
 	}
 
 	redraw := func(reason string) {
-		d, err := s.fb.Image(pattern, 0, 0, display.WaveformGC16, true)
+		d, err := fb.File(pattern, 0, 0, display.Full)
 		if err != nil {
 			log.Printf("draw pattern: %v", err)
 			return
 		}
 		log.Printf("LATENCY full-screen GC16+flash image: %v (%s)", d, reason)
-		s.fb.Text(3, 3, "TATEGAKI PHASE 0")
-		s.fb.Text(8, 2, "Tap anywhere: a dot should appear under your finger")
-		s.fb.Text(26, 4, "EXIT")
+		fb.Text(3, 3, "TATEGAKI PHASE 0")
+		fb.Text(8, 2, "Tap anywhere: a dot should appear under your finger")
+		fb.Text(26, 4, "EXIT")
 	}
 	redraw("startup")
 
-	return s.loop(func(t input.Touch) bool {
-		log.Printf("TAP down=(%d,%d) up=(%d,%d) raw=(%d,%d) held=%v %s",
-			t.X0, t.Y0, t.X1, t.Y1, t.RawX0, t.RawY0, t.Duration.Round(time.Millisecond), describe(t.X0, t.Y0))
-		if image.Pt(t.X0, t.Y0).In(exitBox) {
+	return ev.loop(func(t input.Gesture) bool {
+		log.Printf("%v down=(%d,%d) up=(%d,%d) held=%v %s",
+			t.Kind, t.X, t.Y, t.X1, t.Y1, t.Duration.Round(time.Millisecond), describe(t.X, t.Y))
+		if image.Pt(t.X, t.Y).In(exitBox) {
 			log.Printf("EXIT tapped")
 			return true
 		}
-		x := clamp(t.X0-marker/2, 0, screenW-marker)
-		y := clamp(t.Y0-marker/2, 0, screenH-marker)
-		if d, err := s.fb.Image(dot, x, y, display.WaveformDU, false); err != nil {
+		x := clamp(t.X-marker/2, 0, screenW-marker)
+		y := clamp(t.Y-marker/2, 0, screenH-marker)
+		if d, err := fb.File(dot, x, y, display.Fast); err != nil {
 			log.Printf("draw marker: %v", err)
 		} else {
 			log.Printf("LATENCY region %dx%d DU image: %v", marker, marker, d)
 		}
 		return false
-	}, func() { redraw("wake") })
+	}, func() { redraw("wake") }, nil)
 }
 
 func describe(x, y int) string {

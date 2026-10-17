@@ -4,3 +4,4 @@ __pycache__/
 data/jmdict.sqlite
 converter/.venv/
 .pytest_cache/
+simroot/

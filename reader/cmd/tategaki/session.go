@@ -9,7 +9,6 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/amacdougall/tategaki/reader/internal/display"
 	"github.com/amacdougall/tategaki/reader/internal/input"
 	"github.com/amacdougall/tategaki/reader/internal/kindle"
 )
@@ -19,68 +18,74 @@ const (
 	screenH = 1648
 )
 
-// session owns the device for one run: display, touch, power events and
-// signals.
-type session struct {
-	fb        *display.FBInk
-	tmp       string
-	idle      time.Duration
-	touch     *input.Device
-	touches   <-chan input.Touch
-	power     <-chan string
-	stopPower func()
-	sigs      chan os.Signal
+// events is everything the app reacts to: gestures, wake-ups and signals.
+// The device and the simulator fill it from different sources.
+type events struct {
+	gestures <-chan input.Gesture
+	power    <-chan string    // com.lab126.powerd events (device only)
+	wake     <-chan struct{}  // simulated wake (sim only)
+	settle   <-chan time.Time // post-launch redraws (device only)
+	sigs     chan os.Signal
+	idle     time.Duration
+	// onInput runs on every gesture (the device resets powerd's idle timer).
+	onInput func()
 }
 
-func newSession(fb *display.FBInk, tmp string, idle time.Duration) (*session, error) {
-	if err := os.MkdirAll(tmp, 0o755); err != nil {
-		return nil, err
-	}
-	s := &session{fb: fb, tmp: tmp, idle: idle, stopPower: func() {}}
+func newSignals() chan os.Signal {
+	sigs := make(chan os.Signal, 1)
+	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM, syscall.SIGHUP)
+	return sigs
+}
+
+// deviceEvents opens the touchscreen and powerd's event stream.
+func deviceEvents(idle time.Duration) (*events, func(), error) {
 	touch, err := input.FindByName("pt_mt")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	s.touch = touch
 	ax, _ := touch.Abs(input.AbsMTPosX)
 	ay, _ := touch.Abs(input.AbsMTPosY)
 	mapping := input.Mapping{MaxX: int(ax.Maximum), MaxY: int(ay.Maximum), Width: screenW, Height: screenH}
 	log.Printf("touch device %s %q, mapping %+v", touch.Path, touch.Name, mapping)
-	s.touches = input.Touches(touch, mapping)
 
+	ev := &events{gestures: input.Gestures(input.Touches(touch, mapping)), sigs: newSignals(), idle: idle}
+	settle := make(chan time.Time, 2)
+	ev.settle = settle
+	for _, d := range []time.Duration{2 * time.Second, 5 * time.Second} {
+		time.AfterFunc(d, func() { settle <- time.Now() })
+	}
+	stopPower := func() {}
 	if power, stop, err := kindle.PowerEvents(); err != nil {
 		log.Printf("power events unavailable: %v", err)
 	} else {
-		s.power, s.stopPower = power, stop
+		ev.power, stopPower = power, stop
 	}
-	s.sigs = make(chan os.Signal, 1)
-	signal.Notify(s.sigs, syscall.SIGINT, syscall.SIGTERM, syscall.SIGHUP)
-	return s, nil
+	var lastReset time.Time
+	ev.onInput = func() {
+		if time.Since(lastReset) > 30*time.Second {
+			lastReset = time.Now()
+			go kindle.ResetIdleTimer()
+		}
+	}
+	return ev, func() { stopPower(); touch.Close() }, nil
 }
 
-func (s *session) close() {
-	s.stopPower()
-	s.touch.Close()
-}
-
-// loop dispatches events until onTouch returns true, a signal arrives, or the
-// idle timeout passes. onWake runs when the device leaves the screensaver.
-func (s *session) loop(onTouch func(input.Touch) bool, onWake func()) error {
-	timer := time.NewTimer(s.idle)
-	var lastIdleReset time.Time
-	power := s.power
+// loop dispatches events until onGesture returns true, a signal arrives, or
+// the idle timeout passes.
+func (e *events) loop(onGesture func(input.Gesture) bool, onWake, onSettle func()) error {
+	timer := time.NewTimer(e.idle)
+	power := e.power
 	for {
 		select {
-		case t, ok := <-s.touches:
+		case g, ok := <-e.gestures:
 			if !ok {
-				return fmt.Errorf("touch device closed")
+				return fmt.Errorf("touch input closed")
 			}
-			timer.Reset(s.idle)
-			if time.Since(lastIdleReset) > 30*time.Second {
-				lastIdleReset = time.Now()
-				go kindle.ResetIdleTimer()
+			timer.Reset(e.idle)
+			if e.onInput != nil {
+				e.onInput()
 			}
-			if onTouch(t) {
+			if onGesture(g) {
 				return nil
 			}
 		case ev, ok := <-power:
@@ -93,11 +98,17 @@ func (s *session) loop(onTouch func(input.Touch) bool, onWake func()) error {
 			if strings.HasPrefix(ev, "outOfScreenSaver") {
 				onWake()
 			}
-		case sig := <-s.sigs:
+		case <-e.wake:
+			onWake()
+		case <-e.settle:
+			if onSettle != nil {
+				onSettle()
+			}
+		case sig := <-e.sigs:
 			log.Printf("signal %v", sig)
 			return nil
 		case <-timer.C:
-			log.Printf("idle for %v, exiting", s.idle)
+			log.Printf("idle for %v, exiting", e.idle)
 			return nil
 		}
 	}

@@ -38,13 +38,16 @@ def main() -> int:
     for name in ("manifest.json", "install.sh", "launch.sh", "uninstall.sh"):
         shutil.copy2(PKG_SRC / name, STAGE / name)
     shutil.copytree(PKG_SRC / "scriptlets", STAGE / "scriptlets")
+    (STAGE / "fonts").mkdir()
+    for font in ("BIZUDPGothic-Regular.ttf", "BIZUDPGothic-Bold.ttf", "OFL.txt"):
+        shutil.copy2(ROOT / "data" / "fonts" / font, STAGE / "fonts" / font)
 
     out = BUILD / f"{manifest['id']}_{version}_{platform}.kpkg"
 
     def clean(info: tarfile.TarInfo) -> tarfile.TarInfo:
         info.uid = info.gid = 0
         info.uname = info.gname = "root"
-        if info.isdir() or info.name.endswith(".sh") or "/bin/" in f"/{info.name}":
+        if info.isdir() or info.name.endswith(".sh") or info.name.startswith("bin/"):
             info.mode = 0o755
         else:
             info.mode = 0o644
