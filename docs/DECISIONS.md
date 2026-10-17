@@ -209,3 +209,37 @@ Decisions made during implementation, newest last. LOCKED decisions live in
   (`RENDER_SOURCES` in `library.py`), so CLI or deploy edits don't re-render
   every book.
 - **Phase 4 accepted (2026-10-17).**
+
+## 2026-10-17 (Phase 5)
+
+- **Mined fields match the Calibre viewer:**
+  - Word = the entry's headword (so ひいき in the text is mined as 贔屓)
+  - Word Reading
+  - Word Meaning = every gloss, joined with "; "
+  - Sentence
+  - Duplicates are checked with `canAddNotes`, collection-wide.
+- **Sentences are extracted on the device** from the paragraph text, with a Go
+  port of `extract_sentence`, speaker tags included, as proposed in Phase 1.
+  The bundle's stored sentence spans aren't used for mining. All 26 golden
+  cases match the reference.
+- **AnkiConnect uses an API key** (`anki_api_key`), as the user chose. The
+  user's other AnkiConnect clients (Calibre fork, sentence-builder scripts) were
+  updated by the user. The setup is in `docs/ANKI.md`.
+- **Button and menu labels:**
+  - Popup row: `+ Anki` until mined, then a gray status: Queued, Added ✓,
+    Exists, Error.
+  - Menu: "Send to Anki (n)", which reports "x sent, y skipped".
+- **Flushes:**
+  - Each card is sent right after it's queued (2 s timeout).
+  - Manual: Menu → Send to Anki.
+  - Startup: one attempt. Retrying while Wi-Fi reconnects was tried and
+    dropped at the user's request, since it's an edge case and not worth the
+    code.
+  - Flushes are serialised, so a card is never sent twice.
+- **Per-book deck:** `toradora-01` uses deck とらドラ！ with tags
+  `tategaki`, `とらドラ`.
+- **Phase 5 accepted (2026-10-17)** after on-device tests:
+  - A new card (贔屓, note 1792276449257) was added.
+  - Existing words were reported as Exists.
+  - Cards queued in airplane mode were reported as unreachable, then sent by
+    hand: 1 sent, 1 skipped.
