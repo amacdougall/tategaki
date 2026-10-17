@@ -121,7 +121,7 @@ func (a *App) redraw() {
 // was unreachable are sent in the background.
 func (a *App) Start() {
 	if a.Queue.Pending() > 0 {
-		a.FlushAnki(nil)
+		a.flushWithRetries([]time.Duration{30 * time.Second, 2 * time.Minute})
 	}
 	if id := a.State.State.LastBook; id != "" {
 		if _, err := os.Stat(a.Paths.Book(id)); err == nil {
@@ -148,6 +148,19 @@ func (a *App) Gesture(g input.Gesture) {
 		log.Printf("%T %v: %v", screen, g.Kind, err)
 	}
 	log.Printf("%v at (%d,%d) on %T handled in %v", g.Kind, g.X, g.Y, screen, time.Since(start).Round(time.Millisecond))
+}
+
+// flushWithRetries sends queued cards now, retrying after each delay while
+// Anki is unreachable: at launch the Kindle may still be rejoining Wi-Fi.
+func (a *App) flushWithRetries(delays []time.Duration) {
+	a.FlushAnki(func(res anki.FlushResult) {
+		if res.Unavailable == nil || len(delays) == 0 {
+			return
+		}
+		time.AfterFunc(delays[0], func() {
+			a.Post(func() { a.flushWithRetries(delays[1:]) })
+		})
+	})
 }
 
 // Refresh redraws the current screen without forcing a flash. Used shortly

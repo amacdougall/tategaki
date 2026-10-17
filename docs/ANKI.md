@@ -63,7 +63,10 @@ a word is a duplicate if a Kaishi note with that `Word` exists in **any** deck.
   offline.
   - The reader tries to send each card right away, waiting up to 2 seconds.
   - **Menu → Send to Anki (n)** retries everything still queued.
-  - Waiting cards are also retried each time the reader starts.
+  - Waiting cards are also retried each time the reader starts, and again
+    30 seconds and 2 minutes later if Anki is still unreachable (the Kindle
+    may still be rejoining Wi-Fi, for example after airplane mode).
+  - The result reads "x sent, y skipped". Skipped cards were already in Anki.
 
 ## Without Wi-Fi (USB fallback)
 

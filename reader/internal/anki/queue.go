@@ -173,7 +173,7 @@ func (r FlushResult) String() string {
 	}
 	parts := []string{fmt.Sprintf("%d sent", r.Sent)}
 	if r.Duplicates > 0 {
-		parts = append(parts, fmt.Sprintf("%d already in Anki", r.Duplicates))
+		parts = append(parts, fmt.Sprintf("%d skipped", r.Duplicates)) // already in Anki
 	}
 	if r.Errors > 0 {
 		parts = append(parts, fmt.Sprintf("%d failed", r.Errors))
