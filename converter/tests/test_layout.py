@@ -72,3 +72,13 @@ def test_paragraph_spans(collected):
     text = data['text']
     spans = _paragraphs(text)
     assert [text[a:b] for a, b in spans] == text.split('\n')
+
+
+def test_ruby_bands_merge_with_their_base_column(collected):
+    from tategaki.paginate import merge_bands
+    _, _, data = collected
+    merged = merge_bands([tuple(b) for b in data['bands']])
+    glyph_cols = merge_bands([(g[1] + g[3] / 2 - 1, g[1] + g[3] / 2 + 1) for g in data['glyphs']])
+    # every merged band contains at least one glyph column: no ruby-only bands
+    for a, b in merged:
+        assert any(a <= x0 and x1 <= b for x0, x1 in glyph_cols), (a, b)

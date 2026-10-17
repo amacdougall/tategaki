@@ -89,3 +89,14 @@ Decisions made during implementation, newest last. LOCKED decisions live in
   minimal page viewer (tap left half = next, right half = previous, top strip =
   exit), so proof sheets can be judged in hand. `-hello` keeps the Phase 0
   test.
+- **Default typography: Noto Serif JP at 14 pt, line height 1.75,** chosen by
+  the user from on-device proofs (8–16 pt) so it reads without glasses. That
+  gives about 10 columns per page; the book comes to 557 pages.
+- **Bug fix: furigana could be paginated away from its base word.**
+  - **Symptom:** at 16 pt, the ruby of 高須竜児 appeared at the left edge of
+    the previous page.
+  - **Cause:** a ruby em box can sit a fraction of a pixel away from its base
+    column, so the ruby formed its own band.
+  - **Fix:** ruby bands are extended one ruby em leftward into the base
+    column, so they always merge. Checked for ruby-only bands from 8 to
+    18 pt in two chapters, and a regression test was added.

@@ -168,11 +168,15 @@
     // so they and the ruby boxes bridge the gaps between columns and would
     // merge neighbouring columns into one uncuttable band.
     const fontSizes = new Map();
-    const emBand = (el, box) => {
+    // A ruby band is extended leftward (vertical-rl puts ruby on the right of
+    // its base) by one ruby em, into its base column, so the two always merge:
+    // the ruby em box alone may not quite touch the base, and the paginator
+    // would then be free to cut between a word and its furigana.
+    const emBand = (el, box, isRuby = false) => {
       let fs = fontSizes.get(el);
       if (fs === undefined) { fs = parseFloat(getComputedStyle(el).fontSize) || box[2]; fontSizes.set(el, fs); }
       const cx = box[0] + box[2] / 2;
-      bands.push([cx - fs / 2, cx + fs / 2]);
+      bands.push([cx - fs / 2 - (isRuby ? fs : 0), cx + fs / 2]);
     };
     for (const el of document.body.querySelectorAll('rt')) {
       const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
@@ -181,7 +185,7 @@
         for (const ch of t.nodeValue) {
           range.setStart(t, j); range.setEnd(t, j + ch.length); j += ch.length;
           const box = unionRect(range.getClientRects());
-          if (box && !ASCII_WS.test(ch)) emBand(t.parentElement, box);
+          if (box && !ASCII_WS.test(ch)) emBand(t.parentElement, box, true);
         }
       }
     }
