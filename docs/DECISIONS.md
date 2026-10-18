@@ -243,3 +243,19 @@ Decisions made during implementation, newest last. LOCKED decisions live in
   - Existing words were reported as Exists.
   - Cards queued in airplane mode were reported as unreachable, then sent by
     hand: 1 sent, 1 skipped.
+
+## 2026-10-17 (Phase 6: dark mode)
+
+- **Menu → Dark mode: On/Off** toggles the Kindle's own dark mode, requested
+  by the user to avoid exiting to the home screen.
+  - **The setting:** `com.lab126.winmgr epdcMode`, `Y8` (normal) or `Y8INV`
+    (dark). It's hardware inversion, so the reader's FBInk drawing inverts
+    with no changes of ours, and the setting persists after exit.
+  - **How it was found:** by probing every LIPC property on the device.
+    KOReader inverts per refresh instead and doesn't use this setting.
+  - **winmgr is `awesome`,** which launch.sh SIGSTOPs, so LIPC calls to it
+    hang while the reader runs. The toggle runs `SIGCONT awesome` →
+    `lipc-set-prop` (5 s timeout) → `SIGSTOP awesome`, then redraws the page
+    with a full refresh. The user saw no flicker.
+  - **Startup state:** launch.sh reads `epdcMode` before pausing awesome and
+    passes it as `TATEGAKI_EPDC_MODE`.

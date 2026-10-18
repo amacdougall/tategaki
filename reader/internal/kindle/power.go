@@ -6,8 +6,11 @@ package kindle
 
 import (
 	"bufio"
+	"context"
+	"fmt"
 	"os/exec"
 	"strings"
+	"time"
 )
 
 // PowerEvents streams com.lab126.powerd event lines (for example
@@ -44,4 +47,28 @@ func PowerEvents() (<-chan string, func(), error) {
 // (preventScreenSaver is not used: it also blocks the power button.)
 func ResetIdleTimer() error {
 	return exec.Command("lipc-set-prop", "com.lab126.powerd", "touchScreenSaverTimeout", "1").Run()
+}
+
+// Dark mode is the system's hardware inversion, com.lab126.winmgr epdcMode
+// (Y8 normal, Y8INV dark). winmgr is awesome, which launch.sh SIGSTOPs while
+// the reader runs, so the property is set with awesome briefly resumed.
+const (
+	EPDCNormal = "Y8"
+	EPDCDark   = "Y8INV"
+)
+
+// SetDarkMode switches the system dark mode.
+func SetDarkMode(dark bool) error {
+	mode := EPDCNormal
+	if dark {
+		mode = EPDCDark
+	}
+	exec.Command("killall", "-CONT", "awesome").Run()
+	defer exec.Command("killall", "-STOP", "awesome").Run()
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+	if out, err := exec.CommandContext(ctx, "lipc-set-prop", "com.lab126.winmgr", "epdcMode", mode).CombinedOutput(); err != nil {
+		return fmt.Errorf("lipc-set-prop epdcMode %s: %v: %s", mode, err, out)
+	}
+	return nil
 }

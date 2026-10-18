@@ -17,6 +17,7 @@ import (
 	"github.com/amacdougall/tategaki/reader/internal/config"
 	"github.com/amacdougall/tategaki/reader/internal/display"
 	"github.com/amacdougall/tategaki/reader/internal/input"
+	"github.com/amacdougall/tategaki/reader/internal/kindle"
 	"github.com/amacdougall/tategaki/reader/internal/sim"
 	"github.com/amacdougall/tategaki/reader/internal/text"
 	"github.com/amacdougall/tategaki/reader/internal/ui"
@@ -106,6 +107,10 @@ func run(fbinkBin, tmp, root, fontDir, dictPath string, idle time.Duration, simM
 	app := ui.New(disp, fonts, config.Paths{Root: root}, tmp)
 	app.DictPaths = []string{dictPath, "data/jmdict.sqlite", "../data/jmdict.sqlite"}
 	ev.updates = app.Updates()
+	if !simMode {
+		app.Dark = os.Getenv("TATEGAKI_EPDC_MODE") == kindle.EPDCDark
+		app.SetDark = kindle.SetDarkMode
+	}
 	app.Start()
 	return ev.loop(func(g input.Gesture) bool {
 		app.Gesture(g)

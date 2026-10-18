@@ -57,6 +57,14 @@ func (m *Menu) Draw(a *App) error {
 			})
 			return nil
 		}},
+		{label: darkLabel(a), do: func(a *App) error {
+			if err := a.ToggleDark(); err != nil {
+				return err
+			}
+			a.fullNext = true
+			a.Show(r)
+			return nil
+		}},
 		{label: "Close menu", do: func(a *App) error { a.Show(r); return nil }},
 		{label: "Exit", do: func(a *App) error { a.Quit(); return nil }},
 	}
@@ -69,6 +77,13 @@ func (m *Menu) Draw(a *App) error {
 	}
 	fill(img, image.Rect(0, m.sheet.Max.Y-6, a.W, m.sheet.Max.Y), black)
 	return a.Disp.Image(img, image.Point{}, display.Partial)
+}
+
+func darkLabel(a *App) string {
+	if a.Dark {
+		return "Dark mode: On"
+	}
+	return "Dark mode: Off"
 }
 
 func (m *Menu) ankiLabel(a *App) string {

@@ -41,6 +41,10 @@ trap restore EXIT
 trap 'exit 130' INT TERM HUP
 
 log "starting (package $PKG_DIR, args: $*)"
+# The window manager answers LIPC only while running, so read the dark mode
+# setting before pausing it (the reader toggles it from its menu).
+TATEGAKI_EPDC_MODE="$(lipc-get-prop com.lab126.winmgr epdcMode 2>/dev/null)"
+export TATEGAKI_EPDC_MODE
 cat /dev/fb0 >"$FBDUMP"
 lipc-set-prop com.lab126.pillow disableEnablePillow disable
 killall -STOP awesome

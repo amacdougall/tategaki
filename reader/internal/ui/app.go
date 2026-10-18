@@ -49,6 +49,10 @@ type App struct {
 	DictPaths []string
 	dictDB    *dict.DB
 	dictErr   error
+	// Dark is the system dark mode; SetDark changes it (nil in the simulator,
+	// where the flag is only remembered).
+	Dark    bool
+	SetDark func(bool) error
 	// Queue is the Anki queue (plan §7.7).
 	Queue   *anki.Queue
 	updates chan func()
@@ -148,6 +152,18 @@ func (a *App) Gesture(g input.Gesture) {
 		log.Printf("%T %v: %v", screen, g.Kind, err)
 	}
 	log.Printf("%v at (%d,%d) on %T handled in %v", g.Kind, g.X, g.Y, screen, time.Since(start).Round(time.Millisecond))
+}
+
+// ToggleDark flips the system dark mode and redraws with a full refresh.
+func (a *App) ToggleDark() error {
+	if a.SetDark != nil {
+		if err := a.SetDark(!a.Dark); err != nil {
+			return err
+		}
+	}
+	a.Dark = !a.Dark
+	log.Printf("dark mode %v", a.Dark)
+	return nil
 }
 
 // Refresh redraws the current screen without forcing a flash. Used shortly
