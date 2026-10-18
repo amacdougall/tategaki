@@ -62,7 +62,7 @@ func runHello(fb *display.FBInk, ev *events) error {
 			log.Printf("LATENCY region %dx%d DU image: %v", marker, marker, d)
 		}
 		return false
-	}, func() { redraw("wake") }, nil)
+	}, func() { redraw("wake") }, nil, nil)
 }
 
 func describe(x, y int) string {

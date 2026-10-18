@@ -86,7 +86,7 @@ func run(fbinkBin, tmp, root, fontDir, dictPath string, idle time.Duration, simM
 			}
 		}()
 		disp = sd
-		ev = &events{gestures: srv.Gestures, wake: srv.Wake, sigs: newSignals(), idle: idle}
+		ev = &events{gestures: srv.Gestures, wake: srv.Wake, sleep: srv.Sleep, sigs: newSignals(), idle: idle}
 	} else {
 		fb := &display.FBInk{Bin: fbinkBin, Tmp: tmp, Width: screenW, Height: screenH}
 		dev, cleanup, err := deviceEvents(idle)
@@ -115,7 +115,7 @@ func run(fbinkBin, tmp, root, fontDir, dictPath string, idle time.Duration, simM
 	return ev.loop(func(g input.Gesture) bool {
 		app.Gesture(g)
 		return app.Done()
-	}, app.Wake, func() {
+	}, app.Wake, app.Sleep, func() {
 		log.Printf("post-launch redraw")
 		app.Refresh()
 	})

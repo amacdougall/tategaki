@@ -1,6 +1,7 @@
 package ui
 
 import (
+	"bytes"
 	"os"
 	"path/filepath"
 	"testing"
@@ -60,5 +61,33 @@ func TestStartFallsBackWhenBookRemoved(t *testing.T) {
 	a.Start()
 	if _, ok := a.screen.(*Library); !ok {
 		t.Fatalf("screen is %T, want *Library", a.screen)
+	}
+}
+
+func TestSleepDrawsCover(t *testing.T) {
+	a, _ := testApp(t)
+	sim := a.Disp.(*display.Sim)
+	a.Start() // library: no book opened, none read
+	v := sim.Version()
+	a.Sleep()
+	if sim.Version() != v {
+		t.Fatal("Sleep drew without a book")
+	}
+
+	if err := a.OpenBook("toradora-01"); err != nil {
+		t.Fatal(err)
+	}
+	want, err := a.sleepCover("toradora-01")
+	if err != nil {
+		t.Fatal(err)
+	}
+	a.Sleep()
+	if !bytes.Equal(sim.Frame().Pix, want.Pix) {
+		t.Fatal("screen isn't the sleep cover")
+	}
+	a.Dark = true
+	a.Sleep()
+	if got := sim.Frame().Pix; got[0] != 255-want.Pix[0] || got[len(got)/2] != 255-want.Pix[len(got)/2] {
+		t.Fatal("dark mode cover isn't pre-inverted")
 	}
 }

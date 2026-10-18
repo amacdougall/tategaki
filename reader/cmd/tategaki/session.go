@@ -24,6 +24,7 @@ type events struct {
 	gestures <-chan input.Gesture
 	power    <-chan string    // com.lab126.powerd events (device only)
 	wake     <-chan struct{}  // simulated wake (sim only)
+	sleep    <-chan struct{}  // simulated sleep (sim only)
 	settle   <-chan time.Time // post-launch redraws (device only)
 	updates  <-chan func()    // work posted by background goroutines
 	sigs     chan os.Signal
@@ -73,7 +74,7 @@ func deviceEvents(idle time.Duration) (*events, func(), error) {
 
 // loop dispatches events until onGesture returns true, a signal arrives, or
 // the idle timeout passes.
-func (e *events) loop(onGesture func(input.Gesture) bool, onWake, onSettle func()) error {
+func (e *events) loop(onGesture func(input.Gesture) bool, onWake, onSleep, onSettle func()) error {
 	timer := time.NewTimer(e.idle)
 	power := e.power
 	for {
@@ -96,11 +97,18 @@ func (e *events) loop(onGesture func(input.Gesture) bool, onWake, onSettle func(
 				continue
 			}
 			log.Printf("POWER %s", ev)
-			if strings.HasPrefix(ev, "outOfScreenSaver") {
+			switch {
+			case strings.HasPrefix(ev, "outOfScreenSaver"):
 				onWake()
+			case strings.HasPrefix(ev, "goingToScreenSaver") && onSleep != nil:
+				onSleep()
 			}
 		case <-e.wake:
 			onWake()
+		case <-e.sleep:
+			if onSleep != nil {
+				onSleep()
+			}
 		case f := <-e.updates:
 			f()
 		case <-e.settle:

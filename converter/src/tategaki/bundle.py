@@ -39,6 +39,11 @@ class BundleWriter:
     def add_cover(self, img: Image.Image) -> None:
         self._png('cover.png', img)
 
+    def add_sleep(self, img: Image.Image) -> None:
+        """Full-screen cover for the sleep screen. Optional: format 1 readers
+        ignore it, and newer readers fall back to cover.png without it."""
+        self._png('sleep.png', img)
+
     def add_text(self, chapter: int, text: str) -> str:
         name = f'text/{chapter:04d}.txt'
         self.zip.writestr(name, text.encode('utf-8'))

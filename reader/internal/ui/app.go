@@ -57,7 +57,10 @@ type App struct {
 	Queue *anki.Queue
 	// AnkiWords are the words already in Anki at the last deploy.
 	AnkiWords map[string]bool
-	updates   chan func()
+	// bookID is the book opened most recently this session (for the sleep
+	// cover).
+	bookID  string
+	updates chan func()
 }
 
 // Updates delivers work posted from background goroutines; the event loop
@@ -288,7 +291,7 @@ func (a *App) OpenBook(id string) error {
 	if pos, ok := a.State.Get(id); ok {
 		page = b.PageOf(pos)
 	}
-	a.fullNext = true
+	a.fullNext, a.bookID = true, id
 	a.Show(&Reader{id: id, book: b, page: page})
 	return nil
 }

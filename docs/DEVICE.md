@@ -74,6 +74,8 @@ Discover these at runtime by name; don't hardcode the event numbers.
   "Remaining time" back to `screenSaverTimeout` (600 s).
 - With `awesome` stopped, sleeping turns the frontlight off and leaves our
   image on screen. Waking needs no unlock with the current settings.
+- The reader uses this to draw the book's cover on `goingToScreenSaver`. The
+  log line `SLEEP cover <id> drawn in …` shows the timing.
 
 ## Display latency (FBInk CLI, measured on device 2026-10-17)
 

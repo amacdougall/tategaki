@@ -6,7 +6,8 @@ A Japanese ebook reader for a jailbroken Kindle Paperwhite. It offers:
 - tap-to-look-up against an offline JMdict, with JPDB frequency ranks;
 - one-tap mining to Anki (Kaishi 1.5k note type), with an offline queue,
   and an offline "Exists" marker for words already in Anki;
-- a menu toggle for the Kindle's own dark mode.
+- a menu toggle for the Kindle's own dark mode;
+- the book's cover on screen while the Kindle sleeps.
 
 It's a personal project, built for one device and one reader. "Tategaki
 Reader" is still a placeholder name.
@@ -29,6 +30,7 @@ does lookups.**
   cuts pages only in the gaps between columns, and records every character's
   box and code point offset.
 - **The `.jbk` bundle** is a zip: page PNGs, per-chapter text and layout JSON,
+  a cover thumbnail, an optional full-screen cover for sleep (`sleep.png`),
   and a manifest.
 - **The reader** hit-tests taps against the glyph boxes and scans the chapter
   text with a Go port of the Calibre fork's Yomichan-style deinflector and
@@ -46,7 +48,7 @@ does lookups.**
 | `docs/ANKI.md` | AnkiConnect setup, the mined fields, the queue, and the USB fallback. |
 
 All phases of the plan (0–5) are complete and accepted by the user. Phase 6
-("polish") is open-ended. Done so far: dark mode, and the Anki word list.
+("polish") is open-ended. Done so far: dark mode, the Anki word list, and the sleep cover.
 
 ## Repository layout
 

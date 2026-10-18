@@ -123,6 +123,15 @@ func ReadManifest(path string) (Manifest, error) {
 // Cover returns cover.png's bytes, if the bundle has one.
 func (b *Book) Cover() ([]byte, error) { return b.read("cover.png") }
 
+// SleepCover returns sleep.png's bytes (the full-screen cover), or cover.png's
+// for bundles built before sleep.png existed.
+func (b *Book) SleepCover() ([]byte, error) {
+	if _, ok := b.files["sleep.png"]; ok {
+		return b.read("sleep.png")
+	}
+	return b.Cover()
+}
+
 // Layout returns a chapter's layout, loading it on first use.
 func (b *Book) Layout(chapter int) (*Layout, error) {
 	if l, ok := b.layouts[chapter]; ok {

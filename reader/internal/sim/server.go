@@ -19,11 +19,13 @@ type Server struct {
 	Disp     *display.Sim
 	Gestures chan input.Gesture
 	Wake     chan struct{}
+	Sleep    chan struct{}
 }
 
 // New creates a server around a simulated display.
 func New(disp *display.Sim) *Server {
-	return &Server{Disp: disp, Gestures: make(chan input.Gesture, 16), Wake: make(chan struct{}, 1)}
+	return &Server{Disp: disp, Gestures: make(chan input.Gesture, 16), Wake: make(chan struct{}, 1),
+		Sleep: make(chan struct{}, 1)}
 }
 
 // Handler returns the HTTP routes.
@@ -36,6 +38,12 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("POST /wake", func(w http.ResponseWriter, r *http.Request) {
 		select {
 		case s.Wake <- struct{}{}:
+		default:
+		}
+	})
+	mux.HandleFunc("POST /sleep", func(w http.ResponseWriter, r *http.Request) {
+		select {
+		case s.Sleep <- struct{}{}:
 		default:
 		}
 	})
@@ -96,6 +104,7 @@ const page = `<!doctype html><html><head><meta charset="utf-8"><title>Tategaki s
 </style></head><body>
 <img id="screen" src="/screen.png" draggable="false">
 <div id="bar"><span>Click = tap · hold 0.6 s = hold · drag = swipe</span>
+<button onclick="fetch('/sleep',{method:'POST'})">Simulate sleep</button>
 <button onclick="fetch('/wake',{method:'POST'})">Simulate wake</button><span id="v"></span></div>
 <script>
 const W = %[1]d, H = %[2]d, img = document.getElementById('screen');

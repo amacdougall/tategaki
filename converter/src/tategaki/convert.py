@@ -7,7 +7,7 @@ from .bundle import BundleWriter
 from .epub import cleanup, open_epub
 from .reference.furigana import FuriganaRanker
 from .reference.jmdict import JMdict
-from .render import Profile, Renderer, RenderSettings, cover_image, public_chapters, toc_pages
+from .render import Profile, Renderer, RenderSettings, cover_image, public_chapters, sleep_image, toc_pages
 
 REPO = Path(__file__).resolve().parents[3]
 JMDICT = REPO / 'data' / 'jmdict.sqlite'
@@ -36,6 +36,9 @@ def convert(epub_path: Path, out: Path, settings: RenderSettings, profile: Profi
         cover = cover_image(book, None)
         if cover:
             writer.add_cover(cover)
+        sleep = sleep_image(book, profile, settings.gamma)
+        if sleep:
+            writer.add_sleep(sleep)
         manifest = {
             'title': title or book.title,
             'author': author or book.author,

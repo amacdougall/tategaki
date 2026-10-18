@@ -293,3 +293,27 @@ Decisions made during implementation, newest last. LOCKED decisions live in
   Before, tapping them queued the card again, and the resend was then skipped
   as a duplicate. **Error** stays tappable: tapping it queues a fresh card,
   which retries after fixing the cause, such as a missing deck.
+
+## 2026-10-18 (Phase 6: sleep cover)
+
+- **The Anki word list was accepted** on the device: tapping 警戒 showed
+  Exists.
+- **The book's cover is shown while the Kindle sleeps,** as the user asked.
+  This replaces the Phase 3 behaviour, where the last page stayed on screen.
+  - **When:** on powerd's `goingToScreenSaver`. With `awesome` paused, the
+    e-ink keeps our drawing, and `outOfScreenSaver` already redraws the
+    screen underneath (with a flash).
+  - **Which book:** the one opened this session, else `state.json`'s
+    `last_book`. With neither, the screen is left as it is.
+  - **Dark mode:** the cover is inverted before drawing, so that the hardware
+    inversion shows it the right way round, not as a negative.
+- **Bundle: optional `sleep.png`,** approved by the user as an addition to the
+  LOCKED v1 format. `format` stays 1 because nothing breaks: older readers
+  ignore the file.
+  - **What it is:** the EPUB cover fitted to the full screen (white
+    letterbox), processed like a full-screen illustration (gamma, 16 levels).
+  - **Fallbacks:** without `sleep.png`, the reader scales up `cover.png` (the
+    300×400 thumbnail). An EPUB without a cover gets neither, so the page stays
+    on screen.
+  - Adding it changed `render.py`, so every book rebuilt once.
+- **Simulator:** a "Simulate sleep" button sends the same event.

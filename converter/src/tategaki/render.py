@@ -9,7 +9,7 @@ from importlib import resources
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 from playwright.sync_api import Page, sync_playwright
 
 from . import images
@@ -302,6 +302,17 @@ def cover_image(book: Epub, writer_pages_first: Image.Image | None) -> Image.Ima
     if writer_pages_first is not None:
         return images.fit(writer_pages_first, 300, 400)
     return None
+
+
+def sleep_image(book: Epub, profile: Profile, g: float) -> Image.Image | None:
+    """The cover fitted to the full screen, shown while the Kindle sleeps.
+    Processed like a full-screen illustration (gamma, 16 levels)."""
+    src = book.path(book.cover) if book.cover else None
+    if not (src and src.exists()):
+        return None
+    with Image.open(src) as img:
+        return images.process_illustration(images.fit(ImageOps.exif_transpose(img).convert('L'),
+                                                      profile.width, profile.height), g)
 
 
 def public_chapters(chapters: list[dict]) -> list[dict]:
