@@ -9,6 +9,7 @@ import (
 	"context"
 	"fmt"
 	"os/exec"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -69,6 +70,33 @@ func SetDarkMode(dark bool) error {
 	defer cancel()
 	if out, err := exec.CommandContext(ctx, "lipc-set-prop", "com.lab126.winmgr", "epdcMode", mode).CombinedOutput(); err != nil {
 		return fmt.Errorf("lipc-set-prop epdcMode %s: %v: %s", mode, err, out)
+	}
+	return nil
+}
+
+// The frontlight is com.lab126.powerd flIntensity, the step shown by the
+// Kindle's own slider (0 is off, 0..flMaxIntensity, 24 on the PW5). powerd
+// maps it to the raw LED levels and keeps warmth separate. powerd isn't
+// paused while the reader runs, so no awesome dance is needed.
+const MaxFrontlight = 24
+
+// Frontlight reads the current frontlight step.
+func Frontlight() (int, error) {
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+	out, err := exec.CommandContext(ctx, "lipc-get-prop", "com.lab126.powerd", "flIntensity").Output()
+	if err != nil {
+		return 0, fmt.Errorf("lipc-get-prop flIntensity: %v", err)
+	}
+	return strconv.Atoi(strings.TrimSpace(string(out)))
+}
+
+// SetFrontlight sets the frontlight step.
+func SetFrontlight(n int) error {
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+	if out, err := exec.CommandContext(ctx, "lipc-set-prop", "com.lab126.powerd", "flIntensity", strconv.Itoa(n)).CombinedOutput(); err != nil {
+		return fmt.Errorf("lipc-set-prop flIntensity %d: %v: %s", n, err, out)
 	}
 	return nil
 }

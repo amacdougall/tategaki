@@ -23,6 +23,8 @@ SCHEMA = {
         'scan_len': (int, 16),
         'full_refresh_every': (int, 6),
         'edge_zone_pct': (int, 12),
+        'light_level': (int, 9),         # frontlight step for Light: On (0..24, the Kindle slider)
+        'dark_light_level': (int, 11),   # frontlight step throughout dark mode
     },
     'render': {
         'font': (str, 'fonts/NotoSerifJP-Regular.otf'),
@@ -49,6 +51,10 @@ CHOICES = {
     ('render', 'spreads'): {'split', 'rotate', 'fit'},
     ('reader', 'sleep_screen'): {'cover', 'goodnight'},
 }
+RANGES = {
+    ('device', 'light_level'): (0, 24),
+    ('device', 'dark_light_level'): (0, 24),
+}
 BOOK_TOP = {'epub': str, 'title': str, 'author': str}
 
 
@@ -72,6 +78,9 @@ def _check(where: str, section: str, key: str, value):
     allowed = CHOICES.get((section, key))
     if allowed and value not in allowed:
         raise ConfigError(f'{where}: [{section}] {key} must be one of {sorted(allowed)}, got {value!r}')
+    lo_hi = RANGES.get((section, key))
+    if lo_hi and not lo_hi[0] <= value <= lo_hi[1]:
+        raise ConfigError(f'{where}: [{section}] {key} must be {lo_hi[0]}..{lo_hi[1]}, got {value!r}')
     return value
 
 

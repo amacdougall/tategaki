@@ -25,6 +25,10 @@ type Device struct {
 	ScanLen          int    `json:"scan_len"`
 	FullRefreshEvery int    `json:"full_refresh_every"`
 	EdgeZonePct      int    `json:"edge_zone_pct"`
+	// LightLevel is the frontlight step for Light: On in light mode;
+	// DarkLightLevel is used throughout dark mode.
+	LightLevel     int `json:"light_level"`
+	DarkLightLevel int `json:"dark_light_level"`
 }
 
 // Defaults match the converter's built-in defaults (converter config.py).
@@ -32,6 +36,7 @@ func Defaults() Device {
 	return Device{
 		Profile: "pw11", AnkiConnectURL: "http://127.0.0.1:8765", DefaultDeck: "Default",
 		NoteType: "Kaishi 1.5k", RankingPolicy: "longest", ScanLen: 16, FullRefreshEvery: 6, EdgeZonePct: 12,
+		LightLevel: 9, DarkLightLevel: 11,
 	}
 }
 
@@ -103,6 +108,9 @@ type Position struct {
 type State struct {
 	LastBook string              `json:"last_book,omitempty"`
 	Books    map[string]Position `json:"books"`
+	// LightLevel is the frontlight step last used in light mode, restored on
+	// leaving dark mode (which always uses Device.DarkLightLevel).
+	LightLevel *int `json:"light_level,omitempty"`
 }
 
 // StateFile loads and atomically saves state.json.
@@ -140,6 +148,14 @@ func (s *StateFile) Get(id string) (Position, bool) {
 	defer s.mu.Unlock()
 	p, ok := s.State.Books[id]
 	return p, ok
+}
+
+// SetLightLevel records the light-mode frontlight step and saves.
+func (s *StateFile) SetLightLevel(n int) error {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	s.State.LightLevel = &n
+	return s.save()
 }
 
 func (s *StateFile) save() error {

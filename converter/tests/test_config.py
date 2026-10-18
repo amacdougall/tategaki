@@ -41,6 +41,8 @@ def test_bad_choice_and_type(tmp_path):
         make_lib(tmp_path, '[render]\nfurigana = "some"\n')
     with pytest.raises(ConfigError, match='scan_len'):
         make_lib(tmp_path / 'b', '[device]\nscan_len = "16"\n')
+    with pytest.raises(ConfigError, match='light_level'):
+        make_lib(tmp_path / 'c', '[device]\nlight_level = 25\n')
 
 
 def test_epub_selection(tmp_path):

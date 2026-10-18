@@ -23,14 +23,16 @@ type Menu struct {
 }
 
 type menuButton struct {
-	label string
-	rect  image.Rectangle
-	do    func(a *App) error
+	label    string
+	rect     image.Rectangle
+	do       func(a *App) error
+	wide     bool // takes the whole row
+	disabled bool // drawn grey; taps do nothing
 }
 
 func (m *Menu) Draw(a *App) error {
 	r := m.reader
-	m.sheet = image.Rect(0, 0, a.W, 850)
+	m.sheet = image.Rect(0, 0, a.W, 994)
 	img := image.NewGray(m.sheet)
 	fill(img, m.sheet, white)
 	b := r.book.Manifest
@@ -46,7 +48,7 @@ func (m *Menu) Draw(a *App) error {
 		{label: "Go to page", do: func(a *App) error { a.Show(&Goto{reader: r}); return nil }},
 		{label: "Book info", do: func(a *App) error { a.Show(&Info{reader: r}); return nil }},
 		{label: "Library", do: func(a *App) error { r.Library(a); return nil }},
-		{label: m.ankiLabel(a), do: func(a *App) error {
+		{label: m.ankiLabel(a), wide: true, do: func(a *App) error {
 			m.anki = "Sending…"
 			m.Draw(a)
 			a.FlushAnki(func(res anki.FlushResult) {
@@ -65,15 +67,36 @@ func (m *Menu) Draw(a *App) error {
 			a.Show(r)
 			return nil
 		}},
+		{label: lightLabel(a), disabled: a.Dark, do: func(a *App) error {
+			if err := a.ToggleLight(); err != nil {
+				return err
+			}
+			return m.Draw(a)
+		}},
 		{label: "Close menu", do: func(a *App) error { a.Show(r); return nil }},
 		{label: "Exit", do: func(a *App) error { a.Quit(); return nil }},
 	}
 	bw, bh, gap := (a.W-3*24)/2, 120, 24
+	col, y := 0, 210
 	for i := range m.buttons {
-		x := 24 + (i%2)*(bw+gap)
-		y := 210 + (i/2)*(bh+gap)
-		m.buttons[i].rect = image.Rect(x, y, x+bw, y+bh)
-		a.button(img, m.buttons[i].rect, m.buttons[i].label, false)
+		b := &m.buttons[i]
+		if b.wide && col == 1 {
+			col, y = 0, y+bh+gap
+		}
+		x, w := 24+col*(bw+gap), bw
+		if b.wide {
+			w = 2*bw + gap
+		}
+		b.rect = image.Rect(x, y, x+w, y+bh)
+		if b.disabled {
+			frame(img, b.rect, 4, gray)
+			a.label(img, b.rect, b.label, sizeBody, false, true, gray)
+		} else {
+			a.button(img, b.rect, b.label, false)
+		}
+		if col++; b.wide || col == 2 {
+			col, y = 0, y+bh+gap
+		}
 	}
 	fill(img, image.Rect(0, m.sheet.Max.Y-6, a.W, m.sheet.Max.Y), black)
 	return a.Disp.Image(img, image.Point{}, display.Partial)
@@ -84,6 +107,16 @@ func darkLabel(a *App) string {
 		return "Dark mode: On"
 	}
 	return "Dark mode: Off"
+}
+
+func lightLabel(a *App) string {
+	switch {
+	case a.Dark:
+		return fmt.Sprintf("Light: %d", a.Dev.DarkLightLevel)
+	case a.Light > 0:
+		return "Light: On"
+	}
+	return "Light: Off"
 }
 
 func (m *Menu) ankiLabel(a *App) string {
@@ -100,6 +133,9 @@ func (m *Menu) Handle(a *App, g input.Gesture) error {
 	pt := image.Pt(g.X, g.Y)
 	for _, b := range m.buttons {
 		if pt.In(b.rect) {
+			if b.disabled {
+				return nil
+			}
 			return b.do(a)
 		}
 	}

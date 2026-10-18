@@ -2,6 +2,7 @@ package ui
 
 import (
 	"bytes"
+	"fmt"
 	"os"
 	"path/filepath"
 	"testing"
@@ -102,5 +103,34 @@ func TestSleepGoodnightSetting(t *testing.T) {
 	a.Sleep()
 	if !bytes.Equal(sim.Frame().Pix, a.goodnight().Pix) {
 		t.Fatal("sleep_screen goodnight: screen isn't お休みなさい")
+	}
+}
+
+func TestLightFollowsDarkMode(t *testing.T) {
+	a, _ := testApp(t)
+	var set []int
+	a.SetLight = func(n int) error { set = append(set, n); return nil }
+	a.Light = 9
+
+	a.ToggleLight() // 9 → off
+	a.ToggleDark()  // dark: 11, remembering off
+	if err := a.ToggleLight(); err != nil || a.Light != 11 {
+		t.Fatalf("light toggled in dark mode: %d, %v", a.Light, err)
+	}
+	a.ToggleDark() // back to off
+	a.ToggleLight()
+	if want := []int{0, 11, 0, 9}; fmt.Sprint(set) != fmt.Sprint(want) {
+		t.Fatalf("frontlight steps %v, want %v", set, want)
+	}
+
+	// Launched in dark mode: pinned at once; leaving restores the saved step.
+	b := New(a.Disp, a.Fonts, a.Paths, a.Tmp)
+	set = nil
+	b.SetLight = a.SetLight
+	b.Light, b.Dark = 5, true
+	b.Start()
+	b.ToggleDark()
+	if want := []int{11, 9}; fmt.Sprint(set) != fmt.Sprint(want) {
+		t.Fatalf("frontlight steps %v, want %v", set, want)
 	}
 }

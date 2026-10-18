@@ -110,6 +110,12 @@ func run(fbinkBin, tmp, root, fontDir, dictPath string, idle time.Duration, simM
 	if !simMode {
 		app.Dark = os.Getenv("TATEGAKI_EPDC_MODE") == kindle.EPDCDark
 		app.SetDark = kindle.SetDarkMode
+		if n, err := kindle.Frontlight(); err == nil {
+			app.Light = n
+		} else {
+			log.Printf("frontlight: %v", err)
+		}
+		app.SetLight = kindle.SetFrontlight
 	}
 	app.Start()
 	return ev.loop(func(g input.Gesture) bool {

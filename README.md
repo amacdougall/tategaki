@@ -6,7 +6,7 @@ A Japanese ebook reader for a jailbroken Kindle Paperwhite. It offers:
 - tap-to-look-up against an offline JMdict, with JPDB frequency ranks;
 - one-tap mining to Anki (Kaishi 1.5k note type), with an offline queue,
   and an offline "Exists" marker for words already in Anki;
-- a menu toggle for the Kindle's own dark mode;
+- a menu toggle for the Kindle's own dark mode, and one for the frontlight;
 - the book's cover, or お休みなさい, on screen while the Kindle sleeps.
 
 It's a personal project, built for one device and one reader. "Tategaki
@@ -48,7 +48,8 @@ does lookups.**
 | `docs/ANKI.md` | AnkiConnect setup, the mined fields, the queue, and the USB fallback. |
 
 All phases of the plan (0–5) are complete and accepted by the user. Phase 6
-("polish") is open-ended. Done so far: dark mode, the Anki word list, and the sleep cover.
+("polish") is open-ended. Done so far: dark mode, the Anki word list, the sleep cover, and the
+frontlight toggle.
 
 ## Repository layout
 
@@ -98,6 +99,8 @@ The user's library lives in `~/Tategaki/` (override with `TATEGAKI_HOME`):
 - `books/<id>/`: one folder per book, holding the `.epub`, an optional
   `book.toml` with per-book `[render]`, `[anki]` and `[reader]` overrides, and
   `build/` output.
+  - `[device] light_level` (9) and `dark_light_level` (11) are the
+    frontlight steps; see DECISIONS, Phase 6 frontlight.
   - `[reader] sleep_screen = "goodnight"` shows お休みなさい instead of the
     cover while the Kindle sleeps. Books without a cover always do.
     Only `deploy --settings-only` is needed after changing it.
@@ -155,7 +158,7 @@ fixtures by hand.
   `fw_setenv`, or put `update*.bin` files on the device.
 - Only delete inside `/mnt/us/tategaki/` and the package's own files.
 - Ask before system-setting changes through `lipc-set-prop`, beyond
-  screensaver, framework and dark-mode controls.
+  screensaver, framework, dark-mode and frontlight controls.
 - A factory reset removes the jailbreak. If one ever happens, keep the device
   in airplane mode until it's re-jailbroken.
 

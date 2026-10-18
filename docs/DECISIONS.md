@@ -336,3 +336,27 @@ Decisions made during implementation, newest last. LOCKED decisions live in
     `[anki]` and `[reader]`.
   - **Format:** TOML, like the rest of the desktop config. The user had
     suggested YAML ("YAML on desktop is fine").
+
+## 2026-10-18 (Phase 6: frontlight)
+
+- **System lighting is in scope** (user, 2026-10-18): the reader may set
+  `com.lab126.powerd flIntensity`. This extends the plan's `lipc-set-prop`
+  guardrail. Warmth is left alone.
+- **Menu → Light: On/Off** switches between 0 and `[device] light_level`
+  (9), the only two steps the user uses in light mode. Any other step set
+  from the Kindle's slider counts as On, so the next tap turns it off.
+- **Dark mode pins the light at `[device] dark_light_level` (11).** The
+  button shows "Light: 11", greyed out, and does nothing.
+  - Turning dark mode on saves the current light-mode step to `state.json`
+    (`light_level`). Turning it off restores that step (user's choice), or
+    `light_level` if none was saved.
+  - Starting the reader in dark mode sets 11 straight away.
+  - A frontlight failure is logged and doesn't undo the dark mode change.
+- **Why `flIntensity` and not sysfs:** see DEVICE.md, Frontlight. The setting
+  persists after exit, like dark mode.
+- **The levels are in `[device]`,** not `[reader]`, because `[reader]` is
+  per-book. Both are checked against 0..24.
+- **Menu layout:** Send to Anki now takes the whole row (its result text is
+  the longest label), so Dark mode and Light sit side by side above
+  Close menu and Exit. The sheet is one row taller.
+

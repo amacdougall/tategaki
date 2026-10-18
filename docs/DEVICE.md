@@ -77,6 +77,18 @@ Discover these at runtime by name; don't hardcode the event numbers.
 - The reader uses this to draw the book's cover on `goingToScreenSaver`. The
   log line `SLEEP cover <id> drawn in …` shows the timing.
 
+## Frontlight (verified 2026-10-18)
+
+- **`com.lab126.powerd flIntensity`** (rw) is the step the Kindle's slider
+  shows: 0..`flMaxIntensity`, which is **24** (25 positions). 0 is fully off.
+- powerd maps the step to two LED channels, `/sys/class/backlight/fp9966-bl0`
+  and `fp9966-bl1` (raw 0..2047), whose mix is the warmth. At step 9 they read
+  930 and 632; at 0 both read 0. Don't write these directly: powerd would
+  overwrite them and its slider would be out of sync.
+- `flAuto` (auto-brightness) is 0 on this device. `flRawIntensity` is read-only.
+- powerd isn't paused while the reader runs; `lipc-set-prop` takes about 30 ms
+  with `awesome` stopped.
+
 ## Display latency (FBInk CLI, measured on device 2026-10-17)
 
 | Operation | Time |

@@ -19,6 +19,7 @@ import (
 	"github.com/amacdougall/tategaki/reader/internal/dict"
 	"github.com/amacdougall/tategaki/reader/internal/display"
 	"github.com/amacdougall/tategaki/reader/internal/input"
+	"github.com/amacdougall/tategaki/reader/internal/kindle"
 	"github.com/amacdougall/tategaki/reader/internal/text"
 )
 
@@ -53,6 +54,10 @@ type App struct {
 	// where the flag is only remembered).
 	Dark    bool
 	SetDark func(bool) error
+	// Light is the frontlight step; SetLight changes it (nil in the
+	// simulator). Dark mode pins it to Dev.DarkLightLevel.
+	Light    int
+	SetLight func(int) error
 	// Queue is the Anki queue (plan §7.7).
 	Queue *anki.Queue
 	// AnkiWords are the words already in Anki at the last deploy.
@@ -94,6 +99,7 @@ func New(disp display.Display, fonts *text.Fonts, paths config.Paths, tmp string
 	a := &App{Disp: disp, Fonts: fonts, Paths: paths, Tmp: tmp, W: size.X, H: size.Y, State: config.OpenState(paths),
 		updates: make(chan func(), 16)}
 	a.reloadConfig()
+	a.Light = a.Dev.LightLevel
 	q, err := anki.OpenQueue(filepath.Join(paths.Root, "anki-queue.jsonl"))
 	if err != nil {
 		log.Printf("anki queue: %v", err)
@@ -110,6 +116,8 @@ func (a *App) reloadConfig() {
 	if dev.FullRefreshEvery < 1 {
 		dev.FullRefreshEvery = 1
 	}
+	dev.LightLevel = clampLight(dev.LightLevel)
+	dev.DarkLightLevel = clampLight(dev.DarkLightLevel)
 	a.Dev = dev
 	words, err := anki.LoadWords(a.Paths.AnkiWords())
 	if err != nil {
@@ -134,6 +142,9 @@ func (a *App) redraw() {
 // library if there is none (or it has been removed). Cards mined while Anki
 // was unreachable are sent in the background.
 func (a *App) Start() {
+	if a.Dark {
+		a.applyLight(a.Dev.DarkLightLevel)
+	}
 	if a.Queue.Pending() > 0 {
 		a.FlushAnki(nil)
 	}
@@ -173,8 +184,61 @@ func (a *App) ToggleDark() error {
 	}
 	a.Dark = !a.Dark
 	log.Printf("dark mode %v", a.Dark)
+	if a.Dark {
+		// Remember the light-mode step to restore on the way back.
+		if err := a.State.SetLightLevel(a.Light); err != nil {
+			log.Printf("state: %v", err)
+		}
+		a.applyLight(a.Dev.DarkLightLevel)
+	} else {
+		n := a.Dev.LightLevel
+		if p := a.State.State.LightLevel; p != nil {
+			n = *p
+		}
+		a.applyLight(n)
+	}
 	return nil
 }
+
+// ToggleLight switches the frontlight between off and Dev.LightLevel. It does
+// nothing in dark mode, where the level is fixed.
+func (a *App) ToggleLight() error {
+	if a.Dark {
+		return nil
+	}
+	n := a.Dev.LightLevel
+	if a.Light > 0 {
+		n = 0
+	}
+	if err := a.setLight(n); err != nil {
+		return err
+	}
+	return a.State.SetLightLevel(n)
+}
+
+// applyLight sets the frontlight if it differs, logging failures: the light
+// follows dark mode, and a failure there shouldn't undo the mode change.
+func (a *App) applyLight(n int) {
+	if n == a.Light {
+		return
+	}
+	if err := a.setLight(n); err != nil {
+		log.Printf("frontlight: %v", err)
+	}
+}
+
+func (a *App) setLight(n int) error {
+	if a.SetLight != nil {
+		if err := a.SetLight(n); err != nil {
+			return err
+		}
+	}
+	a.Light = n
+	log.Printf("frontlight %d", n)
+	return nil
+}
+
+func clampLight(n int) int { return min(max(n, 0), kindle.MaxFrontlight) }
 
 // Refresh redraws the current screen without forcing a flash. Used shortly
 // after launch: the Kindle UI can still be finishing a redraw when it is
