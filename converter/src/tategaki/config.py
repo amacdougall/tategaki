@@ -40,10 +40,14 @@ SCHEMA = {
         'tags': (list, ['tategaki']),
         'strip_speaker_tags': (bool, False),
     },
+    'reader': {
+        'sleep_screen': (str, 'cover'),  # or 'goodnight' (お休みなさい)
+    },
 }
 CHOICES = {
     ('render', 'furigana'): {'all', 'rare', 'none'},
     ('render', 'spreads'): {'split', 'rotate', 'fit'},
+    ('reader', 'sleep_screen'): {'cover', 'goodnight'},
 }
 BOOK_TOP = {'epub': str, 'title': str, 'author': str}
 
@@ -108,6 +112,7 @@ class BookConfig:
     author: str | None
     render: dict
     anki: dict
+    reader: dict
 
     @property
     def build_dir(self) -> Path:
@@ -128,6 +133,7 @@ class Library:
     device: dict
     render: dict
     anki: dict
+    reader: dict
 
     @classmethod
     def load(cls, root: Path | None = None) -> 'Library':
@@ -135,9 +141,10 @@ class Library:
         cfg = defaults()
         path = root / 'tategaki.toml'
         if path.exists():
-            for section, values in _load(path, {'device', 'render', 'anki'}, {}).items():
+            for section, values in _load(path, {'device', 'render', 'anki', 'reader'}, {}).items():
                 cfg[section].update(values)
-        return cls(root=root, device=cfg['device'], render=cfg['render'], anki=cfg['anki'])
+        return cls(root=root, device=cfg['device'], render=cfg['render'], anki=cfg['anki'],
+                   reader=cfg['reader'])
 
     def book_ids(self) -> list[str]:
         books = self.root / 'books'
@@ -149,13 +156,14 @@ class Library:
             raise ConfigError(f'no book folder {d}')
         if not book_id.isascii() or not all(c.isalnum() or c in '-_.' for c in book_id):
             raise ConfigError(f'book id "{book_id}" should be an ASCII slug (letters, digits, - _ .)')
-        render, anki = dict(self.render), dict(self.anki)
+        render, anki, reader = dict(self.render), dict(self.anki), dict(self.reader)
         top = {}
         path = d / 'book.toml'
         if path.exists():
-            data = _load(path, {'render', 'anki'}, BOOK_TOP)
+            data = _load(path, {'render', 'anki', 'reader'}, BOOK_TOP)
             render.update(data.pop('render', {}))
             anki.update(data.pop('anki', {}))
+            reader.update(data.pop('reader', {}))
             top = data
         if 'epub' in top:
             epub = d / top['epub']
@@ -169,4 +177,4 @@ class Library:
         font = Path(render['font']).expanduser()
         render['font'] = str(font if font.is_absolute() else self.root / font)
         return BookConfig(id=book_id, dir=d, epub=epub, title=top.get('title'), author=top.get('author'),
-                          render=render, anki=anki)
+                          render=render, anki=anki, reader=reader)

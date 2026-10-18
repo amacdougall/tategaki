@@ -64,7 +64,8 @@ def existing_hash(jbk: Path) -> str | None:
 def write_sidecar(book: BookConfig) -> None:
     book.build_dir.mkdir(parents=True, exist_ok=True)
     data = {'deck': book.anki['deck'], 'tags': book.anki['tags'],
-            'strip_speaker_tags': book.anki['strip_speaker_tags']}
+            'strip_speaker_tags': book.anki['strip_speaker_tags'],
+            'sleep_screen': book.reader['sleep_screen']}
     tmp = book.sidecar.with_suffix('.json.tmp')
     tmp.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding='utf-8')
     tmp.replace(book.sidecar)

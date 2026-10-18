@@ -317,3 +317,22 @@ Decisions made during implementation, newest last. LOCKED decisions live in
     on screen.
   - Adding it changed `render.py`, so every book rebuilt once.
 - **Simulator:** a "Simulate sleep" button sends the same event.
+- **Accepted on the device (2026-10-18).** The first sleep, about 4 s after
+  launch, showed the cover and then the page: the 5 s post-launch redraw
+  (`settle`) fired after the cover was drawn. The user chose to leave this
+  edge case alone. The cover takes 1.2–1.3 s to draw on the device, which is
+  still in time.
+- **お休みなさい screen** (user request): one vertical column of 200 px
+  BIZ UDPGothic, centred. It's drawn on the device, with no bundle file.
+  - **Shown when:** the book sets `sleep_screen = "goodnight"`, the book
+    has no cover, or no book has been opened or read.
+  - **Dark mode:** unlike the cover, it isn't pre-inverted, so it follows
+    dark mode and shows white on black.
+- **The setting is `[reader] sleep_screen`**, either `"cover"` (the default)
+  or `"goodnight"`. It goes in `book.toml`, or in `tategaki.toml` for every
+  book.
+  - **Where it's stored:** in the per-book sidecar, so changing it needs only
+    `deploy --settings-only`, with no re-render. The sidecar now mirrors
+    `[anki]` and `[reader]`.
+  - **Format:** TOML, like the rest of the desktop config. The user had
+    suggested YAML ("YAML on desktop is fine").

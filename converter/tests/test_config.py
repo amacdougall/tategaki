@@ -56,5 +56,14 @@ def test_japanese_values_round_trip_to_sidecar(tmp_path):
     assert book.title == '変な家' and book.author == '雨穴'
     write_sidecar(book)
     data = json.loads(book.sidecar.read_text(encoding='utf-8'))
-    assert data == {'deck': '日本語::変な家', 'tags': ['変な家'], 'strip_speaker_tags': True}
+    assert data == {'deck': '日本語::変な家', 'tags': ['変な家'], 'strip_speaker_tags': True,
+                    'sleep_screen': 'cover'}
     assert '日本語::変な家' in book.sidecar.read_text(encoding='utf-8')  # stored as UTF-8, not \u escapes
+
+
+def test_sleep_screen(tmp_path):
+    lib = make_lib(tmp_path, '[reader]\nsleep_screen = "goodnight"\n', '[reader]\nsleep_screen = "cover"\n')
+    assert lib.reader['sleep_screen'] == 'goodnight'          # tategaki.toml default
+    assert lib.book('hen-na-ie').reader['sleep_screen'] == 'cover'  # book.toml wins
+    with pytest.raises(ConfigError, match='sleep_screen'):
+        make_lib(tmp_path / 'bad', '', '[reader]\nsleep_screen = "blank"\n').book('hen-na-ie')

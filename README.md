@@ -7,7 +7,7 @@ A Japanese ebook reader for a jailbroken Kindle Paperwhite. It offers:
 - one-tap mining to Anki (Kaishi 1.5k note type), with an offline queue,
   and an offline "Exists" marker for words already in Anki;
 - a menu toggle for the Kindle's own dark mode;
-- the book's cover on screen while the Kindle sleeps.
+- the book's cover, or お休みなさい, on screen while the Kindle sleeps.
 
 It's a personal project, built for one device and one reader. "Tategaki
 Reader" is still a placeholder name.
@@ -96,8 +96,11 @@ The user's library lives in `~/Tategaki/` (override with `TATEGAKI_HOME`):
 - `tategaki.toml`: global settings, mostly `[device]` and `[render]`.
 - `fonts/`: reading fonts.
 - `books/<id>/`: one folder per book, holding the `.epub`, an optional
-  `book.toml` with per-book `[render]` and `[anki]` overrides, and `build/`
-  output.
+  `book.toml` with per-book `[render]`, `[anki]` and `[reader]` overrides, and
+  `build/` output.
+  - `[reader] sleep_screen = "goodnight"` shows お休みなさい instead of the
+    cover while the Kindle sleeps. Books without a cover always do.
+    Only `deploy --settings-only` is needed after changing it.
 
 ## Everyday commands
 

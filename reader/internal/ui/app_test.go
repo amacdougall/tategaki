@@ -68,10 +68,9 @@ func TestSleepDrawsCover(t *testing.T) {
 	a, _ := testApp(t)
 	sim := a.Disp.(*display.Sim)
 	a.Start() // library: no book opened, none read
-	v := sim.Version()
 	a.Sleep()
-	if sim.Version() != v {
-		t.Fatal("Sleep drew without a book")
+	if !bytes.Equal(sim.Frame().Pix, a.goodnight().Pix) {
+		t.Fatal("no book: screen isn't お休みなさい")
 	}
 
 	if err := a.OpenBook("toradora-01"); err != nil {
@@ -89,5 +88,19 @@ func TestSleepDrawsCover(t *testing.T) {
 	a.Sleep()
 	if got := sim.Frame().Pix; got[0] != 255-want.Pix[0] || got[len(got)/2] != 255-want.Pix[len(got)/2] {
 		t.Fatal("dark mode cover isn't pre-inverted")
+	}
+}
+
+func TestSleepGoodnightSetting(t *testing.T) {
+	a, paths := testApp(t)
+	sim := a.Disp.(*display.Sim)
+	if err := a.OpenBook("toradora-01"); err != nil {
+		t.Fatal(err)
+	}
+	os.WriteFile(paths.Sidecar("toradora-01"), []byte(`{"sleep_screen":"goodnight"}`), 0o644)
+	a.Dark = true // goodnight isn't pre-inverted
+	a.Sleep()
+	if !bytes.Equal(sim.Frame().Pix, a.goodnight().Pix) {
+		t.Fatal("sleep_screen goodnight: screen isn't お休みなさい")
 	}
 }

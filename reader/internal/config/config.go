@@ -35,11 +35,14 @@ func Defaults() Device {
 	}
 }
 
-// Book mirrors a book's resolved [anki] settings (books/<id>.json).
+// Book mirrors a book's resolved [anki] and [reader] settings
+// (books/<id>.json).
 type Book struct {
 	Deck             *string  `json:"deck"`
 	Tags             []string `json:"tags"`
 	StripSpeakerTags bool     `json:"strip_speaker_tags"`
+	// SleepScreen is "cover" (the default) or "goodnight".
+	SleepScreen string `json:"sleep_screen"`
 }
 
 // Paths under the reader's root (/mnt/us/tategaki on the device).

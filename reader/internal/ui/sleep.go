@@ -11,37 +11,65 @@ import (
 	xdraw "golang.org/x/image/draw"
 
 	"github.com/amacdougall/tategaki/reader/internal/book"
+	"github.com/amacdougall/tategaki/reader/internal/config"
 	"github.com/amacdougall/tategaki/reader/internal/display"
 )
 
-// Sleep draws the book's cover full-screen as the Kindle goes to its
-// screensaver: with the Kindle UI paused, the e-ink keeps whatever we drew
-// last. The book is the one opened this session, else the last one read; with
-// neither, the screen is left as it is. Wake redraws the screen underneath.
+// Sleep draws the sleep screen as the Kindle goes to its screensaver: with
+// the Kindle UI paused, the e-ink keeps whatever we drew last. Wake redraws
+// the screen underneath.
+//
+// The screen is the book's cover, or お休みなさい when the book's
+// sleep_screen is "goodnight", it has no cover, or there's no book. The book
+// is the one opened this session, else the last one read.
 func (a *App) Sleep() {
 	start := time.Now()
 	id := a.bookID
 	if id == "" {
 		id = a.State.State.LastBook
 	}
-	if id == "" {
-		return
-	}
-	img, err := a.sleepCover(id)
-	if err != nil {
-		log.Printf("sleep cover %s: %v", id, err)
-		return
-	}
-	if a.Dark { // the hardware inversion would show the cover as a negative
-		for i, v := range img.Pix {
-			img.Pix[i] = 255 - v
+	img, what := a.goodnight(), "goodnight"
+	if id != "" {
+		side, err := config.LoadBook(a.Paths, id)
+		if err != nil {
+			log.Printf("sidecar %s: %v", id, err)
+		}
+		if side.SleepScreen != "goodnight" {
+			if cover, err := a.sleepCover(id); err != nil {
+				log.Printf("sleep cover %s: %v", id, err)
+			} else {
+				img, what = cover, "cover "+id
+				if a.Dark { // the hardware inversion would show it as a negative
+					for i, v := range img.Pix {
+						img.Pix[i] = 255 - v
+					}
+				}
+			}
 		}
 	}
 	if err := a.Disp.Image(img, image.Point{}, display.Full); err != nil {
-		log.Printf("sleep cover %s: %v", id, err)
+		log.Printf("sleep screen: %v", err)
 		return
 	}
-	log.Printf("SLEEP cover %s drawn in %v", id, time.Since(start).Round(time.Millisecond))
+	log.Printf("SLEEP %s drawn in %v", what, time.Since(start).Round(time.Millisecond))
+}
+
+// goodnightSize is the お休みなさい glyph size in pixels (about 48 pt).
+const goodnightSize = 200
+
+// goodnight is お休みなさい in one vertical column, centred. Unlike the
+// cover, it follows dark mode (white on black).
+func (a *App) goodnight() *image.Gray {
+	img := a.canvas()
+	chars := []rune("お休みなさい")
+	step := goodnightSize * 21 / 20
+	y := (a.H - step*len(chars)) / 2
+	for _, c := range chars {
+		box := image.Rect(a.W/2-goodnightSize, y, a.W/2+goodnightSize, y+step)
+		a.label(img, box, string(c), goodnightSize, false, true, black)
+		y += step
+	}
+	return img
 }
 
 // sleepCover is the book's sleep.png (already screen-sized), or its cover
