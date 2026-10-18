@@ -26,7 +26,7 @@ def main(argv: list[str] | None = None) -> int:
 
     d = sub.add_parser('deploy', help='send built books and settings to the Kindle')
     d.add_argument('books', nargs='*')
-    d.add_argument('--settings-only', action='store_true', help='only config.json and per-book settings')
+    d.add_argument('--settings-only', action='store_true', help='only config.json, per-book settings and the Anki word list')
     d.add_argument('--usb', type=Path, metavar='VOLUME', help='copy to a mounted Kindle instead of SSH')
     d.add_argument('--force', action='store_true', help='resend books even if unchanged')
 

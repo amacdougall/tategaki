@@ -259,3 +259,37 @@ Decisions made during implementation, newest last. LOCKED decisions live in
     with a full refresh. The user saw no flicker.
   - **Startup state:** launch.sh reads `epdcMode` before pausing awesome and
     passes it as `TATEGAKI_EPDC_MODE`.
+
+## 2026-10-18 (Phase 6: Anki word list)
+
+- **The popup shows Exists before mining,** as the user proposed, for any word
+  already in Anki, using a word list that's deployed from the desktop.
+  - **Fetched on the Mac during `tategaki deploy`,** including
+    `--settings-only` and `--usb`, not by the Kindle. Plan §5.8 says the
+    device writes only reading position and the queue, and fetching every
+    note over the Kindle's Wi-Fi would be slow.
+  - **The file:** `anki-words.txt`, one word per line. It's written to
+    `~/Tategaki/` (which the simulator links to) and sent to
+    `/mnt/us/tategaki/`.
+  - **What's in it:** the first field (`Word`) of every note of the
+    configured note type, collection-wide, matching the duplicate scope.
+    8,484 words on 2026-10-18, fetched in under 2 s.
+  - **If Anki is unreachable,** deploy prints a warning and the Kindle keeps
+    its previous list.
+- **Furigana is dropped, not just its tags.** About 530 of the user's Kaishi
+  notes hold `<ruby>島<rt>しま</rt></ruby>`. Anki's own duplicate check sees
+  that as "島しま", so mining 島 would still be added. The list counts it as
+  島, so the popup shows Exists, which is the useful answer.
+- **Between deploys,** a word also counts as known if any queued card with
+  that `Word`, from any book, is Sent or Duplicate. The device writes no new
+  state for this.
+- **Label order:** this book's queue status for the row (Queued, Added ✓,
+  Exists, Error) comes first, then Exists from the list or the queue, then
+  `+ Anki`.
+- **Exists is informational:** tapping it does nothing. The user agreed that
+  a list made stale by deleting a note in Anki is fixed by redeploying, which
+  wasn't worth a tap override (option (a)).
+- **Queued and Added ✓ are informational too,** at the user's request.
+  Before, tapping them queued the card again, and the resend was then skipped
+  as a duplicate. **Error** stays tappable: tapping it queues a fresh card,
+  which retries after fixing the cause, such as a missing deck.

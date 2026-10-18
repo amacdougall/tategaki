@@ -54,8 +54,10 @@ type App struct {
 	Dark    bool
 	SetDark func(bool) error
 	// Queue is the Anki queue (plan §7.7).
-	Queue   *anki.Queue
-	updates chan func()
+	Queue *anki.Queue
+	// AnkiWords are the words already in Anki at the last deploy.
+	AnkiWords map[string]bool
+	updates   chan func()
 }
 
 // Updates delivers work posted from background goroutines; the event loop
@@ -106,6 +108,11 @@ func (a *App) reloadConfig() {
 		dev.FullRefreshEvery = 1
 	}
 	a.Dev = dev
+	words, err := anki.LoadWords(a.Paths.AnkiWords())
+	if err != nil {
+		log.Printf("anki words: %v", err)
+	}
+	a.AnkiWords = words
 }
 
 // Show switches to a screen and draws it.

@@ -133,6 +133,20 @@ func (q *Queue) Latest(book string, entSeq int64, word string) (Item, bool) {
 	return Item{}, false
 }
 
+// InAnki reports whether a card with this Word, from any book, was sent or
+// found to be a duplicate: Anki has it, even if the deployed word list
+// predates it.
+func (q *Queue) InAnki(word string) bool {
+	q.mu.Lock()
+	defer q.mu.Unlock()
+	for _, it := range q.items {
+		if it.Fields[Word] == word && (it.Status == Sent || it.Status == Duplicate) {
+			return true
+		}
+	}
+	return false
+}
+
 func (q *Queue) save() error {
 	tmp := q.path + ".tmp"
 	f, err := os.Create(tmp)

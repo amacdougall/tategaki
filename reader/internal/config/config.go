@@ -47,6 +47,7 @@ type Paths struct{ Root string }
 
 func (p Paths) Config() string           { return filepath.Join(p.Root, "config.json") }
 func (p Paths) State() string            { return filepath.Join(p.Root, "state.json") }
+func (p Paths) AnkiWords() string        { return filepath.Join(p.Root, "anki-words.txt") }
 func (p Paths) Books() string            { return filepath.Join(p.Root, "books") }
 func (p Paths) Book(id string) string    { return filepath.Join(p.Root, "books", id+".jbk") }
 func (p Paths) Sidecar(id string) string { return filepath.Join(p.Root, "books", id+".json") }

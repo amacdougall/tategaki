@@ -4,7 +4,8 @@ A Japanese ebook reader for a jailbroken Kindle Paperwhite. It offers:
 
 - vertical (縦書き, right-to-left) text with furigana;
 - tap-to-look-up against an offline JMdict, with JPDB frequency ranks;
-- one-tap mining to Anki (Kaishi 1.5k note type), with an offline queue;
+- one-tap mining to Anki (Kaishi 1.5k note type), with an offline queue,
+  and an offline "Exists" marker for words already in Anki;
 - a menu toggle for the Kindle's own dark mode.
 
 It's a personal project, built for one device and one reader. "Tategaki
@@ -45,7 +46,7 @@ does lookups.**
 | `docs/ANKI.md` | AnkiConnect setup, the mined fields, the queue, and the USB fallback. |
 
 All phases of the plan (0–5) are complete and accepted by the user. Phase 6
-("polish") is open-ended; dark mode is the only item done so far.
+("polish") is open-ended. Done so far: dark mode, and the Anki word list.
 
 ## Repository layout
 
@@ -101,7 +102,7 @@ The user's library lives in `~/Tategaki/` (override with `TATEGAKI_HOME`):
 ```sh
 bin/tategaki build [ID…]          # convert books whose inputs changed (hash-checked)
 bin/tategaki deploy [ID…]         # send books, settings and the dictionary to the Kindle
-bin/tategaki deploy --settings-only
+bin/tategaki deploy --settings-only   # also refreshes the Anki word list (Anki must be open)
 bin/tategaki preview ID           # HTML preview with glyph overlays (click a glyph)
 bin/tategaki proof EPUB --font-size-pt 12,14,16 --deploy   # typography proof sheets
 tools/dev-install.sh              # build + (re)install the reader package on the Kindle
@@ -138,7 +139,7 @@ fixtures by hand.
   lines).
 - **Screenshot:** `uv run --project converter --with pillow tools/fbshot.py out.png`.
 - **Data on the device** lives in `/mnt/us/tategaki/`: `books/`, `config.json`,
-  `state.json`, `anki-queue.jsonl`, `jmdict.sqlite`. The KPM package itself sits
+  `state.json`, `anki-queue.jsonl`, `anki-words.txt`, `jmdict.sqlite`. The KPM package itself sits
   in `/mnt/us/kmc/kpm/packages/tategaki/`.
 - **Taps can't be injected remotely.** Test interaction in the simulator, then
   ask the user to try it on the device and read the log.

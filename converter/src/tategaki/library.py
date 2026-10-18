@@ -1,20 +1,25 @@
 """`tategaki build` and `tategaki deploy` over the library folder (plan §5.8)."""
 
 import hashlib
+import html
 import json
+import re
 import shlex
 import shutil
 import subprocess
 import tempfile
+import urllib.request
 import zipfile
 from importlib import resources
 from pathlib import Path
 
 from .config import BookConfig, Library
 from .convert import JMDICT, convert, sha256
+from .reference.anki_connect import AnkiConnectError, AnkiConnectUnavailable
 from .render import Profile, RenderSettings
 
 DEVICE_ROOT = '/mnt/us/tategaki'
+ANKI_WORDS = 'anki-words.txt'
 
 
 # Source files whose changes alter a rendered bundle. CLI, config and deploy
@@ -169,6 +174,62 @@ def deploy_dictionary(target, deployed: dict, force: bool, log=print) -> None:
     target.save_hashes(deployed)
 
 
+def anki_invoke(device: dict, action: str, **params):
+    """One AnkiConnect call with the configured URL and API key (the vendored
+    client has no key support)."""
+    body = {'action': action, 'version': 6, 'params': params}
+    if device['anki_api_key']:
+        body['key'] = device['anki_api_key']
+    req = urllib.request.Request(device['ankiconnect_url'], data=json.dumps(body).encode('utf-8'),
+                                 headers={'Content-Type': 'application/json'})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            r = json.loads(resp.read().decode('utf-8'))
+    except OSError as e:
+        raise AnkiConnectUnavailable(f'Anki not reachable at {device["ankiconnect_url"]}: {e}') from e
+    if r.get('error') is not None:
+        raise AnkiConnectError(r['error'])
+    return r['result']
+
+
+def first_field(note: dict) -> str:
+    """A note's first field (the one Anki's duplicate check compares) as plain
+    text. Furigana is dropped, not just its tags: some notes hold
+    <ruby>島<rt>しま</rt></ruby>, which should match the reader's 島."""
+    fields = note.get('fields') or {}
+    if not fields:
+        return ''
+    value = min(fields.values(), key=lambda f: f['order'])['value']
+    value = re.sub(r'<(rt|rp)\b[^>]*>.*?</\1>', '', value, flags=re.S | re.I)
+    return html.unescape(re.sub(r'<[^>]*>', '', value)).strip()
+
+
+def anki_words(device: dict) -> list[str]:
+    """Every word already in Anki for the reader's note type, collection-wide,
+    as the reader's duplicate check sees them."""
+    ids = anki_invoke(device, 'findNotes', query=f'"note:{device["note_type"]}"')
+    words = set()
+    for i in range(0, len(ids), 500):
+        for note in anki_invoke(device, 'notesInfo', notes=ids[i:i + 500]):
+            if w := first_field(note):
+                words.add(w)
+    return sorted(words)
+
+
+def deploy_anki_words(lib: Library, target, log=print) -> None:
+    """Send the words already in Anki, so the lookup popup can show Exists
+    offline. If Anki can't be reached, the Kindle keeps its previous list."""
+    try:
+        words = anki_words(lib.device)
+    except (AnkiConnectUnavailable, AnkiConnectError) as e:
+        log(f'anki words: {e}; the Kindle keeps its previous list')
+        return
+    path = lib.root / ANKI_WORDS
+    path.write_text(''.join(w + '\n' for w in words), encoding='utf-8')
+    target.put(path, f'{DEVICE_ROOT}/{ANKI_WORDS}')
+    log(f'anki words: {len(words)} deployed')
+
+
 def deploy(lib: Library, ids: list[str], settings_only: bool = False, usb: Path | None = None,
            force: bool = False, log=print) -> None:
     target = UsbTarget(usb, log) if usb else SshTarget(lib.device['ssh_host'], log)
@@ -179,6 +240,7 @@ def deploy(lib: Library, ids: list[str], settings_only: bool = False, usb: Path 
         cfg.write_text(json.dumps(device_config(lib), ensure_ascii=False, indent=1), encoding='utf-8')
         target.put(cfg, f'{DEVICE_ROOT}/config.json')
     log('config.json deployed')
+    deploy_anki_words(lib, target, log)
 
     deployed = target.hashes()
     if not settings_only:

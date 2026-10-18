@@ -51,13 +51,20 @@ a word is a duplicate if a Kaishi note with that `Word` exists in **any** deck.
 
 ## On the Kindle
 
+- **Words you already know:** a popup row shows a gray **Exists** instead of
+  **+ Anki** when the word is already in Anki, even offline. Tapping it does
+  nothing. The reader knows from the word list described below, and from cards
+  it has already sent.
 - **Adding cards:** in the lookup popup, tap **+ Anki** on an entry. The
   button then shows the card's state:
   - **Queued:** saved on the Kindle, waiting for Anki.
   - **Added ✓:** in Anki.
   - **Exists:** already in Anki (a duplicate), so nothing was added.
   - **Error:** Anki refused it, for example a missing deck. Check
-    `/mnt/us/tategaki/log.txt`.
+    `/mnt/us/tategaki/log.txt`, fix the cause, and tap **Error** to try
+    again.
+  - Only **+ Anki** and **Error** respond to taps. The other labels just show
+    the card's state.
 - **The queue:** every card is saved to `/mnt/us/tategaki/anki-queue.jsonl`
   before anything is sent, so nothing is lost if Anki is closed or the Kindle is
   offline.
@@ -65,6 +72,36 @@ a word is a duplicate if a Kaishi note with that `Word` exists in **any** deck.
   - **Menu → Send to Anki (n)** retries everything still queued.
   - Waiting cards are also retried once each time the reader starts.
   - The result reads "x sent, y skipped". Skipped cards were already in Anki.
+
+## Keeping the word list up to date
+
+`tategaki deploy` asks Anki for the `Word` of every Kaishi note, in any deck,
+and copies the list to the Kindle as `anki-words.txt`. Cards you add some other
+way, such as from Yomitan, the Calibre viewer or Anki itself, only show as
+**Exists** once the list has been refreshed. To refresh it, open Anki on the
+computer and run:
+
+```sh
+bin/tategaki deploy --settings-only          # over Wi-Fi; takes a few seconds
+bin/tategaki deploy --settings-only --usb /Volumes/Kindle   # or over USB
+```
+
+- Any deploy refreshes the list. `--settings-only` just skips the books and
+  the dictionary.
+- **The reader picks up the new list** the next time the library opens, or
+  when it restarts.
+- **If Anki isn't running,** deploy prints `anki words: … the Kindle keeps its
+  previous list` and carries on. Nothing on the Kindle changes.
+- **Cards mined on the Kindle** count as Exists right away once they're sent,
+  without a refresh.
+- **A stale list is safe.** Cards are still checked against Anki when they're
+  sent, so a word added elsewhere since the last refresh is skipped as a
+  duplicate. In the other direction, if you delete a note in Anki, its word
+  shows as Exists until the next deploy.
+- **Furigana in `Word`** (`<ruby>島<rt>しま</rt></ruby>`) is ignored, so
+  that note counts as 島.
+- A copy of the list is kept at `~/Tategaki/anki-words.txt`, and the simulator
+  uses it too.
 
 ## Without Wi-Fi (USB fallback)
 

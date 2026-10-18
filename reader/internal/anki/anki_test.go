@@ -129,3 +129,29 @@ func TestQueueAnkiErrorMarksItem(t *testing.T) {
 		t.Fatalf("flush = %+v, items %+v", res, q.Items())
 	}
 }
+
+func TestLoadWords(t *testing.T) {
+	dir := t.TempDir()
+	if w, err := LoadWords(filepath.Join(dir, "missing.txt")); err != nil || len(w) != 0 {
+		t.Fatalf("missing file: %v, %v", w, err)
+	}
+	path := filepath.Join(dir, "anki-words.txt")
+	os.WriteFile(path, []byte("贔屓\n\n蜘蛛の巣 \n"), 0o644)
+	w, err := LoadWords(path)
+	if err != nil || !reflect.DeepEqual(w, map[string]bool{"贔屓": true, "蜘蛛の巣": true}) {
+		t.Fatalf("LoadWords = %v, %v", w, err)
+	}
+}
+
+func TestInAnki(t *testing.T) {
+	q, _ := OpenQueue(filepath.Join(t.TempDir(), "q.jsonl"))
+	for word, status := range map[string]string{"贔屓": Sent, "蜘蛛": Duplicate, "巣": Pending, "家": Failed} {
+		q.Append(Item{Book: "other-book", Fields: map[string]string{Word: word}})
+		q.items[len(q.items)-1].Status = status
+	}
+	for word, want := range map[string]bool{"贔屓": true, "蜘蛛": true, "巣": false, "家": false, "猫": false} {
+		if got := q.InAnki(word); got != want {
+			t.Errorf("InAnki(%q) = %v, want %v", word, got, want)
+		}
+	}
+}

@@ -10,5 +10,7 @@ mkdir -p "$SIM/books"
 for f in "$HOME_DIR"/books/*/build/*.jbk "$HOME_DIR"/books/*/build/*.json; do
     [ -e "$f" ] && ln -sf "$f" "$SIM/books/$(basename "$f")"
 done
+# the Anki word list written by the last `tategaki deploy`
+[ -e "$HOME_DIR/anki-words.txt" ] && ln -sf "$HOME_DIR/anki-words.txt" "$SIM/anki-words.txt"
 cd "$ROOT/reader"
 exec go run ./cmd/tategaki --sim --root "$SIM" --fonts "$ROOT/data/fonts" "$@"

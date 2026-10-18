@@ -13,6 +13,7 @@ import (
 	"time"
 	"unicode"
 
+	"github.com/amacdougall/tategaki/reader/internal/anki"
 	"github.com/amacdougall/tategaki/reader/internal/book"
 	"github.com/amacdougall/tategaki/reader/internal/dict"
 	"github.com/amacdougall/tategaki/reader/internal/display"
@@ -566,18 +567,27 @@ func (r *Reader) adjustSpan(a *App, delta int) error {
 }
 
 // ankiButton draws a row's "+ Anki" button, labelled with the row's queue
-// status (queued, sent, duplicate, error).
+// status (queued, sent, duplicate, error), or Exists for a word already in
+// Anki. It returns the tappable area: empty for Queued, Added ✓ and Exists,
+// which are only informational. Error stays tappable, to retry.
 func (r *Reader) ankiButton(a *App, img *image.Gray, p *Popup, entSeq int64, word string, rect image.Rectangle) image.Rectangle {
 	if word == "" {
 		word = r.popupText(p)
 	}
-	label, done := ankiStatus(a.Queue.Latest(r.id, entSeq, word))
+	it, queued := a.Queue.Latest(r.id, entSeq, word)
+	label, done := ankiStatus(it, queued)
+	if !queued && (a.AnkiWords[word] || a.Queue.InAnki(word)) {
+		label, done = "Exists", true
+	}
 	if done { // a status, not a button: gray, so it doesn't read as a rank badge
 		fill(img, rect, light)
 	} else {
 		frame(img, rect, 3, black)
 	}
 	a.label(img, rect, label, sizeNote, true, true, black)
+	if done && !(queued && it.Status == anki.Failed) {
+		return image.Rectangle{}
+	}
 	return rect
 }
 
