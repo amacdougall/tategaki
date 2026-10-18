@@ -167,7 +167,9 @@ class Renderer:
     def _text_page(self, page: Page, writer: BundleWriter, cut: Cut, data: dict,
                    s: RenderSettings, stamp: Stamp | None) -> dict:
         p = self.profile
-        target = cut.right - (p.width - p.margins['right'])
+        # Headless Chromium paints a vertical-rl page blank at scrollX 0, which
+        # a page whose first column touches the right margin would scroll to.
+        target = min(cut.right - (p.width - p.margins['right']), -1)
         page.evaluate('(x) => window.scrollTo(x, 0)', target)
         actual = page.evaluate('() => window.scrollX')
         dx = -actual
@@ -178,15 +180,17 @@ class Renderer:
             draw.rectangle((0, 0, left - 1, p.height), fill=255)
         if right < p.width:
             draw.rectangle((right, 0, p.width, p.height), fill=255)
+        glyphs = []
+        for off, x, y, w, h in data['glyphs']:
+            if cut.clip_left <= x + w / 2 <= cut.clip_right:
+                glyphs.append([off, round(x + dx), round(y), round(w), round(h)])
+        if glyphs and shot.getextrema()[0] == 255:
+            self.log(f'  warning: page {writer.page_count} has {len(glyphs)} glyphs but rendered blank')
         shot = images.gamma(shot, s.gamma)
         if s.quantize:
             shot = images.quantize(shot, dither=False)
         idx = writer.add_page(_stamp(shot, stamp))
 
-        glyphs = []
-        for off, x, y, w, h in data['glyphs']:
-            if cut.clip_left <= x + w / 2 <= cut.clip_right:
-                glyphs.append([off, round(x + dx), round(y), round(w), round(h)])
         imgs = []
         for im in data['inlineImages']:
             x, y, w, h = im['box']

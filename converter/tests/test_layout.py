@@ -82,3 +82,67 @@ def test_ruby_bands_merge_with_their_base_column(collected):
     # every merged band contains at least one glyph column: no ruby-only bands
     for a, b in merged:
         assert any(a <= x0 and x1 <= b for x0, x1 in glyph_cols), (a, b)
+
+
+FRONTMATTER = Path(__file__).parent / 'fixtures' / 'frontmatter.xhtml'
+
+
+class _Writer:
+    """Just enough BundleWriter for Renderer._text_page."""
+    def __init__(self):
+        self.pages = []
+        self.page_count = 0
+
+    def add_page(self, img):
+        self.pages.append(img)
+        self.page_count += 1
+        return self.page_count - 1
+
+    def add_image(self, key, img):
+        return f'images/{key}.png'
+
+
+@pytest.fixture(scope='module')
+def frontmatter():
+    """A chapter opening like Date A Live's: a 1x1 spacer image, a 1.3em
+    heading whose ruby is flush with the right margin, and a small logo alone
+    in a block."""
+    from tategaki.paginate import Cut, paginate
+    from tategaki.render import Renderer
+    profile = Profile.load('pw11')
+    s = RenderSettings(font=FONT, font_size_pt=14)
+    logs = []
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch()
+        ctx = browser.new_context(java_script_enabled=False, device_scale_factor=1,
+                                  viewport={'width': profile.width, 'height': profile.height})
+        page = ctx.new_page()
+        _load(page, FRONTMATTER.resolve().as_uri(), _css(s, profile))
+        illus = page.evaluate('() => TG.extractIllustrations()')
+        data = page.evaluate('() => TG.collect()')
+        cuts = paginate([tuple(b) for b in data['bands']], [(m[0], m[1]) for m in data['markers']],
+                        profile.content_width)
+        writer = _Writer()
+        renderer = Renderer(profile, log=logs.append)
+        text_cuts = [c for c in cuts if isinstance(c, Cut)]
+        pages = [renderer._text_page(page, writer, c, data, s, None) for c in text_cuts]
+        browser.close()
+    return profile, illus, data, cuts, text_cuts, writer, pages, logs
+
+
+def test_spacer_images_are_dropped_and_small_images_stay_inline(frontmatter):
+    _, illus, data, cuts, *_ = frontmatter
+    assert illus['sources'] == [] and not illus['onlyIllustrations']
+    assert data['markers'] == []
+    assert [im['src'].rsplit('/', 1)[-1] for im in data['inlineImages']] == ['logo.png']
+    assert len(cuts) == 1  # no forced breaks: heading, text, logo and label share a page
+
+
+def test_page_flush_with_right_margin_is_not_blank(frontmatter):
+    profile, _, _, _, cuts, writer, pages, logs = frontmatter
+    # precondition: the heading's column reaches the margin, so the naive
+    # scroll target is 0, where headless Chromium paints nothing
+    assert cuts[0].right > profile.width - profile.margins['right'] - 0.5
+    assert pages[0]['glyphs']
+    assert writer.pages[0].getextrema()[0] < 128
+    assert logs == []

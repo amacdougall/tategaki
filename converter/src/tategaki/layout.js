@@ -27,14 +27,38 @@
     return href ? new URL(href, document.baseURI).href : null;
   }
 
-  // Replace every block whose only visible content is one image (the light
-  // novel illustration pattern) with a zero-size marker. Returns the sources in
-  // document order; each marker forces a page break and becomes a full-screen
-  // illustration page (plan §5.5).
+  // Images up to this size on the long side are spacers (KADOKAWA's 1x1
+  // keep-space.jpg) and are removed. Images below the illustration size stay
+  // inline even when alone in a block (a 50 px publisher logo).
+  const SPACER_MAX = 4;
+  const ILLUSTRATION_MIN = 256;
+
+  // Natural size on the long side. An <svg><image> without a stated size
+  // counts as an illustration, as before.
+  function naturalSize(img) {
+    if (img.localName === 'img') return Math.max(img.naturalWidth, img.naturalHeight);
+    const svg = img.closest('svg');
+    const w = parseFloat(img.getAttribute('width')), h = parseFloat(img.getAttribute('height'));
+    if (w > 0 && h > 0) return Math.max(w, h);
+    const vb = svg && svg.viewBox && svg.viewBox.baseVal;
+    if (vb && vb.width > 0 && vb.height > 0) return Math.max(vb.width, vb.height);
+    return Infinity;
+  }
+
+  // Remove spacer images, then replace every block whose only visible content
+  // is one illustration-sized image (the light novel illustration pattern)
+  // with a zero-size marker. Returns the sources in document order; each
+  // marker forces a page break and becomes a full-screen illustration page
+  // (plan §5.5).
   function extractIllustrations() {
     const sources = [];
+    for (const img of Array.from(document.body.querySelectorAll('img, svg image'))) {
+      if (naturalSize(img) > SPACER_MAX) continue;
+      (img.localName === 'image' ? img.closest('svg') || img : img).remove();
+    }
     const images = Array.from(document.body.querySelectorAll('img, svg image'));
     for (const img of images) {
+      if (naturalSize(img) < ILLUSTRATION_MIN) continue;
       let block = img.localName === 'image' ? img.closest('svg') : img;
       // climb to the outermost ancestor that still contains nothing else
       let target = null;

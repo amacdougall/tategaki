@@ -360,3 +360,33 @@ Decisions made during implementation, newest last. LOCKED decisions live in
   the longest label), so Dark mode and Light sit side by side above
   Close menu and Exit. The sheet is one row taller.
 
+
+## 2026-10-18 (Date A Live layout fixes)
+
+The second book, `date-a-live-01` (KADOKAWA's EPUB template), showed three
+converter bugs. The user agreed to all three fixes.
+
+- **Never screenshot at `scrollX` 0.** Headless Chromium paints a vertical-rl
+  page blank at scroll offset 0, in every book. Toradora never got there,
+  because half-leading kept its first column inside the margin. In Date A
+  Live, a 1.3em chapter heading's ruby reaches the margin, so five chapters
+  lost their first page (the glyph boxes were still there, so the blank page
+  even had taps). `_text_page` now scrolls to at most −1 px, and logs a
+  warning for any page that has glyphs but no ink.
+- **Spacer images are removed.** The template opens almost every spine item
+  with a 1×1 `keep-space.jpg`. The CSS that hides it is linked only from the
+  image-only pages, so each one became a blank full-screen illustration (39
+  pages). Images of at most 4 px on the long side (natural size) are now
+  removed before layout. This includes images that failed to load.
+- **Only illustration-sized images become full-screen pages.** A lone image
+  needs a natural long side of at least 256 px. Smaller ones stay inline at
+  their CSS size, like the title page's 50 px publisher logo.
+  `<svg><image>` uses its `width`/`height` or the viewBox, and counts as an
+  illustration when neither is given.
+  - Toradora's 120×120 author photo is now inline beside the bio, no longer
+    a blurry full-screen page (557 → 556 pages). Nothing else in it changed.
+- **The title page stays vertical** (user's choice). `p-title.xhtml` is
+  designed horizontal-tb (it links only `style-h.css`), but we force
+  vertical-rl everywhere, and it reads fine. A "fixed page" mode for
+  horizontal front matter is possible later if more books need it.
+- Date A Live: 770 → 727 pages, with no blank pages left.
