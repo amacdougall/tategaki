@@ -8,6 +8,7 @@ import (
 	"bufio"
 	"context"
 	"fmt"
+	"log"
 	"os/exec"
 	"strconv"
 	"strings"
@@ -58,7 +59,11 @@ const (
 	EPDCDark   = "Y8INV"
 )
 
-// SetDarkMode switches the system dark mode.
+// SetDarkMode switches the system dark mode. lipc-set-prop returns once
+// awesome has taken the new value, before it has asked X to apply it, so
+// awesome stays running until the framebuffer shows the change. Stopping it
+// sooner can strand the change until the reader exits. The lag is
+// intermittent: usually none, sometimes a few hundred milliseconds.
 func SetDarkMode(dark bool) error {
 	mode := EPDCNormal
 	if dark {
@@ -66,12 +71,27 @@ func SetDarkMode(dark bool) error {
 	}
 	exec.Command("killall", "-CONT", "awesome").Run()
 	defer exec.Command("killall", "-STOP", "awesome").Run()
+	start := time.Now()
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 	if out, err := exec.CommandContext(ctx, "lipc-set-prop", "com.lab126.winmgr", "epdcMode", mode).CombinedOutput(); err != nil {
 		return fmt.Errorf("lipc-set-prop epdcMode %s: %v: %s", mode, err, out)
 	}
-	return nil
+	set := time.Since(start)
+	for {
+		inv, err := fbInverted()
+		if err != nil {
+			return fmt.Errorf("epdcMode %s: reading framebuffer: %v", mode, err)
+		}
+		if inv == dark {
+			log.Printf("epdcMode %s: set in %v, applied in %v", mode, set.Round(time.Millisecond), time.Since(start).Round(time.Millisecond))
+			return nil
+		}
+		if ctx.Err() != nil {
+			return fmt.Errorf("epdcMode %s: set, but the display didn't follow within 5s", mode)
+		}
+		time.Sleep(20 * time.Millisecond)
+	}
 }
 
 // The frontlight is com.lab126.powerd flIntensity, the step shown by the
