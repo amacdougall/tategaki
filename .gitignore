@@ -5,3 +5,5 @@ data/jmdict.sqlite
 converter/.venv/
 .pytest_cache/
 simroot/
+
+.scratch.md
