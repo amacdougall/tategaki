@@ -32,17 +32,6 @@ type menuButton struct {
 
 func (m *Menu) Draw(a *App) error {
 	r := m.reader
-	m.sheet = image.Rect(0, 0, a.W, 994)
-	img := image.NewGray(m.sheet)
-	fill(img, m.sheet, white)
-	b := r.book.Manifest
-	a.label(img, image.Rect(24, 20, a.W-24, 110), b.Title, sizeTitle, true, false, black)
-	where := pageLabel(r.page, b.PageCount) + fmt.Sprintf("  (%d%%)", percent(r.page, b.PageCount))
-	if t := r.book.TOCTitle(r.page); t != "" {
-		where = t + " · " + where
-	}
-	a.label(img, image.Rect(24, 110, a.W-24, 180), where, sizeBody, false, false, black)
-
 	m.buttons = []menuButton{
 		{label: "Contents", do: func(a *App) error { a.Show(&TOC{reader: r}); return nil }},
 		{label: "Go to page", do: func(a *App) error { a.Show(&Goto{reader: r}); return nil }},
@@ -73,6 +62,11 @@ func (m *Menu) Draw(a *App) error {
 			}
 			return m.Draw(a)
 		}},
+		{label: "Refresh screen", do: func(a *App) error {
+			a.fullNext = true
+			a.Show(r)
+			return nil
+		}},
 		{label: "Close menu", do: func(a *App) error { a.Show(r); return nil }},
 		{label: "Exit", do: func(a *App) error { a.Quit(); return nil }},
 	}
@@ -88,14 +82,31 @@ func (m *Menu) Draw(a *App) error {
 			w = 2*bw + gap
 		}
 		b.rect = image.Rect(x, y, x+w, y+bh)
+		if col++; b.wide || col == 2 {
+			col, y = 0, y+bh+gap
+		}
+	}
+	if col != 0 {
+		y += bh + gap
+	}
+
+	// The sheet grows to fit the buttons.
+	m.sheet = image.Rect(0, 0, a.W, y+64)
+	img := image.NewGray(m.sheet)
+	fill(img, m.sheet, white)
+	b := r.book.Manifest
+	a.label(img, image.Rect(24, 20, a.W-24, 110), b.Title, sizeTitle, true, false, black)
+	where := pageLabel(r.page, b.PageCount) + fmt.Sprintf("  (%d%%)", percent(r.page, b.PageCount))
+	if t := r.book.TOCTitle(r.page); t != "" {
+		where = t + " · " + where
+	}
+	a.label(img, image.Rect(24, 110, a.W-24, 180), where, sizeBody, false, false, black)
+	for _, b := range m.buttons {
 		if b.disabled {
 			frame(img, b.rect, 4, gray)
 			a.label(img, b.rect, b.label, sizeBody, false, true, gray)
 		} else {
 			a.button(img, b.rect, b.label, false)
-		}
-		if col++; b.wide || col == 2 {
-			col, y = 0, y+bh+gap
 		}
 	}
 	fill(img, image.Rect(0, m.sheet.Max.Y-6, a.W, m.sheet.Max.Y), black)
