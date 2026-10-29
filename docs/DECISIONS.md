@@ -390,3 +390,19 @@ converter bugs. The user agreed to all three fixes.
   vertical-rl everywhere, and it reads fine. A "fixed page" mode for
   horizontal front matter is possible later if more books need it.
 - Date A Live: 770 → 727 pages, with no blank pages left.
+
+## 2026-10-28 (`tategaki list` and `tategaki remove`)
+
+- **`tategaki remove ID…`** deletes `books/<id>.jbk` and `books/<id>.json`
+  from the device, over SSH or `--usb`. The library folder is kept.
+  - **Removal sticks.** Removed ids are recorded under `_removed` in
+    `books/.deployed.json`, so a plain `deploy` (all books) skips them
+    instead of quietly sending them back. `deploy <id>` restores a book and
+    takes it off the list.
+  - **`state.json` isn't touched.** The reader owns it and may be writing it,
+    and keeping the position means a redeployed book resumes where it was.
+    The reader already copes with a missing `last_book`: it opens the library,
+    and sleep shows お休みなさい.
+- **`tategaki list`** shows each book on the device with its size, progress
+  (from `state.json`) and whether the local build matches what was deployed,
+  then lists library books that aren't on the device.

@@ -30,6 +30,13 @@ def main(argv: list[str] | None = None) -> int:
     d.add_argument('--usb', type=Path, metavar='VOLUME', help='copy to a mounted Kindle instead of SSH')
     d.add_argument('--force', action='store_true', help='resend books even if unchanged')
 
+    ls = sub.add_parser('list', help='list the books on the Kindle')
+    ls.add_argument('--usb', type=Path, metavar='VOLUME', help='read a mounted Kindle instead of SSH')
+
+    rm = sub.add_parser('remove', help='delete books from the Kindle (the library folder is kept)')
+    rm.add_argument('books', nargs='+', help='book ids')
+    rm.add_argument('--usb', type=Path, metavar='VOLUME', help='use a mounted Kindle instead of SSH')
+
     c = sub.add_parser('convert', help='low-level: one EPUB to one .jbk with explicit settings')
     c.add_argument('epub', type=Path)
     c.add_argument('-o', '--output', type=Path, required=True)
@@ -74,6 +81,10 @@ def _run(args) -> int:
         library.build(Library.load(), args.books, force=args.force)
     elif args.cmd == 'deploy':
         library.deploy(Library.load(), args.books, settings_only=args.settings_only, usb=args.usb, force=args.force)
+    elif args.cmd == 'list':
+        library.list_books(Library.load(), usb=args.usb)
+    elif args.cmd == 'remove':
+        library.remove(Library.load(), args.books, usb=args.usb)
     elif args.cmd == 'convert':
         from .convert import convert
         s = RenderSettings(font=args.font, font_size_pt=args.font_size_pt, line_height=args.line_height,

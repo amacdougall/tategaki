@@ -217,6 +217,8 @@ Every setting is described in the [user's manual](#users-manual) below.
 bin/tategaki build [ID…]          # convert books whose inputs changed (hash-checked)
 bin/tategaki deploy [ID…]         # send books, settings and the dictionary to the Kindle
 bin/tategaki deploy --settings-only   # also refreshes the Anki word list (Anki must be open)
+bin/tategaki list                 # books on the Kindle: progress, and whether the local build is newer
+bin/tategaki remove ID…           # delete books from the Kindle (the library folder stays)
 bin/tategaki preview ID           # HTML preview with glyph overlays (click a glyph)
 bin/tategaki proof EPUB --font-size-pt 12,14,16 --deploy   # typography proof sheets
 tools/dev-install.sh              # build + (re)install the reader package on the Kindle
@@ -237,6 +239,14 @@ build/lookup --scan "蜘蛛の巣が張って"   # after: (cd reader && go build
 
 To replace the EPUB with a revised one, keep the same folder and id. The
 reading position survives, though it may drift a little if the text changed.
+
+### Removing a book
+
+`bin/tategaki remove <id>` deletes the book and its settings from the Kindle.
+The folder in `~/Tategaki/books/` is left alone, and so is the reading
+position, so deploying the book again resumes where you were. A plain
+`bin/tategaki deploy` skips removed books; `bin/tategaki deploy <id>` brings
+one back. To see what's on the Kindle, run `bin/tategaki list`.
 
 ### On the Kindle
 

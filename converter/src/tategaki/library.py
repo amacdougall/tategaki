@@ -8,6 +8,7 @@ import shlex
 import shutil
 import subprocess
 import tempfile
+import unicodedata
 import urllib.request
 import zipfile
 from importlib import resources
@@ -20,6 +21,9 @@ from .render import Profile, RenderSettings
 
 DEVICE_ROOT = '/mnt/us/tategaki'
 ANKI_WORDS = 'anki-words.txt'
+# Key in books/.deployed.json listing books taken off the device with
+# `tategaki remove`, which a plain `deploy` (all books) then skips.
+REMOVED = '_removed'
 
 
 # Source files whose changes alter a rendered bundle. CLI, config and deploy
@@ -53,12 +57,17 @@ def build_hash(book: BookConfig, profile_name: str) -> str:
     return hashlib.sha256(json.dumps(key, sort_keys=True).encode()).hexdigest()
 
 
-def existing_hash(jbk: Path) -> str | None:
+def manifest(jbk: Path) -> dict | None:
     try:
         with zipfile.ZipFile(jbk) as z:
-            return json.loads(z.read('manifest.json')).get('build_hash')
+            return json.loads(z.read('manifest.json'))
     except (OSError, KeyError, zipfile.BadZipFile, json.JSONDecodeError):
         return None
+
+
+def existing_hash(jbk: Path) -> str | None:
+    m = manifest(jbk)
+    return m.get('build_hash') if m else None
 
 
 def write_sidecar(book: BookConfig) -> None:
@@ -119,6 +128,23 @@ class SshTarget:
     def mkdir(self, path: str) -> None:
         self.run(f'mkdir -p {shlex.quote(path)}')
 
+    def read(self, remote: str) -> str:
+        """A text file's contents, or '' when it's missing."""
+        return self.run(f'cat {shlex.quote(remote)} 2>/dev/null || true')
+
+    def books(self) -> dict[str, int]:
+        """book id -> .jbk size in bytes, for every book on the device."""
+        out = self.run(f'cd {DEVICE_ROOT}/books 2>/dev/null || exit 0; '
+                       'for f in *.jbk; do [ -f "$f" ] && echo "$(wc -c < "$f") $f"; done; true')
+        sizes = {}
+        for line in out.splitlines():
+            size, name = line.strip().split(' ', 1)
+            sizes[name.removesuffix('.jbk')] = int(size)
+        return sizes
+
+    def remove(self, remote: str) -> None:
+        self.run(f'rm -f {shlex.quote(remote)}')
+
     def hashes(self) -> dict[str, str]:
         """book id -> build_hash recorded on the device at last deploy."""
         out = self.run(f'cat {DEVICE_ROOT}/books/.deployed.json 2>/dev/null || true').strip()
@@ -150,6 +176,16 @@ class UsbTarget:
 
     def mkdir(self, path: str) -> None:
         (self.root / Path(path).relative_to(DEVICE_ROOT)).mkdir(parents=True, exist_ok=True)
+
+    def read(self, remote: str) -> str:
+        p = self.root / Path(remote).relative_to(DEVICE_ROOT)
+        return p.read_text(encoding='utf-8') if p.exists() else ''
+
+    def books(self) -> dict[str, int]:
+        return {p.stem: p.stat().st_size for p in sorted((self.root / 'books').glob('*.jbk'))}
+
+    def remove(self, remote: str) -> None:
+        (self.root / Path(remote).relative_to(DEVICE_ROOT)).unlink(missing_ok=True)
 
     def hashes(self) -> dict[str, str]:
         p = self.root / 'books' / '.deployed.json'
@@ -231,9 +267,13 @@ def deploy_anki_words(lib: Library, target, log=print) -> None:
     log(f'anki words: {len(words)} deployed')
 
 
+def target_for(lib: Library, usb: Path | None, log=print):
+    return UsbTarget(usb, log) if usb else SshTarget(lib.device['ssh_host'], log)
+
+
 def deploy(lib: Library, ids: list[str], settings_only: bool = False, usb: Path | None = None,
            force: bool = False, log=print) -> None:
-    target = UsbTarget(usb, log) if usb else SshTarget(lib.device['ssh_host'], log)
+    target = target_for(lib, usb, log)
     target.mkdir(f'{DEVICE_ROOT}/books')
 
     with tempfile.TemporaryDirectory() as tmp:
@@ -246,7 +286,15 @@ def deploy(lib: Library, ids: list[str], settings_only: bool = False, usb: Path 
     deployed = target.hashes()
     if not settings_only:
         deploy_dictionary(target, deployed, force, log)
+    removed = set(deployed.get(REMOVED, []))
+    if ids and removed & set(ids):
+        # naming a removed book brings it back
+        deployed[REMOVED] = sorted(removed - set(ids))
+        target.save_hashes(deployed)
     for book_id in ids or lib.book_ids():
+        if not ids and book_id in removed:
+            log(f'{book_id}: removed from the device, skipping (`tategaki deploy {book_id}` restores it)')
+            continue
         book = lib.book(book_id)
         write_sidecar(book)
         target.put(book.sidecar, f'{DEVICE_ROOT}/books/{book_id}.json')
@@ -265,3 +313,78 @@ def deploy(lib: Library, ids: list[str], settings_only: bool = False, usb: Path 
         deployed[book_id] = h
         target.save_hashes(deployed)
     log('deploy done')
+
+
+def _cells(s: str) -> int:
+    """Terminal width: full-width (Japanese) characters take two cells."""
+    return sum(2 if unicodedata.east_asian_width(c) in 'WF' else 1 for c in s)
+
+
+def _progress(pos: dict | None) -> str:
+    if not pos or not pos.get('page_count'):
+        return 'not started'
+    return f'p. {pos["page"] + 1} / {pos["page_count"]} ({100 * (pos["page"] + 1) // pos["page_count"]}%)'
+
+
+def list_books(lib: Library, usb: Path | None = None, log=print) -> None:
+    """Print the books on the device, then local books that aren't on it."""
+    target = target_for(lib, usb, log)
+    on_device = target.books()
+    deployed = target.hashes()
+    try:
+        state = json.loads(target.read(f'{DEVICE_ROOT}/state.json') or '{}')
+    except json.JSONDecodeError:
+        state = {}
+    positions, last = state.get('books') or {}, state.get('last_book')
+    local = set(lib.book_ids())
+
+    rows = []
+    for book_id, size in sorted(on_device.items()):
+        title, status = '', 'not in the library'
+        if book_id in local:
+            m = manifest(lib.root / 'books' / book_id / 'build' / f'{book_id}.jbk')
+            if m is None:
+                status = 'not built locally'
+            else:
+                title = m.get('title') or ''
+                status = 'up to date' if deployed.get(book_id) == m.get('build_hash') else 'local build is newer'
+        mark = '*' if book_id == last else ' '
+        rows.append((f'{mark} {book_id}', title, f'{size / 1e6:.1f} MB', _progress(positions.get(book_id)), status))
+    if rows:
+        widths = [max(_cells(r[i]) for r in rows) for i in range(4)]
+        for r in rows:
+            log(''.join(c + ' ' * (w - _cells(c) + 2) for c, w in zip(r, widths)) + r[4])
+        log(f'{len(rows)} on the device' + ('; * = last read' if last in on_device else ''))
+    else:
+        log('no books on the device')
+
+    removed = set(deployed.get(REMOVED, []))
+    missing = sorted(local - set(on_device))
+    if missing:
+        log('in the library, not on the device: ' + ', '.join(
+            b + (' (removed)' if b in removed else '') for b in missing))
+
+
+def remove(lib: Library, ids: list[str], usb: Path | None = None, log=print) -> None:
+    """Delete books (and their settings) from the device. Reading positions
+    stay in state.json, so deploying a book again resumes where it was."""
+    for book_id in ids:
+        if not book_id.isascii() or not all(c.isalnum() or c in '-_.' for c in book_id) \
+                or book_id.strip('.') == '':
+            raise SystemExit(f'"{book_id}" is not a book id')
+    target = target_for(lib, usb, log)
+    on_device = target.books()
+    deployed = target.hashes()
+    removed = set(deployed.get(REMOVED, []))
+    for book_id in ids:
+        if book_id not in on_device:
+            log(f'{book_id}: not on the device')
+            continue
+        for name in (f'{book_id}.jbk', f'{book_id}.json', f'{book_id}.jbk.part', f'{book_id}.json.part'):
+            target.remove(f'{DEVICE_ROOT}/books/{name}')
+        deployed.pop(book_id, None)
+        if book_id in lib.book_ids():
+            removed.add(book_id)
+        log(f'{book_id}: removed')
+    deployed[REMOVED] = sorted(removed)
+    target.save_hashes(deployed)
