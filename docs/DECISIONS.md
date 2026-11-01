@@ -442,3 +442,4 @@ converter bugs. The user agreed to all three fixes.
   is negative (−1, −2, …), so it never collides with JMdict's.
 - **JMdict parity is untouched:** `DB.Scan` and `LookupCandidates` are
   unchanged; the UI prepends the book's matches.
+- **Accepted on the device (2026-11-01).**
