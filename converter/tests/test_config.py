@@ -59,8 +59,42 @@ def test_japanese_values_round_trip_to_sidecar(tmp_path):
     write_sidecar(book)
     data = json.loads(book.sidecar.read_text(encoding='utf-8'))
     assert data == {'deck': '日本語::変な家', 'tags': ['変な家'], 'strip_speaker_tags': True,
-                    'sleep_screen': 'cover'}
+                    'sleep_screen': 'cover', 'dictionary': []}
     assert '日本語::変な家' in book.sidecar.read_text(encoding='utf-8')  # stored as UTF-8, not \u escapes
+
+
+def test_book_dictionary(tmp_path):
+    lib = make_lib(tmp_path, '', '''
+[[dictionary]]
+kanji = "五河士道"
+reading = "いつかしどう"
+definition = "protagonist"
+
+[[dictionary]]
+kanji = "トウカ"
+definition = "heroine"
+''')
+    book = lib.book('hen-na-ie')
+    assert book.dictionary == [
+        {'kanji': '五河士道', 'reading': 'いつかしどう', 'definition': 'protagonist'},
+        {'kanji': 'トウカ', 'reading': '', 'definition': 'heroine'},
+    ]
+    write_sidecar(book)
+    assert json.loads(book.sidecar.read_text(encoding='utf-8'))['dictionary'] == book.dictionary
+    assert make_lib(tmp_path / 'none').book('hen-na-ie').dictionary == []
+
+
+@pytest.mark.parametrize('toml, match', [
+    ('[[dictionary]]\nkanji = "士道"\n', 'needs definition'),
+    ('[[dictionary]]\nkanji = "士道"\ndefinition = "x"\nmeaning = "y"\n', 'meaning'),
+    ('[[dictionary]]\nkanji = ""\ndefinition = "x"\n', 'non-empty'),
+    ('dictionary = ["士道"]\n', 'must be a table'),
+    ('dictionary = "士道"\n', 'must be list'),
+])
+def test_book_dictionary_errors(tmp_path, toml, match):
+    lib = make_lib(tmp_path, '', toml)
+    with pytest.raises(ConfigError, match=match):
+        lib.book('hen-na-ie')
 
 
 def test_sleep_screen(tmp_path):

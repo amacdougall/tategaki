@@ -228,6 +228,7 @@ func (i *Info) Draw(a *App) error {
 		"  Tags: " + strings.Join(side.Tags, ", "),
 		fmt.Sprintf("  Strip speaker tags: %v", side.StripSpeakerTags),
 		"  Note type: " + a.Dev.NoteType,
+		fmt.Sprintf("  Book dictionary: %d entries", len(side.Dictionary)),
 		"", "Rendering",
 	}
 	lines = append(lines, render...)

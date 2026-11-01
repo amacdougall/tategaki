@@ -6,7 +6,7 @@ Unknown keys are errors, since they are usually typos.
 
 import os
 import tomllib
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 # section -> key -> (type, default). A None default means "required to be
@@ -55,7 +55,9 @@ RANGES = {
     ('device', 'light_level'): (0, 24),
     ('device', 'dark_light_level'): (0, 24),
 }
-BOOK_TOP = {'epub': str, 'title': str, 'author': str}
+BOOK_TOP = {'epub': str, 'title': str, 'author': str, 'dictionary': list}
+# Keys of a book.toml [[dictionary]] entry -> required.
+DICTIONARY_KEYS = {'kanji': True, 'reading': False, 'definition': True}
 
 
 class ConfigError(Exception):
@@ -108,6 +110,26 @@ def _load(path: Path, sections: set[str], top: dict) -> dict:
     return out
 
 
+def _check_dictionary(where: str, entries: list) -> list[dict]:
+    """Validate book.toml's [[dictionary]] entries: book-specific words
+    (usually proper names) that the reader looks up ahead of JMdict."""
+    out = []
+    for n, e in enumerate(entries, 1):
+        if not isinstance(e, dict):
+            raise ConfigError(f'{where}: dictionary entry {n} must be a table with kanji, reading, definition')
+        for k, v in e.items():
+            if k not in DICTIONARY_KEYS:
+                raise ConfigError(f'{where}: unknown key "{k}" in dictionary entry {n} (allowed: {sorted(DICTIONARY_KEYS)})')
+            if not isinstance(v, str) or not v.strip():
+                raise ConfigError(f'{where}: dictionary entry {n}: {k} must be a non-empty string')
+        for k, required in DICTIONARY_KEYS.items():
+            if required and k not in e:
+                raise ConfigError(f'{where}: dictionary entry {n} needs {k}')
+        out.append({'kanji': e['kanji'].strip(), 'reading': e.get('reading', '').strip(),
+                    'definition': e['definition'].strip()})
+    return out
+
+
 def defaults() -> dict:
     return {s: {k: (list(d) if isinstance(d, list) else d) for k, (_, d) in keys.items()} for s, keys in SCHEMA.items()}
 
@@ -122,6 +144,7 @@ class BookConfig:
     render: dict
     anki: dict
     reader: dict
+    dictionary: list[dict] = field(default_factory=list)
 
     @property
     def build_dir(self) -> Path:
@@ -174,6 +197,7 @@ class Library:
             anki.update(data.pop('anki', {}))
             reader.update(data.pop('reader', {}))
             top = data
+        dictionary = _check_dictionary(str(path), top.pop('dictionary', []))
         if 'epub' in top:
             epub = d / top['epub']
             if not epub.exists():
@@ -186,4 +210,4 @@ class Library:
         font = Path(render['font']).expanduser()
         render['font'] = str(font if font.is_absolute() else self.root / font)
         return BookConfig(id=book_id, dir=d, epub=epub, title=top.get('title'), author=top.get('author'),
-                          render=render, anki=anki, reader=reader)
+                          render=render, anki=anki, reader=reader, dictionary=dictionary)

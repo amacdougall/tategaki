@@ -352,7 +352,11 @@ func (a *App) OpenBook(id string) error {
 	if pos, ok := a.State.Get(id); ok {
 		page = b.PageOf(pos)
 	}
+	side, err := config.LoadBook(a.Paths, id)
+	if err != nil {
+		log.Printf("sidecar %s: %v", id, err)
+	}
 	a.fullNext, a.bookID = true, id
-	a.Show(&Reader{id: id, book: b, page: page})
+	a.Show(&Reader{id: id, book: b, page: page, words: side.Dictionary})
 	return nil
 }

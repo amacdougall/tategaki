@@ -156,8 +156,8 @@ expect showing colour to be new work.
 | `docs/ANKI.md` | AnkiConnect setup, the mined fields, the queue, and the USB fallback. |
 
 All phases of the plan (0–5) are complete and accepted by the user. Phase 6
-("polish") is open-ended. Done so far: dark mode, the Anki word list, the sleep cover, and the
-frontlight toggle.
+("polish") is open-ended. Done so far: dark mode, the Anki word list, the sleep cover, the
+frontlight toggle, and per-book dictionary entries.
 
 ## Repository layout
 
@@ -294,6 +294,8 @@ the tapped character. A black line beside the text marks the matched span.
 - **Swipe up / down** to page through more entries (a "1 / 2" indicator
   shows when there are more).
 - **+ Anki** mines the entry; see [Anki](#anki) below.
+- Entries from the book's own dictionary (`[[dictionary]]` in `book.toml`)
+  come first, marked "book dictionary", with no rank badge and no **+ Anki**.
 - **×** or a tap on the page outside the popup closes it. A tap on another
   character looks that one up instead.
 
@@ -410,6 +412,29 @@ keys are errors, since they're usually typos.
 | `title` | Override the title from the EPUB. Needs a rebuild. |
 | `author` | Override the author from the EPUB. Needs a rebuild. |
 
+#### `book.toml` only: `[[dictionary]]`
+
+Book-specific dictionary entries, for names and other words JMdict doesn't
+have. Add one `[[dictionary]]` table per entry:
+
+| Key | Meaning |
+|---|---|
+| `kanji` | The word as written. Required. |
+| `reading` | Its reading. Optional (leave it out for a katakana name). |
+| `definition` | What the popup shows. Required. |
+
+- **Matching:** a tap on the first character of `kanji`, or of `reading`
+  written in kana, finds the entry. There's no deinflection, and the scan
+  isn't limited by `scan_len`. With ◀ ▶, the span has to equal the kanji or
+  reading exactly.
+- **Ranking:** matching entries always come before JMdict's, longest first,
+  whatever `ranking_policy` says.
+- **No mining:** these rows have no **+ Anki** button.
+- **Taking effect:** `deploy --settings-only`; no rebuild. **Book info**
+  shows how many entries were deployed.
+- Add the short forms the text uses as separate entries (士道 as well as
+  五河士道).
+
 A complete example:
 
 ```toml
@@ -427,6 +452,11 @@ strip_speaker_tags = true
 
 [reader]
 sleep_screen = "goodnight"
+
+[[dictionary]]
+kanji = "五河士道"
+reading = "いつかしどう"
+definition = "protagonist"
 ```
 
 ## Tests

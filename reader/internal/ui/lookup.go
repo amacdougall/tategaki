@@ -232,6 +232,8 @@ func (r *Reader) lookupAt(a *App, ch int, g book.Glyph) error {
 	if err != nil {
 		return err
 	}
+	// The book's own entries come first, whatever the ranking policy.
+	cands = append(r.words.Scan(text, offset, paraEnd), cands...)
 	scanned := time.Since(started)
 
 	// The sheet covers 3/4 of the screen, on the side away from the tapped
@@ -441,9 +443,13 @@ func (r *Reader) drawRow(a *App, img *image.Gray, p *Popup, i int, row rowLayout
 	readFace := a.Fonts.Face(sizeRead, false)
 	noteFace := a.Fonts.Face(sizeNote, false)
 	// Top line, right to left: [+ Anki] [rank badge] … word【reading】.
-	button := image.Rect(a.W-popPad-250, y+14, a.W-popPad, y+72)
-	p.ankiRects[i] = r.ankiButton(a, img, p, c.EntSeq, c.Word, button)
-	right := button.Min.X - 16
+	// Book dictionary entries can't be mined, so they have no button.
+	right := a.W - popPad
+	if !c.Book {
+		button := image.Rect(a.W-popPad-250, y+14, a.W-popPad, y+72)
+		p.ankiRects[i] = r.ankiButton(a, img, p, c.EntSeq, c.Word, button)
+		right = button.Min.X - 16
+	}
 	if c.Rank < dict.Unranked { // inverted badge for common words (rank <= 10,000)
 		label := formatRank(c.Rank)
 		w := text.Width(noteFace, label) + 2*sizeNote // label() pads by half the size on each side
@@ -465,6 +471,9 @@ func (r *Reader) drawRow(a *App, img *image.Gray, p *Popup, i int, row rowLayout
 		text.Draw(img, readFace, xr, base, text.Ellipsize(readFace, "【"+c.Reading+"】", right-xr), black)
 	}
 	var note []string
+	if c.Book {
+		note = append(note, "book dictionary")
+	}
 	if len(c.Reasons) > 0 {
 		note = append(note, "← "+strings.Join(c.Reasons, " ← "))
 	}
@@ -556,10 +565,12 @@ func (r *Reader) adjustSpan(a *App, delta int) error {
 	if err != nil {
 		return err
 	}
-	cands, err := db.LookupCandidates(string(text[p.offset:p.offset+n]), dict.MaxResults)
+	span := string(text[p.offset : p.offset+n])
+	cands, err := db.LookupCandidates(span, dict.MaxResults)
 	if err != nil {
 		return err
 	}
+	cands = append(r.words.Exact(span), cands...)
 	p.adjusted, p.spanLen, p.cands, p.selected, p.expanded, p.pageIdx = true, n, cands, 0, false, 0
 	p.raw = len(cands) == 0
 	r.showPopup(a)

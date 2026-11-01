@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/amacdougall/tategaki/reader/internal/book"
+	"github.com/amacdougall/tategaki/reader/internal/dict"
 	"github.com/amacdougall/tategaki/reader/internal/display"
 	"github.com/amacdougall/tategaki/reader/internal/input"
 )
@@ -16,6 +17,8 @@ type Reader struct {
 	id   string
 	book *book.Book
 	page int
+	// words is the book's own dictionary, from the sidecar at open.
+	words dict.BookDict
 
 	texts    map[int][]rune   // chapter text cache
 	popup    *Popup           // open lookup, if any

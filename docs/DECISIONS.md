@@ -420,3 +420,25 @@ converter bugs. The user agreed to all three fixes.
     `anki-queue.jsonl`; nothing is kept as a tombstone.
   - **Not during a send.** `Flush` reads the items by index, so `Remove`
     refuses while one runs. The tap does nothing and the refusal is logged.
+
+## 2026-11-01 (book dictionary)
+
+- **`book.toml` takes `[[dictionary]]` entries** (`kanji`, optional
+  `reading`, `definition`), requested by the user for proper names that
+  aren't in JMdict and get furigana only once.
+  - **Where they travel:** in the per-book sidecar (`dictionary`), like
+    `[anki]` and `[reader]`, so `deploy --settings-only` is enough. Not in
+    `tategaki.toml`, since they belong to one book.
+  - **Reading is optional,** so a katakana name can have just a definition.
+- **Matching (`dict.BookDict`):** a literal prefix match of the kanji or the
+  reading at the tapped offset, up to the paragraph end. Names don't
+  inflect, so there's no deinflection, and no `scan_len` cap. The span-adjust
+  path matches the selection exactly.
+- **Book entries always come first,** longest first, ahead of JMdict under
+  either ranking policy. The user wrote them on purpose for this book, and
+  names often collide with a common word (士道 is also "bushido").
+- **No Anki UI on those rows,** at the user's request. They're marked
+  "book dictionary" on the note line and have no rank badge. Their `EntSeq`
+  is negative (−1, −2, …), so it never collides with JMdict's.
+- **JMdict parity is untouched:** `DB.Scan` and `LookupCandidates` are
+  unchanged; the UI prepends the book's matches.

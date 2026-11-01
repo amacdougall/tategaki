@@ -11,6 +11,8 @@ import (
 	"path/filepath"
 	"sync"
 	"time"
+
+	"github.com/amacdougall/tategaki/reader/internal/dict"
 )
 
 // Device mirrors tategaki.toml [device].
@@ -40,14 +42,17 @@ func Defaults() Device {
 	}
 }
 
-// Book mirrors a book's resolved [anki] and [reader] settings
-// (books/<id>.json).
+// Book mirrors a book's resolved [anki] and [reader] settings, plus its
+// [[dictionary]] (books/<id>.json).
 type Book struct {
 	Deck             *string  `json:"deck"`
 	Tags             []string `json:"tags"`
 	StripSpeakerTags bool     `json:"strip_speaker_tags"`
 	// SleepScreen is "cover" (the default) or "goodnight".
 	SleepScreen string `json:"sleep_screen"`
+	// Dictionary is book.toml's [[dictionary]]: book-specific words, looked
+	// up ahead of JMdict.
+	Dictionary dict.BookDict `json:"dictionary"`
 }
 
 // Paths under the reader's root (/mnt/us/tategaki on the device).

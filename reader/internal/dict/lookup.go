@@ -23,6 +23,9 @@ type Candidate struct {
 	// SourceLen is how many characters of text the candidate explains (scan
 	// only; 0 for selection lookups).
 	SourceLen int `json:"source_len,omitempty"`
+	// Book marks an entry from the book's own dictionary (BookDict), not
+	// JMdict. It can't be mined.
+	Book bool `json:"book,omitempty"`
 }
 
 // Lookup tuning, as in lookup.py.

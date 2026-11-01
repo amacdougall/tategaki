@@ -134,3 +134,48 @@ func TestLightFollowsDarkMode(t *testing.T) {
 		t.Fatalf("frontlight steps %v, want %v", set, want)
 	}
 }
+
+func TestBookDictionaryLookup(t *testing.T) {
+	a, paths := testApp(t)
+	a.DictPaths = []string{"../../../data/jmdict.sqlite"}
+	if _, err := a.Dict(); err != nil {
+		t.Skip("no jmdict.sqlite")
+	}
+	os.WriteFile(paths.Sidecar("toradora-01"),
+		[]byte(`{"dictionary":[{"kanji":"竜児","reading":"りゅうじ","definition":"protagonist"}]}`), 0o644)
+	if err := a.OpenBook("toradora-01"); err != nil {
+		t.Fatal(err)
+	}
+	r := a.screen.(*Reader)
+	// Find a page with 竜児 on it, and tap its first character.
+	for r.page = 0; r.page < r.book.Manifest.PageCount; r.page++ {
+		pl, ch, err := r.pageLayout()
+		if err != nil {
+			continue
+		}
+		text, _ := r.chapterText(ch)
+		for _, g := range pl.Glyphs {
+			if g[0]+2 > len(text) || string(text[g[0]:g[0]+2]) != "竜児" {
+				continue
+			}
+			if err := r.lookupAt(a, ch, g); err != nil {
+				t.Fatal(err)
+			}
+			p := r.popup
+			if len(p.cands) < 2 || !p.cands[0].Book || p.cands[0].Meaning != "protagonist" || p.cands[1].Book {
+				t.Fatalf("candidates: %+v", p.cands)
+			}
+			if p.highlightLen() != 2 {
+				t.Fatalf("highlight %d, want 2", p.highlightLen())
+			}
+			if _, ok := p.ankiRects[0]; ok {
+				t.Fatal("book entry has an Anki button")
+			}
+			if _, ok := p.ankiRects[1]; !ok {
+				t.Fatal("JMdict entry lost its Anki button")
+			}
+			return
+		}
+	}
+	t.Fatal("竜児 not found in the test book")
+}
