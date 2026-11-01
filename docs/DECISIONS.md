@@ -406,3 +406,17 @@ converter bugs. The user agreed to all three fixes.
 - **`tategaki list`** shows each book on the device with its size, progress
   (from `state.json`) and whether the local build matches what was deployed,
   then lists library books that aren't on the device.
+
+## 2026-10-31 (Anki: send on demand, unqueue)
+
+- **Cards are sent only from Menu → Send to Anki,** at the user's request.
+  The send after each add and the attempt at startup are gone. This
+  supersedes the Phase 5 flush list.
+- **Tapping Queued removes the card from the queue,** so a mistaken
+  `+ Anki` can be undone before it reaches Anki. This reverses "Queued is
+  informational" from 2026-10-18. The row then shows its previous state,
+  usually `+ Anki`.
+  - **Only pending cards are removed.** The line is deleted from
+    `anki-queue.jsonl`; nothing is kept as a tombstone.
+  - **Not during a send.** `Flush` reads the items by index, so `Remove`
+    refuses while one runs. The tap does nothing and the refusal is logged.

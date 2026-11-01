@@ -330,13 +330,12 @@ short:
   word. It goes to the book's `[anki] deck` (or `default_deck`) with the
   book's `tags`.
 - **Offline is fine.** Every card is saved to a queue on the Kindle first. The
-  reader tries to send it at once, retries everything at each start, and
-  **Menu → Send to Anki** retries on demand. Without Wi-Fi, the USB fallback
+  reader sends the queue only when you choose **Menu → Send to Anki**. Without Wi-Fi, the USB fallback
   (`tools/flush_queue.py`) sends the queue from the computer.
-- **The button shows the card's state:** **Queued** (waiting for Anki),
-  **Added ✓**, **Exists** (already in Anki, so nothing was added), or
-  **Error** (tap to retry; the reason is in the log). Only **+ Anki** and
-  **Error** respond to taps.
+- **The button shows the card's state:** **Queued** (waiting to be sent; tap
+  to unqueue a mistake), **Added ✓**, **Exists** (already in Anki, so nothing
+  was added), or **Error** (tap to retry; the reason is in the log). Only
+  **+ Anki**, **Queued** and **Error** respond to taps.
 - **Words you already have** show a grey **Exists** before you tap anything,
   even offline. The list comes from Anki at each deploy: run
   `bin/tategaki deploy --settings-only` with Anki open to refresh it. A

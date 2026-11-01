@@ -2,6 +2,7 @@ package anki
 
 import (
 	"encoding/json"
+	"errors"
 	"io"
 	"net/http"
 	"net/http/httptest"
@@ -153,5 +154,23 @@ func TestInAnki(t *testing.T) {
 		if got := q.InAnki(word); got != want {
 			t.Errorf("InAnki(%q) = %v, want %v", word, got, want)
 		}
+	}
+}
+
+func TestQueueRemove(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "q.jsonl")
+	q, _ := OpenQueue(path)
+	a, _ := q.Append(Item{Book: "b", Fields: map[string]string{Word: "猫"}})
+	b, _ := q.Append(Item{Book: "b", Fields: map[string]string{Word: "犬"}})
+	q.items[1].Status = Sent
+	if err := q.Remove(a.ID); err != nil {
+		t.Fatal(err)
+	}
+	if err := q.Remove(b.ID); !errors.Is(err, ErrNotPending) {
+		t.Fatalf("removing a sent card: %v", err)
+	}
+	q2, _ := OpenQueue(path)
+	if items := q2.Items(); len(items) != 1 || items[0].ID != b.ID {
+		t.Fatalf("after remove: %+v", items)
 	}
 }

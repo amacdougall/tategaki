@@ -120,6 +120,28 @@ func (q *Queue) Append(it Item) (Item, error) {
 	return it, q.save()
 }
 
+// ErrNotPending means Remove found no pending item with that id: it was
+// already sent, or a flush is under way.
+var ErrNotPending = errors.New("not a pending card")
+
+// Remove drops a pending item, undoing a mistaken mine. It refuses while a
+// flush runs, since Flush walks the items by index.
+func (q *Queue) Remove(id string) error {
+	if !q.flushMu.TryLock() {
+		return ErrNotPending
+	}
+	defer q.flushMu.Unlock()
+	q.mu.Lock()
+	defer q.mu.Unlock()
+	for i, it := range q.items {
+		if it.ID == id && it.Status == Pending {
+			q.items = append(q.items[:i:i], q.items[i+1:]...)
+			return q.save()
+		}
+	}
+	return ErrNotPending
+}
+
 // Latest returns the newest item for (book, ent_seq, word), if any.
 func (q *Queue) Latest(book string, entSeq int64, word string) (Item, bool) {
 	q.mu.Lock()

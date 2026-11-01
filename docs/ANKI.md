@@ -57,20 +57,21 @@ a word is a duplicate if a Kaishi note with that `Word` exists in **any** deck.
   it has already sent.
 - **Adding cards:** in the lookup popup, tap **+ Anki** on an entry. The
   button then shows the card's state:
-  - **Queued:** saved on the Kindle, waiting for Anki.
+  - **Queued:** saved on the Kindle, waiting for **Menu → Send to Anki**.
+    Tap it to take the card back out of the queue, if you added it by
+    mistake.
   - **Added ✓:** in Anki.
   - **Exists:** already in Anki (a duplicate), so nothing was added.
   - **Error:** Anki refused it, for example a missing deck. Check
     `/mnt/us/tategaki/log.txt`, fix the cause, and tap **Error** to try
     again.
-  - Only **+ Anki** and **Error** respond to taps. The other labels just show
-    the card's state.
+  - Only **+ Anki**, **Queued** and **Error** respond to taps. The other
+    labels just show the card's state.
 - **The queue:** every card is saved to `/mnt/us/tategaki/anki-queue.jsonl`
   before anything is sent, so nothing is lost if Anki is closed or the Kindle is
   offline.
-  - The reader tries to send each card right away, waiting up to 2 seconds.
-  - **Menu → Send to Anki (n)** retries everything still queued.
-  - Waiting cards are also retried once each time the reader starts.
+  - Nothing is sent until you choose **Menu → Send to Anki (n)**, which sends
+    everything still queued.
   - The result reads "x sent, y skipped". Skipped cards were already in Anki.
 
 ## Keeping the word list up to date

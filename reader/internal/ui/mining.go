@@ -9,8 +9,7 @@ import (
 	"github.com/amacdougall/tategaki/reader/internal/sentence"
 )
 
-// flushTimeout bounds each AnkiConnect request (plan §7.7: a 2-second try
-// after each add).
+// flushTimeout bounds each AnkiConnect request.
 const flushTimeout = 2 * time.Second
 
 func (a *App) ankiClient() *anki.Client {
@@ -18,7 +17,8 @@ func (a *App) ankiClient() *anki.Client {
 }
 
 // FlushAnki sends pending cards in the background, then runs done (if any)
-// on the event loop.
+// on the event loop. Only Menu → Send to Anki flushes, so a mistaken mine can
+// be undone first.
 func (a *App) FlushAnki(done func(anki.FlushResult)) {
 	q, client := a.Queue, a.ankiClient()
 	go func() {
@@ -35,6 +35,7 @@ func (a *App) FlushAnki(done func(anki.FlushResult)) {
 }
 
 // ankiStatus is a popup row's button label; done is false for "+ Anki".
+// Queued counts as done, though tapping it unqueues the card.
 func ankiStatus(it anki.Item, ok bool) (label string, done bool) {
 	if !ok {
 		return "+ Anki", false
@@ -51,9 +52,18 @@ func ankiStatus(it anki.Item, ok bool) (label string, done bool) {
 	}
 }
 
-// mine queues a card for popup row i (plan §7.6) and tries to send it.
+// mine queues a card for popup row i (plan §7.6), or unqueues it if it is
+// still pending.
 func (r *Reader) mine(a *App, i int) error {
 	p := r.popup
+	if it, ok := r.rowItem(a, p, i); ok && it.Status == anki.Pending {
+		if err := a.Queue.Remove(it.ID); err != nil {
+			return err
+		}
+		log.Printf("ANKI unqueued %q", it.Fields[anki.Word])
+		r.showPopup(a)
+		return nil
+	}
 	text, err := r.chapterText(p.chapter)
 	if err != nil {
 		return err
@@ -90,10 +100,15 @@ func (r *Reader) mine(a *App, i int) error {
 	}
 	log.Printf("ANKI queued %q (deck %q) sentence %q", word, deck, sent)
 	r.showPopup(a)
-	a.FlushAnki(func(anki.FlushResult) {
-		if r.popup == p && a.screen == r {
-			r.showPopup(a) // update the row's status
-		}
-	})
 	return nil
+}
+
+// rowItem is the newest queue item for popup row i, if any.
+func (r *Reader) rowItem(a *App, p *Popup, i int) (anki.Item, bool) {
+	var entSeq int64
+	word := r.popupText(p)
+	if !p.raw && len(p.cands) > 0 {
+		entSeq, word = p.cands[i].EntSeq, p.cands[i].Word
+	}
+	return a.Queue.Latest(r.id, entSeq, word)
 }

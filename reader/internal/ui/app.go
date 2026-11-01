@@ -139,14 +139,11 @@ func (a *App) redraw() {
 }
 
 // Start resumes the most recently read book at its saved place, or opens the
-// library if there is none (or it has been removed). Cards mined while Anki
-// was unreachable are sent in the background.
+// library if there is none (or it has been removed). Queued cards wait for
+// Menu → Send to Anki.
 func (a *App) Start() {
 	if a.Dark {
 		a.applyLight(a.Dev.DarkLightLevel)
-	}
-	if a.Queue.Pending() > 0 {
-		a.FlushAnki(nil)
 	}
 	if id := a.State.State.LastBook; id != "" {
 		if _, err := os.Stat(a.Paths.Book(id)); err == nil {
