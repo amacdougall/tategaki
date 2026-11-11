@@ -113,7 +113,7 @@
     ],
     "reasons": [],
     "completed_from": "突き込",
-    "rank": 11584
+    "rank": 24000
    }
   ]
  },
@@ -183,44 +183,6 @@
     "rank": 4559
    },
    {
-    "ent_seq": 1523790,
-    "word": "摩る",
-    "reading": "さする",
-    "readings": [
-     "さする"
-    ],
-    "pos": [
-     "v5r",
-     "vt"
-    ],
-    "meaning": "to rub; to pat; to stroke; to massage",
-    "glosses": [
-     "to rub",
-     "to pat",
-     "to stroke",
-     "to massage"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "v5r",
-       "vt"
-      ],
-      "glosses": [
-       "to rub",
-       "to pat",
-       "to stroke",
-       "to massage"
-      ]
-     }
-    ],
-    "reasons": [
-     "-zu"
-    ],
-    "completed_from": "擦ら",
-    "rank": 4559
-   },
-   {
     "ent_seq": 1595910,
     "word": "擦る",
     "reading": "する",
@@ -272,7 +234,93 @@
      "-zu"
     ],
     "completed_from": "擦ら",
-    "rank": 4559
+    "rank": 5052
+   },
+   {
+    "ent_seq": 1523790,
+    "word": "摩る",
+    "reading": "さする",
+    "readings": [
+     "さする"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub; to pat; to stroke; to massage",
+    "glosses": [
+     "to rub",
+     "to pat",
+     "to stroke",
+     "to massage"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub",
+       "to pat",
+       "to stroke",
+       "to massage"
+      ]
+     }
+    ],
+    "reasons": [
+     "-zu"
+    ],
+    "completed_from": "擦ら",
+    "rank": 5552
+   },
+   {
+    "ent_seq": 2086270,
+    "word": "擦る",
+    "reading": "なする",
+    "readings": [
+     "なする"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub in; to smear on; to spread on; to daub; to lay the blame on",
+    "glosses": [
+     "to rub in",
+     "to smear on",
+     "to spread on",
+     "to daub",
+     "to lay the blame on"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub in",
+       "to smear on",
+       "to spread on",
+       "to daub"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to lay the blame on"
+      ]
+     }
+    ],
+    "reasons": [
+     "-zu"
+    ],
+    "completed_from": "擦ら",
+    "rank": 11516
    },
    {
     "ent_seq": 1636530,
@@ -322,55 +370,7 @@
      "-zu"
     ],
     "completed_from": "擦ら",
-    "rank": 4559
-   },
-   {
-    "ent_seq": 2086270,
-    "word": "擦る",
-    "reading": "なする",
-    "readings": [
-     "なする"
-    ],
-    "pos": [
-     "v5r",
-     "vt"
-    ],
-    "meaning": "to rub in; to smear on; to spread on; to daub; to lay the blame on",
-    "glosses": [
-     "to rub in",
-     "to smear on",
-     "to spread on",
-     "to daub",
-     "to lay the blame on"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "v5r",
-       "vt"
-      ],
-      "glosses": [
-       "to rub in",
-       "to smear on",
-       "to spread on",
-       "to daub"
-      ]
-     },
-     {
-      "pos": [
-       "v5r",
-       "vt"
-      ],
-      "glosses": [
-       "to lay the blame on"
-      ]
-     }
-    ],
-    "reasons": [
-     "-zu"
-    ],
-    "completed_from": "擦ら",
-    "rank": 4559
+    "rank": 15991
    }
   ]
  },
@@ -1492,7 +1492,7 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 4559
+    "rank": 5052
    },
    {
     "ent_seq": 1581900,
@@ -2069,42 +2069,6 @@
     "rank": 4559
    },
    {
-    "ent_seq": 1523790,
-    "word": "摩る",
-    "reading": "さする",
-    "readings": [
-     "さする"
-    ],
-    "pos": [
-     "v5r",
-     "vt"
-    ],
-    "meaning": "to rub; to pat; to stroke; to massage",
-    "glosses": [
-     "to rub",
-     "to pat",
-     "to stroke",
-     "to massage"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "v5r",
-       "vt"
-      ],
-      "glosses": [
-       "to rub",
-       "to pat",
-       "to stroke",
-       "to massage"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 4559
-   },
-   {
     "ent_seq": 1595910,
     "word": "擦る",
     "reading": "する",
@@ -2154,7 +2118,89 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 4559
+    "rank": 5052
+   },
+   {
+    "ent_seq": 1523790,
+    "word": "摩る",
+    "reading": "さする",
+    "readings": [
+     "さする"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub; to pat; to stroke; to massage",
+    "glosses": [
+     "to rub",
+     "to pat",
+     "to stroke",
+     "to massage"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub",
+       "to pat",
+       "to stroke",
+       "to massage"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 5552
+   },
+   {
+    "ent_seq": 2086270,
+    "word": "擦る",
+    "reading": "なする",
+    "readings": [
+     "なする"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub in; to smear on; to spread on; to daub; to lay the blame on",
+    "glosses": [
+     "to rub in",
+     "to smear on",
+     "to spread on",
+     "to daub",
+     "to lay the blame on"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub in",
+       "to smear on",
+       "to spread on",
+       "to daub"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to lay the blame on"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 11516
    },
    {
     "ent_seq": 1636530,
@@ -2202,53 +2248,7 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 4559
-   },
-   {
-    "ent_seq": 2086270,
-    "word": "擦る",
-    "reading": "なする",
-    "readings": [
-     "なする"
-    ],
-    "pos": [
-     "v5r",
-     "vt"
-    ],
-    "meaning": "to rub in; to smear on; to spread on; to daub; to lay the blame on",
-    "glosses": [
-     "to rub in",
-     "to smear on",
-     "to spread on",
-     "to daub",
-     "to lay the blame on"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "v5r",
-       "vt"
-      ],
-      "glosses": [
-       "to rub in",
-       "to smear on",
-       "to spread on",
-       "to daub"
-      ]
-     },
-     {
-      "pos": [
-       "v5r",
-       "vt"
-      ],
-      "glosses": [
-       "to lay the blame on"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 4559
+    "rank": 15991
    }
   ]
  },
@@ -3283,6 +3283,34 @@
     "rank": 2218
    },
    {
+    "ent_seq": 1476410,
+    "word": "箸",
+    "reading": "はし",
+    "readings": [
+     "はし"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "chopsticks",
+    "glosses": [
+     "chopsticks"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "chopsticks"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 5008
+   },
+   {
     "ent_seq": 2543170,
     "word": "階",
     "reading": "はし",
@@ -3319,63 +3347,7 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 2360
-   },
-   {
-    "ent_seq": 1476410,
-    "word": "箸",
-    "reading": "はし",
-    "readings": [
-     "はし"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "chopsticks",
-    "glosses": [
-     "chopsticks"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "chopsticks"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 5008
-   },
-   {
-    "ent_seq": 2575170,
-    "word": "梯",
-    "reading": "はし",
-    "readings": [
-     "はし"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "ladder",
-    "glosses": [
-     "ladder"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "ladder"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 19290
+    "rank": 10802
    },
    {
     "ent_seq": 1565560,
@@ -3410,8 +3382,8 @@
     "rank": 21623
    },
    {
-    "ent_seq": 2869636,
-    "word": "波斯",
+    "ent_seq": 2575170,
+    "word": "梯",
     "reading": "はし",
     "readings": [
      "はし"
@@ -3419,10 +3391,9 @@
     "pos": [
      "n"
     ],
-    "meaning": "Sasanian Empire; Persia",
+    "meaning": "ladder",
     "glosses": [
-     "Sasanian Empire",
-     "Persia"
+     "ladder"
     ],
     "senses": [
      {
@@ -3430,14 +3401,13 @@
        "n"
       ],
       "glosses": [
-       "Sasanian Empire",
-       "Persia"
+       "ladder"
       ]
      }
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 56583
+    "rank": 9999999
    },
    {
     "ent_seq": 2757660,
@@ -3474,106 +3444,34 @@
     "rank": 9999999
    },
    {
-    "ent_seq": 2590770,
-    "word": "端",
-    "reading": "はした",
+    "ent_seq": 2869636,
+    "word": "波斯",
+    "reading": "はし",
     "readings": [
-     "はした"
+     "はし"
     ],
     "pos": [
-     "n",
-     "adj-no",
-     "adj-na"
+     "n"
     ],
-    "meaning": "fraction; odd sum; odd money; small change; low class female servant",
+    "meaning": "Sasanian Empire; Persia",
     "glosses": [
-     "fraction",
-     "odd sum",
-     "odd money",
-     "small change",
-     "low class female servant"
+     "Sasanian Empire",
+     "Persia"
     ],
     "senses": [
-     {
-      "pos": [
-       "n",
-       "adj-no",
-       "adj-na"
-      ],
-      "glosses": [
-       "fraction",
-       "odd sum"
-      ]
-     },
      {
       "pos": [
        "n"
       ],
       "glosses": [
-       "odd money",
-       "small change"
-      ]
-     },
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "low class female servant"
+       "Sasanian Empire",
+       "Persia"
       ]
      }
     ],
     "reasons": [],
-    "completed_from": "はし",
-    "rank": 2039
-   },
-   {
-    "ent_seq": 2009400,
-    "word": "捷い",
-    "reading": "はしっこい",
-    "readings": [
-     "はしっこい",
-     "はしこい"
-    ],
-    "pos": [
-     "adj-i"
-    ],
-    "meaning": "smart; clever; sharp; shrewd; agile; nimble; quick",
-    "glosses": [
-     "smart",
-     "clever",
-     "sharp",
-     "shrewd",
-     "agile",
-     "nimble",
-     "quick"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "adj-i"
-      ],
-      "glosses": [
-       "smart",
-       "clever",
-       "sharp",
-       "shrewd"
-      ]
-     },
-     {
-      "pos": [
-       "adj-i"
-      ],
-      "glosses": [
-       "agile",
-       "nimble",
-       "quick"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": "はし",
-    "rank": 5680
+    "completed_from": null,
+    "rank": 9999999
    },
    {
     "ent_seq": 2464070,
@@ -3753,6 +3651,60 @@
     "rank": 27354
    },
    {
+    "ent_seq": 2590770,
+    "word": "端",
+    "reading": "はした",
+    "readings": [
+     "はした"
+    ],
+    "pos": [
+     "n",
+     "adj-no",
+     "adj-na"
+    ],
+    "meaning": "fraction; odd sum; odd money; small change; low class female servant",
+    "glosses": [
+     "fraction",
+     "odd sum",
+     "odd money",
+     "small change",
+     "low class female servant"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "adj-no",
+       "adj-na"
+      ],
+      "glosses": [
+       "fraction",
+       "odd sum"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "odd money",
+       "small change"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "low class female servant"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "はし",
+    "rank": 31695
+   },
+   {
     "ent_seq": 1704780,
     "word": "はした金",
     "reading": "はしたがね",
@@ -3840,6 +3792,38 @@
     "reasons": [],
     "completed_from": "はし",
     "rank": 40567
+   },
+   {
+    "ent_seq": 1759140,
+    "word": "梯子段",
+    "reading": "はしごだん",
+    "readings": [
+     "はしごだん"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "step; stair; staircase",
+    "glosses": [
+     "step",
+     "stair",
+     "staircase"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "step",
+       "stair",
+       "staircase"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "はし",
+    "rank": 48922
    }
   ]
  },
@@ -4180,34 +4164,6 @@
     "rank": 223486
    },
    {
-    "ent_seq": 2250780,
-    "word": "くも膜下腔",
-    "reading": "くもまくかくう",
-    "readings": [
-     "くもまくかくう"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "subarachnoid space",
-    "glosses": [
-     "subarachnoid space"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "subarachnoid space"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": "蜘蛛",
-    "rank": 250718
-   },
-   {
     "ent_seq": 2612950,
     "word": "クモ恐怖症",
     "reading": "くもきょうふしょう",
@@ -4233,7 +4189,7 @@
     ],
     "reasons": [],
     "completed_from": "蜘蛛",
-    "rank": 254306
+    "rank": 254731
    },
    {
     "ent_seq": 2844024,
@@ -4355,6 +4311,35 @@
       ],
       "glosses": [
        "Ophioplocus japonicus (species of brittlestar)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": "蜘蛛",
+    "rank": 9999999
+   },
+   {
+    "ent_seq": 2849452,
+    "word": "くも合戦",
+    "reading": "くもがっせん",
+    "readings": [
+     "くもがっせん",
+     "クモがっせん"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "spider fighting",
+    "glosses": [
+     "spider fighting"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "spider fighting"
       ]
      }
     ],
@@ -4722,7 +4707,7 @@
     ],
     "reasons": [],
     "completed_from": "来た",
-    "rank": 38
+    "rank": 5335
    },
    {
     "ent_seq": 1591260,
@@ -4875,7 +4860,7 @@
     ],
     "reasons": [],
     "completed_from": "来た",
-    "rank": 236423
+    "rank": 9999999
    }
   ]
  },
@@ -6655,45 +6640,6 @@
   "selection": "高須",
   "candidates": [
    {
-    "ent_seq": 1633260,
-    "word": "高",
-    "reading": "たか",
-    "readings": [
-     "たか",
-     "だか"
-    ],
-    "pos": [
-     "n",
-     "n-suf"
-    ],
-    "meaning": "quantity; amount; volume; number; amount of money",
-    "glosses": [
-     "quantity",
-     "amount",
-     "volume",
-     "number",
-     "amount of money"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n",
-       "n-suf"
-      ],
-      "glosses": [
-       "quantity",
-       "amount",
-       "volume",
-       "number",
-       "amount of money"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 3873
-   },
-   {
     "ent_seq": 2183260,
     "word": "高",
     "reading": "こう",
@@ -6732,6 +6678,45 @@
     "reasons": [],
     "completed_from": null,
     "rank": 3873
+   },
+   {
+    "ent_seq": 1633260,
+    "word": "高",
+    "reading": "たか",
+    "readings": [
+     "たか",
+     "だか"
+    ],
+    "pos": [
+     "n",
+     "n-suf"
+    ],
+    "meaning": "quantity; amount; volume; number; amount of money",
+    "glosses": [
+     "quantity",
+     "amount",
+     "volume",
+     "number",
+     "amount of money"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "n-suf"
+      ],
+      "glosses": [
+       "quantity",
+       "amount",
+       "volume",
+       "number",
+       "amount of money"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 4702
    }
   ]
  },
@@ -8108,45 +8093,6 @@
     "rank": 27
    },
    {
-    "ent_seq": 2844332,
-    "word": "友",
-    "reading": "ゆう",
-    "readings": [
-     "ゆう"
-    ],
-    "pos": [
-     "n",
-     "adj-na"
-    ],
-    "meaning": "friend; affection (for siblings)",
-    "glosses": [
-     "friend",
-     "affection (for siblings)"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "friend"
-      ]
-     },
-     {
-      "pos": [
-       "n",
-       "adj-na"
-      ],
-      "glosses": [
-       "affection (for siblings)"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 3856
-   },
-   {
     "ent_seq": 1540940,
     "word": "有",
     "reading": "ゆう",
@@ -8259,53 +8205,6 @@
     "reasons": [],
     "completed_from": null,
     "rank": 9238
-   },
-   {
-    "ent_seq": 2836662,
-    "word": "雄",
-    "reading": "ゆう",
-    "readings": [
-     "ゆう"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "male; man; excellence; greatness; best (of); great person; leading figure",
-    "glosses": [
-     "male",
-     "man",
-     "excellence",
-     "greatness",
-     "best (of)",
-     "great person",
-     "leading figure"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "male",
-       "man"
-      ]
-     },
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "excellence",
-       "greatness",
-       "best (of)",
-       "great person",
-       "leading figure"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 9925
    },
    {
     "ent_seq": 1254600,
@@ -8421,34 +8320,6 @@
     "rank": 15326
    },
    {
-    "ent_seq": 2261050,
-    "word": "木綿",
-    "reading": "ゆう",
-    "readings": [
-     "ゆう"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "string made of cut steamed, soaked mulberry bark fibers",
-    "glosses": [
-     "string made of cut steamed, soaked mulberry bark fibers"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "string made of cut steamed, soaked mulberry bark fibers"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 22767
-   },
-   {
     "ent_seq": 2844201,
     "word": "悠",
     "reading": "ゆう",
@@ -8561,6 +8432,53 @@
     "rank": 35047
    },
    {
+    "ent_seq": 2836662,
+    "word": "雄",
+    "reading": "ゆう",
+    "readings": [
+     "ゆう"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "male; man; excellence; greatness; best (of); great person; leading figure",
+    "glosses": [
+     "male",
+     "man",
+     "excellence",
+     "greatness",
+     "best (of)",
+     "great person",
+     "leading figure"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "male",
+       "man"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "excellence",
+       "greatness",
+       "best (of)",
+       "great person",
+       "leading figure"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 55701
+   },
+   {
     "ent_seq": 1586000,
     "word": "釉薬",
     "reading": "ゆう",
@@ -8591,6 +8509,73 @@
     "reasons": [],
     "completed_from": null,
     "rank": 62770
+   },
+   {
+    "ent_seq": 2261050,
+    "word": "木綿",
+    "reading": "ゆう",
+    "readings": [
+     "ゆう"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "string made of cut steamed, soaked mulberry bark fibers",
+    "glosses": [
+     "string made of cut steamed, soaked mulberry bark fibers"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "string made of cut steamed, soaked mulberry bark fibers"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999
+   },
+   {
+    "ent_seq": 2844332,
+    "word": "友",
+    "reading": "ゆう",
+    "readings": [
+     "ゆう"
+    ],
+    "pos": [
+     "n",
+     "adj-na"
+    ],
+    "meaning": "friend; affection (for siblings)",
+    "glosses": [
+     "friend",
+     "affection (for siblings)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "friend"
+      ]
+     },
+     {
+      "pos": [
+       "n",
+       "adj-na"
+      ],
+      "glosses": [
+       "affection (for siblings)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999
    },
    {
     "ent_seq": 1538920,
@@ -8865,34 +8850,6 @@
     "rank": 1630
    },
    {
-    "ent_seq": 1198160,
-    "word": "会",
-    "reading": "え",
-    "readings": [
-     "え"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "gathering (esp. Buddhist, festive, etc.)",
-    "glosses": [
-     "gathering (esp. Buddhist, festive, etc.)"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "gathering (esp. Buddhist, festive, etc.)"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 1936
-   },
-   {
     "ent_seq": 1177490,
     "word": "縁",
     "reading": "え",
@@ -8981,45 +8938,6 @@
     "rank": 2425
    },
    {
-    "ent_seq": 1508290,
-    "word": "柄",
-    "reading": "え",
-    "readings": [
-     "え"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "handle; grip; stalk (of a mushroom, leaf, etc.)",
-    "glosses": [
-     "handle",
-     "grip",
-     "stalk (of a mushroom, leaf, etc.)"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "handle",
-       "grip"
-      ]
-     },
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "stalk (of a mushroom, leaf, etc.)"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 3529
-   },
-   {
     "ent_seq": 1173340,
     "word": "餌",
     "reading": "え",
@@ -9065,38 +8983,6 @@
     "reasons": [],
     "completed_from": null,
     "rank": 3863
-   },
-   {
-    "ent_seq": 1335730,
-    "word": "重",
-    "reading": "え",
-    "readings": [
-     "え"
-    ],
-    "pos": [
-     "suf",
-     "ctr"
-    ],
-    "meaning": "-fold; -ply",
-    "glosses": [
-     "-fold",
-     "-ply"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "suf",
-       "ctr"
-      ],
-      "glosses": [
-       "-fold",
-       "-ply"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 5635
    },
    {
     "ent_seq": 1279860,
@@ -9170,6 +9056,77 @@
     "rank": 13827
    },
    {
+    "ent_seq": 1508290,
+    "word": "柄",
+    "reading": "え",
+    "readings": [
+     "え"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "handle; grip; stalk (of a mushroom, leaf, etc.)",
+    "glosses": [
+     "handle",
+     "grip",
+     "stalk (of a mushroom, leaf, etc.)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "handle",
+       "grip"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "stalk (of a mushroom, leaf, etc.)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 27102
+   },
+   {
+    "ent_seq": 1335730,
+    "word": "重",
+    "reading": "え",
+    "readings": [
+     "え"
+    ],
+    "pos": [
+     "suf",
+     "ctr"
+    ],
+    "meaning": "-fold; -ply",
+    "glosses": [
+     "-fold",
+     "-ply"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "suf",
+       "ctr"
+      ],
+      "glosses": [
+       "-fold",
+       "-ply"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 29102
+   },
+   {
     "ent_seq": 1173300,
     "word": "荏",
     "reading": "え",
@@ -9198,6 +9155,34 @@
     "reasons": [],
     "completed_from": null,
     "rank": 74465
+   },
+   {
+    "ent_seq": 1198160,
+    "word": "会",
+    "reading": "え",
+    "readings": [
+     "え"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "gathering (esp. Buddhist, festive, etc.)",
+    "glosses": [
+     "gathering (esp. Buddhist, festive, etc.)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "gathering (esp. Buddhist, festive, etc.)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999
    },
    {
     "ent_seq": 2064450,

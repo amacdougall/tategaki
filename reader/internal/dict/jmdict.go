@@ -202,51 +202,88 @@ func split(s string) []string {
 	return strings.Split(s, unitSep)
 }
 
-// MinRanks returns the JPDB rank of each form that has one.
-func (d *DB) MinRanks(forms []string) (map[string]int, error) {
-	out := map[string]int{}
+// rankKey is a frequency row: a written form and the reading it's for.
+// Kana headwords have reading "". So does every row of a frequency table
+// built before readings were stored (see Ranks).
+type rankKey struct{ text, reading string }
+
+// Ranks holds the JPDB ranks for a set of entries' forms.
+type Ranks struct {
+	byKey map[rankKey]int
+	// formsOnly: the table has no reading column, so rows are keyed by form
+	// alone and an entry is ranked by its forms, as before readings landed.
+	formsOnly bool
+}
+
+// Ranks fetches the JPDB ranks of every form of entries.
+func (d *DB) Ranks(entries map[int64]*Entry) (Ranks, error) {
+	out := Ranks{byKey: map[rankKey]int{}}
 	var args []any
 	seen := map[string]bool{}
-	for _, f := range forms {
-		if f != "" && !seen[f] {
-			seen[f] = true
-			args = append(args, f)
+	for _, e := range entries {
+		for _, k := range rankKeys(e) {
+			if !seen[k.text] {
+				seen[k.text] = true
+				args = append(args, k.text)
+			}
 		}
 	}
 	if len(args) == 0 {
 		return out, nil
 	}
-	rows, err := d.db.Query("SELECT text, rank FROM frequency WHERE text IN ("+placeholders(len(args))+")", args...)
+	in := " FROM frequency WHERE text IN (" + placeholders(len(args)) + ")"
+	rows, err := d.db.Query("SELECT text, reading, rank"+in, args...)
 	if err != nil {
-		return out, nil // no frequency table: everything unranked, as jmdict.py
+		// An older jmdict.sqlite (deployed separately from the binary) has no
+		// reading column: fall back to its form-only ranks.
+		out.formsOnly = true
+		rows, err = d.db.Query("SELECT text, '', rank"+in, args...)
+		if err != nil {
+			return out, nil // no frequency table: everything unranked, as jmdict.py
+		}
 	}
 	defer rows.Close()
 	for rows.Next() {
-		var t string
+		var k rankKey
 		var r int
-		if err := rows.Scan(&t, &r); err != nil {
-			return nil, err
+		if err := rows.Scan(&k.text, &k.reading, &r); err != nil {
+			return out, err
 		}
-		out[t] = r
+		if old, ok := out.byKey[k]; !ok || r < old {
+			out.byKey[k] = r
+		}
 	}
 	return out, rows.Err()
 }
 
-// rankForms is what an entry is ranked by: its written forms, or its readings
-// for kana-only entries (lookup.py: min_rank(kanji or readings)).
-func rankForms(e *Entry) []string {
-	if len(e.Kanji) > 0 {
-		return e.Kanji
+// rankKeys is what an entry is ranked by (jmdict.py entry_rank): each pair of
+// its written forms and readings, so 後方/しりえ doesn't inherit the rank of
+// 後 (that's あと); or its readings as kana headwords for kana-only entries.
+func rankKeys(e *Entry) []rankKey {
+	var out []rankKey
+	if len(e.Kanji) == 0 {
+		for _, r := range e.Readings {
+			out = append(out, rankKey{r, ""})
+		}
+		return out
 	}
-	return e.Readings
+	for _, k := range e.Kanji {
+		for _, r := range e.Readings {
+			out = append(out, rankKey{k, r})
+		}
+	}
+	return out
 }
 
-func minRank(e *Entry, ranks map[string]int) int {
+// Of returns e's rank: its most common (form, reading) pair, or Unranked.
+func (rs Ranks) Of(e *Entry) int {
 	best := Unranked
-	found := false
-	for _, f := range rankForms(e) {
-		if r, ok := ranks[f]; ok && (!found || r < best) {
-			best, found = r, true
+	for _, k := range rankKeys(e) {
+		if rs.formsOnly {
+			k.reading = ""
+		}
+		if r, ok := rs.byKey[k]; ok && r < best {
+			best = r
 		}
 	}
 	return best

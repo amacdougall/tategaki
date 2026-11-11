@@ -107,7 +107,7 @@ def _collect_exact(db, surface, consider, force_tier=None):
                 tier = force_tier
             else:
                 tier = TIER_LITERAL if not d.reasons else TIER_DEINFLECTED
-            rank = db.min_rank(entry['kanji'] or entry['readings'])
+            rank = db.entry_rank(entry)
             consider(tier, len(d.reasons), _candidate_entry(entry, d.reasons, d.term, rank=rank))
 
 
@@ -119,13 +119,13 @@ def _collect_prefix(db, surface, limit, consider):
       * inflection completion — 擦ら  -> 擦る   (surface is a partial inflection)
     '''
     for entry in db.lookup_prefix(surface, limit):
-        rank = db.min_rank(entry['kanji'] or entry['readings'])
+        rank = db.entry_rank(entry)
         consider(TIER_PREFIX, 0, _candidate_entry(entry, [], '', completed_from=surface, rank=rank))
     for comp in complete_partial_inflection(surface):
         for entry in db.lookup_exact(comp.term):
             if not rules_compatible(comp.rules, _flat_pos(entry['senses'])):
                 continue
-            rank = db.min_rank(entry['kanji'] or entry['readings'])
+            rank = db.entry_rank(entry)
             consider(TIER_PREFIX, len(comp.reasons),
                      _candidate_entry(entry, comp.reasons, comp.term, completed_from=surface, rank=rank))
 

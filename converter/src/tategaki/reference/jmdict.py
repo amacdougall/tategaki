@@ -109,8 +109,9 @@ class JMdict:
                 'readings': readings, 'senses': senses}
 
     def min_rank(self, forms):
-        '''Smallest JPDB frequency rank (lower = more common) among ``forms``
-        (an entry's kanji + readings), or ``UNRANKED`` if none are ranked.
+        '''Smallest JPDB frequency rank (lower = more common) among ``forms``,
+        across all their readings, or ``UNRANKED`` if none are ranked. To rank
+        a dictionary entry, use ``entry_rank``, which respects its readings.
 
         Degrades to ``UNRANKED`` if the frequency table is absent (an old
         jmdict.sqlite built before frequency ranking landed), so lookups keep
@@ -129,6 +130,35 @@ class JMdict:
         if row and row[0] is not None:
             return row[0]
         return UNRANKED
+
+    def entry_rank(self, entry):
+        '''JPDB rank of a dictionary entry, or ``UNRANKED``.
+
+        A kanji entry is ranked by its own (written form, reading) pairs, so
+        後方/しりえ doesn't inherit the rank of 後 (that's あと). A kana-only
+        entry is ranked by its readings as kana headwords (reading '').
+
+        A frequency table from before readings were stored has no reading
+        column; then rank by forms alone, as before.
+        '''
+        kanji, readings = entry['kanji'], entry['readings']
+        if not kanji:
+            pairs = [(r, '') for r in readings if r]
+        else:
+            pairs = [(k, r) for k in kanji for r in readings if k and r]
+        if not pairs:
+            return UNRANKED
+        texts = sorted({t for t, _ in pairs})
+        placeholders = ','.join('?' * len(texts))
+        try:
+            rows = self.conn.execute(
+                f'SELECT text, reading, rank FROM frequency WHERE text IN ({placeholders})',
+                texts).fetchall()
+        except sqlite3.Error:
+            return self.min_rank(kanji or readings)
+        wanted = set(pairs)
+        ranks = [rank for text, reading, rank in rows if (text, reading) in wanted]
+        return min(ranks) if ranks else UNRANKED
 
     def meta(self):
         '''Return the {key: value} build-provenance map (or {} if absent).'''

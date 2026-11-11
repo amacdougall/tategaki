@@ -108,7 +108,7 @@ func (d *DB) Scan(text []rune, offset, paraEnd, scanLen int, policy string, maxR
 					continue
 				}
 			}
-			c := newCandidate(e, st.d.Reasons, st.d.Term, nil, minRank(e, ranks))
+			c := newCandidate(e, st.d.Reasons, st.d.Term, nil, ranks.Of(e))
 			c.SourceLen = st.n
 			best[seq] = &c
 		}

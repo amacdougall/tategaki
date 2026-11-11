@@ -1,7 +1,7 @@
 # data/
 
 - `jmdict.sqlite` is **not committed** (54 MB). It holds JMdict plus JPDB
-  frequency ranks.
+  frequency ranks, keyed by (written form, reading).
   - **To create it,** run `python3 tools/prepare_jmdict.py`. This copies the
     Calibre fork's dictionary from
     `../calibre/src/calibre/gui2/viewer/anki_cards/jmdict.sqlite` and adds

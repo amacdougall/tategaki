@@ -52,7 +52,7 @@ def scan(db, text, offset, para_end=None, scan_len=SCAN_LEN, policy='longest', m
     def consider(n, d, entry):
         if not rules_compatible(d.rules, _flat_pos(entry['senses'])):
             return
-        rank = db.min_rank(entry['kanji'] or entry['readings'])
+        rank = db.entry_rank(entry)
         cand = _candidate_entry(entry, d.reasons, d.term, rank=rank)
         cand['source_len'] = n
         old = best.get(cand['ent_seq'])

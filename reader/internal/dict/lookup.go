@@ -114,16 +114,12 @@ func (c *collector) consider(tier, chain int, cand Candidate) {
 }
 
 // entriesFor fetches entries plus their ranks.
-func (d *DB) entriesFor(seqs []int64) (map[int64]*Entry, map[string]int, error) {
+func (d *DB) entriesFor(seqs []int64) (map[int64]*Entry, Ranks, error) {
 	entries, err := d.Entries(seqs)
 	if err != nil {
-		return nil, nil, err
+		return nil, Ranks{}, err
 	}
-	var forms []string
-	for _, e := range entries {
-		forms = append(forms, rankForms(e)...)
-	}
-	ranks, err := d.MinRanks(forms)
+	ranks, err := d.Ranks(entries)
 	return entries, ranks, err
 }
 
@@ -149,7 +145,7 @@ func (d *DB) collectExact(surface string, c *collector, forceTier int) error {
 					tier = TierDeinflected
 				}
 			}
-			c.consider(tier, len(di.Reasons), newCandidate(e, di.Reasons, di.Term, nil, minRank(e, ranks)))
+			c.consider(tier, len(di.Reasons), newCandidate(e, di.Reasons, di.Term, nil, ranks.Of(e)))
 		}
 	}
 	return nil
@@ -167,7 +163,7 @@ func (d *DB) collectPrefix(surface string, limit int, c *collector) error {
 	}
 	for _, seq := range seqs {
 		e := entries[seq]
-		c.consider(TierPrefix, 0, newCandidate(e, nil, "", &from, minRank(e, ranks)))
+		c.consider(TierPrefix, 0, newCandidate(e, nil, "", &from, ranks.Of(e)))
 	}
 	for _, comp := range CompletePartialInflection(surface) {
 		seqs, err := d.LookupExact(comp.Term)
@@ -183,7 +179,7 @@ func (d *DB) collectPrefix(surface string, limit int, c *collector) error {
 			if !RulesCompatible(comp.Rules, flatPOS(e.Senses)) {
 				continue
 			}
-			c.consider(TierPrefix, len(comp.Reasons), newCandidate(e, comp.Reasons, comp.Term, &from, minRank(e, ranks)))
+			c.consider(TierPrefix, len(comp.Reasons), newCandidate(e, comp.Reasons, comp.Term, &from, ranks.Of(e)))
 		}
 	}
 	return nil

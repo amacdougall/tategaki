@@ -443,3 +443,26 @@ converter bugs. The user agreed to all three fixes.
 - **JMdict parity is untouched:** `DB.Scan` and `LookupCandidates` are
   unchanged; the UI prepends the book's matches.
 - **Accepted on the device (2026-11-01).**
+
+## 2026-11-11 (frequency ranks by reading)
+
+- **Problem, reported by the user:** 後方【しりえ】, an archaic reading, had a
+  rank in the low hundreds, ahead of 後方【こうほう】 at 3374.
+  - **Cause:** the frequency table was keyed by written form alone, and an
+    entry took the best rank among its forms. The しりえ entry also lists
+    the form 後, which ranks 186 as あと.
+- **The table is now `frequency(text, reading, rank)`.** Kanji headwords keep
+  JPDB's reading; kana headwords have reading `''`. Duplicate keys keep the
+  smallest rank, as before.
+- **An entry is ranked by its own (form, reading) pairs**, or by its readings
+  as kana headwords if it's kana-only (`jmdict.py` `entry_rank`, Go
+  `Ranks.Of`). 後方【しりえ】 is now unranked, since JPDB has no row for it.
+  Usually-kana words still rank correctly: JPDB lists 有難う/ありがとう at 508.
+- **Furigana ranking is unchanged.** It ranks by form across all readings,
+  which still works because the primary key starts with `text`.
+- **An old DB still works:** with no `reading` column, both lookups fall back
+  to form-only ranks. The reader binary and `jmdict.sqlite` deploy
+  separately, so a new binary can meet an old DB.
+- **Golden fixtures regenerated.** Ranks moved wherever a form has several
+  readings (for example 分【ふん】 went from 413, the rank of ぶん, to 902), and
+  scan order moved with them.

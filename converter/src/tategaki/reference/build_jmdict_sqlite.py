@@ -180,8 +180,16 @@ def _frequency_value(data):
     return None
 
 
+def _frequency_reading(data):
+    '''The reading a kanji-headword freq row is for, or '' for a kana row.'''
+    if isinstance(data, dict) and isinstance(data.get('reading'), str):
+        return data['reading']
+    return ''
+
+
 def _iter_frequencies(zip_bytes):
-    '''Yield (surface_form, rank) from every term_meta_bank_*.json in the zip.'''
+    '''Yield (surface_form, reading, rank) from every term_meta_bank_*.json in
+    the zip. ``reading`` is '' for kana headwords, which carry none.'''
     with zipfile.ZipFile(io.BytesIO(zip_bytes)) as z:
         names = sorted(n for n in z.namelist()
                        if re.search(r'term_meta_bank_\d+\.json$', n))
@@ -194,32 +202,40 @@ def _iter_frequencies(zip_bytes):
                     continue
                 rank = _frequency_value(row[2])
                 if rank is not None:
-                    yield row[0], rank
+                    yield row[0], _frequency_reading(row[2]), rank
 
 
 def build_frequency_table(conn, zip_bytes):
-    '''(Re)build the frequency(text, rank) table from a JPDB Yomitan zip.
+    '''(Re)build the frequency(text, reading, rank) table from a JPDB Yomitan zip.
 
-    A surface form recurs (multiple readings + a kana variant); keep the
-    smallest rank, i.e. the most common word sharing that form. ``text`` is the
-    PRIMARY KEY (already indexed), so jmdict.py can look ranks up directly.
+    Kanji headwords are keyed by (form, reading), so an entry is ranked by its
+    own word: 後方/しりえ must not inherit 後's rank, which belongs to あと.
+    Kana headwords have reading ''. A key can recur (JPDB lists a word's kana
+    spelling under its kanji headword too, and one kana form spells several
+    words); keep the smallest rank, i.e. the most common use.
+
+    The primary key starts with ``text``, so a form-only lookup
+    (``WHERE text IN ...``, as furigana.py does) still uses the index.
     '''
     best = {}
-    for form, rank in _iter_frequencies(zip_bytes):
-        cur_best = best.get(form)
+    for form, reading, rank in _iter_frequencies(zip_bytes):
+        key = (form, reading)
+        cur_best = best.get(key)
         if cur_best is None or rank < cur_best:
-            best[form] = rank
-    if len(best) < FREQUENCY_MIN_FORMS:
-        raise SystemExit(f'Frequency data looks incomplete ({len(best)} forms)')
+            best[key] = rank
+    forms = len({form for form, _ in best})
+    if forms < FREQUENCY_MIN_FORMS:
+        raise SystemExit(f'Frequency data looks incomplete ({forms} forms)')
     cur = conn.cursor()
     cur.execute('DROP TABLE IF EXISTS frequency')
-    # WITHOUT ROWID: store rows directly in the text btree (no duplicate text in
-    # a separate rowid table + unique index), keeping the committed binary small.
-    cur.execute('CREATE TABLE frequency (text TEXT PRIMARY KEY, rank INTEGER) WITHOUT ROWID')
-    cur.executemany('INSERT OR IGNORE INTO frequency (text, rank) VALUES (?, ?)',
-                    best.items())
+    # WITHOUT ROWID: store rows directly in the key btree (no duplicate text in
+    # a separate rowid table + unique index), keeping the file small.
+    cur.execute('CREATE TABLE frequency (text TEXT, reading TEXT, rank INTEGER, '
+                'PRIMARY KEY (text, reading)) WITHOUT ROWID')
+    cur.executemany('INSERT INTO frequency (text, reading, rank) VALUES (?, ?, ?)',
+                    ((form, reading, rank) for (form, reading), rank in best.items()))
     conn.commit()
-    return len(best)
+    return forms
 
 
 def add_frequency(db_path, zip_path=None, download=False):

@@ -491,7 +491,7 @@
      "progressive or perfect"
     ],
     "completed_from": null,
-    "rank": 1671,
+    "rank": 9999999,
     "source_len": 5
    },
    {
@@ -701,42 +701,6 @@
     "source_len": 5
    },
    {
-    "ent_seq": 2250310,
-    "word": "張る",
-    "reading": "ばる",
-    "readings": [
-     "ばる"
-    ],
-    "pos": [
-     "suf",
-     "v5r"
-    ],
-    "meaning": "to be prominently ...; to be persistently ...",
-    "glosses": [
-     "to be prominently ...",
-     "to be persistently ..."
-    ],
-    "senses": [
-     {
-      "pos": [
-       "suf",
-       "v5r"
-      ],
-      "glosses": [
-       "to be prominently ...",
-       "to be persistently ..."
-      ]
-     }
-    ],
-    "reasons": [
-     "-te",
-     "progressive or perfect"
-    ],
-    "completed_from": null,
-    "rank": 1671,
-    "source_len": 5
-   },
-   {
     "ent_seq": 2247920,
     "word": "張",
     "reading": "ちょう",
@@ -776,6 +740,42 @@
     "completed_from": null,
     "rank": 9813,
     "source_len": 1
+   },
+   {
+    "ent_seq": 2250310,
+    "word": "張る",
+    "reading": "ばる",
+    "readings": [
+     "ばる"
+    ],
+    "pos": [
+     "suf",
+     "v5r"
+    ],
+    "meaning": "to be prominently ...; to be persistently ...",
+    "glosses": [
+     "to be prominently ...",
+     "to be persistently ..."
+    ],
+    "senses": [
+     {
+      "pos": [
+       "suf",
+       "v5r"
+      ],
+      "glosses": [
+       "to be prominently ...",
+       "to be persistently ..."
+      ]
+     }
+    ],
+    "reasons": [
+     "-te",
+     "progressive or perfect"
+    ],
+    "completed_from": null,
+    "rank": 9999999,
+    "source_len": 5
    }
   ]
  },
@@ -785,6 +785,56 @@
   "para_end": 10,
   "policy": "longest",
   "candidates": [
+   {
+    "ent_seq": 1537250,
+    "word": "野",
+    "reading": "の",
+    "readings": [
+     "の"
+    ],
+    "pos": [
+     "n",
+     "n-pref"
+    ],
+    "meaning": "field; plain; hidden interior part (of a structure or object); wild (of an animal or plant)",
+    "glosses": [
+     "field",
+     "plain",
+     "hidden interior part (of a structure or object)",
+     "wild (of an animal or plant)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "field",
+       "plain"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "hidden interior part (of a structure or object)"
+      ]
+     },
+     {
+      "pos": [
+       "n-pref"
+      ],
+      "glosses": [
+       "wild (of an animal or plant)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 2490,
+    "source_len": 1
+   },
    {
     "ent_seq": 1469800,
     "word": "乃",
@@ -856,7 +906,7 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 34,
+    "rank": 13652,
     "source_len": 1
    },
    {
@@ -889,57 +939,7 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 2042,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 1537250,
-    "word": "野",
-    "reading": "の",
-    "readings": [
-     "の"
-    ],
-    "pos": [
-     "n",
-     "n-pref"
-    ],
-    "meaning": "field; plain; hidden interior part (of a structure or object); wild (of an animal or plant)",
-    "glosses": [
-     "field",
-     "plain",
-     "hidden interior part (of a structure or object)",
-     "wild (of an animal or plant)"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "field",
-       "plain"
-      ]
-     },
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "hidden interior part (of a structure or object)"
-      ]
-     },
-     {
-      "pos": [
-       "n-pref"
-      ],
-      "glosses": [
-       "wild (of an animal or plant)"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 2490,
+    "rank": 153501,
     "source_len": 1
    },
    {
@@ -968,7 +968,7 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 29393,
+    "rank": 9999999,
     "source_len": 1
    }
   ]
@@ -980,6 +980,56 @@
   "policy": "frequency",
   "candidates": [
    {
+    "ent_seq": 1537250,
+    "word": "野",
+    "reading": "の",
+    "readings": [
+     "の"
+    ],
+    "pos": [
+     "n",
+     "n-pref"
+    ],
+    "meaning": "field; plain; hidden interior part (of a structure or object); wild (of an animal or plant)",
+    "glosses": [
+     "field",
+     "plain",
+     "hidden interior part (of a structure or object)",
+     "wild (of an animal or plant)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "field",
+       "plain"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "hidden interior part (of a structure or object)"
+      ]
+     },
+     {
+      "pos": [
+       "n-pref"
+      ],
+      "glosses": [
+       "wild (of an animal or plant)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 2490,
+    "source_len": 1
+   },
+   {
     "ent_seq": 1469800,
     "word": "乃",
     "reading": "の",
@@ -1050,7 +1100,7 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 34,
+    "rank": 13652,
     "source_len": 1
    },
    {
@@ -1083,57 +1133,7 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 2042,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 1537250,
-    "word": "野",
-    "reading": "の",
-    "readings": [
-     "の"
-    ],
-    "pos": [
-     "n",
-     "n-pref"
-    ],
-    "meaning": "field; plain; hidden interior part (of a structure or object); wild (of an animal or plant)",
-    "glosses": [
-     "field",
-     "plain",
-     "hidden interior part (of a structure or object)",
-     "wild (of an animal or plant)"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "field",
-       "plain"
-      ]
-     },
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "hidden interior part (of a structure or object)"
-      ]
-     },
-     {
-      "pos": [
-       "n-pref"
-      ],
-      "glosses": [
-       "wild (of an animal or plant)"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 2490,
+    "rank": 153501,
     "source_len": 1
    },
    {
@@ -1162,7 +1162,7 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 29393,
+    "rank": 9999999,
     "source_len": 1
    }
   ]
@@ -3791,7 +3791,7 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 18322,
+    "rank": 59501,
     "source_len": 1
    }
   ]
@@ -3873,6 +3873,35 @@
     "source_len": 4
    },
    {
+    "ent_seq": 2564800,
+    "word": "引っ",
+    "reading": "ひっ",
+    "readings": [
+     "ひっ"
+    ],
+    "pos": [
+     "pref"
+    ],
+    "meaning": "goes before a verb to strengthen its meaning or to add emphasis",
+    "glosses": [
+     "goes before a verb to strengthen its meaning or to add emphasis"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "pref"
+      ],
+      "glosses": [
+       "goes before a verb to strengthen its meaning or to add emphasis"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 23683,
+    "source_len": 2
+   },
+   {
     "ent_seq": 2148430,
     "word": "引き",
     "reading": "びき",
@@ -3911,37 +3940,8 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 18322,
+    "rank": 59501,
     "source_len": 1
-   },
-   {
-    "ent_seq": 2564800,
-    "word": "引っ",
-    "reading": "ひっ",
-    "readings": [
-     "ひっ"
-    ],
-    "pos": [
-     "pref"
-    ],
-    "meaning": "goes before a verb to strengthen its meaning or to add emphasis",
-    "glosses": [
-     "goes before a verb to strengthen its meaning or to add emphasis"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "pref"
-      ],
-      "glosses": [
-       "goes before a verb to strengthen its meaning or to add emphasis"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 23683,
-    "source_len": 2
    }
   ]
  },
@@ -4600,46 +4600,6 @@
     "source_len": 4
    },
    {
-    "ent_seq": 1523790,
-    "word": "摩る",
-    "reading": "さする",
-    "readings": [
-     "さする"
-    ],
-    "pos": [
-     "v5r",
-     "vt"
-    ],
-    "meaning": "to rub; to pat; to stroke; to massage",
-    "glosses": [
-     "to rub",
-     "to pat",
-     "to stroke",
-     "to massage"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "v5r",
-       "vt"
-      ],
-      "glosses": [
-       "to rub",
-       "to pat",
-       "to stroke",
-       "to massage"
-      ]
-     }
-    ],
-    "reasons": [
-     "passive",
-     "past"
-    ],
-    "completed_from": null,
-    "rank": 4559,
-    "source_len": 4
-   },
-   {
     "ent_seq": 1595910,
     "word": "擦る",
     "reading": "する",
@@ -4692,7 +4652,97 @@
      "past"
     ],
     "completed_from": null,
-    "rank": 4559,
+    "rank": 5052,
+    "source_len": 4
+   },
+   {
+    "ent_seq": 1523790,
+    "word": "摩る",
+    "reading": "さする",
+    "readings": [
+     "さする"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub; to pat; to stroke; to massage",
+    "glosses": [
+     "to rub",
+     "to pat",
+     "to stroke",
+     "to massage"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub",
+       "to pat",
+       "to stroke",
+       "to massage"
+      ]
+     }
+    ],
+    "reasons": [
+     "passive",
+     "past"
+    ],
+    "completed_from": null,
+    "rank": 5552,
+    "source_len": 4
+   },
+   {
+    "ent_seq": 2086270,
+    "word": "擦る",
+    "reading": "なする",
+    "readings": [
+     "なする"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub in; to smear on; to spread on; to daub; to lay the blame on",
+    "glosses": [
+     "to rub in",
+     "to smear on",
+     "to spread on",
+     "to daub",
+     "to lay the blame on"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub in",
+       "to smear on",
+       "to spread on",
+       "to daub"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to lay the blame on"
+      ]
+     }
+    ],
+    "reasons": [
+     "passive",
+     "past"
+    ],
+    "completed_from": null,
+    "rank": 11516,
     "source_len": 4
    },
    {
@@ -4744,57 +4794,7 @@
      "past"
     ],
     "completed_from": null,
-    "rank": 4559,
-    "source_len": 4
-   },
-   {
-    "ent_seq": 2086270,
-    "word": "擦る",
-    "reading": "なする",
-    "readings": [
-     "なする"
-    ],
-    "pos": [
-     "v5r",
-     "vt"
-    ],
-    "meaning": "to rub in; to smear on; to spread on; to daub; to lay the blame on",
-    "glosses": [
-     "to rub in",
-     "to smear on",
-     "to spread on",
-     "to daub",
-     "to lay the blame on"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "v5r",
-       "vt"
-      ],
-      "glosses": [
-       "to rub in",
-       "to smear on",
-       "to spread on",
-       "to daub"
-      ]
-     },
-     {
-      "pos": [
-       "v5r",
-       "vt"
-      ],
-      "glosses": [
-       "to lay the blame on"
-      ]
-     }
-    ],
-    "reasons": [
-     "passive",
-     "past"
-    ],
-    "completed_from": null,
-    "rank": 4559,
+    "rank": 15991,
     "source_len": 4
    }
   ]
@@ -4870,46 +4870,6 @@
     "source_len": 4
    },
    {
-    "ent_seq": 1523790,
-    "word": "摩る",
-    "reading": "さする",
-    "readings": [
-     "さする"
-    ],
-    "pos": [
-     "v5r",
-     "vt"
-    ],
-    "meaning": "to rub; to pat; to stroke; to massage",
-    "glosses": [
-     "to rub",
-     "to pat",
-     "to stroke",
-     "to massage"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "v5r",
-       "vt"
-      ],
-      "glosses": [
-       "to rub",
-       "to pat",
-       "to stroke",
-       "to massage"
-      ]
-     }
-    ],
-    "reasons": [
-     "passive",
-     "past"
-    ],
-    "completed_from": null,
-    "rank": 4559,
-    "source_len": 4
-   },
-   {
     "ent_seq": 1595910,
     "word": "擦る",
     "reading": "する",
@@ -4962,7 +4922,97 @@
      "past"
     ],
     "completed_from": null,
-    "rank": 4559,
+    "rank": 5052,
+    "source_len": 4
+   },
+   {
+    "ent_seq": 1523790,
+    "word": "摩る",
+    "reading": "さする",
+    "readings": [
+     "さする"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub; to pat; to stroke; to massage",
+    "glosses": [
+     "to rub",
+     "to pat",
+     "to stroke",
+     "to massage"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub",
+       "to pat",
+       "to stroke",
+       "to massage"
+      ]
+     }
+    ],
+    "reasons": [
+     "passive",
+     "past"
+    ],
+    "completed_from": null,
+    "rank": 5552,
+    "source_len": 4
+   },
+   {
+    "ent_seq": 2086270,
+    "word": "擦る",
+    "reading": "なする",
+    "readings": [
+     "なする"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub in; to smear on; to spread on; to daub; to lay the blame on",
+    "glosses": [
+     "to rub in",
+     "to smear on",
+     "to spread on",
+     "to daub",
+     "to lay the blame on"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub in",
+       "to smear on",
+       "to spread on",
+       "to daub"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to lay the blame on"
+      ]
+     }
+    ],
+    "reasons": [
+     "passive",
+     "past"
+    ],
+    "completed_from": null,
+    "rank": 11516,
     "source_len": 4
    },
    {
@@ -5014,57 +5064,7 @@
      "past"
     ],
     "completed_from": null,
-    "rank": 4559,
-    "source_len": 4
-   },
-   {
-    "ent_seq": 2086270,
-    "word": "擦る",
-    "reading": "なする",
-    "readings": [
-     "なする"
-    ],
-    "pos": [
-     "v5r",
-     "vt"
-    ],
-    "meaning": "to rub in; to smear on; to spread on; to daub; to lay the blame on",
-    "glosses": [
-     "to rub in",
-     "to smear on",
-     "to spread on",
-     "to daub",
-     "to lay the blame on"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "v5r",
-       "vt"
-      ],
-      "glosses": [
-       "to rub in",
-       "to smear on",
-       "to spread on",
-       "to daub"
-      ]
-     },
-     {
-      "pos": [
-       "v5r",
-       "vt"
-      ],
-      "glosses": [
-       "to lay the blame on"
-      ]
-     }
-    ],
-    "reasons": [
-     "passive",
-     "past"
-    ],
-    "completed_from": null,
-    "rank": 4559,
+    "rank": 15991,
     "source_len": 4
    }
   ]
@@ -5643,7 +5643,7 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 4559,
+    "rank": 5052,
     "source_len": 2
    },
    {
@@ -5754,64 +5754,6 @@
     "source_len": 2
    },
    {
-    "ent_seq": 2219050,
-    "word": "為",
-    "reading": "す",
-    "readings": [
-     "す"
-    ],
-    "pos": [
-     "vs-c"
-    ],
-    "meaning": "to do",
-    "glosses": [
-     "to do"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "vs-c"
-      ],
-      "glosses": [
-       "to do"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 89,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 2427540,
-    "word": "主",
-    "reading": "す",
-    "readings": [
-     "す"
-    ],
-    "pos": [
-     "suf"
-    ],
-    "meaning": "honorific (or familiar) suffix used after a name",
-    "glosses": [
-     "honorific (or familiar) suffix used after a name"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "suf"
-      ],
-      "glosses": [
-       "honorific (or familiar) suffix used after a name"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 207,
-    "source_len": 1
-   },
-   {
     "ent_seq": 2269410,
     "word": "っす",
     "reading": "す",
@@ -5843,6 +5785,97 @@
     "reasons": [],
     "completed_from": null,
     "rank": 1449,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 2219050,
+    "word": "為",
+    "reading": "す",
+    "readings": [
+     "す"
+    ],
+    "pos": [
+     "vs-c"
+    ],
+    "meaning": "to do",
+    "glosses": [
+     "to do"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "vs-c"
+      ],
+      "glosses": [
+       "to do"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 4502,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 1400390,
+    "word": "巣",
+    "reading": "す",
+    "readings": [
+     "す"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "nest; rookery; breeding place; hive; den; haunt; (spider's) web",
+    "glosses": [
+     "nest",
+     "rookery",
+     "breeding place",
+     "hive",
+     "den",
+     "haunt",
+     "(spider's) web"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "nest",
+       "rookery",
+       "breeding place",
+       "hive"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "den"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "haunt"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "(spider's) web"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 5167,
     "source_len": 1
    },
    {
@@ -5914,7 +5947,36 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 2802,
+    "rank": 5942,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 1370270,
+    "word": "酢",
+    "reading": "す",
+    "readings": [
+     "す"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "vinegar",
+    "glosses": [
+     "vinegar"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "vinegar"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 21377,
     "source_len": 1
    },
    {
@@ -5945,139 +6007,7 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 5048,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 1400390,
-    "word": "巣",
-    "reading": "す",
-    "readings": [
-     "す"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "nest; rookery; breeding place; hive; den; haunt; (spider's) web",
-    "glosses": [
-     "nest",
-     "rookery",
-     "breeding place",
-     "hive",
-     "den",
-     "haunt",
-     "(spider's) web"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "nest",
-       "rookery",
-       "breeding place",
-       "hive"
-      ]
-     },
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "den"
-      ]
-     },
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "haunt"
-      ]
-     },
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "(spider's) web"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 5167,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 1272690,
-    "word": "候",
-    "reading": "す",
-    "readings": [
-     "そろ",
-     "そう",
-     "さう",
-     "す"
-    ],
-    "pos": [
-     "aux"
-    ],
-    "meaning": "to be; to do",
-    "glosses": [
-     "to be",
-     "to do"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "aux"
-      ],
-      "glosses": [
-       "to be"
-      ]
-     },
-     {
-      "pos": [
-       "aux"
-      ],
-      "glosses": [
-       "to do"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 12208,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 1370270,
-    "word": "酢",
-    "reading": "す",
-    "readings": [
-     "す"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "vinegar",
-    "glosses": [
-     "vinegar"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "vinegar"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 18149,
+    "rank": 25680,
     "source_len": 1
    },
    {
@@ -6200,6 +6130,76 @@
     "reasons": [],
     "completed_from": null,
     "rank": 127449,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 1272690,
+    "word": "候",
+    "reading": "す",
+    "readings": [
+     "そろ",
+     "そう",
+     "さう",
+     "す"
+    ],
+    "pos": [
+     "aux"
+    ],
+    "meaning": "to be; to do",
+    "glosses": [
+     "to be",
+     "to do"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "aux"
+      ],
+      "glosses": [
+       "to be"
+      ]
+     },
+     {
+      "pos": [
+       "aux"
+      ],
+      "glosses": [
+       "to do"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 2427540,
+    "word": "主",
+    "reading": "す",
+    "readings": [
+     "す"
+    ],
+    "pos": [
+     "suf"
+    ],
+    "meaning": "honorific (or familiar) suffix used after a name",
+    "glosses": [
+     "honorific (or familiar) suffix used after a name"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "suf"
+      ],
+      "glosses": [
+       "honorific (or familiar) suffix used after a name"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999,
     "source_len": 1
    }
   ]
@@ -6439,64 +6439,6 @@
     "source_len": 2
    },
    {
-    "ent_seq": 2219050,
-    "word": "為",
-    "reading": "す",
-    "readings": [
-     "す"
-    ],
-    "pos": [
-     "vs-c"
-    ],
-    "meaning": "to do",
-    "glosses": [
-     "to do"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "vs-c"
-      ],
-      "glosses": [
-       "to do"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 89,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 2427540,
-    "word": "主",
-    "reading": "す",
-    "readings": [
-     "す"
-    ],
-    "pos": [
-     "suf"
-    ],
-    "meaning": "honorific (or familiar) suffix used after a name",
-    "glosses": [
-     "honorific (or familiar) suffix used after a name"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "suf"
-      ],
-      "glosses": [
-       "honorific (or familiar) suffix used after a name"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 207,
-    "source_len": 1
-   },
-   {
     "ent_seq": 2269410,
     "word": "っす",
     "reading": "す",
@@ -6528,6 +6470,150 @@
     "reasons": [],
     "completed_from": null,
     "rank": 1449,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 2219050,
+    "word": "為",
+    "reading": "す",
+    "readings": [
+     "す"
+    ],
+    "pos": [
+     "vs-c"
+    ],
+    "meaning": "to do",
+    "glosses": [
+     "to do"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "vs-c"
+      ],
+      "glosses": [
+       "to do"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 4502,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 1595910,
+    "word": "擦る",
+    "reading": "する",
+    "readings": [
+     "する"
+    ],
+    "pos": [
+     "v5r",
+     "vt"
+    ],
+    "meaning": "to rub; to chafe; to strike (match); to file; to frost (glass); to squander (one's money); to run through (one's fortune); to lose money (e.g. by gambling)",
+    "glosses": [
+     "to rub",
+     "to chafe",
+     "to strike (match)",
+     "to file",
+     "to frost (glass)",
+     "to squander (one's money)",
+     "to run through (one's fortune)",
+     "to lose money (e.g. by gambling)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to rub",
+       "to chafe",
+       "to strike (match)",
+       "to file",
+       "to frost (glass)"
+      ]
+     },
+     {
+      "pos": [
+       "v5r",
+       "vt"
+      ],
+      "glosses": [
+       "to squander (one's money)",
+       "to run through (one's fortune)",
+       "to lose money (e.g. by gambling)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 5052,
+    "source_len": 2
+   },
+   {
+    "ent_seq": 1400390,
+    "word": "巣",
+    "reading": "す",
+    "readings": [
+     "す"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "nest; rookery; breeding place; hive; den; haunt; (spider's) web",
+    "glosses": [
+     "nest",
+     "rookery",
+     "breeding place",
+     "hive",
+     "den",
+     "haunt",
+     "(spider's) web"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "nest",
+       "rookery",
+       "breeding place",
+       "hive"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "den"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "haunt"
+      ]
+     },
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "(spider's) web"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 5167,
     "source_len": 1
    },
    {
@@ -6599,194 +6685,7 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 2802,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 1595910,
-    "word": "擦る",
-    "reading": "する",
-    "readings": [
-     "する"
-    ],
-    "pos": [
-     "v5r",
-     "vt"
-    ],
-    "meaning": "to rub; to chafe; to strike (match); to file; to frost (glass); to squander (one's money); to run through (one's fortune); to lose money (e.g. by gambling)",
-    "glosses": [
-     "to rub",
-     "to chafe",
-     "to strike (match)",
-     "to file",
-     "to frost (glass)",
-     "to squander (one's money)",
-     "to run through (one's fortune)",
-     "to lose money (e.g. by gambling)"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "v5r",
-       "vt"
-      ],
-      "glosses": [
-       "to rub",
-       "to chafe",
-       "to strike (match)",
-       "to file",
-       "to frost (glass)"
-      ]
-     },
-     {
-      "pos": [
-       "v5r",
-       "vt"
-      ],
-      "glosses": [
-       "to squander (one's money)",
-       "to run through (one's fortune)",
-       "to lose money (e.g. by gambling)"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 4559,
-    "source_len": 2
-   },
-   {
-    "ent_seq": 1331850,
-    "word": "州",
-    "reading": "す",
-    "readings": [
-     "す"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "sandbank; sandbar",
-    "glosses": [
-     "sandbank",
-     "sandbar"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "sandbank",
-       "sandbar"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 5048,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 1400390,
-    "word": "巣",
-    "reading": "す",
-    "readings": [
-     "す"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "nest; rookery; breeding place; hive; den; haunt; (spider's) web",
-    "glosses": [
-     "nest",
-     "rookery",
-     "breeding place",
-     "hive",
-     "den",
-     "haunt",
-     "(spider's) web"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "nest",
-       "rookery",
-       "breeding place",
-       "hive"
-      ]
-     },
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "den"
-      ]
-     },
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "haunt"
-      ]
-     },
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "(spider's) web"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 5167,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 1272690,
-    "word": "候",
-    "reading": "す",
-    "readings": [
-     "そろ",
-     "そう",
-     "さう",
-     "す"
-    ],
-    "pos": [
-     "aux"
-    ],
-    "meaning": "to be; to do",
-    "glosses": [
-     "to be",
-     "to do"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "aux"
-      ],
-      "glosses": [
-       "to be"
-      ]
-     },
-     {
-      "pos": [
-       "aux"
-      ],
-      "glosses": [
-       "to do"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 12208,
+    "rank": 5942,
     "source_len": 1
    },
    {
@@ -6847,7 +6746,38 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 18149,
+    "rank": 21377,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 1331850,
+    "word": "州",
+    "reading": "す",
+    "readings": [
+     "す"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "sandbank; sandbar",
+    "glosses": [
+     "sandbank",
+     "sandbar"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "sandbank",
+       "sandbar"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 25680,
     "source_len": 1
    },
    {
@@ -7046,6 +6976,76 @@
     "completed_from": null,
     "rank": 127449,
     "source_len": 1
+   },
+   {
+    "ent_seq": 1272690,
+    "word": "候",
+    "reading": "す",
+    "readings": [
+     "そろ",
+     "そう",
+     "さう",
+     "す"
+    ],
+    "pos": [
+     "aux"
+    ],
+    "meaning": "to be; to do",
+    "glosses": [
+     "to be",
+     "to do"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "aux"
+      ],
+      "glosses": [
+       "to be"
+      ]
+     },
+     {
+      "pos": [
+       "aux"
+      ],
+      "glosses": [
+       "to do"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 2427540,
+    "word": "主",
+    "reading": "す",
+    "readings": [
+     "す"
+    ],
+    "pos": [
+     "suf"
+    ],
+    "meaning": "honorific (or familiar) suffix used after a name",
+    "glosses": [
+     "honorific (or familiar) suffix used after a name"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "suf"
+      ],
+      "glosses": [
+       "honorific (or familiar) suffix used after a name"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999,
+    "source_len": 1
    }
   ]
  },
@@ -7415,7 +7415,7 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 175,
+    "rank": 23101,
     "source_len": 2
    },
    {
@@ -7546,8 +7546,37 @@
      "masu stem"
     ],
     "completed_from": null,
-    "rank": 143,
+    "rank": 3981,
     "source_len": 2
+   },
+   {
+    "ent_seq": 2414420,
+    "word": "好",
+    "reading": "こう",
+    "readings": [
+     "こう"
+    ],
+    "pos": [
+     "pref"
+    ],
+    "meaning": "good",
+    "glosses": [
+     "good"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "pref"
+      ],
+      "glosses": [
+       "good"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 8078,
+    "source_len": 1
    },
    {
     "ent_seq": 1608940,
@@ -7585,36 +7614,7 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 2515,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 2414420,
-    "word": "好",
-    "reading": "こう",
-    "readings": [
-     "こう"
-    ],
-    "pos": [
-     "pref"
-    ],
-    "meaning": "good",
-    "glosses": [
-     "good"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "pref"
-      ],
-      "glosses": [
-       "good"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 8078,
+    "rank": 21282,
     "source_len": 1
    }
   ]
@@ -7720,43 +7720,6 @@
     "source_len": 2
    },
    {
-    "ent_seq": 1277480,
-    "word": "好く",
-    "reading": "すく",
-    "readings": [
-     "すく"
-    ],
-    "pos": [
-     "v5k",
-     "vt"
-    ],
-    "meaning": "to like; to love; to be fond of",
-    "glosses": [
-     "to like",
-     "to love",
-     "to be fond of"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "v5k",
-       "vt"
-      ],
-      "glosses": [
-       "to like",
-       "to love",
-       "to be fond of"
-      ]
-     }
-    ],
-    "reasons": [
-     "masu stem"
-    ],
-    "completed_from": null,
-    "rank": 143,
-    "source_len": 2
-   },
-   {
     "ent_seq": 1277450,
     "word": "好き",
     "reading": "すき",
@@ -7850,6 +7813,111 @@
     "source_len": 2
    },
    {
+    "ent_seq": 1277480,
+    "word": "好く",
+    "reading": "すく",
+    "readings": [
+     "すく"
+    ],
+    "pos": [
+     "v5k",
+     "vt"
+    ],
+    "meaning": "to like; to love; to be fond of",
+    "glosses": [
+     "to like",
+     "to love",
+     "to be fond of"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v5k",
+       "vt"
+      ],
+      "glosses": [
+       "to like",
+       "to love",
+       "to be fond of"
+      ]
+     }
+    ],
+    "reasons": [
+     "masu stem"
+    ],
+    "completed_from": null,
+    "rank": 3981,
+    "source_len": 2
+   },
+   {
+    "ent_seq": 2414420,
+    "word": "好",
+    "reading": "こう",
+    "readings": [
+     "こう"
+    ],
+    "pos": [
+     "pref"
+    ],
+    "meaning": "good",
+    "glosses": [
+     "good"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "pref"
+      ],
+      "glosses": [
+       "good"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 8078,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 1608940,
+    "word": "誼",
+    "reading": "よしみ",
+    "readings": [
+     "よしみ",
+     "ぎ",
+     "よしび"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "friendship; friendly relations; connection; relation; intimacy",
+    "glosses": [
+     "friendship",
+     "friendly relations",
+     "connection",
+     "relation",
+     "intimacy"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "friendship",
+       "friendly relations",
+       "connection",
+       "relation",
+       "intimacy"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 21282,
+    "source_len": 1
+   },
+   {
     "ent_seq": 2146440,
     "word": "好き",
     "reading": "ずき",
@@ -7896,76 +7964,8 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 175,
+    "rank": 23101,
     "source_len": 2
-   },
-   {
-    "ent_seq": 1608940,
-    "word": "誼",
-    "reading": "よしみ",
-    "readings": [
-     "よしみ",
-     "ぎ",
-     "よしび"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "friendship; friendly relations; connection; relation; intimacy",
-    "glosses": [
-     "friendship",
-     "friendly relations",
-     "connection",
-     "relation",
-     "intimacy"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "friendship",
-       "friendly relations",
-       "connection",
-       "relation",
-       "intimacy"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 2515,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 2414420,
-    "word": "好",
-    "reading": "こう",
-    "readings": [
-     "こう"
-    ],
-    "pos": [
-     "pref"
-    ],
-    "meaning": "good",
-    "glosses": [
-     "good"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "pref"
-      ],
-      "glosses": [
-       "good"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 8078,
-    "source_len": 1
    }
   ]
  },
@@ -8046,7 +8046,7 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 413,
+    "rank": 902,
     "source_len": 2
    },
    {
@@ -8137,7 +8137,7 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 3135,
+    "rank": 14521,
     "source_len": 2
    },
    {
@@ -8249,37 +8249,6 @@
     "source_len": 1
    },
    {
-    "ent_seq": 2870787,
-    "word": "夫",
-    "reading": "ふ",
-    "readings": [
-     "ふ"
-    ],
-    "pos": [
-     "n-suf"
-    ],
-    "meaning": "(working) man; laborer",
-    "glosses": [
-     "(working) man",
-     "laborer"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n-suf"
-      ],
-      "glosses": [
-       "(working) man",
-       "laborer"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 1882,
-    "source_len": 1
-   },
-   {
     "ent_seq": 1496840,
     "word": "布",
     "reading": "ふ",
@@ -8322,95 +8291,6 @@
     "reasons": [],
     "completed_from": null,
     "rank": 2042,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 2862651,
-    "word": "布",
-    "reading": "ふ",
-    "readings": [
-     "ふ"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "Hawaii",
-    "glosses": [
-     "Hawaii"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "Hawaii"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 2042,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 2416410,
-    "word": "生",
-    "reading": "ふ",
-    "readings": [
-     "ふ"
-    ],
-    "pos": [
-     "n",
-     "n-suf"
-    ],
-    "meaning": "area of thick growth (of trees, grass, etc.)",
-    "glosses": [
-     "area of thick growth (of trees, grass, etc.)"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n",
-       "n-suf"
-      ],
-      "glosses": [
-       "area of thick growth (of trees, grass, etc.)"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 2227,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 1514290,
-    "word": "歩",
-    "reading": "ふ",
-    "readings": [
-     "ふ"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "pawn",
-    "glosses": [
-     "pawn"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "pawn"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 4022,
     "source_len": 1
    },
    {
@@ -8478,65 +8358,6 @@
     "source_len": 1
    },
    {
-    "ent_seq": 2783730,
-    "word": "経",
-    "reading": "ふ",
-    "readings": [
-     "ふ"
-    ],
-    "pos": [
-     "v2h-s",
-     "vi"
-    ],
-    "meaning": "to pass; to elapse; to go by; to pass through; to go through; to experience; to go through",
-    "glosses": [
-     "to pass",
-     "to elapse",
-     "to go by",
-     "to pass through",
-     "to go through",
-     "to experience",
-     "to go through"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "v2h-s",
-       "vi"
-      ],
-      "glosses": [
-       "to pass",
-       "to elapse",
-       "to go by"
-      ]
-     },
-     {
-      "pos": [
-       "v2h-s",
-       "vi"
-      ],
-      "glosses": [
-       "to pass through",
-       "to go through"
-      ]
-     },
-     {
-      "pos": [
-       "v2h-s",
-       "vi"
-      ],
-      "glosses": [
-       "to experience",
-       "to go through"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 12440,
-    "source_len": 1
-   },
-   {
     "ent_seq": 2227490,
     "word": "府",
     "reading": "ふ",
@@ -8594,71 +8415,6 @@
     "reasons": [],
     "completed_from": null,
     "rank": 14402,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 1583240,
-    "word": "斑",
-    "reading": "ふ",
-    "readings": [
-     "ぶち",
-     "はん",
-     "ふ",
-     "ふち"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "spots; speckles; mottles",
-    "glosses": [
-     "spots",
-     "speckles",
-     "mottles"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "spots",
-       "speckles",
-       "mottles"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 15477,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 2397180,
-    "word": "麩",
-    "reading": "ふ",
-    "readings": [
-     "ふ"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "wheat gluten (usu. steamed or baked)",
-    "glosses": [
-     "wheat gluten (usu. steamed or baked)"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "wheat gluten (usu. steamed or baked)"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 18518,
     "source_len": 1
    },
    {
@@ -8855,6 +8611,42 @@
     "source_len": 1
    },
    {
+    "ent_seq": 1583240,
+    "word": "斑",
+    "reading": "ふ",
+    "readings": [
+     "ぶち",
+     "はん",
+     "ふ",
+     "ふち"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "spots; speckles; mottles",
+    "glosses": [
+     "spots",
+     "speckles",
+     "mottles"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "spots",
+       "speckles",
+       "mottles"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 46762,
+    "source_len": 1
+   },
+   {
     "ent_seq": 1563880,
     "word": "傅",
     "reading": "ふ",
@@ -8934,6 +8726,35 @@
     "source_len": 1
    },
    {
+    "ent_seq": 2397180,
+    "word": "麩",
+    "reading": "ふ",
+    "readings": [
+     "ふ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "wheat gluten (usu. steamed or baked)",
+    "glosses": [
+     "wheat gluten (usu. steamed or baked)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "wheat gluten (usu. steamed or baked)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 91978,
+    "source_len": 1
+   },
+   {
     "ent_seq": 2248960,
     "word": "訃",
     "reading": "ふ",
@@ -8989,6 +8810,125 @@
     "reasons": [],
     "completed_from": null,
     "rank": 310022,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 1514290,
+    "word": "歩",
+    "reading": "ふ",
+    "readings": [
+     "ふ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "pawn",
+    "glosses": [
+     "pawn"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "pawn"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 2416410,
+    "word": "生",
+    "reading": "ふ",
+    "readings": [
+     "ふ"
+    ],
+    "pos": [
+     "n",
+     "n-suf"
+    ],
+    "meaning": "area of thick growth (of trees, grass, etc.)",
+    "glosses": [
+     "area of thick growth (of trees, grass, etc.)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "n-suf"
+      ],
+      "glosses": [
+       "area of thick growth (of trees, grass, etc.)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 2783730,
+    "word": "経",
+    "reading": "ふ",
+    "readings": [
+     "ふ"
+    ],
+    "pos": [
+     "v2h-s",
+     "vi"
+    ],
+    "meaning": "to pass; to elapse; to go by; to pass through; to go through; to experience; to go through",
+    "glosses": [
+     "to pass",
+     "to elapse",
+     "to go by",
+     "to pass through",
+     "to go through",
+     "to experience",
+     "to go through"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v2h-s",
+       "vi"
+      ],
+      "glosses": [
+       "to pass",
+       "to elapse",
+       "to go by"
+      ]
+     },
+     {
+      "pos": [
+       "v2h-s",
+       "vi"
+      ],
+      "glosses": [
+       "to pass through",
+       "to go through"
+      ]
+     },
+     {
+      "pos": [
+       "v2h-s",
+       "vi"
+      ],
+      "glosses": [
+       "to experience",
+       "to go through"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999,
     "source_len": 1
    },
    {
@@ -9019,6 +8959,66 @@
     "completed_from": null,
     "rank": 9999999,
     "source_len": 1
+   },
+   {
+    "ent_seq": 2862651,
+    "word": "布",
+    "reading": "ふ",
+    "readings": [
+     "ふ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "Hawaii",
+    "glosses": [
+     "Hawaii"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "Hawaii"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 2870787,
+    "word": "夫",
+    "reading": "ふ",
+    "readings": [
+     "ふ"
+    ],
+    "pos": [
+     "n-suf"
+    ],
+    "meaning": "(working) man; laborer",
+    "glosses": [
+     "(working) man",
+     "laborer"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n-suf"
+      ],
+      "glosses": [
+       "(working) man",
+       "laborer"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999,
+    "source_len": 1
    }
   ]
  },
@@ -9028,6 +9028,40 @@
   "para_end": 15,
   "policy": "frequency",
   "candidates": [
+   {
+    "ent_seq": 1461140,
+    "word": "二",
+    "reading": "ふ",
+    "readings": [
+     "に",
+     "ふた",
+     "ふ",
+     "ふう"
+    ],
+    "pos": [
+     "num"
+    ],
+    "meaning": "two; 2",
+    "glosses": [
+     "two",
+     "2"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "num"
+      ],
+      "glosses": [
+       "two",
+       "2"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 532,
+    "source_len": 1
+   },
    {
     "ent_seq": 1502840,
     "word": "分",
@@ -9063,42 +9097,8 @@
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 413,
+    "rank": 902,
     "source_len": 2
-   },
-   {
-    "ent_seq": 1461140,
-    "word": "二",
-    "reading": "ふ",
-    "readings": [
-     "に",
-     "ふた",
-     "ふ",
-     "ふう"
-    ],
-    "pos": [
-     "num"
-    ],
-    "meaning": "two; 2",
-    "glosses": [
-     "two",
-     "2"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "num"
-      ],
-      "glosses": [
-       "two",
-       "2"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 532,
-    "source_len": 1
    },
    {
     "ent_seq": 1632520,
@@ -9158,37 +9158,6 @@
     "source_len": 2
    },
    {
-    "ent_seq": 2870787,
-    "word": "夫",
-    "reading": "ふ",
-    "readings": [
-     "ふ"
-    ],
-    "pos": [
-     "n-suf"
-    ],
-    "meaning": "(working) man; laborer",
-    "glosses": [
-     "(working) man",
-     "laborer"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n-suf"
-      ],
-      "glosses": [
-       "(working) man",
-       "laborer"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 1882,
-    "source_len": 1
-   },
-   {
     "ent_seq": 1496840,
     "word": "布",
     "reading": "ふ",
@@ -9231,129 +9200,6 @@
     "reasons": [],
     "completed_from": null,
     "rank": 2042,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 2862651,
-    "word": "布",
-    "reading": "ふ",
-    "readings": [
-     "ふ"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "Hawaii",
-    "glosses": [
-     "Hawaii"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "Hawaii"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 2042,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 2416410,
-    "word": "生",
-    "reading": "ふ",
-    "readings": [
-     "ふ"
-    ],
-    "pos": [
-     "n",
-     "n-suf"
-    ],
-    "meaning": "area of thick growth (of trees, grass, etc.)",
-    "glosses": [
-     "area of thick growth (of trees, grass, etc.)"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n",
-       "n-suf"
-      ],
-      "glosses": [
-       "area of thick growth (of trees, grass, etc.)"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 2227,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 2834408,
-    "word": "糞",
-    "reading": "ふん",
-    "readings": [
-     "ふん",
-     "フン"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "feces (esp. animal); excrement; dung",
-    "glosses": [
-     "feces (esp. animal)",
-     "excrement",
-     "dung"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "feces (esp. animal)",
-       "excrement",
-       "dung"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 3135,
-    "source_len": 2
-   },
-   {
-    "ent_seq": 1514290,
-    "word": "歩",
-    "reading": "ふ",
-    "readings": [
-     "ふ"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "pawn",
-    "glosses": [
-     "pawn"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "pawn"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 4022,
     "source_len": 1
    },
    {
@@ -9457,65 +9303,6 @@
     "source_len": 4
    },
    {
-    "ent_seq": 2783730,
-    "word": "経",
-    "reading": "ふ",
-    "readings": [
-     "ふ"
-    ],
-    "pos": [
-     "v2h-s",
-     "vi"
-    ],
-    "meaning": "to pass; to elapse; to go by; to pass through; to go through; to experience; to go through",
-    "glosses": [
-     "to pass",
-     "to elapse",
-     "to go by",
-     "to pass through",
-     "to go through",
-     "to experience",
-     "to go through"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "v2h-s",
-       "vi"
-      ],
-      "glosses": [
-       "to pass",
-       "to elapse",
-       "to go by"
-      ]
-     },
-     {
-      "pos": [
-       "v2h-s",
-       "vi"
-      ],
-      "glosses": [
-       "to pass through",
-       "to go through"
-      ]
-     },
-     {
-      "pos": [
-       "v2h-s",
-       "vi"
-      ],
-      "glosses": [
-       "to experience",
-       "to go through"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 12440,
-    "source_len": 1
-   },
-   {
     "ent_seq": 2227490,
     "word": "府",
     "reading": "ふ",
@@ -9576,23 +9363,21 @@
     "source_len": 1
    },
    {
-    "ent_seq": 1583240,
-    "word": "斑",
-    "reading": "ふ",
+    "ent_seq": 2834408,
+    "word": "糞",
+    "reading": "ふん",
     "readings": [
-     "ぶち",
-     "はん",
-     "ふ",
-     "ふち"
+     "ふん",
+     "フン"
     ],
     "pos": [
      "n"
     ],
-    "meaning": "spots; speckles; mottles",
+    "meaning": "feces (esp. animal); excrement; dung",
     "glosses": [
-     "spots",
-     "speckles",
-     "mottles"
+     "feces (esp. animal)",
+     "excrement",
+     "dung"
     ],
     "senses": [
      {
@@ -9600,45 +9385,16 @@
        "n"
       ],
       "glosses": [
-       "spots",
-       "speckles",
-       "mottles"
+       "feces (esp. animal)",
+       "excrement",
+       "dung"
       ]
      }
     ],
     "reasons": [],
     "completed_from": null,
-    "rank": 15477,
-    "source_len": 1
-   },
-   {
-    "ent_seq": 2397180,
-    "word": "麩",
-    "reading": "ふ",
-    "readings": [
-     "ふ"
-    ],
-    "pos": [
-     "n"
-    ],
-    "meaning": "wheat gluten (usu. steamed or baked)",
-    "glosses": [
-     "wheat gluten (usu. steamed or baked)"
-    ],
-    "senses": [
-     {
-      "pos": [
-       "n"
-      ],
-      "glosses": [
-       "wheat gluten (usu. steamed or baked)"
-      ]
-     }
-    ],
-    "reasons": [],
-    "completed_from": null,
-    "rank": 18518,
-    "source_len": 1
+    "rank": 14521,
+    "source_len": 2
    },
    {
     "ent_seq": 2703290,
@@ -9834,6 +9590,42 @@
     "source_len": 1
    },
    {
+    "ent_seq": 1583240,
+    "word": "斑",
+    "reading": "ふ",
+    "readings": [
+     "ぶち",
+     "はん",
+     "ふ",
+     "ふち"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "spots; speckles; mottles",
+    "glosses": [
+     "spots",
+     "speckles",
+     "mottles"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "spots",
+       "speckles",
+       "mottles"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 46762,
+    "source_len": 1
+   },
+   {
     "ent_seq": 1563880,
     "word": "傅",
     "reading": "ふ",
@@ -9944,6 +9736,35 @@
     "source_len": 2
    },
    {
+    "ent_seq": 2397180,
+    "word": "麩",
+    "reading": "ふ",
+    "readings": [
+     "ふ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "wheat gluten (usu. steamed or baked)",
+    "glosses": [
+     "wheat gluten (usu. steamed or baked)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "wheat gluten (usu. steamed or baked)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 91978,
+    "source_len": 1
+   },
+   {
     "ent_seq": 2689450,
     "word": "芬",
     "reading": "ふん",
@@ -10045,6 +9866,125 @@
     "source_len": 1
    },
    {
+    "ent_seq": 1514290,
+    "word": "歩",
+    "reading": "ふ",
+    "readings": [
+     "ふ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "pawn",
+    "glosses": [
+     "pawn"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "pawn"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 2416410,
+    "word": "生",
+    "reading": "ふ",
+    "readings": [
+     "ふ"
+    ],
+    "pos": [
+     "n",
+     "n-suf"
+    ],
+    "meaning": "area of thick growth (of trees, grass, etc.)",
+    "glosses": [
+     "area of thick growth (of trees, grass, etc.)"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n",
+       "n-suf"
+      ],
+      "glosses": [
+       "area of thick growth (of trees, grass, etc.)"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 2783730,
+    "word": "経",
+    "reading": "ふ",
+    "readings": [
+     "ふ"
+    ],
+    "pos": [
+     "v2h-s",
+     "vi"
+    ],
+    "meaning": "to pass; to elapse; to go by; to pass through; to go through; to experience; to go through",
+    "glosses": [
+     "to pass",
+     "to elapse",
+     "to go by",
+     "to pass through",
+     "to go through",
+     "to experience",
+     "to go through"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "v2h-s",
+       "vi"
+      ],
+      "glosses": [
+       "to pass",
+       "to elapse",
+       "to go by"
+      ]
+     },
+     {
+      "pos": [
+       "v2h-s",
+       "vi"
+      ],
+      "glosses": [
+       "to pass through",
+       "to go through"
+      ]
+     },
+     {
+      "pos": [
+       "v2h-s",
+       "vi"
+      ],
+      "glosses": [
+       "to experience",
+       "to go through"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999,
+    "source_len": 1
+   },
+   {
     "ent_seq": 2860679,
     "word": "普",
     "reading": "ふ",
@@ -10065,6 +10005,66 @@
       ],
       "glosses": [
        "ordinary bank account"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 2862651,
+    "word": "布",
+    "reading": "ふ",
+    "readings": [
+     "ふ"
+    ],
+    "pos": [
+     "n"
+    ],
+    "meaning": "Hawaii",
+    "glosses": [
+     "Hawaii"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n"
+      ],
+      "glosses": [
+       "Hawaii"
+      ]
+     }
+    ],
+    "reasons": [],
+    "completed_from": null,
+    "rank": 9999999,
+    "source_len": 1
+   },
+   {
+    "ent_seq": 2870787,
+    "word": "夫",
+    "reading": "ふ",
+    "readings": [
+     "ふ"
+    ],
+    "pos": [
+     "n-suf"
+    ],
+    "meaning": "(working) man; laborer",
+    "glosses": [
+     "(working) man",
+     "laborer"
+    ],
+    "senses": [
+     {
+      "pos": [
+       "n-suf"
+      ],
+      "glosses": [
+       "(working) man",
+       "laborer"
       ]
      }
     ],
